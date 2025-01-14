@@ -1,25 +1,493 @@
 ---
-title: "lecture_1"
-format: revealjs
+title: "Lecture 1: Introduction to ePortfolios"
+subtitle: BAA1028 - Workflow & Data Management 
+author: Damien Dupré
+format:
+  revealjs:
+    theme: [theme/metropolis.scss]
+    toc-depth: 1
+    chalkboard: false
+    menu: true
+    slide-number: true
+title-slide-attributes:
+    data-background-iframe: logo-fall/index.html
+preload-iframes: true
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
-
-## Bullets
-
-When you click the **Render** button a document will be generated that includes:
-
--   Content authored with markdown
--   Output from executable code
-
-## Code
-
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
-
-```{r}
-1 + 1
+```{r setup, include = FALSE}
+# libraries --------------------------------------------------------------------
+library(anicon)
+library(countdown)
+library(fontawesome)
+library(knitr)
 ```
 
+## Module Contact Details
+
+::: columns
+::: {.column width="50%"}
+### Damien Dupré, PhD
+
+- email: damien.dupre@dcu.ie
+- phone: 00353 (0)1 700 6360
+- office: Q233 DCU Business School
+:::
+
+::: {.column width="40%"}
+```{r}
+include_graphics("https://pbs.twimg.com/profile_images/1221820283159490565/96a3XnSg_400x400.jpg")
+```
+:::
+:::
+
+## Module Content
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+### Knowledge
+
+- ePortfolio
+- Project Organisation
+
+### Skills
+
+- bash/zsh
+- Git & GitHub
+- Quarto
+- Markdown & HTML
+- Jupyter
+:::
+
+::: {#second-column}
+### Slides
+
+Available on the module's loop page and, more importantly, online at:
+
+[https://damien-dupre.github.io -> courses -> BAA1028](https://damien-dupre.github.io/courses/details/BAA1028)
+:::
+::::
+
+## What About You?
+
+::: incremental
+- Who is using Microsoft OS, Mac Os, or Linux?
+- Who has already an account on GitHub, GitLab, or equivalent?
+- Who has a personal website on WordPress, Google Site, or equivalent?
+- Who knows how to read and write .html files?
+- Which coding platform are you currently using to code: Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, RStudio, Atom, Positron, other?
+- Who knows what Quarto is?
+- Who knows what bash/zsh is?
+- Do you know where is your Notepad (Windows) or TextEdit (MacOS)?
+:::
+
+## Module Assessment
+
+### 90% ePortfolio
+
+Website that showcases your coding skills, achievements, experiences, and personal reflections. It should include various media types—documents, images, videos, audio clips, presentations, and web links—that can be tailored for different audiences. **Deadline: April 13, 2025**
+
+### 10% Kubicle Courses
+
+  - [Data Presentation Skills: Communicating Data Effectively](https://app.kubicle.com/learn/data-presentation-skills/overview-of-data-communication)<br>
+  - [Data Presentation Skills: Telling Stories with Data](https://app.kubicle.com/learn/data-presentation-skills/a-storytelling-structure)<br>
+  - [Data Presentation Skills: Presenting Your Data](https://app.kubicle.com/learn/data-presentation-skills/overview-of-data-presentation)<br>
+  - [Data Security: Keeping Your Information Safe](https://app.kubicle.com/learn/data-security/introduction-to-information-security)<br>
+  - [Data Security: Handling Data Securely and Responsibly](https://app.kubicle.com/learn/data-security/introduction-to-security-protocols)
+  
+## Creating an ePortfolio
+
+```{r}
+include_img("workflow.png")
+```
+
+## ePortfolio Example 1
+
+```{=html}
+<iframe width="1000" height="500" src="https://alanlynch94.github.io/My-Website/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://alanlynch94.github.io/My-Website](https://alanlynch94.github.io/My-Website)
+- [`r fa(name = "github")` https://github.com/AlanLynch94/My-Website](https://github.com/AlanLynch94/My-Website)
+
+## ePortfolio Example 2
+
+```{=html}
+<iframe width="1000" height="500" src="https://jeff-bow.github.io/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://jeff-bow.github.io/](https://jeff-bow.github.io/)
+- [`r fa(name = "github")` https://github.com/jeff-bow/jeff-bow.github.io](https://github.com/jeff-bow/jeff-bow.github.io)
+
+## ePortfolio Example 3
+
+```{=html}
+<iframe width="1000" height="500" src="https://liam-mcgovern23.github.io/Portfolio3.0/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://liam-mcgovern23.github.io/Portfolio3.0/](https://liam-mcgovern23.github.io/Portfolio3.0/)
+- [`r fa(name = "github")` https://github.com/liam-mcgovern23/Portfolio3.0](https://github.com/liam-mcgovern23/Portfolio3.0)
+
+## ePortfolio Example 4
+
+```{=html}
+<iframe width="1000" height="500" src="https://beris00.github.io/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://beris00.github.io/](https://beris00.github.io/)
+- [`r fa(name = "github")` https://github.com/beris00/beris00.github.io](https://github.com/beris00/beris00.github.io)
+
+<!-- ## ePortfolio Example 5 -->
+
+<!-- ```{=html} -->
+<!-- <iframe width="1000" height="500" src="https://wackerdam.github.io/"></iframe> -->
+<!-- ``` -->
+
+<!-- - [`r fa(name = "globe")` https://wackerdam.github.io/](https://wackerdam.github.io/) -->
+<!-- - [`r fa(name = "github")` https://github.com/wackerdam/wackerdam.github.io](https://github.com/wackerdam/wackerdam.github.io) -->
+
+## ePortfolio Example 5
+
+```{=html}
+<iframe width="1000" height="500" src="https://laurenmcconnel.github.io/Business_Analytics_Portfolio/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://laurenmcconnel.github.io/Business_Analytics_Portfolio/](https://laurenmcconnel.github.io/Business_Analytics_Portfolio/)
+- [`r fa(name = "github")` https://github.com/laurenmcconnel/Business_Analytics_Portfolio](https://github.com/laurenmcconnel/Business_Analytics_Portfolio)
+
+## ePortfolio Example 6
+
+```{=html}
+<iframe width="1000" height="500" src="https://kellie-staunton.github.io/E-Portfolio/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://kellie-staunton.github.io/E-Portfolio/](https://kellie-staunton.github.io/E-Portfolio/)
+- [`r fa(name = "github")` https://github.com/kellie-staunton/E-Portfolio](https://github.com/kellie-staunton/E-Portfolio)
+
+## ePortfolio Example 7
+
+```{=html}
+<iframe width="1000" height="500" src="https://chstefan.github.io/Data_Analytics_Website/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://chstefan.github.io/Data_Analytics_Website/](https://chstefan.github.io/Data_Analytics_Website/)
+- [`r fa(name = "github")` https://github.com/chstefan/Data_Analytics_Website](https://github.com/chstefan/Data_Analytics_Website)
+
+## ePortfolio Example 8
+
+```{=html}
+<iframe width="1000" height="500" src="https://lclehr.github.io/MT412/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://lclehr.github.io/MT412/](https://lclehr.github.io/MT412/)
+- [`r fa(name = "github")` https://github.com/lclehr/MT412](https://github.com/lclehr/MT412)
+
+## ePortfolio Example 9
+
+```{=html}
+<iframe width="1000" height="500" src="https://jhowardinho45.github.io/jameshoward.github.io/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://jhowardinho45.github.io/jameshoward.github.io/](https://jhowardinho45.github.io/jameshoward.github.io/)
+- [`r fa(name = "github")` https://github.com/jhowardinho45/jameshoward.github.io](https://github.com/jhowardinho45/jameshoward.github.io)
+
+## ePortfolio Example 10
+
+```{=html}
+<iframe width="1000" height="500" src="https://chloed77.github.io/MT412---E-Portfolio---Chloe-Downes/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://chloed77.github.io/MT412---E-Portfolio---Chloe-Downes/](https://chloed77.github.io/MT412---E-Portfolio---Chloe-Downes/)
+- [`r fa(name = "github")` https://github.com/chloed77/MT412---E-Portfolio---Chloe-Downes/](https://github.com/chloed77/MT412---E-Portfolio---Chloe-Downes/)
+
+## ePortfolio Example 11
+
+```{=html}
+<iframe width="1000" height="500" src="https://catalinbondari.github.io/eportfolio-website/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://catalinbondari.github.io/eportfolio-website/](https://catalinbondari.github.io/eportfolio-website/)
+- [`r fa(name = "github")` https://github.com/catalinbondari/eportfolio-website](https://github.com/catalinbondari/eportfolio-website)
+
+## ePortfolio Example 12
+
+```{=html}
+<iframe width="1000" height="500" src="https://cianshannon.github.io/cian-shannon/"></iframe>
+```
+
+- [`r fa(name = "globe")` https://cianshannon.github.io/cian-shannon/](https://cianshannon.github.io/cian-shannon/)
+- [`r fa(name = "github")` https://github.com/cianshannon/cian-shannon](https://github.com/cianshannon/cian-shannon)
+
+# What is an ePortfolio?
+
+## Definition
+
+- An ePortfolio is a digital collection of materials that showcases an individual’s achievements, skills, experiences, and learning.
+- It serves as both a personal and professional development tool.
+-	Combines multimedia elements (text, images, videos, etc.) to enhance presentation.
+
+### ePortfolio are also about what you don't include
+
+- Quality over quantity! Don't throw in every student project
+- Avoid sharing irrelevant information like data cleaning (just link to the file with the code) or personal information like phone number
+- Check for grammar errors/clarity
+
+## ePortfolio Platforms
+
+- [Google Sites](https://sites.google.com): Free and user-friendly while having limited design options.
+- [Canva](https://www.canva.com/en_gb/): Visually appealing templates.
+- [WordPress](https://wordpress.com/): Customisable and scalable website for diverse purpose.
+- [Loop Reflect/Mahara](https://www.dcu.ie/teu/learning-eportfolios): Designed for education and collaboration.
+- [LinkedIn](https://www.linkedin.com/pulse/linkedin-portfolio-step-by-step-guide-showcase-your-work): Professional networking with portfolio integration.
+
+...Just to name a few.
+
+These services offer a **platform to design an eportfolio/website** and to **host the eportfolio/website on their own servers**.
+
+Instead, we are going to **manually create** our eportfolio/website and to **host it on a specific server**.
+
+## ePortfolio Requirements {.smaller}
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+### Technical Features
+
+- Published with **GitHub Pages**
+- Use of **Git** to upload files rather manual upload
+- Use of **Quarto** rather than manual html pages
+- **Active code** rather than inactive code (e.g., screenshots)
+- **Tidy project** folder organisation
+- **Careful use of data**, both databases and personal data
+:::
+
+::: {#second-column}
+### Components
+
+- **Introduction:** About me/profile section.
+- **Evidence of Work**: Projects, assignments, and achievements.
+- **Reflection**: Insights on learning experiences.
+- **References/Contact**: Networks and accessibility details.
+- **CV**: Link to pdf accessible document.
+:::
+::::
+
+### Additional Criteria
+**Overall design**, **attention to details**, and **innovation**.
+
+## Plagiarism {background="#43464B"}
+
+<br>
+
+### Do `NOT` copy other students work
+
+<br>
+
+### Do `NOT` copy code online without reference
+
+<br>
+
+### Do `NOT` use full code templates
+
+## Exercise 1: Type of Files in an ePortfolio
+
+1. Go to the GitHub Repository of one of the portfolio presented earlier,
+2. Download and unZip this repository on your own Computer,
+3. List all the file extensions of documents included in this folder and subfolders.
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+## Exercise 1: Type of Files in an ePortfolio {.smaller}
+
+Which file `extensions` have you found?
+
+::: {.fragment .fade-up}
+::: columns
+::: {.column width="30%"}
+Web and Interactive Content
+
+	•	.html / .htm: HyperText Markup Language files for web content.
+	•	.css: Cascading Style Sheets for web design.
+	•	.js: JavaScript files for interactive elements.
+
+Text and Document Formats
+
+	•	.doc / .docx: Microsoft Word documents.
+	•	.pdf: Portable Document Format, widely used for static, professional documents.
+	•	.txt: Plain text files.
+	•	.rtf: Rich Text Format, compatible with various word processors.
+	•	.odt: OpenDocument Text, used by open-source tools like LibreOffice.
+
+Presentation Formats
+
+	•	.ppt / .pptx: Microsoft PowerPoint presentations.
+	•	.odp: OpenDocument Presentation format.
+	•	.key: Apple Keynote presentations.
+:::
+::: {.column width="30%"}
+Spreadsheet Formats
+
+	•	.xls / .xlsx: Microsoft Excel spreadsheets.
+	•	.csv: Comma-separated values, often used for data sharing.
+	•	.ods: OpenDocument Spreadsheet format.
+
+Image Formats
+
+	•	.jpg / .jpeg: Compressed image files.
+	•	.png: High-quality image files supporting transparency.
+	•	.gif: Animated or static image files.
+	•	.bmp: Bitmap image files.
+	•	.tiff / .tif: High-resolution image files.
+	•	.webp: Compressed image format for the web.
+	•	.ico: Icon image files, often used for branding or UI mockups.
+	•	.heic: High Efficiency Image Format, used in modern Apple devices.
+	•	.svgz: Compressed Scalable Vector Graphics.
+	•	.raw: Camera raw image files from DSLRs.
+:::
+::: {.column width="30%"}
+Audio Formats
+
+	•	.mp3: Compressed audio files.
+	•	.wav: High-quality audio files.
+	•	.ogg: Open-source audio file format.
+
+Video Formats
+
+	•	.mp4: A widely-used video format compatible with most devices.
+	•	.avi: Video format with higher quality, but larger file size.
+	•	.mov: Apple QuickTime video format.
+	•	.wmv: Windows Media Video format.
+
+Other Formats
+
+	•	.svg: Scalable Vector Graphics, ideal for logos and illustrations.
+	•	.md: Markdown files, often used in coding or minimalist documentation.
+	•	.log: Log files for tracking progress or issues.
+	•	.yml / .yaml: Data serialisation formats, often for configuration files.
+	•	.zip / .tar.gz / .7z: Compressed archive formats for distributing multiple files.
+	•	.dat: Generic data files.
+:::
+:::
+:::
+
+# What is an HTML file?
+
+## HyperText Markup Language file
+
+An HTML file (HyperText Markup Language file) is a plain text document used to create and structure the content of a web page. 
+
+It contains the essential code that browsers interpret to display text, images, links, videos, and other elements on a webpage. 
+
+The file typically has a `.html` or `.htm` extension.
+
+In essence, an HTML file serves as the backbone of a website, working in tandem with CSS (Cascading Style Sheets) for design and JavaScript for functionality to deliver a complete web experience.
+
+## Role of an HTML file {.smaller}
+
+#### 1.	Foundation of a Web Page:
+HTML provides the basic structure of a webpage, defining elements such as headings, paragraphs, links, lists, and multimedia content.
+
+#### 2. Organisation of Content:
+HTML uses tags (e.g., `<h1>`, `<p>`, `<img>`, `<a>`) to organise and label different sections and types of content, making it clear how they should appear and behave.
+
+#### 3. Linking Resources:
+It can link to external resources such as CSS files for styling, JavaScript files for interactivity, and multimedia assets like images or videos.
+
+#### 4. Navigation:
+HTML is used to create navigational structures, such as menus and hyperlinks, enabling users to move between pages on the site or to external resources.
+
+#### 5. Semantic Markup:
+Modern HTML includes semantic tags (e.g., `<header>`, `<article>`, `<footer>`) that provide additional meaning and improve accessibility and search engine optimisation (SEO).
+
+## Open HTML file and access to its source
+
+### Method 1: Use your webrowser
+Right-click on the webpage in your browser and select “View Page Source” (name may vary by browser). Then, copy the source code displayed, open Notepad/TextEdit, and paste it in to view or edit.
+
+### Method 2: Use your most basic text editor
+- Notepad: Just open the file
+- TextEdit: Choose File > Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.
+
+### Method 3: Open it with your coding tool
+e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
+
+## Exercise 2: Structure of an HTML file
+
+1. Go to the following URL with your web browser:
+
+[https://damien-dupre.github.io/my-first-web-page.html](https://damien-dupre.github.io/my-first-web-page.html)
+
+2. Display the source code
+
+3. List the different HTML tags
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+## Exercise 2: Structure of an HTML file
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page</title>
+  </head>
+  <body bgcolor="#BBCCFF">
+    <h1>Welcome to my first webpage</h1>
+    <p>I hope you will like this page.</p>
+  </body>
+</html>
+```
+
+- All HTML documents must start with a document type declaration: `<!DOCTYPE html>`.
+
+- The HTML document itself begins with `<html>` and ends with `</html>`.
+
+- The visible part of the HTML document is between `<body>` and `</body>`. 
+
+::: footer
+Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3schools.com/html/html_basic.asp)
+:::
+
+## Exercise 3: Modify of an HTML file
+
+- Copy the following HTML code:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page</title>
+  </head>
+  <body bgcolor="#BBCCFF">
+    <h1>Welcome to my first webpage</h1>
+    <p>I hope you will like this page.</p>
+  </body>
+</html>
+```
+
+- Go to [https://jsfiddle.net/](https://jsfiddle.net/), paste it in the HTML box, and Click the RUN button
+
+- Change the text and observe your changes with the RUN button
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+## {background="#43464B"}
+
+```{css, echo = FALSE}
+img.circle {border-radius:50%;}
+```
+
+::: {layout-ncol="2"}
+<img class="circle" src="https://github.com/damien-dupre.png" />
+
+**Thanks for your attention and don't hesitate to ask if you have any questions!**  
+[`r fa(name = "mastodon")` @damien_dupre](https://datasci.social/@damien_dupre)  
+[`r fa(name = "github")` @damien-dupre](https://github.com/damien-dupre)  
+[`r fa(name = "link")` https://damien-dupre.github.io](https://damien-dupre.github.io)  
+[`r fa(name = "paper-plane")` damien.dupre@dcu.ie](mailto:damien.dupre@dcu.ie)
+:::
 

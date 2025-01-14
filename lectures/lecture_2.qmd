@@ -1,0 +1,365 @@
+---
+title: "Lecture 2: HTML and CSS"
+subtitle: BAA1028 - Workflow & Data Management 
+author: Damien Dupré
+format:
+  revealjs:
+    theme: [theme/metropolis.scss]
+    toc-depth: 1
+    chalkboard: false
+    menu: true
+    slide-number: true
+title-slide-attributes:
+    data-background-iframe: logo-fall/index.html
+preload-iframes: true
+---
+
+```{r setup, include = FALSE}
+# libraries --
+library(anicon)
+library(countdown)
+library(fontawesome)
+library(knitr)
+
+# functions --
+include_img <- function(img_name) {
+  paste0("https://raw.githubusercontent.com/damien-dupre/img/main/", img_name) |> 
+  knitr::include_graphics()
+}
+
+# browseURL("https://ucsb-meds.github.io/customizing-quarto-websites/")
+# browseURL("https://fania.github.io/uca-web-lec1/")
+# browseURL("https://github.com/lamkeewei/html-slides")
+# browseURL("https://github.com/ale66/learn-web")
+# browseURL("https://github.com/ZoeLawson/mcc_tools_tech/tree/Winter2024")
+# browseURL("https://websitesetup.org/html5-cheat-sheet/")
+# browseURL("https://github.com/b2renger/Introduction_HTML-CSS-JS")
+
+```
+
+## HTML, CSS, JavaScript
+
+- HTML: **what** - defines *content*
+- CSS: **how** - specifies *layout/presentation*
+- JavaScript: **when** - codes *interaction*
+
+## HTML History
+
+- **SGML** (title, h1-6, p, ol, ul...)
+- **1965** Ted Nelson & the hyperlink
+- **1987** Hypercard uses local hyperlinks (Bill Atkinson, Apple)
+- **HTML** devised by Tim Berner-Lee (TBL) at CERN
+- **1989** TBL creates HTML/WWW on NeXT (for *collaborative research*)
+- **1990** global hypertext project - first <a href="https://worldwideweb.cern.ch/browser/#https://worldwideweb.cern.ch/browser/default.html">*W*orld*W*ide*W*eb (WWW) browser</a>
+- **1991** the Internet first carries the WWW
+- **2008** HTML5 first released
+- **2014** HTML5 becomes a [W3C](https://www.w3.org/) recommendation
+
+## CSS History
+      
+- **1994** first draft of *Cascading HTML Style Sheets*, Håkon Wium Lie
+- **1995** W3C Board set up for HTML specifications
+- **1996** MS Internet Explorer first to support CSS
+- **1996** CSS1 *W3C* Recommendation
+- **1996** W3C forms CSS Working Group
+- **1998** CSS2 published as *W3C* Recommendation
+- **2000** W3C CSS3 Working Draft
+- **2011** W3C releases *CSS 2.1* (fixed errors, better browser matching)
+- **2014** W3C Candidate Recommendation CSS Syntax Module Level 3
+- **2017** CSS3 and browser support *continues to evolve*…
+      
+# How Websites Work?
+      
+## Back-end: “SERVER”
+      
+A **web server** handles your [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) requests for a website, does background **processing** and **retrieval** (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser** using [http](https://http.cat/).
+
+## Front-end: “CLIENT”
+      
+A 'client'—usually a **web browser**—receives **files** from the server using using [http](https://http.cat/) and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
+
+## Exercise 1: Observe your web browser in action
+
+1. Open your web browser (Chrome, Firefox, Edge, ...)
+2. Go to the URL [https://damien-dupre.github.io/](https://damien-dupre.github.io/)
+3. In the menu of your web browser, find "Developer Tools" (Chrome), "Web Developer Tools" (Firefox), or equivalent
+4. Click `Network` and Reload the page
+
+See, all the documents downloaded to display the page!
+
+```{r}
+countdown(minutes = 3, warn_when = 60)
+```
+
+# HTML Code
+
+## HTML Code
+      
+An **HTML5** document consists of 4 core elements:  
+`doctype`, `html`, `head`, and `body`  
+**All websites** have the following fundamental *structure*!
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <!-- some **information** the browser needs -->
+  </head>
+  <body>
+    <!-- what actually **appears** in the browser -->
+  </body>
+</html>
+```
+
+## HTML Code
+
+Content is between **matching pairs** of HTML tags:
+
+```html
+<header>The box at the top</header>
+
+<h2>A heading element</h2>
+
+<p>Some text in a paragraph</p>
+
+<footer>The box at the bottom</footer>
+```
+
+## HTML Code
+
+Some tags **don't need 'closing'** e.g. the `img` tag:
+
+```html
+<img src="imgs/my-lovely-horse.png" alt="nice horse">
+```
+The only other **'self-closing' tags** you might use are:
+
+```html
+<br> <!-- a line break -->
+
+<input type="checkbox" name="horses">
+<input type="radio" name="cats"> 
+```
+
+## HTML Code
+
+A **hyperlink** goes to *another page*, a separate *website*,  
+or can jump to a *specific section* on the same page,  
+marked by an HTML `id` attribute:
+
+```html
+<a href="another-page.html">Go to another page</a>
+
+<a href="http://xkcd.com">Go to another website</a>
+
+<a href="#my_section">Jump to an ID on the page</a>
+
+<section id="my_section">
+  <p>The link above will jump to this section</p>
+</section>
+```
+
+## HTML Code
+
+⚠️ *IMPORTANT SLIDE !!*
+
+most HTML tags are **nested inside** other HTML tags:
+(watch your indentation!)
+
+```html
+<header>
+  <h1>The main heading</h1>
+</header>  
+
+<section>
+  <h2>A section heading</h2>
+  <p>Some text in a paragraph</p>
+</section>
+```
+
+## HTML Code
+
+You can add **HTML comments** in your code:
+
+```html
+<!-- The figure tag is for image/captions boxes -->
+
+<figure>
+  <!-- The img tag goes here -->
+  <!-- The figcaption tag goes here -->
+</figure>
+```
+
+Text between `<!--` and `-->` won't show on screen.
+
+My slides are using a Fira Font type, which makes the ligature between corresponding signs but `<!--` and `-->` are actually `< ! - - ` and `- - >` without the spaces.
+
+# CSS Code
+
+## CSS Code
+
+the stylesheet needs to be linked in the `head` section
+
+```html
+<link rel="stylesheet" href="path/to/styles.css">
+```
+
+technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
+
+```html
+<style>
+  body {
+    background: beige;
+  }
+</style>
+```
+
+## CSS Code
+
+the **selector** is the element to be styled:
+
+```css
+selector { /* can be element, class, id… */
+  property: value;
+}
+```
+
+inside the curly braces `{ }`, the *property* and *value*  
+together make a CSS **declaration** e.g.
+
+```css
+main { /* targets tag main */
+  margin: 0 auto;
+}
+aside.sidebar { /* targets tag aside with class sidebar */
+  width: 50%;
+}
+form#myForm { /* targets tag form with id myForm */
+  background: #666;
+}
+```
+
+## CSS Code
+
+⚠️ *IMPORTANT SLIDE !!*
+
+**IDs** should always be *unique*! (CSS **#NameOfID**)
+
+IDs are often used to identify things in JavaScript
+
+**classes** can be applied to *multiple* tags (CSS **.NameofClass**)
+
+Classes are often used to style similar things in CSS
+
+## CSS Code
+
+A CSS **rule** inside `{}` can contain **multiple** CSS **declarations**:
+      
+```css
+main {
+  margin: 10px; /* 10 pixels all round */
+  width: 80%; /* always 80% of the screen width */
+  background: #eee;
+  font-family: Tahoma, Helvetica, sans-serif;
+}
+```
+
+or be on **one line** (*harder to read* when developing):
+
+```css
+main { margin: 0 auto; width: 50%; }
+```
+```css
+main{margin:0 auto;width:50%;}input{background:yellow;width:100px;}
+```
+
+## TIDY CODE
+  
+⚠️ *IMPORTANT SLIDE !!*
+
+- **indent all your code** as you go, with **2 spaces**!
+- **HTML** in `.html` files (`<`angle brackets`>`)
+- **CSS** in `.css` files (`{`curly braces`}`)
+
+### KEEPING **CODE TIDY** WILL HELP YOU **A LOT**
+
+## TIDY FILES
+
+⚠️ *IMPORTANT SLIDE !!*
+
+- **YES** all file & folder names **lower-case**!
+- **YES** all **resized images** in an `images` folder!
+- **NO** *spaces* in filenames (incl. images etc.)!
+- **NO** unused, old files in folder (e.g. photoshop files)!
+
+### Clean up at the end of every session
+
+## References
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+- [The birth of the Web](https://home.cern/topics/birth-web)
+
+- [A history of HTML](https://www.w3.org/People/Raggett/book4/ch02.html)
+
+- [A Brief History of CSS](http://www.css-class.com/a-brief-history-of-css/)
+
+- [W3C CSS Syntax Module Level 3](https://www.w3.org/TR/css-syntax-3/)
+
+- [Learn HTML](https://www.codecademy.com/learn/learn-html)
+
+- [Learn CSS](https://www.codecademy.com/learn/learn-css)
+
+- [Learn how to build websites](https://www.codecademy.com/learn/paths/learn-how-to-build-websites)
+
+- [Introduction to JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+:::
+
+::: {#second-column}
+- [Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
+
+- [Introduction to CSS](https://developer.mozilla.org/en-US/docs/Learn/CSS/Introduction_to_CSS)
+
+- [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+
+- [W3Schools HTML](http://www.w3schools.com/html/)
+
+- [W3Schools CSS](http://www.w3schools.com/css/)
+
+- [W3Schools Borders](https://www.w3schools.com/css/css_border.asp)
+
+- [W3Schools: Position Property](https://www.w3schools.com/css/css_positioning.asp)
+
+- [MDN: Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
+
+:::
+::::
+
+## Website templates on the Internet
+
+Rather than starting a website from scratch, is a multitude of different providers offering already made templates, see [https://www.google.com/search?q=website+template](https://www.google.com/search?q=website+template)
+
+## Homework Exercises
+
+1. Go to [https://html5up.net/](https://html5up.net/)
+
+2. Download the template of your choice for free
+
+3. Fill the template with your informations and observe the changes
+
+## {background="#43464B"}
+
+```{css, echo = FALSE}
+img.circle {border-radius:50%;}
+```
+
+::: {layout-ncol="2"}
+<img class="circle" src="https://github.com/damien-dupre.png" />
+
+**Thanks for your attention and don't hesitate to ask if you have any questions!**  
+[`r fa(name = "mastodon")` @damien_dupre](https://datasci.social/@damien_dupre)  
+[`r fa(name = "github")` @damien-dupre](https://github.com/damien-dupre)  
+[`r fa(name = "link")` https://damien-dupre.github.io](https://damien-dupre.github.io)  
+[`r fa(name = "paper-plane")` damien.dupre@dcu.ie](mailto:damien.dupre@dcu.ie)
+:::
+
