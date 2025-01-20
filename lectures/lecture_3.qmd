@@ -27,10 +27,10 @@ include_img <- function(img_name) {
   knitr::include_graphics()
 }
 
-# https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/
-# https://drmowinckels.io/talks_repo/slides/2022.04.28-git-github/#/title-slide
-# https://drmowinckels.io/talks_repo/slides/2022.03.03-fileorg/#1
-# https://drmowinckels.io/talks_repo/slides/2022.02.03-rproj/#1
-# https://www.ethanrosenthal.com/2024/10/23/portable-quarto-reports/
+browseURL("https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.04.28-git-github/#/title-slide")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.03.03-fileorg/#1")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.02.03-rproj/#1")
+browseURL("https://www.ethanrosenthal.com/2024/10/23/portable-quarto-reports/")
 ```
 

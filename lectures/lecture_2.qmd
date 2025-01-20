@@ -37,37 +37,6 @@ include_img <- function(img_name) {
 
 ```
 
-## HTML, CSS, JavaScript
-
-- HTML: **what** - defines *content*
-- CSS: **how** - specifies *layout/presentation*
-- JavaScript: **when** - codes *interaction*
-
-## HTML History
-
-- **SGML** (title, h1-6, p, ol, ul...)
-- **1965** Ted Nelson & the hyperlink
-- **1987** Hypercard uses local hyperlinks (Bill Atkinson, Apple)
-- **HTML** devised by Tim Berner-Lee (TBL) at CERN
-- **1989** TBL creates HTML/WWW on NeXT (for *collaborative research*)
-- **1990** global hypertext project - first <a href="https://worldwideweb.cern.ch/browser/#https://worldwideweb.cern.ch/browser/default.html">*W*orld*W*ide*W*eb (WWW) browser</a>
-- **1991** the Internet first carries the WWW
-- **2008** HTML5 first released
-- **2014** HTML5 becomes a [W3C](https://www.w3.org/) recommendation
-
-## CSS History
-      
-- **1994** first draft of *Cascading HTML Style Sheets*, Håkon Wium Lie
-- **1995** W3C Board set up for HTML specifications
-- **1996** MS Internet Explorer first to support CSS
-- **1996** CSS1 *W3C* Recommendation
-- **1996** W3C forms CSS Working Group
-- **1998** CSS2 published as *W3C* Recommendation
-- **2000** W3C CSS3 Working Draft
-- **2011** W3C releases *CSS 2.1* (fixed errors, better browser matching)
-- **2014** W3C Candidate Recommendation CSS Syntax Module Level 3
-- **2017** CSS3 and browser support *continues to evolve*…
-      
 # How Websites Work?
       
 ## Back-end: “SERVER”
@@ -91,7 +60,83 @@ See, all the documents downloaded to display the page!
 countdown(minutes = 3, warn_when = 60)
 ```
 
-# HTML Code
+# Enter HTML and CSS
+
+## HTML and CSS
+
+In order to really fine-tune the appearance of our site, we need to dive a bit into the world of [HTML](https://html.spec.whatwg.org/) and [CSS](https://www.w3.org/Style/CSS/Overview.en.html).
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html_css.png?raw=true")
+```
+
+## The building blocks of web pages
+
+**HTML** (Hypertext Markup Language) is a *markup language*<sup>1</sup> that tells web browsers how to *structure* web pages. You can think of HTML as the *skeleton* of a web page. It gives authors the means to create elements like headings, text, tables, lists, add media, etc.
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html.png?raw=true")
+```
+
+Source: Adapted from [Nicolas Karasiak](https://github.com/nkarasiak/Illustration)
+
+<sup>1</sup>[**Markdown**](https://www.markdownguide.org/) is also a lightweight markup languages -- it is a bit easier for humans to write and read than HTML. HTML is more expressive and allows for customization that is difficult or impossible to do in Markdown.
+
+## The building blocks of web pages
+
+**CSS** (Cascading Style Sheets) is a programming language that allows you to control how HTML elements *look* on a web page. You can think of CSS as the *outfit* that is styling the skeleton. It allows authors to control aspects such as the colors, layout, and font style.
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/css.png?raw=true")
+```
+
+Source: Adapted from [Nicolas Karasiak](https://github.com/nkarasiak/Illustration)
+
+## Browser Specific Internal Style Sheet
+
+Your browser will style HTML documents using an internal style sheet, which ensures that headings are larger than normal text, links are highlighted, lists and tables are structured correctly, etc.
+
+:::: {.columns}
+::: {.column width="47%"}
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html-github.png?raw=true")
+```
+:::
+::: {.column width="47%"}
+```{r}
+
+
+#| fig-align: "center"
+#| out-width: "90%" 
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/browser-styling-github.png?raw=true")
+```
+:::
+::::
+
+## CSS adds style to web page renderings
+
+CSS allows website developers to add additional styling to web browser defaults. Otherwise, websites would be pretty boring to look at (and they'd all generally look the same).
+
+:::: {.columns}
+::: {.column width="47%"}
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/browser-styling-github.png?raw=true")
+```
+:::
+::: {.column width="47%"}
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/css-styling-github.png?raw=true")
+```
+:::
+::::
+
+# Light intro to HTML
 
 ## HTML Code
       
@@ -194,38 +239,294 @@ Text between `<!--` and `-->` won't show on screen.
 
 My slides are using a Fira Font type, which makes the ligature between corresponding signs but `<!--` and `-->` are actually `< ! - - ` and `- - >` without the spaces.
 
-# CSS Code
+##  HTML elements
+
+[Elements](https://www.w3schools.com/html/html_elements.asp) comprise **start tags** and **end tags** that render some form of content in a particular way.
+
+**The basic anatomy of an HTML element:**
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html_element.png?raw=true")
+```
+
+## Commonly used HTML tags {.smaller}
+
+Browse a complete [list of HTML tags](https://www.w3schools.com/tags/default.asp).
+
+| Tag                 | What it does                                                 |
+|---------------------|--------------------------------------------------------------|
+| `<div></div>`       | defines a division or section in an HTML document            |
+| `<h1></h1>`         | create a first-level heading (largest)                       |
+| `<h6></h6>`         | create a sixth-level heading (smallest)                      |
+| `<p></p>`           | begin a new paragraph                                        |
+| `<strong></strong>` | bold text                                                    |
+| `<em></em>`         | italicized text                                              |
+| `<img></img>`       | present an image                                             |
+| `<a></a>`           | define a hyperlink                                           |
+| `<br>`              | add a line break (empty element)                             |
+| `<span></span>`     | an inline container used to markup part of a text or document|
+
+**Note:** Some HTML elements have no content (e.g. the `<br>`, or "break" element) -- these are called *empty* elements and do not have an end tag.
+
+## Nested HTML elements
+
+Remember to close out tags from the inside-out to avoid unexpected renderings.
+
+**Nested HTML elements:**
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/nested_html_elements.png?raw=true")
+```
+
+**IMPORTANT: Take extra care to never skip (or incorrectly type) an end tag!**
+Some elements will still display correctly if you forget an end tag, but you cannot rely on this. Forgotten end tags will cause you headaches as you try troubleshoot unexpected results and errors.
+
+# Light intro to CSS
+
+## CSS Rules
+
+CSS is a rule-based language, meaning that it allows you to **define groups of styles that should be applied to particular elements or groups of elements on a web page.** 
+
+For example, *"I want all level one (`<h1>`) headings to be green text with a bit of extra space between each letter"* could be coded as:
+
+## CSS Rules {.smaller}
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/CSS_syntax.png?raw=true")
+```
+
+- **Selectors**select the HTML element(s) you want to style *(e.g. level one headings, `<h1>`)*
+
+- **Declarations** sit inside curly brackets, `{}`, and are made up of **[property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)** and **[value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units)** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*
+
+- A property and its corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`
 
 ## CSS Code
 
-the stylesheet needs to be linked in the `head` section
-
-```html
-<link rel="stylesheet" href="path/to/styles.css">
+A CSS **rule** inside `{}` can contain **multiple** CSS **declarations**:
+      
+```css
+main {
+  margin: 10px; /* 10 pixels all round */
+  width: 80%; /* always 80% of the screen width */
+  background: #eee;
+  font-family: Tahoma, Helvetica, sans-serif;
+}
 ```
 
-technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
+or be on **one line** (*harder to read* when developing):
+
+```css
+main { margin: 0 auto; width: 50%; }
+```
+```css
+main{margin:0 auto;width:50%;}input{background:yellow;width:100px;}
+```
+
+## Types of Selectors
+
+There are many different CSS selector types, but the following will get you pretty far (though you can learn more about all the [different categories of CSS selectors here](https://www.w3schools.com/css/css_selectors.asp)).
+
+- **Element selectors:** selects all HTML elements with the specified element name
+
+- **Grouping selectors:** selects all HTML elements with the same style definitions
+
+- **ID selectors:** uses the id attribute of an HTML element to select a specific element; id of an element is unique within a page, so the id selector is used to select one unique element
+
+- **Class selectors:** selects HTML elements with a specific class attribute
+
+- **Universal selector:** selects all HTML elements on the page
+
+- **Inline styling:** (not a selector type, but an alternative way to apply CSS styling)
+
+## Element selectors
+
+Any HTML element can be used as a selector. The declarations specified apply to all HTML elements of that type.
+
+:::: {.columns}
+::: {.column width="30%"}
+
+**CSS**
+
+```{css}
+#| eval: false
+#| echo: true
+h1 {
+  color: green;
+  letter-spacing: 5px;
+}
+```
+
+:::
+::: {.column width="63%"}
+
+**HTML**
+
+```{html}
+#| eval: false
+#| echo: true
+<h1>My level one header will be styled</h1>
+<h2>This level two header will not be styled</h2>
+<p>Neither will this paragaph</p>
+<h1>But this second level one header will be</h1>
+```
+
+:::
+::::
+
+```{r}
+
+
+#| fig-align: "center"
+#| out-width: "90%" 
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/element_selector.png?raw=true")
+```
+
+## Grouping selectors
+
+Group multiple element selectors together (separated by commas) if you want them all styled the same way.
+
+:::: {.columns}
+::: {.column width="30%"}
+
+**CSS**
+
+```{css}
+#| eval: false
+#| echo: true
+h1, h2, p {
+  text-align: center;
+  color: purple;
+}
+```
+
+:::
+::: {.column width="63%"}
+
+**HTML**
 
 ```html
-<style>
-  body {
-    background: beige;
-  }
-</style>
+<h1>My level one header will be styled</h1>
+<h2>This level two header will be styled</h2>
+<h3>This level three header will not be styled</h3>
+<p>This paragraph will be styled</p>
 ```
+
+:::
+::::
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/grouping_selector.png?raw=true")
+```
+
+## Class selectors
+
+[Attributes](https://www.w3schools.com/html/html_attributes.asp) provide extra information about elements. They are always **specified in the start tag** and usually come in **value/name pairs** (e.g. `attributeName="attributeValue"`). We can use attributes (e.g. the **`class`** attribute) to apply **targeted styling** using class selectors.
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html_attribute.png?raw=true")
+```
+
+## Class selectors {.smaller}
+
+A class selector uses the *`class` attribute* of an HTML element to style that specific element. Class selectors are written using a `.` followed by the selector name, e.g. `.selector`. HTML elements can have more than one class, e.g. `<p class="class1 class2">`
+
+**CSS**
+
+```css
+.blue-italicized {color: blue; font-style: italic;}
+```
+
+**HTML**
+
+```html
+<p class="blue-italicized">My first paragraph is styled</p>
+<p>But my second paragraph is not</p>
+<p>We can use span tags to target <span class="blue-italicized">parts of an element</span> as well</p>
+```
+
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/class_selector.png?raw=true")
+```
+
+## Other selector types {.smaller}
+
+::: {.panel-tabset}
+
+### ID Selectors
+
+An ID selector uses the *`id` attribute* of an HTML element to style that specific element. IDs must be unique within a page and therefore can only be used to select and style *one* unique element. ID selectors are written using a `#` followed by the selector name, e.g. `#selector`.
+
+**CSS**
+
+```css
+#para1 {color: red; text-align: center;}
+```
+
+**HTML**
+
+```html
+#| echo: true
+<p id="para1">My first paragraph is styled</p>
+<p>But my second paragraph is not</p>
+```
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/id_selector.png?raw=true")
+```
+
+### Universal Selector
+
+The universal selector selects *all* HTML elements on the page. It is written using only an asterisk, `*`.
+
+**CSS**
+
+```css
+* {text-align: center; color: orange;}
+```
+
+**HTML**
+
+```html
+<h1>My level one header will be styled</h1>
+<h2>This level two header will be styled</h2>
+<p>This paragaph will also be styled</p>
+```
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/universal_selector.png?raw=true")
+```
+
+### Inline styling
+
+You may define styles directly inline using the *`style` attribute*. However, it's best practice to use these sparingly as it mixes content (HTML) with presentation (CSS) and cannot be reused with other elements like defined CSS rules can.
+
+**HTML with inline styling**
+
+```html
+<p>This is a normal paragraph</p>
+<p style="color: red; font-style: italic;">This paragraph has inline styling</p>
+<p>Here, only the word <span style="color: red; font-style: italic;">paragraph</span> is styled</p>
+```
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/inline_styling.png?raw=true")
+```
+:::
 
 ## CSS Code
 
 the **selector** is the element to be styled:
-
-```css
-selector { /* can be element, class, id… */
-  property: value;
-}
-```
-
-inside the curly braces `{ }`, the *property* and *value*  
-together make a CSS **declaration** e.g.
 
 ```css
 main { /* targets tag main */
@@ -251,27 +552,81 @@ IDs are often used to identify things in JavaScript
 
 Classes are often used to style similar things in CSS
 
+## Conflicting CSS rules {.smaller}
+
+It is often the case that more than one CSS rule will point to the same element. For example, say you have a style sheet and HTML that look like the following:
+
+**CSS**
+
+```css
+* {color: orange;}
+h1 {color: blue;}
+.green-text {color: green;}
+```
+
+**HTML**
+
+```html
+<h1>This is my header</h1>
+<p>This is my paragraph with <span style="green-text">some green text</span></p>
+```
+
+In this case, we have a universal selector that styles all of our text orange, but we also have an element selector that colors our `<h1>` elements blue and a class selector that is applied inline to color a subset of text green. *How do you know which style will be declared and applied to each of our HTML elements?*
+
+## CSS Specificity
+
+[Specificity](https://www.w3schools.com/css/css_specificity.asp) can be complicated (especially when you consider all the other types of selectors we haven't covered in these slides). For the purposes of this workshop and getting started on your CSS journeys, a general rule of thumb is as follows: Inline styles are the most specific and will override ID selectors, which will override class selectors, which will override element selectors, etc. The order that rules are written in your stylesheet matters as well -- since rules are read top to bottom, a directly competing rule farther down your stylesheet will take precedent.
+
+## CSS Specificity
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+
+**Inline Styles**
+
+<br>
+
+**IDs**
+
+<br>
+
+**Class Selectors**
+
+<br>
+
+**Element Selectors**
+
+<br>
+
+**Universal Selectors**
+:::
+
+::: {#second-column}
+```{r}
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/specificity_arrow.png?raw=true")
+```
+:::
+::::
+
 ## CSS Code
 
-A CSS **rule** inside `{}` can contain **multiple** CSS **declarations**:
-      
-```css
-main {
-  margin: 10px; /* 10 pixels all round */
-  width: 80%; /* always 80% of the screen width */
-  background: #eee;
-  font-family: Tahoma, Helvetica, sans-serif;
-}
+the stylesheet needs to be linked in the `head` section
+
+```html
+<link rel="stylesheet" href="path/to/styles.css">
 ```
 
-or be on **one line** (*harder to read* when developing):
+technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
 
-```css
-main { margin: 0 auto; width: 50%; }
+```html
+<style>
+  body {
+    background: beige;
+  }
+</style>
 ```
-```css
-main{margin:0 auto;width:50%;}input{background:yellow;width:100px;}
-```
+
+# Keep Your Code Tidy
 
 ## TIDY CODE
   
