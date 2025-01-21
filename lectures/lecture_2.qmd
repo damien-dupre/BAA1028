@@ -287,16 +287,18 @@ Some elements will still display correctly if you forget an end tag, but you can
 
 <a href="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" target="_blank" rel="noopener noreferrer"><img fetchpriority="high" decoding="async" class="shadow-2 aligncenter wp-image-11758 size-full" src="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" alt="HTML Cheat Sheet" width="1024" height="11407" srcset="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png 1024w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-768x8555.png 768w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-92x1024.png 92w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>If you spot any errors in this cheat sheet, please contact us &#8211; info@websitesetup.org
 
-## Exercise 2: Modify an HTML File Localy
+## Exercise 2: Modify an HTML File Localy {.smaller}
 
 1. Download the Repository [https://github.com/damien-dupre/damien-dupre.github.io](https://github.com/damien-dupre/damien-dupre.github.io)
 2. Find the file `about.html` in the `docs` folder
 3. Modify this file to:
-- Add a **h2 title with your name**
-- Modify the **text with your own description**
-- Replace the picture with **another image found on the web** (your picture or any other)
+ - Add a **h2 title with your name**
+ - Modify the **text with your own description**
+ - Replace the picture with **another image found on the web** (your picture or any other)
 
 Then open this page on your web browser!
+
+Note: Use TextEdit (MacOS) / Notepad (Win) to open and modify the html code. In the TextEdit app on your Mac, choose TextEdit > Settings, then click Open and Save. Select **“Display HTML files as HTML code instead of formatted text”**.
 
 ```{r}
 countdown(minutes = 5, warn_when = 60)
