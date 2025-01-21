@@ -283,6 +283,25 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 **IMPORTANT: Take extra care to never skip (or incorrectly type) an end tag!**
 Some elements will still display correctly if you forget an end tag, but you cannot rely on this. Forgotten end tags will cause you headaches as you try troubleshoot unexpected results and errors.
 
+## HTML Cheat Sheet
+
+<a href="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" target="_blank" rel="noopener noreferrer"><img fetchpriority="high" decoding="async" class="shadow-2 aligncenter wp-image-11758 size-full" src="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" alt="HTML Cheat Sheet" width="1024" height="11407" srcset="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png 1024w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-768x8555.png 768w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-92x1024.png 92w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>If you spot any errors in this cheat sheet, please contact us &#8211; info@websitesetup.org
+
+## Exercise 2: Modify an HTML File Localy
+
+1. Download the Repository [https://github.com/damien-dupre/damien-dupre.github.io](https://github.com/damien-dupre/damien-dupre.github.io)
+2. Find the file `about.html` in the `docs` folder
+3. Modify this file to:
+- Add a **h2 title with your name**
+- Modify the **text with your own description**
+- Replace the picture with **another image found on the web** (your picture or any other)
+
+Then open this page on your web browser!
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
 # Light intro to CSS
 
 ## CSS Rules
@@ -304,7 +323,7 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 - A property and its corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`
 
-## CSS Code
+## CSS Rules
 
 A CSS **rule** inside `{}` can contain **multiple** CSS **declarations**:
       
@@ -524,7 +543,7 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 ```
 :::
 
-## CSS Code
+## Other selector types
 
 the **selector** is the element to be styled:
 
@@ -540,7 +559,7 @@ form#myForm { /* targets tag form with id myForm */
 }
 ```
 
-## CSS Code
+## Other selector types
 
 ⚠️ *IMPORTANT SLIDE !!*
 
@@ -608,7 +627,7 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 :::
 ::::
 
-## CSS Code
+## CSS Stylesheet in HTML Code
 
 the stylesheet needs to be linked in the `head` section
 
@@ -690,17 +709,33 @@ technically, it can go between `style` tags directly in the `head` section, but 
 :::
 ::::
 
-## Website templates on the Internet
+## References
 
-Rather than starting a website from scratch, is a multitude of different providers offering already made templates, see [https://www.google.com/search?q=website+template](https://www.google.com/search?q=website+template)
+Huge thanks the following people who have generated and shared most of the content of this lecture:
 
-## Homework Exercises
+- Fania Raczinski: [Web Design & Development](https://fania.github.io/uca-web-lec1/)
 
-1. Go to [https://html5up.net/](https://html5up.net/)
+- Sam Csik: [Customizing Quarto Websites](https://ucsb-meds.github.io/customizing-quarto-websites/)
 
-2. Download the template of your choice for free
+<br>
 
-3. Fill the template with your informations and observe the changes
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzNHJxcXNsMjFoczM1cjVzMmw5MWo4aTFqNmx5c3UyNXQ2MzB5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxI1G5PNC5esyNlIUs/giphy.gif")
+```
+
+## Homework Exercise
+
+1. Go to [https://html5up.net/](https://html5up.net/).
+
+2. Download the template of your choice for free.
+
+3. Fill the template with your informations and observe the changes on your local computer.
+
+Notes:
+
+- This exercise is mandatory for next lecture.
+- This will not be accepted as a submission to the module's assignment but you will be able to use the content created in your future Quarto website.
 
 ## {background="#43464B"}
 

@@ -429,7 +429,7 @@ Damien Dupré
 <p>See, all the documents downloaded to display the page!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f9a30de5" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_80b52f8e" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -663,6 +663,32 @@ marked by an HTML <code>id</code> attribute:</p>
 <p><strong>Nested HTML elements:</strong></p>
 
 <img data-src="https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/nested_html_elements.png?raw=true" class="quarto-figure quarto-figure-center r-stretch"><p><strong>IMPORTANT: Take extra care to never skip (or incorrectly type) an end tag!</strong> Some elements will still display correctly if you forget an end tag, but you cannot rely on this. Forgotten end tags will cause you headaches as you try troubleshoot unexpected results and errors.</p>
+</section>
+<section id="html-cheat-sheet" class="slide level2">
+<h2>HTML Cheat Sheet</h2>
+<p><a href="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" target="_blank" rel="noopener noreferrer"><img fetchpriority="high" decoding="async" class="shadow-2 aligncenter wp-image-11758 size-full" src="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" alt="HTML Cheat Sheet" width="1024" height="11407" srcset="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png 1024w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-768x8555.png 768w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-92x1024.png 92w" sizes="(max-width: 1024px) 100vw, 1024px"></a>If you spot any errors in this cheat sheet, please contact us – info@websitesetup.org</p>
+</section>
+<section id="exercise-2-modify-an-html-file-localy" class="slide level2">
+<h2>Exercise 2: Modify an HTML File Localy</h2>
+<ol type="1">
+<li>Download the Repository <a href="https://github.com/damien-dupre/damien-dupre.github.io">https://github.com/damien-dupre/damien-dupre.github.io</a></li>
+<li>Find the file <code>about.html</code> in the <code>docs</code> folder</li>
+<li>Modify this file to:</li>
+</ol>
+<ul>
+<li>Add a <strong>h2 title with your name</strong></li>
+<li>Modify the <strong>text with your own description</strong></li>
+<li>Replace the picture with <strong>another image found on the web</strong> (your picture or any other)</li>
+</ul>
+<p>Then open this page on your web browser!</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_a1e0127e" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="light-intro-to-css" class="title-slide slide level1 center">
@@ -683,8 +709,8 @@ marked by an HTML <code>id</code> attribute:</p>
 <li><p>A property and its corresponding value are separated by a colon, <code>:</code>. Declarations end with a semicolon, <code>;</code></p></li>
 </ul>
 </section>
-<section id="css-code" class="slide level2">
-<h2>CSS Code</h2>
+<section id="css-rules-2" class="slide level2">
+<h2>CSS Rules</h2>
 <p>A CSS <strong>rule</strong> inside <code>{}</code> can contain <strong>multiple</strong> CSS <strong>declarations</strong>:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a href=""></a>main {</span>
 <span id="cb8-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span> <span class="co">/* 10 pixels all round */</span></span>
@@ -828,8 +854,8 @@ marked by an HTML <code>id</code> attribute:</p>
 </div>
 </div>
 </section>
-<section id="css-code-1" class="slide level2">
-<h2>CSS Code</h2>
+<section id="other-selector-types-1" class="slide level2">
+<h2>Other selector types</h2>
 <p>the <strong>selector</strong> is the element to be styled:</p>
 <div class="sourceCode" id="cb22"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb22-1"><a href=""></a>main { <span class="co">/* targets tag main */</span></span>
 <span id="cb22-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
@@ -841,8 +867,8 @@ marked by an HTML <code>id</code> attribute:</p>
 <span id="cb22-8"><a href=""></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#666</span><span class="op">;</span></span>
 <span id="cb22-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="css-code-2" class="slide level2">
-<h2>CSS Code</h2>
+<section id="other-selector-types-2" class="slide level2">
+<h2>Other selector types</h2>
 <p>⚠️ <em>IMPORTANT SLIDE !!</em></p>
 <p><strong>IDs</strong> should always be <em>unique</em>! (CSS <strong>#NameOfID</strong>)</p>
 <p>IDs are often used to identify things in JavaScript</p>
@@ -897,8 +923,8 @@ marked by an HTML <code>id</code> attribute:</p>
 </div>
 </div>
 </section>
-<section id="css-code-3" class="slide level2">
-<h2>CSS Code</h2>
+<section id="css-stylesheet-in-html-code" class="slide level2">
+<h2>CSS Stylesheet in HTML Code</h2>
 <p>the stylesheet needs to be linked in the <code>head</code> section</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"path/to/styles.css"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>technically, it can go between <code>style</code> tags directly in the <code>head</code> section, but it should really go into an external file</p>
@@ -968,17 +994,28 @@ marked by an HTML <code>id</code> attribute:</p>
 </div>
 </div>
 </section>
-<section id="website-templates-on-the-internet" class="slide level2">
-<h2>Website templates on the Internet</h2>
-<p>Rather than starting a website from scratch, is a multitude of different providers offering already made templates, see <a href="https://www.google.com/search?q=website+template">https://www.google.com/search?q=website+template</a></p>
-</section>
-<section id="homework-exercises" class="slide level2">
-<h2>Homework Exercises</h2>
+<section id="references-1" class="slide level2">
+<h2>References</h2>
+<p>Huge thanks the following people who have generated and shared most of the content of this lecture:</p>
+<ul>
+<li><p>Fania Raczinski: <a href="https://fania.github.io/uca-web-lec1/">Web Design &amp; Development</a></p></li>
+<li><p>Sam Csik: <a href="https://ucsb-meds.github.io/customizing-quarto-websites/">Customizing Quarto Websites</a></p></li>
+</ul>
+<p><br></p>
+
+<img data-src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzNHJxcXNsMjFoczM1cjVzMmw5MWo4aTFqNmx5c3UyNXQ2MzB5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxI1G5PNC5esyNlIUs/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="homework-exercise" class="slide level2">
+<h2>Homework Exercise</h2>
 <ol type="1">
-<li><p>Go to <a href="https://html5up.net/">https://html5up.net/</a></p></li>
-<li><p>Download the template of your choice for free</p></li>
-<li><p>Fill the template with your informations and observe the changes</p></li>
+<li><p>Go to <a href="https://html5up.net/">https://html5up.net/</a>.</p></li>
+<li><p>Download the template of your choice for free.</p></li>
+<li><p>Fill the template with your informations and observe the changes on your local computer.</p></li>
 </ol>
+<p>Notes:</p>
+<ul>
+<li>This exercise is mandatory for next lecture.</li>
+<li>This will not be accepted as a submission to the module’s assignment but you will be able to use the content created in your future Quarto website.</li>
+</ul>
 </section>
 <section id="section" class="slide level2" data-background="#43464B">
 <h2></h2>
