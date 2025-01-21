@@ -475,6 +475,17 @@ Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3school
 countdown(minutes = 5, warn_when = 60)
 ```
 
+## Homework Exercise: Prepare your Content
+
+Write a piece of text for each of the following pages:
+
+- About Me (pubic professional description of yourself)
+- Project 1 (a first project that you want to describe and present)
+- Project 2 (a second project that you want to describe and present)
+- Project 3 (a third project that you want to describe and present)
+
+Find pictures of yourself or that represents you to be published online and view by recruiters.
+
 ## {background="#43464B"}
 
 ```{css, echo = FALSE}

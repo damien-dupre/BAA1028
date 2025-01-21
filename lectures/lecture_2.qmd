@@ -724,7 +724,7 @@ Huge thanks the following people who have generated and shared most of the conte
 knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzNHJxcXNsMjFoczM1cjVzMmw5MWo4aTFqNmx5c3UyNXQ2MzB5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxI1G5PNC5esyNlIUs/giphy.gif")
 ```
 
-## Homework Exercise
+## Exercise 3: Create your Website
 
 1. Go to [https://html5up.net/](https://html5up.net/).
 
@@ -732,10 +732,11 @@ knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzN
 
 3. Fill the template with your informations and observe the changes on your local computer.
 
-Notes:
+Notes: This will not be accepted as a submission to the module's assignment but you will be able to use the content created in your future Quarto website. However, we will use it next week in our lecture about GitHub.
 
-- This exercise is mandatory for next lecture.
-- This will not be accepted as a submission to the module's assignment but you will be able to use the content created in your future Quarto website.
+```{r}
+countdown(minutes = 20, warn_when = 60)
+```
 
 ## {background="#43464B"}
 
