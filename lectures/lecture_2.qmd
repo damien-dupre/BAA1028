@@ -34,7 +34,7 @@ include_img <- function(img_name) {
 # browseURL("https://github.com/ZoeLawson/mcc_tools_tech/tree/Winter2024")
 # browseURL("https://websitesetup.org/html5-cheat-sheet/")
 # browseURL("https://github.com/b2renger/Introduction_HTML-CSS-JS")
-
+# https://js4shiny.com/slides/how-to-www#13
 ```
 
 # How Websites Work?
@@ -47,7 +47,7 @@ A **web server** handles your [DNS](https://en.wikipedia.org/wiki/Domain_Name_Sy
       
 A 'client'—usually a **web browser**—receives **files** from the server using using [http](https://http.cat/) and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
 
-## Exercise 1: Observe your web browser in action
+## Exercise 1: Observe your web browser in action {background="#43464B"}
 
 1. Open your web browser (Chrome, Firefox, Edge, ...)
 2. Go to the URL [https://damien-dupre.github.io/](https://damien-dupre.github.io/)
@@ -287,7 +287,7 @@ Some elements will still display correctly if you forget an end tag, but you can
 
 <a href="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" target="_blank" rel="noopener noreferrer"><img fetchpriority="high" decoding="async" class="shadow-2 aligncenter wp-image-11758 size-full" src="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" alt="HTML Cheat Sheet" width="1024" height="11407" srcset="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png 1024w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-768x8555.png 768w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-92x1024.png 92w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>If you spot any errors in this cheat sheet, please contact us &#8211; info@websitesetup.org
 
-## Exercise 2: Modify an HTML File Localy {.smaller}
+## Exercise 2: Modify an HTML File Localy {background="#43464B" .smaller}
 
 1. Download the Repository [https://github.com/damien-dupre/damien-dupre.github.io](https://github.com/damien-dupre/damien-dupre.github.io)
 2. Find the file `about.html` in the `docs` folder
@@ -726,7 +726,7 @@ Huge thanks the following people who have generated and shared most of the conte
 knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzNHJxcXNsMjFoczM1cjVzMmw5MWo4aTFqNmx5c3UyNXQ2MzB5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxI1G5PNC5esyNlIUs/giphy.gif")
 ```
 
-## Exercise 3: Create your Website
+## Exercise 3: Create your Website {background="#43464B"}
 
 1. Go to [https://html5up.net/](https://html5up.net/).
 

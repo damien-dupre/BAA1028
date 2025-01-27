@@ -287,7 +287,7 @@ Instead, we are going to **manually create** our eportfolio/website and to **hos
 
 ### Do `NOT` use full code templates
 
-## Exercise 1: Type of Files in an ePortfolio
+## Exercise 1: Type of Files in an ePortfolio {background="#43464B"}
 
 1. Go to the GitHub Repository of one of the portfolio presented earlier,
 2. Download and unZip this repository on your own Computer,
@@ -297,7 +297,7 @@ Instead, we are going to **manually create** our eportfolio/website and to **hos
 countdown(minutes = 5, warn_when = 60)
 ```
 
-## Exercise 1: Type of Files in an ePortfolio {.smaller}
+## Exercise 1: Type of Files in an ePortfolio {background="#43464B" .smaller}
 
 Which file `extensions` have you found?
 
@@ -411,7 +411,7 @@ Right-click on the webpage in your browser and select “View Page Source” (na
 ### Method 3: Open it with your coding tool
 e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
 
-## Exercise 2: Structure of an HTML file
+## Exercise 2: Structure of an HTML file {background="#43464B"}
 
 1. Go to the following URL with your web browser:
 
@@ -425,7 +425,7 @@ e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
 countdown(minutes = 5, warn_when = 60)
 ```
 
-## Exercise 2: Structure of an HTML file
+## Exercise 2: Structure of an HTML file {background="#43464B"}
 
 ```html
 <!DOCTYPE html>
@@ -450,7 +450,7 @@ countdown(minutes = 5, warn_when = 60)
 Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3schools.com/html/html_basic.asp)
 :::
 
-## Exercise 3: Modify of an HTML file
+## Exercise 3: Modify of an HTML file {background="#43464B"}
 
 - Copy the following HTML code:
 
@@ -475,7 +475,7 @@ Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3school
 countdown(minutes = 5, warn_when = 60)
 ```
 
-## Homework Exercise: Prepare your Content
+## Homework Exercise: Prepare your Content {background="#43464B"}
 
 Write a piece of text for each of the following pages:
 

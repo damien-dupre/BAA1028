@@ -1,5 +1,5 @@
 ---
-title: "Lecture 3: Project Organisation"
+title: "Lecture 3: Publishing with GitHub Pages"
 subtitle: BAA1028 - Workflow & Data Management 
 author: Damien Dupré
 format:
@@ -12,6 +12,9 @@ format:
 title-slide-attributes:
     data-background-iframe: logo-fall/index.html
 preload-iframes: true
+knitr: 
+  opts_chunk:
+    fig.align: center
 ---
 
 ```{r setup, include = FALSE}
@@ -27,10 +30,576 @@ include_img <- function(img_name) {
   knitr::include_graphics()
 }
 
-browseURL("https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/")
-browseURL("https://drmowinckels.io/talks_repo/slides/2022.04.28-git-github/#/title-slide")
-browseURL("https://drmowinckels.io/talks_repo/slides/2022.03.03-fileorg/#1")
-browseURL("https://drmowinckels.io/talks_repo/slides/2022.02.03-rproj/#1")
-browseURL("https://www.ethanrosenthal.com/2024/10/23/portable-quarto-reports/")
+#https://floswald.github.io/ScPoProgramming/
+# https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Environment_setup/Command_line
+# https://www.paulogcd.com/portfolio_tutorial/1_git_and_github.html
+
+# https://drmowinckels.io/talks_repo/slides/2022.04.28-git-github/#/git---why
+# https://r4ds.had.co.nz/workflow-projects.html#rstudio-projects
+
+# - [Structure Your Data Science
+# Projects](https://towardsdatascience.com/structure-your-data-science-projects-6c6c8653c16a)
+# 
+# - [Managing a statistical analysis project – guidelines and best
+# practices](https://www.r-statistics.com/2010/09/managing-a-statistical-analysis-project-guidelines-and-best-practices/)
+# 
+# - [Creating a research compendium w/
+# rrtools](https://annakrystalli.me/rrresearch/10_compendium.html)
+# 
+# - [Management of R
+# project](https://r-cubed.rostools.org/r-project-management.html)
+# 
+# - [The Basic Reproducible Workflow
+# Template](http://www.practicereproducibleresearch.org/core-chapters/3-basic.html)
+
+# https://jobreu.github.io/reproducible-research-gesis-2022/slides/comp-literacy.html#1
+# https://jobreu.github.io/reproducible-research-gesis-2022/
+
+# https://github.com/NGSchoolEU/ngs19_python_intro/blob/6a70c84188b74a02cdd52b13ff5f5c2955af86f5/1_Introduction_to_Python.ipynb#L109
+
+# https://github.com/Public-Health-Scotland/python-training/blob/1b2302fdf8c6a57e2782e9ed96d613afd40e047c/intro.Rmd#L223
 ```
 
+## For Today
+
+### Requirements
+
+#### 1. Find these slides at:
+
+[https://damien-dupre.github.io/BAA1028/lecture_3](https://damien-dupre.github.io/BAA1028/lecture_3)
+
+#### 2. Homework Exercise done
+
+<br>
+
+### Objectives
+
+#### 1. Host your ePortfolio on GitHub
+
+#### 2. Publish your ePortfolio with GitHub pages
+
+<br>
+
+### Any questions?
+
+## Then, it's time to enter ...
+
+```{r out.width='40%'}
+include_img("the_matrix.gif")
+```
+
+# Host your Website on GitHub
+
+## GitHub
+
+#### GitHub has a lot of different functions. For now, we will only see how to use it to **published the html document output from our notebook file**.
+
+```{r}
+include_graphics("http://www.quickmeme.com/img/75/7509f68823389e4af3777ca6d3744c632cc32ab3547bc56e319126aa29ab149a.jpg")
+```
+
+## What is GitHub
+
+### Primary used to collaborate on code development, it became multi-purpose:
+
+- Version Control
+- File and Code Storage
+- Collaboration Projects
+- Social Media for Developers
+- Online Publication & Website Host
+- Automatic Actions
+
+### And even more that I am not aware of!
+
+## What is GitHub
+
+### Primary used to collaborate on code development, it became multi-purpose:
+
+- Version Control
+- **File and Code Storage**
+- Collaboration
+- Developers Social Media
+- **Online Publication & Website Host**
+- Automatic Actions
+
+### And even more that I am not aware of!
+
+## Exercise 1: Sign In or Sign Up {background="#43464B"}
+
+1. Go to [https://github.com](https://github.com),
+2. Click <kbd>Sign In</kbd> or <kbd>Sign Up</kbd> (if you have already done it),
+3. If you are creating an account, fill all requested information.
+
+Note: Your user name will become extremely important in your future, `firstname-name` is usually good
+
+```{r}
+countdown(minutes = 2, warn_when = 60)
+```
+
+## Welcome to GitHub
+
+```{r}
+include_graphics("https://miro.medium.com/v2/resize:fit:1400/1*cgJlPulU9t3djbf9TQ5sGA.gif")
+```
+
+## How does GitHub Work?
+
+#### The core principle of GitHub is a remote desktop (or profile) with a folder called **Repository** for each project you are working on or you worked on (also called "Repo" if you want to use the slang).
+
+```{r}
+include_img("github_dd_profile.png")
+```
+
+## Exercise 2: Your First Repository {background="#43464B"}
+
+Follow the steps here after [to create a Repository](https://docs.github.com/en/get-started/quickstart/create-a-repo):
+
+1. In the upper-right corner of any page, use the `+` drop-down menu, and select <kbd>New repository</kbd>.
+
+```{r}
+include_graphics("https://docs.github.com/assets/cb-11427/mw-1000/images/help/repository/repo-create.webp")
+```
+
+## Exercise 2: Your First Repository {background="#43464B"}
+
+```{r}
+include_graphics("https://proclusacademy.com/images/32-github-new-repo-1.webp")
+```
+
+## Exercise 2: Your First Repository {background="#43464B"}
+
+2. Type a short, memorable name for your repository, like `hello-world`.
+
+```{r}
+include_graphics("https://docs.github.com/assets/cb-61138/mw-1440/images/help/repository/create-repository-name.webp")
+```
+
+3. Optionally, add a description of your repository. For example, `My first repository on GitHub`. 
+
+## Exercise 2: Your First Repository {background="#43464B"}
+
+4. Choose a **PUBLIC** repository visibility. For more information, see [about repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories),
+
+5. Tick ✅ **Add a README file**,
+
+6. Click <kbd>Create repository</kbd>.
+
+### Congratulations! You've successfully created your first repository, and initialized it with a README file.
+
+```{r out.width='50%'}
+include_graphics("https://external-preview.redd.it/H3X9ghkU1diDoEaB2j6OLakfRVvtelkI-VVCAMvpHFw.jpg?auto=webp&s=812777b2de31ed351475ecfb9cfe91a74931201b")
+```
+
+## Always Commit Changes
+
+In GitHub, a commit is a saved change to a project's source code or other files. When you make changes to a file in a GitHub repository, you create a new version of that file. 
+
+**A commit contains a snapshot of the changes** you've made to one or more files, along with a message that describes the changes. This **message should be descriptive and clear**, so that other developers can understand what changes you've made and why.
+
+### Everytime you want to take into account a change in your repository, you need to commit these changes
+
+## Exercise 3: Your First Commit {background="#43464B"}
+
+When you created your new repository, you initialized it with a README file. README files are a great place to describe your project in more detail, or add some documentation such as how to install or use your project. The contents of your README file are automatically shown on the front page of your repository.
+
+**Follow the steps here after to commit a change to the README file.**
+
+1. In your repository's list of files, click <kbd>README.md</kbd>. 
+
+```{r}
+include_graphics("https://docs.github.com/assets/cb-21025/mw-1440/images/help/repository/create-commit-open-readme.webp")
+```
+
+## Exercise 3: Your First Commit {background="#43464B"}
+
+2. In the upper right corner of the file view, click on the pen icon to open the file editor ✏️,
+
+```{r}
+include_graphics("https://docs.github.com/assets/cb-47677/mw-1440/images/help/repository/edit-file-edit-button.webp")
+```
+
+3. In the text box, **type some information about the project**.
+
+## Exercise 3: Your First Commit {background="#43464B"}
+
+4. Above the new content, click <kbd>Preview</kbd> to review the changes you made to the file.
+
+```{r}
+include_graphics("https://docs.github.com/assets/cb-35443/mw-1440/images/help/repository/edit-readme-preview-changes.webp")
+```
+
+
+6. Click <kbd>Commit changes...</kbd>.
+
+## Exercise 3: Your First Commit {background="#43464B"}
+
+7. In the "Commit message" field, type a short, meaningful **commit message** that describes the change you made to the file,
+
+```{r}
+include_img("github_commit.png")
+```
+
+8. Below the commit message fields, decide whether to add your commit to the current branch or to a new branch. Select **commit directly to the `main` branch** for now. 
+
+9. Click <kbd>Commit changes</kbd>.
+
+⚠️ Warning: For collaborative projects never commit to the main branch
+
+## Exercise 4: Add New Files to your Repository {background="#43464B"}
+
+1. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
+
+2. **Drop** or **choose** all the files necessary to your transformed template website,
+
+3. In the main box and **commit your changes**
+
+```{r}
+countdown(minutes = 2, warn_when = 60)
+```
+
+## GitHub Pages
+
+GitHub Pages is a **web hosting service** offered by GitHub that allows you to host static websites directly from a GitHub repository. This means you can use GitHub to store and version control your website's code, and then host it for free using GitHub Pages.
+
+Your website will then be published at a URL based on your GitHub username and repository name (e.g., **username.github.io/repository**).
+
+```{r out.width='50%'}
+include_graphics("https://miro.medium.com/v2/resize:fit:1400/format:webp/1*uHia-SKJPkWqbxbGJPfCCA.jpeg")
+```
+
+## Exercise 5: Turn on GitHub Page {background="#43464B"}
+
+Turn on GitHub Pages for your project repository:
+
+1. Go to **Settings** and find **Pages** on the left pane,
+
+2. In **Branch**, instead of None select **Main** and click <kbd>Save</kbd>,
+
+3. Click on <kbd>Actions</kbd>Actions and wait that "pages build and deployment" finishes,
+
+4. When it's done, go to **https://username.github.io/repository/nameofyourfile.html**.
+
+```{r}
+countdown(minutes = 3, warn_when = 60)
+```
+
+# Keep your Projects Tidy
+
+## Project Management
+
+Why do we care about project management?
+
+<br>
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+### Portability
+The ability to move the project without breaking code or needing adapting
+
+- you will change computers
+- you will reorganise your file structure
+- you will share your code with others
+:::
+
+::: {#second-column}
+### Reproducibility
+The ability to rerun the entire process from scratch
+
+- not just for reviews
+- not just for best-practice analytics
+- also for future (or even present) you
+- and for your collaborators/helpers
+:::
+::::
+
+## Project Workflows
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+### Portability
+- All necessary files should be contained in the project and referenced relatively
+- All necessary outputs are created by code in the project and stored in the project
+:::
+
+::: {#second-column}
+### Reproducibility
+- All code can be run in fresh sessions and produce the same output
+- Does not force other users to alter their own work setup
+:::
+::::
+
+## Portability
+
+In your code, do not use:
+
+```python
+import os
+os.chdir('/path/to/your/directory')
+```
+
+Prefer:
+
+```bash
+#| eval: false
+# pip
+python -m pip install pyprojroot
+
+# conda
+conda install -c conda-forge pyprojroot
+```
+
+Then: 
+
+```python
+from pyprojroot.here import here
+
+here()
+```
+
+## Portability
+
+What’s wrong with `os.chdir('/path/to/your/directory')`?
+
+- It will only ever work for the user creating the file
+
+- It is not portable
+  - Moving the folder/file will break the code
+  - Collaborators will need to change any setwd path
+
+- Increases likelihood that work from other processes leaks into current work
+
+## Portability
+
+The `pyprojroot` library:
+
+If all files are contained in the project folder reference files with the here() function from the `pyprojroot` library creates relative paths from project root allows several ways to indicate project root folder
+
+```{r}
+include_graphics("https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/here.png")
+```
+
+## Self-Contained Projects
+
+Contains all necessary files for your project, eportfolio or any repository in general:
+
+- data
+- results
+- documentation
+- scripts
+- images
+- designs (css/sass)
+- tabs/topics
+
+## Folder/File structure
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+
+### `data`
+
+- all raw data files, organised in meaningful ways
+- never, ever write back to this folder, read only
+- if using git, never commit to history, place in .gitignore
+
+### `results`
+
+- write all analysis etc. results to treat as disposable, can be overwritten
+- may also include figures etc if wanted
+
+### `docs`
+- documentation
+- Quarto files
+
+:::
+
+::: {#second-column}
+
+### `py`
+- if you write functions that are used in several places
+- this is the standard python folder for keeping these files that might be called in python scripts
+
+### `scripts/analysis`
+- files with full analysis pipelines
+- might have source calls to files in python
+
+:::
+::::
+
+## Folder/File structure
+
+### `README.md`
+- markdown file describing the project content and intent
+- maybe also explains which files to look in for what
+- ideal to have if saving the folder to github
+
+### `LICENCE`
+- dictates how code can be reused
+- not covering that in this series, ask me at need
+
+## File Naming
+
+Organising files in data/, results/, docs/, and scripts/ require some ideas of how to name files for:
+
+- easy machine reading
+- easy human reading
+- easy understanding of file content
+- choosing the correct type of file to store
+
+If you are using the py/ folder to store python-functions, these might need somewhat different naming conventions than the other folders, as these are functions you can use across the other files.
+
+Here, naming should be particularly thought in terms of content rather than structural organisation.
+
+## File Naming
+
+An important part of project management, code automation, and data analytics in general is to have your files read by a piece of code or software.
+
+Machines are clever, but extremely pedantic.
+
+Be consistent, be meticulous.
+
+Some machines are more clever than others, so name files in a way that the "dumbest" of them can deal with.
+
+## File Naming
+
+- Don't use white space
+  - decide on a separator and use consistently
+  - recommend the dash -
+- Use small case letters
+  - certain machines care about capitalization
+- Use numbers smartly
+  - numbers are awesome to use and can help organise files meaningfully
+  - but needs some thinking about before implementing
+  
+## File Naming
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+
+Machines will first list files starting with numbers (ascdendingly) then in alphabetic order.
+
+```markdown
+1_file.txt
+2_file.txt
+file_one.txt
+file_three.txt
+file_two.txt
+```
+
+But they wont understand the difference between 1 and 10
+
+```markdown
+10_file.txt
+1_file.txt
+2_file.txt
+file_1.txt
+file_10.txt
+file_2.txt
+```
+
+:::
+
+::: {#second-column .fragment}
+
+'zero-padding' is a way of preserving file order
+
+```markdown
+01_file.txt
+02_file.txt
+10_file.txt
+file_01.txt
+file_02.txt
+file_10.txt
+```
+
+:::
+::::
+
+## File Naming
+
+Using dates in file names may also ensure decent organisation but be consistent. Recommend using YYYY-MM-DD formatting
+
+```markdown
+13-11-21_initial-submission-results.txt
+22-01-03_revised-results.txt
+2022-02-28_results.txt
+```
+
+vs
+
+```markdown
+2021-11-13_initial-submission-results.txt
+2022-02-28_results.txt
+2022-03-01_revised-results.txt
+```
+
+## File Naming
+
+Consider using different space separators for different parts of the file name
+
+This way you can use the file name it self, programatically, if needed
+
+```markdown
+2021-11-13_initial_submission_results.txt
+2022-02-28_results.txt
+2022-03-01_revised_results.txt
+```
+
+## File Naming
+
+Optimising file names for computers is great, but ultimately its us humans that need to choose files to work with. Naming files in a way that makes the file content obvious (or at least give an idea of content) by the file name is good for such interactions. 
+
+```markdown
+2021-11-13_final-results.txt
+2022-02-28_finalfinal-results.txt
+2022-03-01_finished-results.txt
+```
+
+vs.
+
+```markdown
+2021-11-13_first-submission-results.txt
+2022-02-28_revision-round1-results.txt
+2022-03-01_revision-round2-results.txt
+2022-03-01_revision-round2-no-sex-results.txt
+```
+
+## Image Types
+
+Images from plots should use png or svg
+
+.png - supports transparency and has no quality loss upon re-saving
+.svg - can rescale to infinity without getting grainy
+.jpg - best for photos, quality loss on rescale, blurry edges and poor text rendering
+
+mages can also some times be saved in pdf, but pdf while a vector format, cannot support transparency.
+
+Tiff has fallen out of favour due to high file sizes, but are preferable to jpeg for photos.
+
+## References
+
+Huge thanks the following people who have generated and shared most of the content of this lecture:
+
+- Athanasia Monika Mowinckel: [Mind your data - Creating Organised Research Projects](https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/)
+
+<br>
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif")
+```
+
+## {background="#43464B"}
+
+```{css, echo = FALSE}
+img.circle {border-radius:50%;}
+```
+
+::: {layout-ncol="2"}
+<img class="circle" src="https://github.com/damien-dupre.png" />
+
+**Thanks for your attention and don't hesitate to ask if you have any questions!**  
+[`r fa(name = "mastodon")` @damien_dupre](https://datasci.social/@damien_dupre)  
+[`r fa(name = "github")` @damien-dupre](https://github.com/damien-dupre)  
+[`r fa(name = "link")` https://damien-dupre.github.io](https://damien-dupre.github.io)  
+[`r fa(name = "paper-plane")` damien.dupre@dcu.ie](mailto:damien.dupre@dcu.ie)
+:::

@@ -1,0 +1,485 @@
+---
+title: "Lecture 4: Git, GitHub, and Version Control"
+subtitle: BAA1028 - Workflow & Data Management 
+author: Damien Dupré
+format:
+  revealjs:
+    theme: [theme/metropolis.scss]
+    toc-depth: 1
+    chalkboard: false
+    menu: true
+    slide-number: true
+title-slide-attributes:
+    data-background-iframe: logo-fall/index.html
+preload-iframes: true
+---
+
+```{r setup, include = FALSE}
+# libraries --------------------------------------------------------------------
+library(anicon)
+library(countdown)
+library(fontawesome)
+library(knitr)
+
+# functions --------------------------------------------------------------------
+include_img <- function(img_name) {
+  paste0("https://raw.githubusercontent.com/damien-dupre/img/main/", img_name) |> 
+  knitr::include_graphics()
+}
+
+browseURL("https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.04.28-git-github/#/title-slide")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.03.03-fileorg/#1")
+browseURL("https://drmowinckels.io/talks_repo/slides/2022.02.03-rproj/#1")
+browseURL("https://www.ethanrosenthal.com/2024/10/23/portable-quarto-reports/")
+```
+
+## What is Git ?
+
+It's a version control system, which works like a time machine. In this time machine, it has check points which is known as 
+Commits and it's unique for every check point. It has a super cool feature like multiverse aka Branching, that lets us create
+an alternate version of our code. A branch is a copy of project and it's super useful when working in groups, allowing us the 
+capability of working on with or without changing the original code. We can also synchronize the changes that happened across different
+branches and that's called Merging.
+
+### Setting up Git
+
+1. The first step is to set up some configuration variables which helps git to keep track of contributor and contributors contribution.
+To set up the basic changes we will run `git config` command.
+
+```bash
+# git config command
+git config --global user.name "Your Name"
+git config --gloabl user.email "Your Email"
+```
+
+The global option makes sure that every project in that local machine will use that name and email address.
+To see all the global configuration we can run the below command:
+
+```bash
+# displaying git global configuration command
+git config --list
+```
+
+To see where the settings file are defined, we can run bellow command:
+
+```bash
+# displaying setting files location command
+git config --list --show-origin
+```
+
+2. Once we set up the global variables, we will initialize the project. To do so, we have to go to that directory from the command line.
+
+```bash
+# changing directory command
+cd folder/location
+```
+
+Once we are in the desired directory, we will initialize our project using `git init` command
+
+```bash
+# initializing git command
+git init
+```
+
+It will create a .git file in the same directory and by default it's hidden. To see that, we need to type `ls -la` command on terminal.
+`git init` command initialize the project for us and make files that are necessary for keeping track of our changes. We can change the 
+directory to see what files have been created by the `git init` command.
+
+```bash
+cd .git
+ls -la
+```
+
+It will display that git has created a several files to keep the tracks of our changes. 
+
+In VS Code, `git init` command will change the color of the files and it will show `U` beside the file names. `U` means **Untracked File**
+
+3. After initializing the git, we need to add the files in the staging environment with `git add` command. Staging is a temporary area
+that we can store files that we want to commit later.
+
+```bash
+# basic command for adding Files
+git add FILENAME # it adds single file at a time and it's a good practices
+# Alternative Options
+git add --all # it adds all the file in the directory to the staging environment
+git add -A # does the same thing as --all but it's a shortcut
+git add . # same as --all and -A
+```
+
+after executing the `git add` command it  will change that file from `U` to `A` in the VS Code. `A` means Added.
+
+4. Last step is to commit the changes using the `git commit` command. 
+
+```bash
+# basic commit command
+git commit -m "Commit Message"
+# commit command with description along with commit Message
+git commit -m "Commit Message" -m "Commit Description"
+```
+
+git commit message should be short and precise. What are the changes being made, why are the changes and the functionalities it will add.
+git commit message should be like email subject. 
+
+`git commit` command will remove the `A` tag beside the files names in VS Code. It means these files has been committed into your local machine.
+Any changes made after this will flag the file as `M` tag. `M` means Modified. 
+
+To verify git is keeping the track of our work we can use `git log` command.
+
+```bash
+# verifying command to check if git is keeping track 
+git log
+```
+
+It will show the entries that has been made in the .git folder. It shows the commit hash, author name, date with timestamp, and commit message.
+
+
+#### Workflow of git
+
+```{mermaid}
+flowchart TD
+  A[Initializing git] --> B[Adding files in the staging environment]
+  B --> C[Committing the files]
+  C --> D[Push the files in the remote repo]
+```
+
+
+### Understanding Git Environments
+
+#### Git information
+
+`git log` command shows us some information about the commits that has been made. I will use the output of our first commit.
+
+```bash
+git log
+# Below is the output
+commit 1b12ec3c6bc7dfc48fa33c3ae655564a02700162 (HEAD -> main) # commit hash, which is unique for every commit
+Author: Shuvo Barman <user@users.noreply.github.com> # Name of the author and email
+Date:   Sun Dec 17 16:32:29 2023 -0330 # detailed time of the commit
+
+    Initial commit # commit message
+```
+the HEAD always point to the current branch in this case it's `main`
+
+#### Git Environments
+
+Git has 3 stages where we can move files.
+
+```{mermaid}
+flowchart TD
+  A[Git] --> B[Working]
+  A --> C[Staging]
+  A --> D[Commit]
+```
+
+1. Working: Here the files looks like what they did during the last commit.
+2. Staging: Before we create a new commit, we can move our file to a temporary location called Staging. It gives us a queue up changes
+until we are ready to commit.
+3. Commit: This is the final environment. In this stage, a new log entry is created with a new hash.
+
+Before a commit a file can be in one of two main states.
+
+
+```{mermaid}
+flowchart TD
+  A[File States] --> B[Tracked]
+  A --> C[Untracked]
+```
+
+1. Tracked Files: These are the files that existed in the previous snapshot (another name for commit).
+2. Untracked Files: Untracked files are anything else.
+
+Tracked files can be in different states
+
+```{mermaid}
+flowchart TD
+  A[Tracked Files] --> B[Unmodified]
+  A --> C[Modified]
+  A --> D[Staged]
+```
+
+1. Unmodified: Files haven't changed since the last commit.
+2. Modified: Files have changed since the last commit.
+3. Staged: Files that have been moved to staging environment.
+
+We can see this with `git status` viewing command.
+
+```bash
+# Viewing status command
+git status
+```
+
+If a file goes into Modified Stage, we have two option for that file. One is adding that file using `git add` command
+or we can restore it using `git restore` command.
+
+```bash
+# restoring file command
+git restore FILENAME
+# Alternative options
+git restore . # restore all the files into it's previous state
+git checkout . # older version of restore command
+```
+
+### Ignoring Files
+
+Even if git is used to keep track of files but sometimes we don't want to keep track of all the files.
+There could be several reasons behind it. Such as:
+- Sensitive information(i.e. Password, Authentication tokens, API keys etc.)
+- Personal notes(i.e. To-Do list for project)
+- System files
+- Large files
+
+we can achieve this by creating a new file called `.gitignore`. Inside this file we can add any types of pattern, file name, folder name etc.
+which will git ignore. Git doesn't track empty folders.
+
+we can also use global ignore file to ignoring files or pattern that we don't want git to upload.
+
+```bash
+# global git ignore command
+git config --global core.excludesfile [file]
+```
+
+Clearing the cahce using below command.
+
+```bash
+# cache clearing command
+git rm -r --cached .
+```
+
+### Deleting 
+
+It can be done in two ways, from command line and another is doing manually from the IDE interface. we use `git rm` command to delete file.
+
+```bash
+# delete file command
+git rm FILENAME
+# force fully delete file 
+git rm -f FILENAME
+```
+
+If we delete the file using `git rm` command, it deletes the file and moved that deletion automatically into staging. But if we do it manually from 
+IDE interface we have do move that file from staging. 
+
+After deleting a certain file using `git rm` command, if we want to restore the file we need to execute below command
+
+```bash
+# restoring deleted file command
+git restore --staged FILENAME
+# git restore -S FILENAME
+```
+
+after executing the above command we have to execute below command as well.
+
+```bash
+git restore FILENAME
+```
+
+### Renaming
+
+This is a tricky part if we do it from the IDE interface manually. It will track two action: first deletion of certain file and 
+second creating a new file. if we want to restore the manually renamed file using `git restore` command, git will keep both the 
+files.
+
+To do it from the command line we have to use `git mv` command
+
+```bash
+# file renaming command
+git mv OLD_FILE_NAME NEW_FILE_NAME
+```
+
+To restore the renamed file to it's previous name, we can use the same command `git mv` with just changing the order of file names.
+
+### Git difference
+
+we use `git diff` command to see the changes we made accross the files. If we made changes to a handful number of files then it's 
+easier to use the IDE interface.
+
+```bash
+# checking difference command
+git diff
+```
+
+We can also compare files based on commit hash. 
+
+```bash
+git diff COMMITHASH
+```
+
+We use `git log` to check the git history but if we don't want to see all the information, we can use `git log --oneline` command
+
+```bash
+git log --oneline
+```
+
+It will show the commit hash and commit message as decending order. We can also the git commits as a graph, which makes it really helpful
+when we have multiple branches.
+
+```bash
+# git log as graph 
+git log --all --decorate --oneline --graph 
+# or
+git log --oneline --all --graph
+```
+
+### Changing History
+
+#### Using Git Amend
+
+As we know git keeps track of all our changes, sometimes we end up with some commits that was not right. We can do another commit 
+with proper changes but that will make the git history quiet messy. We can use `git amend` command to add changed files to the last
+commit.
+
+```bash
+# changing history command
+git commit --amend
+# Alternative options
+git commit --amend -m "New Commit Message"
+git commit --amend --no-edit
+```
+
+`git amend` command will launch the default editor and allow us to edit the file with the amended history. We can avoid that by using the second line
+if we want to have a different commit message, it will change the commit message directly in the command line. We can also keep the commit message same
+as the last commit by executing the third command.
+
+
+#### Using Git Reset
+
+We can also do that, using `git reset` command. Resetting let us go back to a previous commit, and we have to give that commit hash in the command.
+
+```bash
+# resetting command
+git reset COMMIT_HASH
+```
+
+This will go back to that commit hash snapshot and point the head to that. But it will not delete the changes that we made in the files.
+It will show those files as modified after getting back to that particular commit. If we want to discard all the changes we can use the
+`git reset --hard` command, it will discard all the changes after that commit hash. But be careful as it's going to delete all the changes
+along with commits.
+
+```bash
+# hard reset command
+git reset --hard COMMIT_HASH
+```
+
+#### Using Git Rebase
+
+Rebasing is another way of changing history and it's designed to take the commits from one branch and apply them to another.
+
+```bash
+# git rebasing command
+git rebase <branch>/<commit>
+# Alternative options
+git rebase --interactive <branch>/<commit> # best way to use rebase
+git rebase -i HEAD~# # useful when have a long commit history and only want to go back to certain steps
+git rebase -i --root # bring all the history in ascending order and let us pick
+```
+
+### Branches
+
+to see the brances we can use `git branch` command. It will show all the available branc in our project.
+
+```bash
+# checking git branch command
+git branch
+```
+
+To create a new branch we will have to take a copy of a snapshot from another branch and start working from there. To do so, 
+
+```bash
+# copying a branch command
+git switch -c NAME
+# Alternative Option
+git checkout -b NAME # older version of git switch
+```
+
+`git merge` command will merge the changes from one branch into the current branch.
+
+```bash
+# merge command syntax
+git merge <branch>
+```
+
+When we merge a feature into main branch, it's a good idea to delete that branch. To do that, we use below command
+
+```bash
+# git branch delete command syntax
+git branch --delete NAME
+# Alternative Option
+git branch -d NAME # we can use this as long as branches have no conflicts
+git branch -D NAME # ignore any conflicts, forcefully delete the branch
+```
+
+These sequence of doing things is also called git flow.
+
+#### Git flow
+
+- Feature / Fix branch
+- Make changes
+- Merge changes to main branch
+- Delete the feature / fix branch
+
+
+### Merge Conflicts
+
+Conflicts happen when we try to merge two branches, but there are changes made in the file. 
+
+###  Git Stash
+
+Stashing is a way of putting away code temporarily. We can do that via `git stash` command.
+
+```bash
+# stashing command syntax
+git stash
+# Checking git stash command
+git stash list # for checking what has been stored
+git stash apply # apply a set of changes from stash
+git stash pop # remove the git stash from the list
+```
+
+It's can be think of as a deck of cards, we can stash on top of another stash.
+
+### Git Clean
+
+remove all untracked files and directories from your branch super quicky. Nice way of removing files that we don't need anymore.
+
+```bash
+# git clean command syntax
+git clean -n # dry run
+git clean -d # directories
+git clean -f # force
+```
+
+We can combine these commands together as well, i.e. `git clean -dn` to remove both untracked file and directories
+
+
+# Description of files in GitHub repo
+
+It's good practice to include some files in our github repo which will help people understand a bit more about our 
+project. It makes the project self explanatory and well documented.
+
+- **README.md:**
+It tells about the purpose of the project, which is essentially describing what the project does and why it's useful.
+It also works as a homepage for the repo. It can provide table of contents, dependencies for the project, installation
+guidelines and so on.
+
+- **LICENCE:**
+Public repositories are normally used to share open source software, but we need to define how developers can use,
+change or distribute the software. For doing so, we need a **LICENCE** file and the location of the file is in the 
+root folder.
+
+- **CODE_OF_CONDUCT.md:** 
+This file establishes the expectations as to how people are supposed to behave when using your public repo or open
+source software.
+
+- **SECURITY.md:**
+This file specify the security support and where to report vulnerabilities.
+
+- **CONTRIBUTING.md:**
+This file defines the guidelines for other developers on how they can contribute to the project.
+
+- **SUPPORT.md:**
+This file defines the rules on regulations about how other people can get support for the open source project.
+
+- **CODEOWNERS:** 
+This is a simple text file where describes the list of persons who are responsible for maintaining the 
+repo up to date and who changes the code. The format for this file is pretty similar to `.gitignore` file.
