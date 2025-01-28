@@ -414,7 +414,7 @@ Contains all necessary files for your project, eportfolio or any repository in g
 
 ::: {#second-column}
 
-### `py`
+### `src` or `py`
 - if you write functions that are used in several places
 - this is the standard python folder for keeping these files that might be called in python scripts
 
@@ -470,6 +470,14 @@ Some machines are more clever than others, so name files in a way that the "dumb
   - numbers are awesome to use and can help organise files meaningfully
   - but needs some thinking about before implementing
   
+## File Naming
+
+**Naming** - variables and filenames should have meaningful names in *`snake_case`* format, preferring all lower case.
+
+```{r}
+knitr::include_graphics("https://raw.githubusercontent.com/Public-Health-Scotland/python-training/1b2302fdf8c6a57e2782e9ed96d613afd40e047c/images/r_coding_cases.png")
+```
+
 ## File Naming
 
 :::: {layout="[1,1]"}
