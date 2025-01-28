@@ -575,11 +575,13 @@ vs.
 
 Images from plots should use png or svg
 
-.png - supports transparency and has no quality loss upon re-saving
-.svg - can rescale to infinity without getting grainy
-.jpg - best for photos, quality loss on rescale, blurry edges and poor text rendering
+- .png supports transparency and has no quality loss upon re-saving
 
-mages can also some times be saved in pdf, but pdf while a vector format, cannot support transparency.
+- .svg can rescale to infinity without getting grainy
+
+- .jpg best for photos, quality loss on rescale, blurry edges and poor text rendering
+
+Images can also some times be saved in pdf, but pdf while a vector format, cannot support transparency.
 
 Tiff has fallen out of favour due to high file sizes, but are preferable to jpeg for photos.
 
