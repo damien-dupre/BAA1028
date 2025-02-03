@@ -585,6 +585,191 @@ Images can also some times be saved in pdf, but pdf while a vector format, canno
 
 Tiff has fallen out of favour due to high file sizes, but are preferable to jpeg for photos.
 
+
+## What is a path?
+
+> A path is a string of characters used to uniquely identify a location in a
+directory structure. It is composed by following the directory tree hierarchy in which components, separated by a delimiting character, represent each directory.
+
+> The **delimiting character** is most commonly the **slash ("/")**, the
+**backslash character ("\\")**, or colon (":"), though some operating systems
+may use a different delimiter. 
+
+> Resources can be represented by either **absolute or relative paths**
+
+See [https://en.wikipedia.org/wiki/Path_(computing)](https://en.wikipedia.org/wiki/Path_(computing))
+
+## Delimiting characters
+
+Delimiting characters `/` or `\` vary by operating system
+
+- MS Windows: 
+  - Use a colon `:` to specify the drive name (e.g., `c:`, `d:`, `e:`)
+  - Folders and files are seperated by a backslash character (`\`)
+  - Example: `J:\Work\PARI\PARI-F\data\pari-f_data_v0-1.dta`
+
+- Linux/macOS:
+  - No colon (`:`)
+  - Use only the slash (`/`) character
+  - Example: `/E/syncwork/projects/confer/ps2021-10-ws-repro-research`
+  
+## Delimiting characters
+
+- Software, such as R, $\LaTeX$, and Python, with a Linux/UNIX background behaves differently under MS Windows when it comes to specifying file/folder paths
+
+- That is, when specifying a path (e.g., in R or $\LaTeX$) in MS Windows, these programs do not like the backslash character (`\`) (the backslash is used for "escaping" other characters)
+
+## Delimiting characters
+
+Two solutions in MS Windows:
+
+1. Use the slash character `/` instead of `\`, e.g.:   
+
+```python
+import pandas
+csv_file = pandas.read_csv('C:/Damien/myfolder/mysubfolder/mydata.csv')
+```
+
+2. Escape the backslash character via `\\`, e.g.:
+
+```python
+import pandas
+csv_file = pandas.read_csv('C:\\Damien\\myfolder\\mysubfolder\\mydata.csv')
+```
+
+## Delimiting characters
+
+Note: Many programming languages/statistical packages (R, Python, ...) can
+dynamically create a full path that follows the rules of the respective
+operating system
+
+```python
+import os
+os.path.join("e:", "folder1", "folder2", "file")
+```
+returns: `'e:folder1\\folder2\\file'` (in Windows)
+
+A handy tool when working on both operating system: [Path
+Copy Copy -- Copy file paths from Windows explorer's contextual
+menu](https://pathcopycopy.github.io/)
+
+Mac users can left-click and press <kbd>option</kbd> to "copy as a Pathname"
+
+## Relative vs. Absolute Paths
+
+An absolute path specifies a file or directory location from the root directory.
+
+Examples:
+
+- **Mac/Linux:**
+```bash
+/Users/username/Documents/file.txt
+```
+- **Windows:**
+```bash
+C:\Users\Username\Documents\file.txt
+```
+
+## Relative vs. Absolute Paths
+
+A relative path specifies a location relative to the current directory which is a "fixed location" on your computer
+
+Often, this "fixed location" is the so-called "working directory" 
+
+- The dot `.` denotes the current working directory
+- The dot dot `..` denotes the parent directory, i.e., it points upwards in the folder hierarchy
+- Finally, the tilde symbol `~` will bring you back to your home directory, e.g. `cd ~`
+
+Examples:
+```bash
+subfolder/file.txt  # Inside a subfolder
+./file.txt       # Current directory
+../file.txt      # Parent directory
+```
+
+Works differently based on where the command is run.
+
+## Relative vs. Absolute Paths
+
+So, let's assume the project "PARI-F" is located on drive `J:`, the full
+absolute path is `J:\Work\PARI\PARI-F`
+
+- The content of the project's folder `PARI-F` is:
+```
+.
+|-- analysis
+|-- data
+|-- doc
+|-- pari-f.stpr
+`-- report
+```
+
+## Relative vs. Absolute Paths
+
+All other file- or folder-related operations are defined relative to this working directory
+
+**The huge benefit: when you share your project with a colleague or move it to
+a new computer, you only have to define the working directory once, everything
+else should work flawelessly**
+
+How to define a working directory?
+
+`import os; os.chdir("full-path-to-working-directory")`
+
+How to get information about the current working directory?
+
+`import os; os.getcwd()` (cwd = current working directory); see below for an example
+
+```python
+import os 
+os.getcwd()
+```
+
+## Checking Your Current Directory 
+
+From a terminal/command line:
+
+- **Mac/Linux:**
+  ```bash
+  pwd
+  ```
+- **Windows (Git Bash or WSL):**
+  ```bash
+  pwd
+  ```
+- **Windows (Command Prompt):**
+  ```cmd
+  cd
+  ```
+
+## Navigating with Paths
+
+- Moving between directories:
+  ```bash
+  cd /absolute/path  # Go to absolute path is always correct
+  cd relative/path   # Move to relative path only if the path exists
+  ```
+- Special notations:
+  - `.` (current directory)
+  - `..` (parent directory)
+
+## Practical Examples
+
+- Moving into a subdirectory:
+  ```bash
+  cd Documents/Projects
+  ```
+- Moving up one level:
+  ```bash
+  cd ..
+  ```
+- Accessing a file in a parent directory:
+  ```bash
+  cat ../notes.txt
+  ```
+  
+See here for [more examples](https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python)
+
 ## References
 
 Huge thanks the following people who have generated and shared most of the content of this lecture:

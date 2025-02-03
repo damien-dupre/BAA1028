@@ -411,6 +411,19 @@ Right-click on the webpage in your browser and select “View Page Source” (na
 ### Method 3: Open it with your coding tool
 e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
 
+## Why plain text?
+
+- Version control (e.g., Git) works well (efficient, differences between versions are easy to understand) with plain text documents, `.docx` et al. not so much
+
+- Future proof 
+
+- Can easily manipulated with external tools
+
+- ...
+
+Canonical reference: [The Plain Person’s Guide to Plain Text Social
+Science](https://plain-text.co/) by Kieran Healy
+
 ## Exercise 2: Structure of an HTML file {background="#43464B"}
 
 1. Go to the following URL with your web browser:

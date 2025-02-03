@@ -156,6 +156,16 @@ An **HTML5** document consists of 4 core elements:
 </html>
 ```
 
+## HTML Code Encoding
+
+Sometimes you will see the term `utf-8` in the HTML code, it is the encoding
+
+See here for more details on [(character) encoding](https://en.wikipedia.org/wiki/Character_encoding)?
+
+See also [here](https://www.w3.org/International/questions/qa-what-is-encoding.en) 
+
+My only rule: Use utf-8
+
 ## HTML Code
 
 Content is between **matching pairs** of HTML tags:

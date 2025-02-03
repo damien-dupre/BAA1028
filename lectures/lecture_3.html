@@ -468,7 +468,7 @@ Damien Dupré
 <p>Note: Your user name will become extremely important in your future, <code>firstname-name</code> is usually good</p>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_99124acc" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_2b91d255" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -572,7 +572,7 @@ Damien Dupré
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_f6381bbf" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_4ebd7b10" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -596,7 +596,7 @@ Damien Dupré
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5747dacf" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_f7ec038c" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -884,6 +884,156 @@ Damien Dupré
 </ul>
 <p>Images can also some times be saved in pdf, but pdf while a vector format, cannot support transparency.</p>
 <p>Tiff has fallen out of favour due to high file sizes, but are preferable to jpeg for photos.</p>
+</section>
+<section id="what-is-a-path" class="slide level2">
+<h2>What is a path?</h2>
+<blockquote>
+<p>A path is a string of characters used to uniquely identify a location in a directory structure. It is composed by following the directory tree hierarchy in which components, separated by a delimiting character, represent each directory.</p>
+</blockquote>
+<blockquote>
+<p>The <strong>delimiting character</strong> is most commonly the <strong>slash (“/”)</strong>, the <strong>backslash character (“\”)</strong>, or colon (“:”), though some operating systems may use a different delimiter.</p>
+</blockquote>
+<blockquote>
+<p>Resources can be represented by either <strong>absolute or relative paths</strong></p>
+</blockquote>
+<p>See <a href="https://en.wikipedia.org/wiki/Path_(computing)">https://en.wikipedia.org/wiki/Path_(computing)</a></p>
+</section>
+<section id="delimiting-characters" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Delimiting characters <code>/</code> or <code>\</code> vary by operating system</p>
+<ul>
+<li>MS Windows:
+<ul>
+<li>Use a colon <code>:</code> to specify the drive name (e.g., <code>c:</code>, <code>d:</code>, <code>e:</code>)</li>
+<li>Folders and files are seperated by a backslash character (<code>\</code>)</li>
+<li>Example: <code>J:\Work\PARI\PARI-F\data\pari-f_data_v0-1.dta</code></li>
+</ul></li>
+<li>Linux/macOS:
+<ul>
+<li>No colon (<code>:</code>)</li>
+<li>Use only the slash (<code>/</code>) character</li>
+<li>Example: <code>/E/syncwork/projects/confer/ps2021-10-ws-repro-research</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="delimiting-characters-1" class="slide level2">
+<h2>Delimiting characters</h2>
+<ul>
+<li><p>Software, such as R, <span class="math inline">\(\LaTeX\)</span>, and Python, with a Linux/UNIX background behaves differently under MS Windows when it comes to specifying file/folder paths</p></li>
+<li><p>That is, when specifying a path (e.g., in R or <span class="math inline">\(\LaTeX\)</span>) in MS Windows, these programs do not like the backslash character (<code>\</code>) (the backslash is used for “escaping” other characters)</p></li>
+</ul>
+</section>
+<section id="delimiting-characters-2" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Two solutions in MS Windows:</p>
+<ol type="1">
+<li>Use the slash character <code>/</code> instead of <code>\</code>, e.g.:</li>
+</ol>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb12-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:/Damien/myfolder/mysubfolder/mydata.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="2" type="1">
+<li>Escape the backslash character via <code>\\</code>, e.g.:</li>
+</ol>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb13-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:</span><span class="ch">\\</span><span class="st">Damien</span><span class="ch">\\</span><span class="st">myfolder</span><span class="ch">\\</span><span class="st">mysubfolder</span><span class="ch">\\</span><span class="st">mydata.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="delimiting-characters-3" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Note: Many programming languages/statistical packages (R, Python, …) can dynamically create a full path that follows the rules of the respective operating system</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb14-2"><a href=""></a>os.path.join(<span class="st">"e:"</span>, <span class="st">"folder1"</span>, <span class="st">"folder2"</span>, <span class="st">"file"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>returns: <code>'e:folder1\\folder2\\file'</code> (in Windows)</p>
+<p>A handy tool when working on both operating system: <a href="https://pathcopycopy.github.io/">Path Copy Copy – Copy file paths from Windows explorer’s contextual menu</a></p>
+<p>Mac users can left-click and press <kbd>option</kbd> to “copy as a Pathname”</p>
+</section>
+<section id="relative-vs.-absolute-paths" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>An absolute path specifies a file or directory location from the root directory.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Mac/Linux:</strong></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="ex">/Users/username/Documents/file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Windows:</strong></li>
+</ul>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="ex">C:\Users\Username\Documents\file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="relative-vs.-absolute-paths-1" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>A relative path specifies a location relative to the current directory which is a “fixed location” on your computer</p>
+<p>Often, this “fixed location” is the so-called “working directory”</p>
+<ul>
+<li>The dot <code>.</code> denotes the current working directory</li>
+<li>The dot dot <code>..</code> denotes the parent directory, i.e., it points upwards in the folder hierarchy</li>
+<li>Finally, the tilde symbol <code>~</code> will bring you back to your home directory, e.g.&nbsp;<code>cd ~</code></li>
+</ul>
+<p>Examples:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="ex">subfolder/file.txt</span>  <span class="co"># Inside a subfolder</span></span>
+<span id="cb17-2"><a href=""></a><span class="ex">./file.txt</span>       <span class="co"># Current directory</span></span>
+<span id="cb17-3"><a href=""></a><span class="ex">../file.txt</span>      <span class="co"># Parent directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Works differently based on where the command is run.</p>
+</section>
+<section id="relative-vs.-absolute-paths-2" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>So, let’s assume the project “PARI-F” is located on drive <code>J:</code>, the full absolute path is <code>J:\Work\PARI\PARI-F</code></p>
+<ul>
+<li>The content of the project’s folder <code>PARI-F</code> is:</li>
+</ul>
+<pre><code>.
+|-- analysis
+|-- data
+|-- doc
+|-- pari-f.stpr
+`-- report</code></pre>
+</section>
+<section id="relative-vs.-absolute-paths-3" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>All other file- or folder-related operations are defined relative to this working directory</p>
+<p><strong>The huge benefit: when you share your project with a colleague or move it to a new computer, you only have to define the working directory once, everything else should work flawelessly</strong></p>
+<p>How to define a working directory?</p>
+<p><code>import os; os.chdir("full-path-to-working-directory")</code></p>
+<p>How to get information about the current working directory?</p>
+<p><code>import os; os.getcwd()</code> (cwd = current working directory); see below for an example</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="im">import</span> os </span>
+<span id="cb19-2"><a href=""></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="checking-your-current-directory" class="slide level2">
+<h2>Checking Your Current Directory</h2>
+<p>From a terminal/command line:</p>
+<ul>
+<li><p><strong>Mac/Linux:</strong></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Windows (Git Bash or WSL):</strong></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Windows (Command Prompt):</strong></p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource cmd number-lines code-with-copy"><code class="sourceCode dosbat"><span id="cb22-1"><a href=""></a><span class="bu">cd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="navigating-with-paths" class="slide level2">
+<h2>Navigating with Paths</h2>
+<ul>
+<li><p>Moving between directories:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="bu">cd</span> /absolute/path  <span class="co"># Go to absolute path is always correct</span></span>
+<span id="cb23-2"><a href=""></a><span class="bu">cd</span> relative/path   <span class="co"># Move to relative path only if the path exists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Special notations:</p>
+<ul>
+<li><code>.</code> (current directory)</li>
+<li><code>..</code> (parent directory)</li>
+</ul></li>
+</ul>
+</section>
+<section id="practical-examples" class="slide level2">
+<h2>Practical Examples</h2>
+<ul>
+<li><p>Moving into a subdirectory:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="bu">cd</span> Documents/Projects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Moving up one level:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Accessing a file in a parent directory:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href=""></a><span class="fu">cat</span> ../notes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p>See here for <a href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python">more examples</a></p>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
