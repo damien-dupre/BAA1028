@@ -292,7 +292,7 @@ To set up the basic changes we will run `git config` command.
 ```bash
 # git config command
 git config --global user.name "Your Name"
-git config --gloabl user.email "Your Email"
+git config --global user.email "Your Email"
 ```
 
 ## Setting up Git
