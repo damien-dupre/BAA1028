@@ -385,9 +385,6 @@
       margin-right: 0; 
     }
   </style>
-  <script src="lecture_4_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="lecture_4_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="lecture_4_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -409,15 +406,20 @@ Damien Dupré
 <section id="for-today" class="slide level2">
 <h2>For Today</h2>
 <h4 id="look-back-at-lecture-3-with-new-slides-about-absolute-vs.-relative-paths.">1. Look back at Lecture 3 with new slides about Absolute vs.&nbsp;Relative paths.</h4>
-<h4 id="introduction-to-terminal-macos-command-prompt-win">2. Introduction to Terminal (MacOS) / Command Prompt (Win)</h4>
+<h4 id="introduction-to-command-line-interface">2. Introduction to Command-Line Interface</h4>
 <h4 id="introduction-to-git">3. Introduction to Git</h4>
-<h4 id="git-from-command-line-and-from-vs-code">4. Git from command line and from VS Code</h4>
+<!-- #### 4. Git from command line and from VS Code -->
 <p><br></p>
 <h3 id="any-questions">Any questions?</h3>
 </section>
+<section id="demonstration" class="slide level2" data-background="#43464B">
+<h2>Demonstration</h2>
+<p>Here is my own workflow with Git, GitHub, R, and Rstudio!</p>
+
+<img data-src="https://docs.ropensci.org/magick/reference/figures/Rlogo-banana.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section>
-<section id="terminal-as-a-command-line-interface" class="title-slide slide level1 center">
-<h1>Terminal as a command-line interface</h1>
+<section id="command-line-interface" class="title-slide slide level1 center">
+<h1>Command-Line Interface</h1>
 
 </section>
 <section id="what-is-a-command-line-interface-cli" class="slide level2">
@@ -430,6 +432,47 @@ Damien Dupré
 </blockquote>
 <p>See <a href="https://en.wikipedia.org/wiki/Command-line_interface">https://en.wikipedia.org/wiki/Command-line_interface</a></p>
 </section>
+<section id="what-is-a-command-line-interface-cli-1" class="slide level2">
+<h2>What is a command-line interface (CLI)?</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="command-line-interface-1">Command-Line Interface</h3>
+<ul>
+<li>Text-based commands.</li>
+<li>Efficient for automation.</li>
+<li>Preferred by tech experts.</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="graphical-user-interface">Graphical User Interface</h3>
+<ul>
+<li>Visual elements (icons, windows).</li>
+<li>User-friendly.</li>
+<li>Immediate visual feedback.</li>
+<li>Common for everyday tasks.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="evolution-of-computer-interfaces" class="slide level2">
+<h2>Evolution of Computer Interfaces</h2>
+<ul>
+<li><strong>1969</strong>: UNIX introduces Command Line Interface (CLI)</li>
+<li><strong>1980</strong>: MS-DOS popularizes Command Line Interface (CLI)</li>
+<li><strong>1984</strong>: Apple Macintosh brings GUI to mainstream</li>
+<li><strong>1985</strong>: Microsoft introduces Windows 1.0, a graphical user interface (GUI).</li>
+<li><strong>1991</strong>: Linux introduces CLI to open source</li>
+<li><strong>1995</strong>: Windows 95 merges GUI and CLI</li>
+<li><strong>2001</strong>: Mac OS X merges Unix and GUI</li>
+<li><strong>2004</strong>: Ubuntu simplifies Linux CLI</li>
+<li><strong>2020s</strong>: CLI continues its indispensable role, supporting automation, scripting, and advanced tasks.</li>
+</ul>
+</section>
 <section id="and-what-is-a-shell" class="slide level2">
 <h2>And what is a shell?</h2>
 <blockquote>
@@ -437,6 +480,27 @@ Damien Dupré
 </blockquote>
 <p>See <a href="https://en.wikipedia.org/wiki/Shell_(computing)">https://en.wikipedia.org/wiki/Shell_(computing)</a></p>
 </section>
+<section id="terminal-vs-shell" class="slide level2">
+<h2>Terminal vs Shell</h2>
+<p>Vocabulary:</p>
+<ul>
+<li><strong>Terminal</strong>: A program that runs a shell</li>
+<li><strong>Shell</strong>: A program that interprets commands</li>
+<li><strong>Bash</strong>: The most common shell on Linux and macOS</li>
+<li><strong>PowerShell</strong>: The most common shell on Windows</li>
+<li><strong>Cmd</strong>: The legacy shell on Windows</li>
+</ul>
+<p>My CLI of choice is <a href="https://www.gnu.org/software/bash/">the Bash</a></p>
+<ul>
+<li>Linux/macOS user already have access to the Bash</li>
+<li>MS Windows user can use the “Git Bash” after installing Git</li>
+</ul>
+</section>
+<section id="windows-terminal" class="slide level2">
+<h2>Windows Terminal</h2>
+<p>A new terminal application for Windows 10</p>
+
+<img data-src="https://raw.githubusercontent.com/DHI/datatalks/refs/heads/main/talk_22_command_line_apps/terminal.png" class="r-stretch"></section>
 <section id="okay-but-why" class="slide level2">
 <h2>Okay, but why?!</h2>
 <ul>
@@ -446,25 +510,8 @@ Damien Dupré
 </ul>
 <p><a href="https://riffomonas.org/code_club/2020-08-17-command-line-life">I also recommend “Top ten reasons to learn to use the command line: Expanding your reproducibility tools”</a></p>
 </section>
-<section id="the-git-bash" class="slide level2">
-<h2>The Git Bash</h2>
-<ul>
-<li><p>My CLI of choice is <a href="https://www.gnu.org/software/bash/">the Bash</a></p></li>
-<li><p>Linux/macOS user already have access to the Bash</p></li>
-<li><p>MS Windows user can use the “Git Bash”</p></li>
-</ul>
-</section>
 <section id="important-commands" class="slide level2">
-<h2>Important commands</h2>
-<ul>
-<li><p>Note, some of these commands depend on the respective operating system</p></li>
-<li><p>Almost all of these command can have several arguments, e.g., <code>ls -la</code></p></li>
-<li><p><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Linux cheatsheet</a></p></li>
-<li><p><a href="http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf">MS Windows cheatsheet</a></p></li>
-</ul>
-</section>
-<section id="important-commands-1" class="slide level2">
-<h2>Important commands</h2>
+<h2>Important Commands</h2>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -500,328 +547,635 @@ Damien Dupré
 <td style="text-align: left;"><code>cd</code></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Show current path</td>
+<td style="text-align: left;">Show current path.</td>
 <td style="text-align: left;"><code>echo %cd%</code></td>
 <td style="text-align: left;"><code>pwd</code></td>
 </tr>
 <tr class="odd">
+<td style="text-align: left;">Locate a software</td>
+<td style="text-align: left;"><code>where</code></td>
+<td style="text-align: left;"><code>which</code></td>
+</tr>
+<tr class="even">
 <td style="text-align: left;"><strong>Danger zone</strong> No undo!</td>
 <td style="text-align: left;"></td>
 <td style="text-align: left;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Delete file(s)</td>
 <td style="text-align: left;"><code>del</code></td>
 <td style="text-align: left;"><code>rm</code></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Delete folder(s)</td>
-<td style="text-align: left;"><code>rmdir</code></td>
+<td style="text-align: left;"><code>rmdir</code>.</td>
 <td style="text-align: left;"><code>rm</code></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
+<section id="important-commands-1" class="slide level2">
+<h2>Important Commands</h2>
+<p>Almost all of these command can have several arguments, e.g., <code>ls -la</code></p>
+<p>They also have subcommands, e.g., <code>git</code></p>
 <ul>
-<li><p>Start the Git Bash</p></li>
-<li><p>List the content of the current folder via <code>ls -la</code></p></li>
-<li><p>Determine where you are via <code>pwd</code></p></li>
-<li><p>Go to the parent folder via <code>cd &lt;your input&gt;</code></p></li>
-<li><p>Copy the content from my small script (see above, section <a href="cli:create-project"></a>, use the little copy-icon in the top-right corner) and past it into a text file, save the text file as <code>create-project.sh</code></p></li>
-<li><p>Execute the script <code>./create-project.sh</code> (the <code>./</code> is important, for an explanation see <a href="https://stackoverflow.com/questions/6331075/why-do-you-need-dot-slash-before-executable-or-script-name-to-run-it-in-bas">here</a>) without a folder name</p></li>
-<li><p>Execute the script <code>./create-project.sh &lt;your-new-project&gt;</code> with a folder name as argument</p></li>
+<li><code>git init</code></li>
+<li><code>git add</code></li>
+<li><code>git commit</code></li>
+<li><code>git push</code></li>
 </ul>
+<p>Each subcommand has its own set of options and arguments.</p>
+<ul>
+<li><p><a href="https://files.fosswire.com/2007/08/fwunixref.pdf">Linux cheatsheet</a></p></li>
+<li><p><a href="http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf">MS Windows cheatsheet</a></p></li>
+</ul>
+<!-- ## Exercise -->
+<!-- - Start the Git Bash -->
+<!-- - List the content of the current folder via `ls -la` -->
+<!-- - Determine where you are via `pwd` -->
+<!-- - Go to the parent folder via `cd <your input>` -->
+<!-- - Copy the content from my small script (see above, section [](cli:create-project), use the little copy-icon in the top-right corner) and past it into a text file, save the text file as `create-project.sh` -->
+<!-- - Execute the script `./create-project.sh` (the `./` is important, for an explanation see [here](https://stackoverflow.com/questions/6331075/why-do-you-need-dot-slash-before-executable-or-script-name-to-run-it-in-bas)) without a folder name -->
+<!-- - Execute the script `./create-project.sh <your-new-project>` with a folder name as argument -->
 </section></section>
 <section>
 <section id="git" class="title-slide slide level1 center">
 <h1>Git</h1>
 
 </section>
+<section id="automated-version-control-avc" class="slide level2">
+<h2>Automated Version Control (AVC)</h2>
+<div id="sec-avc">
+<p><img data-src="https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-is-it.png"></p>
+</div>
+</section>
+<section id="automated-version-control-avc-1" class="slide level2">
+<h2>Automated Version Control (AVC)</h2>
+<ul>
+<li>A system that automatically manages changes to files, typically in the context of software development.</li>
+<li>Keeps track of every modification to the code in a special kind of database.</li>
+<li>If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimising disruption to all team members.</li>
+</ul>
+</section>
+<section id="avc-what-should-i-care" class="slide level2">
+<h2>AVC: What should I care?</h2>
+<div id="sec-avc-care">
+<p><img data-src="https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-should-i-care-A.png"></p>
+</div>
+</section>
+<section id="avc-what-should-i-care-1" class="slide level2">
+<h2>AVC: What should I care?</h2>
+
+<img data-src="https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-should-i-care-B.png" class="r-stretch"></section>
+<section id="automated-version-control" class="slide level2">
+<h2>Automated Version Control</h2>
+<ul>
+<li><strong>Backup and restore</strong>: Changes are stored securely and can be restored at any point.</li>
+<li><strong>Collaboration</strong>: Multiple people can work on the same project at the same time.</li>
+<li><strong>Track changes</strong>: You can see who last modified something that might be causing a problem, who introduced an issue, when it was introduced, and more.</li>
+<li><strong>Explore alternatives</strong>: Safely experiment with new ideas in a branch, without affecting the main project.</li>
+</ul>
+</section>
+<section id="introduction-to-git-and-github" class="slide level2">
+<h2>Introduction to Git and GitHub</h2>
+<div id="sec-gg">
+<ul>
+<li><strong>Git</strong>: A version control system that lets you manage and keep track of your source code history.</li>
+<li><strong>GitHub</strong>: A cloud-based hosting service that lets you manage Git repositories.</li>
+<li><strong>Benefits</strong>:
+<ul>
+<li>Track changes in your code across versions.</li>
+<li>Collaborate with others on projects.</li>
+<li>Backup your work on the cloud.</li>
+</ul></li>
+</ul>
+</div>
+</section>
 <section id="what-is-git" class="slide level2">
 <h2>What is Git ?</h2>
-<p>It’s a version control system, which works like a time machine. In this time machine, it has check points which is known as Commits and it’s unique for every check point. It has a super cool feature like multiverse aka Branching, that lets us create an alternate version of our code. A branch is a copy of project and it’s super useful when working in groups, allowing us the capability of working on with or without changing the original code. We can also synchronize the changes that happened across different branches and that’s called Merging.</p>
-<h3 id="setting-up-git">Setting up Git</h3>
-<ol type="1">
-<li>The first step is to set up some configuration variables which helps git to keep track of contributor and contributors contribution. To set up the basic changes we will run <code>git config</code> command.</li>
-</ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="co"># git config command</span></span>
-<span id="cb1-2"><a href=""></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
-<span id="cb1-3"><a href=""></a><span class="fu">git</span> config <span class="at">--gloabl</span> user.email <span class="st">"Your Email"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>The global option makes sure that every project in that local machine will use that name and email address. To see all the global configuration we can run the below command:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="co"># displaying git global configuration command</span></span>
-<span id="cb2-2"><a href=""></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote>
+<p>It’s a <strong>version control system</strong>, which works like a time machine. In this time machine, it has check points which is known as <strong>Commits</strong> and it’s unique for every check point.</p>
+</blockquote>
+<blockquote>
+<p>It has a super cool feature like multiverse aka <strong>Branching</strong>, that lets us create an alternate version of our code. A branch is a copy of project and it’s super useful when working in groups, allowing us the capability of working on with or without changing the original code. We can also synchronize the changes that happened across different branches and that’s called <strong>Merging</strong>.</p>
+</blockquote>
+</section>
+<section id="what-is-a-git-repository" class="slide level2">
+<h2>What is a Git repository?</h2>
+<ul>
+<li>A place where you can store your code, your files, and each file’s revision history.</li>
+<li>Contains a <code>.git</code> folder at the root which does all the git magic behind the scenes.</li>
+</ul>
+</section>
+<section id="check-git" class="slide level2">
+<h2>Check Git</h2>
+<p>To check if Git is already installed, run the following in the Terminal / Command Prompt:</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="linusmacos">Linus/MacOS</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href=""></a><span class="fu">which</span> git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If asked to install the Xcode command line tools, say yes! Right click to copy on a Terminal line</p>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="windows">Windows</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">where</span> git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+<p>Check the version of your Git if you have one</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="fu">git</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="downloading-and-installing-git" class="slide level2">
+<h2>Downloading and Installing Git</h2>
+<p>If Git is not installed:</p>
+<ul>
+<li>Download the installer from <a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></li>
+<li>Run keeping all the default settings.</li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>If the Windows installer hangs with the progress bar at 100%:</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Close the installer with Task Manager</li>
+<li>Press <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Delete</kbd>;<br>
+</li>
+<li>Select Task Manager;<br>
+</li>
+<li>Find Git for Windows installer and close.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="setting-up-git" class="slide level2">
+<h2>Setting up Git</h2>
+<p>The first step is to set up some configuration variables which helps git to keep track of contributor and contributors contribution.</p>
+<p>To set up the basic changes we will run <code>git config</code> command.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="co"># git config command</span></span>
+<span id="cb4-2"><a href=""></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"Your Name"</span></span>
+<span id="cb4-3"><a href=""></a><span class="fu">git</span> config <span class="at">--gloabl</span> user.email <span class="st">"Your Email"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-up-git-1" class="slide level2">
+<h2>Setting up Git</h2>
+<p>The global option makes sure that every project in that local machine will use that name and email address.</p>
+<p>To see all the global configuration we can run the below command:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="co"># displaying git global configuration command</span></span>
+<span id="cb5-2"><a href=""></a><span class="fu">git</span> config <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To see where the settings file are defined, we can run bellow command:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href=""></a><span class="co"># displaying setting files location command</span></span>
-<span id="cb3-2"><a href=""></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--show-origin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ol start="2" type="1">
-<li>Once we set up the global variables, we will initialize the project. To do so, we have to go to that directory from the command line.</li>
-</ol>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="co"># changing directory command</span></span>
-<span id="cb4-2"><a href=""></a><span class="bu">cd</span> folder/location</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Once we are in the desired directory, we will initialize our project using <code>git init</code> command</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="co"># initializing git command</span></span>
-<span id="cb5-2"><a href=""></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It will create a .git file in the same directory and by default it’s hidden. To see that, we need to type <code>ls -la</code> command on terminal. <code>git init</code> command initialize the project for us and make files that are necessary for keeping track of our changes. We can change the directory to see what files have been created by the <code>git init</code> command.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="bu">cd</span> .git</span>
-<span id="cb6-2"><a href=""></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="co"># displaying setting files location command</span></span>
+<span id="cb6-2"><a href=""></a><span class="fu">git</span> config <span class="at">--list</span> <span class="at">--show-origin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-up-git-2" class="slide level2">
+<h2>Setting up Git</h2>
+<p>Once we set up the global variables, we will initialize the project. To do so, we have to go to that directory from the command line.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="co"># changing directory command</span></span>
+<span id="cb7-2"><a href=""></a><span class="bu">cd</span> folder/location</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once we are in the desired directory, we will initialize our project using <code>git init</code> or <code>git clone</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="co"># Initialise a New Repo</span></span>
+<span id="cb8-2"><a href=""></a><span class="fu">git</span> init</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="co"># Cloning an Existing Repo</span></span>
+<span id="cb9-2"><a href=""></a><span class="fu">git</span> clone https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="setting-up-git-3" class="slide level2">
+<h2>Setting up Git</h2>
+<p>It will create a <code>.git</code> file in the same directory and by default it’s hidden. To see that, we need to type <code>ls -la</code> command on terminal.</p>
+<p><code>git init</code> or <code>git clone</code> commands initialize the project for us and make files that are necessary for keeping track of our changes. We can change the directory to see what files have been created by the <code>git init</code> or <code>git clone</code> commands.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="bu">cd</span> .git</span>
+<span id="cb10-2"><a href=""></a><span class="fu">ls</span> <span class="at">-la</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>It will display that git has created a several files to keep the tracks of our changes.</p>
-<p>In VS Code, <code>git init</code> command will change the color of the files and it will show <code>U</code> beside the file names. <code>U</code> means <strong>Untracked File</strong></p>
-<ol start="3" type="1">
-<li>After initializing the git, we need to add the files in the staging environment with <code>git add</code> command. Staging is a temporary area that we can store files that we want to commit later.</li>
-</ol>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="co"># basic command for adding Files</span></span>
-<span id="cb7-2"><a href=""></a><span class="fu">git</span> add FILENAME <span class="co"># it adds single file at a time and it's a good practices</span></span>
-<span id="cb7-3"><a href=""></a><span class="co"># Alternative Options</span></span>
-<span id="cb7-4"><a href=""></a><span class="fu">git</span> add <span class="at">--all</span> <span class="co"># it adds all the file in the directory to the staging environment</span></span>
-<span id="cb7-5"><a href=""></a><span class="fu">git</span> add <span class="at">-A</span> <span class="co"># does the same thing as --all but it's a shortcut</span></span>
-<span id="cb7-6"><a href=""></a><span class="fu">git</span> add . <span class="co"># same as --all and -A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>after executing the <code>git add</code> command it will change that file from <code>U</code> to <code>A</code> in the VS Code. <code>A</code> means Added.</p>
-<ol start="4" type="1">
-<li>Last step is to commit the changes using the <code>git commit</code> command.</li>
-</ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a><span class="co"># basic commit command</span></span>
-<span id="cb8-2"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Commit Message"</span></span>
-<span id="cb8-3"><a href=""></a><span class="co"># commit command with description along with commit Message</span></span>
-<span id="cb8-4"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Commit Message"</span> <span class="at">-m</span> <span class="st">"Commit Description"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- In VS Code, `git init` command will change the color of the files and it will show `U` beside the file names. `U` means **Untracked File** -->
+<!-- ## Exercise 1, creating a git repository: -->
+<!-- <br>- Navigate to a folder you want to work in, and create a new folder to contain your repository: -->
+<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ cd your_dir -->
+<!-- $ mkdir your_folder -->
+<!-- $ cd your_folder -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- Then initialise the folder -->
+<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git init -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- ::: {.callout-tip title=".git"} -->
+<!-- A hidden ".git" folder has been created in your folder. This contains everything Git needs to work. -->
+<!-- ::: -->
+</section>
+<section id="git-add" class="slide level2">
+<h2>Git Add</h2>
+<p>After initializing the git, we need to add the files in the staging environment with <code>git add</code> command. Staging is a temporary area that we can store files that we want to commit later.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="co"># Basic command for adding Files</span></span>
+<span id="cb11-2"><a href=""></a><span class="fu">git</span> add filename.extension <span class="co"># it adds single file at a time and it's a good</span></span>
+<span id="cb11-3"><a href=""></a><span class="ex">practices</span></span>
+<span id="cb11-4"><a href=""></a><span class="co"># Alternative Options</span></span>
+<span id="cb11-5"><a href=""></a><span class="fu">git</span> add <span class="at">--all</span> <span class="co"># it adds all the file in the directory to the staging environment</span></span>
+<span id="cb11-6"><a href=""></a><span class="fu">git</span> add <span class="at">-A</span> <span class="co"># does the same thing as --all but it's a shortcut</span></span>
+<span id="cb11-7"><a href=""></a><span class="fu">git</span> add . <span class="co"># same as --all and -A</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- after executing the `git add` command it  will change that file from `U` to `A` in the VS Code. `A` means Added. -->
+</section>
+<section id="git-commit" class="slide level2">
+<h2>Git Commit</h2>
+<ul>
+<li>You can think of a commit as a snapshot of your work at a particular time</li>
+<li>You can navigate between commits easily with git</li>
+<li>This allows you to switch easily between different versions of your work</li>
+<li>When you commit, rather than saving all the files in a project every time, git is efficient and only stores the files which have been changed between the previous commit and your current one</li>
+<li>The commit also stores a reference to its parent commit</li>
+</ul>
+</section>
+<section id="git-commit-1" class="slide level2">
+<h2>Git Commit</h2>
+<p>This means that Git has four main states that your files can be in:</p>
+<ul>
+<li><strong>Untracked</strong>: You’ve created a new file and not told git to keep track of it.</li>
+<li><strong>Modified</strong>: You’ve changed a file that git already has a record of, but have not told git to include these changes in your next commit. We say these files are in the working tree.</li>
+<li><strong>Staged</strong>: You’ve told git to include the file next time you do a commit. We say these files are in the staging area.</li>
+<li><strong>Committed</strong>: The file is saved in it’s present state in the most recent commit.</li>
+</ul>
+</section>
+<section id="git-commit-2" class="slide level2">
+<h2>Git Commit</h2>
+
+<!-- ## Exercise 2a, create an untracked file: -->
+<!-- ![](images/create_untracked_file.png) -->
+<!-- ## Exercise 2a, create an untracked file: -->
+<!-- <br>- Create a new file in your repository. -->
+<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ touch new.txt -->
+<!-- $ code new.txt -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- <br> -->
+<!-- Lets check what git can see... -->
+<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git status -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- ## Exercise 2b, add the untracked file to the staging area: -->
+<!-- ![](images/add_to_staging_area.png) -->
+<!-- ## Exercise 2b, add the untracked file to the staging area: -->
+<!-- <br> Try these commands... -->
+<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git add . -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git status -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<img data-src="https://raw.githubusercontent.com/Cambridge-ICCS/Summer-school-Intro-Git/refs/heads/main/presentation/images/show_different_file_states.png" class="r-stretch"></section>
+<section id="git-commit-3" class="slide level2">
+<h2>Git Commit</h2>
+<p>Last step is to commit the changes using the <code>git commit</code> command.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="co"># basic commit command</span></span>
+<span id="cb12-2"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Commit Message"</span></span>
+<span id="cb12-3"><a href=""></a><span class="co"># commit command with description along with commit Message</span></span>
+<span id="cb12-4"><a href=""></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Commit Message"</span> <span class="at">-m</span> <span class="st">"Commit Description"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>git commit message should be short and precise. What are the changes being made, why are the changes and the functionalities it will add. git commit message should be like email subject.</p>
-<p><code>git commit</code> command will remove the <code>A</code> tag beside the files names in VS Code. It means these files has been committed into your local machine. Any changes made after this will flag the file as <code>M</code> tag. <code>M</code> means Modified.</p>
+<!-- `git commit` command will remove the `A` tag beside the files names in VS Code. It means these files has been committed into your local machine. -->
+<!-- Any changes made after this will flag the file as `M` tag. `M` means Modified. -->
+<!-- ## Exercise 2c, commiting your changes: -->
+<!-- ![](images/commit_to_repository.png) -->
+<!-- ## Exercise 2c, commiting your changes: -->
+<!-- Commit your file to the local git repo -->
+<!-- <div style="margin-top: 0px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git commit -m "Created new.txt" -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- <br> -->
+<!-- 'git commit' >>>> tells git you want to commit -->
+<!-- <br> -->
+<!-- <br>'-m "Comment"' >>>> adds a description to the log for this commit. This is important as it tells you and others what the commit intent is. -->
+<!-- ## git commit -->
+<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git commit -m "Created new.txt" -->
+<!-- [main (root-commit) f22b25e] Created new.txt -->
+<!--  1 file changed, 1 insertion(+) -->
+<!--  create mode 100644 new.txt -->
+<!-- </code></pre> -->
+<!-- </div> -->
+<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
+<!-- <pre><code> -->
+<!-- $ git status -->
+<!-- On branch main -->
+<!-- nothing to commit, working tree clean -->
+<!-- </code></pre> -->
+<!-- </div> -->
+</section>
+<section id="working-with-remote-repositories" class="slide level2">
+<h2>Working with remote repositories</h2>
+<ul>
+<li><code>git clone</code>: creates a copy of the codebase on your local machine.</li>
+<li><code>git push</code>: pushes changes back to the remote repository.</li>
+<li><code>git pull</code>: pulls changes from the remote repository.</li>
+</ul>
+</section>
+<section id="working-with-remote-repositories-1" class="slide level2">
+<h2>Working with remote repositories</h2>
+
+<img data-src="https://raw.githubusercontent.com/DHI/datatalks/refs/heads/main/talk_16_git/images/git_staging.png" class="r-stretch"></section>
+<section id="github" class="slide level2">
+<h2>GitHub</h2>
+<ul>
+<li>Git repository hosting service</li>
+<li>Collaborate with others on codebase</li>
+<li><strong>Pull requests</strong> for code review and merging changes</li>
+<li><strong>Issue tracking</strong> and project management tools</li>
+<li><strong>GitHub Pages</strong> for hosting websites</li>
+</ul>
+</section>
+<section id="git-and-github" class="slide level2">
+<h2>Git and GitHub</h2>
+<p>Once your changes have been commited, it is time to send them to GitHub:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="fu">git</span> push origin main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Be sure that your git project folder is connected to GitHub repository:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">git</span> remote add origin https://github.com/username/repository.git</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="git-and-github-1" class="slide level2">
+<h2>Git and GitHub</h2>
+<p>If you want to update your project with the version hosted on github:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="fu">git</span> pull origin master</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This command pulls changes from the remote repository and merges them into your local branch.</p>
+<p>This is useful when you are collaborating on a repository and working on different branches.</p>
+</section>
+<section id="git-information" class="slide level2">
+<h2>Git Information</h2>
 <p>To verify git is keeping the track of our work we can use <code>git log</code> command.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="co"># verifying command to check if git is keeping track </span></span>
-<span id="cb9-2"><a href=""></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It will show the entries that has been made in the .git folder. It shows the commit hash, author name, date with timestamp, and commit message.</p>
-<h4 id="workflow-of-git">Workflow of git</h4>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A[Initializing git] --&gt; B[Adding files in the staging environment]
-  B --&gt; C[Committing the files]
-  C --&gt; D[Push the files in the remote repo]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<h3 id="understanding-git-environments">Understanding Git Environments</h3>
-<h4 id="git-information">Git information</h4>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="co"># verifying command to check if git is keeping track </span></span>
+<span id="cb16-2"><a href=""></a><span class="fu">git</span> log</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>It will show the entries that has been made in the <code>.git</code> folder. It shows the commit hash, author name, date with timestamp, and commit message.</p>
+</section>
+<section id="git-information-1" class="slide level2">
+<h2>Git Information</h2>
 <p><code>git log</code> command shows us some information about the commits that has been made. I will use the output of our first commit.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a><span class="fu">git</span> log</span>
-<span id="cb10-2"><a href=""></a><span class="co"># Below is the output</span></span>
-<span id="cb10-3"><a href=""></a><span class="ex">commit</span> 1b12ec3c6bc7dfc48fa33c3ae655564a02700162 <span class="er">(</span><span class="ex">HEAD</span> <span class="at">-</span><span class="op">&gt;</span> main<span class="kw">)</span> <span class="co"># commit hash, which is unique for every commit</span></span>
-<span id="cb10-4"><a href=""></a><span class="ex">Author:</span> Shuvo Barman <span class="op">&lt;</span>user@users.noreply.github.com<span class="op">&gt;</span> <span class="co"># Name of the author and email</span></span>
-<span id="cb10-5"><a href=""></a><span class="ex">Date:</span>   Sun Dec 17 16:32:29 2023 <span class="at">-0330</span> <span class="co"># detailed time of the commit</span></span>
-<span id="cb10-6"><a href=""></a></span>
-<span id="cb10-7"><a href=""></a>    <span class="ex">Initial</span> commit <span class="co"># commit message</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre><code>git log
+# Below is the output
+commit 1b12ec3c6bc7dfc48fa33c3ae655564a02700162 (HEAD -&gt; main) # commit hash, which is unique for every commit
+Author: Shuvo Barman &lt;user@users.noreply.github.com&gt; # Name of the author and email
+Date:   Sun Dec 17 16:32:29 2023 -0330 # detailed time of the commit
+
+    Initial commit # commit message</code></pre>
 <p>the HEAD always point to the current branch in this case it’s <code>main</code></p>
-<h4 id="git-environments">Git Environments</h4>
-<p>Git has 3 stages where we can move files.</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A[Git] --&gt; B[Working]
-  A --&gt; C[Staging]
-  A --&gt; D[Commit]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>Working: Here the files looks like what they did during the last commit.</li>
-<li>Staging: Before we create a new commit, we can move our file to a temporary location called Staging. It gives us a queue up changes until we are ready to commit.</li>
-<li>Commit: This is the final environment. In this stage, a new log entry is created with a new hash.</li>
-</ol>
-<p>Before a commit a file can be in one of two main states.</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A[File States] --&gt; B[Tracked]
-  A --&gt; C[Untracked]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>Tracked Files: These are the files that existed in the previous snapshot (another name for commit).</li>
-<li>Untracked Files: Untracked files are anything else.</li>
-</ol>
-<p>Tracked files can be in different states</p>
-<div class="cell" data-reveal="true" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class=""><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart TD
-  A[Tracked Files] --&gt; B[Unmodified]
-  A --&gt; C[Modified]
-  A --&gt; D[Staged]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
-<ol type="1">
-<li>Unmodified: Files haven’t changed since the last commit.</li>
-<li>Modified: Files have changed since the last commit.</li>
-<li>Staged: Files that have been moved to staging environment.</li>
-</ol>
+<!-- ## Git Environments -->
+<!-- Git has 3 stages where we can move files. -->
+<!-- 1. Working: Here the files looks like what they did during the last commit. -->
+<!-- 2. Staging: Before we create a new commit, we can move our file to a temporary location called Staging. It gives us a queue up changes -->
+<!-- until we are ready to commit. -->
+<!-- 3. Commit: This is the final environment. In this stage, a new log entry is created with a new hash. -->
+<!-- ## Git Environments -->
+<!-- Before a commit a file can be in one of two main states. -->
+<!-- 1. Tracked Files: These are the files that existed in the previous snapshot (another name for commit). -->
+<!-- 2. Untracked Files: Untracked files are anything else. -->
+<!-- ## Git Environments -->
+<!-- Tracked files can be in different states -->
+<!-- 1. Unmodified: Files haven't changed since the last commit. -->
+<!-- 2. Modified: Files have changed since the last commit. -->
+<!-- 3. Staged: Files that have been moved to staging environment. -->
+</section>
+<section id="git-environments" class="slide level2">
+<h2>Git Environments</h2>
 <p>We can see this with <code>git status</code> viewing command.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="co"># Viewing status command</span></span>
-<span id="cb11-2"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="co"># Viewing status command</span></span>
+<span id="cb18-2"><a href=""></a><span class="fu">git</span> status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If a file goes into Modified Stage, we have two option for that file. One is adding that file using <code>git add</code> command or we can restore it using <code>git restore</code> command.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="co"># restoring file command</span></span>
-<span id="cb12-2"><a href=""></a><span class="fu">git</span> restore FILENAME</span>
-<span id="cb12-3"><a href=""></a><span class="co"># Alternative options</span></span>
-<span id="cb12-4"><a href=""></a><span class="fu">git</span> restore . <span class="co"># restore all the files into it's previous state</span></span>
-<span id="cb12-5"><a href=""></a><span class="fu">git</span> checkout . <span class="co"># older version of restore command</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="ignoring-files">Ignoring Files</h3>
-<p>Even if git is used to keep track of files but sometimes we don’t want to keep track of all the files. There could be several reasons behind it. Such as: - Sensitive information(i.e.&nbsp;Password, Authentication tokens, API keys etc.) - Personal notes(i.e.&nbsp;To-Do list for project) - System files - Large files</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="co"># restoring file command</span></span>
+<span id="cb19-2"><a href=""></a><span class="fu">git</span> restore FILENAME</span>
+<span id="cb19-3"><a href=""></a><span class="co"># Alternative options</span></span>
+<span id="cb19-4"><a href=""></a><span class="fu">git</span> restore . <span class="co"># restore all the files into it's previous state</span></span>
+<span id="cb19-5"><a href=""></a><span class="fu">git</span> checkout . <span class="co"># older version of restore command</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="ignoring-files" class="slide level2">
+<h2>Ignoring Files</h2>
+<p>Even if git is used to keep track of files but sometimes we don’t want to keep track of all the files.</p>
+<p>There could be several reasons behind it. Such as:</p>
+<ul>
+<li>Sensitive information(i.e.&nbsp;Password, Authentication tokens, API keys etc.)</li>
+<li>Personal notes(i.e.&nbsp;To-Do list for project)</li>
+<li>System files</li>
+<li>Large files</li>
+</ul>
 <p>we can achieve this by creating a new file called <code>.gitignore</code>. Inside this file we can add any types of pattern, file name, folder name etc. which will git ignore. Git doesn’t track empty folders.</p>
+</section>
+<section id="ignoring-files-1" class="slide level2">
+<h2>Ignoring Files</h2>
 <p>we can also use global ignore file to ignoring files or pattern that we don’t want git to upload.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="co"># global git ignore command</span></span>
-<span id="cb13-2"><a href=""></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile <span class="pp">[</span><span class="ss">file</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="co"># global git ignore command</span></span>
+<span id="cb20-2"><a href=""></a><span class="fu">git</span> config <span class="at">--global</span> core.excludesfile <span class="pp">[</span><span class="ss">file</span><span class="pp">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Clearing the cahce using below command.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="co"># cache clearing command</span></span>
-<span id="cb14-2"><a href=""></a><span class="fu">git</span> rm <span class="at">-r</span> <span class="at">--cached</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="deleting">Deleting</h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="co"># cache clearing command</span></span>
+<span id="cb21-2"><a href=""></a><span class="fu">git</span> rm <span class="at">-r</span> <span class="at">--cached</span> .</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="deleting" class="slide level2">
+<h2>Deleting</h2>
 <p>It can be done in two ways, from command line and another is doing manually from the IDE interface. we use <code>git rm</code> command to delete file.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a href=""></a><span class="co"># delete file command</span></span>
-<span id="cb15-2"><a href=""></a><span class="fu">git</span> rm FILENAME</span>
-<span id="cb15-3"><a href=""></a><span class="co"># force fully delete file </span></span>
-<span id="cb15-4"><a href=""></a><span class="fu">git</span> rm <span class="at">-f</span> FILENAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="co"># delete file command</span></span>
+<span id="cb22-2"><a href=""></a><span class="fu">git</span> rm FILENAME</span>
+<span id="cb22-3"><a href=""></a><span class="co"># force fully delete file </span></span>
+<span id="cb22-4"><a href=""></a><span class="fu">git</span> rm <span class="at">-f</span> FILENAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>If we delete the file using <code>git rm</code> command, it deletes the file and moved that deletion automatically into staging. But if we do it manually from IDE interface we have do move that file from staging.</p>
+</section>
+<section id="deleting-1" class="slide level2">
+<h2>Deleting</h2>
 <p>After deleting a certain file using <code>git rm</code> command, if we want to restore the file we need to execute below command</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href=""></a><span class="co"># restoring deleted file command</span></span>
-<span id="cb16-2"><a href=""></a><span class="fu">git</span> restore <span class="at">--staged</span> FILENAME</span>
-<span id="cb16-3"><a href=""></a><span class="co"># git restore -S FILENAME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="co"># restoring deleted file command</span></span>
+<span id="cb23-2"><a href=""></a><span class="fu">git</span> restore <span class="at">--staged</span> FILENAME</span>
+<span id="cb23-3"><a href=""></a><span class="co"># git restore -S FILENAME</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>after executing the above command we have to execute below command as well.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="fu">git</span> restore FILENAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="renaming">Renaming</h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="fu">git</span> restore FILENAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="renaming" class="slide level2">
+<h2>Renaming</h2>
 <p>This is a tricky part if we do it from the IDE interface manually. It will track two action: first deletion of certain file and second creating a new file. if we want to restore the manually renamed file using <code>git restore</code> command, git will keep both the files.</p>
 <p>To do it from the command line we have to use <code>git mv</code> command</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="co"># file renaming command</span></span>
-<span id="cb18-2"><a href=""></a><span class="fu">git</span> mv OLD_FILE_NAME NEW_FILE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="co"># file renaming command</span></span>
+<span id="cb25-2"><a href=""></a><span class="fu">git</span> mv OLD_FILE_NAME NEW_FILE_NAME</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To restore the renamed file to it’s previous name, we can use the same command <code>git mv</code> with just changing the order of file names.</p>
-<h3 id="git-difference">Git difference</h3>
-<p>we use <code>git diff</code> command to see the changes we made accross the files. If we made changes to a handful number of files then it’s easier to use the IDE interface.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href=""></a><span class="co"># checking difference command</span></span>
-<span id="cb19-2"><a href=""></a><span class="fu">git</span> diff</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We can also compare files based on commit hash.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="fu">git</span> diff COMMITHASH</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We use <code>git log</code> to check the git history but if we don’t want to see all the information, we can use <code>git log --oneline</code> command</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It will show the commit hash and commit message as decending order. We can also the git commits as a graph, which makes it really helpful when we have multiple branches.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="co"># git log as graph </span></span>
-<span id="cb22-2"><a href=""></a><span class="fu">git</span> log <span class="at">--all</span> <span class="at">--decorate</span> <span class="at">--oneline</span> <span class="at">--graph</span> </span>
-<span id="cb22-3"><a href=""></a><span class="co"># or</span></span>
-<span id="cb22-4"><a href=""></a><span class="fu">git</span> log <span class="at">--oneline</span> <span class="at">--all</span> <span class="at">--graph</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="changing-history">Changing History</h3>
-<h4 id="using-git-amend">Using Git Amend</h4>
-<p>As we know git keeps track of all our changes, sometimes we end up with some commits that was not right. We can do another commit with proper changes but that will make the git history quiet messy. We can use <code>git amend</code> command to add changed files to the last commit.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="co"># changing history command</span></span>
-<span id="cb23-2"><a href=""></a><span class="fu">git</span> commit <span class="at">--amend</span></span>
-<span id="cb23-3"><a href=""></a><span class="co"># Alternative options</span></span>
-<span id="cb23-4"><a href=""></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">-m</span> <span class="st">"New Commit Message"</span></span>
-<span id="cb23-5"><a href=""></a><span class="fu">git</span> commit <span class="at">--amend</span> <span class="at">--no-edit</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><code>git amend</code> command will launch the default editor and allow us to edit the file with the amended history. We can avoid that by using the second line if we want to have a different commit message, it will change the commit message directly in the command line. We can also keep the commit message same as the last commit by executing the third command.</p>
-<h4 id="using-git-reset">Using Git Reset</h4>
-<p>We can also do that, using <code>git reset</code> command. Resetting let us go back to a previous commit, and we have to give that commit hash in the command.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb24-1"><a href=""></a><span class="co"># resetting command</span></span>
-<span id="cb24-2"><a href=""></a><span class="fu">git</span> reset COMMIT_HASH</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>This will go back to that commit hash snapshot and point the head to that. But it will not delete the changes that we made in the files. It will show those files as modified after getting back to that particular commit. If we want to discard all the changes we can use the <code>git reset --hard</code> command, it will discard all the changes after that commit hash. But be careful as it’s going to delete all the changes along with commits.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="co"># hard reset command</span></span>
-<span id="cb25-2"><a href=""></a><span class="fu">git</span> reset <span class="at">--hard</span> COMMIT_HASH</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h4 id="using-git-rebase">Using Git Rebase</h4>
-<p>Rebasing is another way of changing history and it’s designed to take the commits from one branch and apply them to another.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href=""></a><span class="co"># git rebasing command</span></span>
-<span id="cb26-2"><a href=""></a><span class="fu">git</span> rebase <span class="op">&lt;</span>branch<span class="op">&gt;</span>/<span class="op">&lt;</span>commit<span class="op">&gt;</span></span>
-<span id="cb26-3"><a href=""></a><span class="co"># Alternative options</span></span>
-<span id="cb26-4"><a href=""></a><span class="fu">git</span> rebase <span class="at">--interactive</span> <span class="op">&lt;</span>branch<span class="op">&gt;</span>/<span class="op">&lt;</span>commit<span class="op">&gt;</span> <span class="co"># best way to use rebase</span></span>
-<span id="cb26-5"><a href=""></a><span class="fu">git</span> rebase <span class="at">-i</span> HEAD~# <span class="co"># useful when have a long commit history and only want to go back to certain steps</span></span>
-<span id="cb26-6"><a href=""></a><span class="fu">git</span> rebase <span class="at">-i</span> <span class="at">--root</span> <span class="co"># bring all the history in ascending order and let us pick</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<h3 id="branches">Branches</h3>
+<!-- ## Git Difference -->
+<!-- we use `git diff` command to see the changes we made across the files. If we made changes to a handful number of files then it's  -->
+<!-- easier to use the IDE interface. -->
+<!-- ```bash -->
+<!-- # checking difference command -->
+<!-- git diff -->
+<!-- ``` -->
+<!-- We can also compare files based on commit hash.  -->
+<!-- ```bash -->
+<!-- git diff COMMITHASH -->
+<!-- ``` -->
+<!-- ## Git Difference -->
+<!-- We use `git log` to check the git history but if we don't want to see all the information, we can use `git log --oneline` command -->
+<!-- ```bash -->
+<!-- git log --oneline -->
+<!-- ``` -->
+<!-- It will show the commit hash and commit message as decending order. We can also the git commits as a graph, which makes it really helpful -->
+<!-- when we have multiple branches. -->
+<!-- ```bash -->
+<!-- # git log as graph  -->
+<!-- git log --all --decorate --oneline --graph  -->
+<!-- # or -->
+<!-- git log --oneline --all --graph -->
+<!-- ``` -->
+<!-- ## Using Git Amend -->
+<!-- As we know git keeps track of all our changes, sometimes we end up with some commits that was not right. We can do another commit  -->
+<!-- with proper changes but that will make the git history quiet messy. We can use `git amend` command to add changed files to the last -->
+<!-- commit. -->
+<!-- ```bash -->
+<!-- # changing history command -->
+<!-- git commit --amend -->
+<!-- # Alternative options -->
+<!-- git commit --amend -m "New Commit Message" -->
+<!-- git commit --amend --no-edit -->
+<!-- ``` -->
+<!-- `git amend` command will launch the default editor and allow us to edit the file with the amended history. We can avoid that by using the second line -->
+<!-- if we want to have a different commit message, it will change the commit message directly in the command line. We can also keep the commit message same as the last commit by executing the third command. -->
+<!-- ## Using Git Reset -->
+<!-- We can also do that, using `git reset` command. Resetting let us go back to a previous commit, and we have to give that commit hash in the command. -->
+<!-- ```bash -->
+<!-- # resetting command -->
+<!-- git reset COMMIT_HASH -->
+<!-- ``` -->
+<!-- This will go back to that commit hash snapshot and point the head to that. But it will not delete the changes that we made in the files. -->
+<!-- It will show those files as modified after getting back to that particular commit. If we want to discard all the changes we can use the -->
+<!-- `git reset --hard` command, it will discard all the changes after that commit hash. But be careful as it's going to delete all the changes -->
+<!-- along with commits. -->
+<!-- ```bash -->
+<!-- # hard reset command -->
+<!-- git reset --hard COMMIT_HASH -->
+<!-- ``` -->
+<!-- ## Using Git Rebase -->
+<!-- Rebasing is another way of changing history and it's designed to take the commits from one branch and apply them to another. -->
+<!-- ```bash -->
+<!-- # git rebasing command -->
+<!-- git rebase <branch>/<commit> -->
+<!-- # Alternative options -->
+<!-- git rebase --interactive <branch>/<commit> # best way to use rebase -->
+<!-- git rebase -i HEAD~# # useful when have a long commit history and only want to go back to certain steps -->
+<!-- git rebase -i --root # bring all the history in ascending order and let us pick -->
+<!-- ``` -->
+</section>
+<section id="branches" class="slide level2">
+<h2>Branches</h2>
 <p>to see the brances we can use <code>git branch</code> command. It will show all the available branc in our project.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># checking git branch command</span></span>
-<span id="cb27-2"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href=""></a><span class="co"># checking git branch command</span></span>
+<span id="cb26-2"><a href=""></a><span class="fu">git</span> branch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>To create a new branch we will have to take a copy of a snapshot from another branch and start working from there. To do so,</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="co"># copying a branch command</span></span>
-<span id="cb28-2"><a href=""></a><span class="fu">git</span> switch <span class="at">-c</span> NAME</span>
-<span id="cb28-3"><a href=""></a><span class="co"># Alternative Option</span></span>
-<span id="cb28-4"><a href=""></a><span class="fu">git</span> checkout <span class="at">-b</span> NAME <span class="co"># older version of git switch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a href=""></a><span class="co"># copying a branch command</span></span>
+<span id="cb27-2"><a href=""></a><span class="fu">git</span> switch <span class="at">-c</span> NAME</span>
+<span id="cb27-3"><a href=""></a><span class="co"># Alternative Option</span></span>
+<span id="cb27-4"><a href=""></a><span class="fu">git</span> checkout <span class="at">-b</span> NAME <span class="co"># older version of git switch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="branches-1" class="slide level2">
+<h2>Branches</h2>
 <p><code>git merge</code> command will merge the changes from one branch into the current branch.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="co"># merge command syntax</span></span>
-<span id="cb29-2"><a href=""></a><span class="fu">git</span> merge <span class="op">&lt;</span>branch<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href=""></a><span class="co"># merge command syntax</span></span>
+<span id="cb28-2"><a href=""></a><span class="fu">git</span> merge <span class="op">&lt;</span>branch<span class="op">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>When we merge a feature into main branch, it’s a good idea to delete that branch. To do that, we use below command</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href=""></a><span class="co"># git branch delete command syntax</span></span>
-<span id="cb30-2"><a href=""></a><span class="fu">git</span> branch <span class="at">--delete</span> NAME</span>
-<span id="cb30-3"><a href=""></a><span class="co"># Alternative Option</span></span>
-<span id="cb30-4"><a href=""></a><span class="fu">git</span> branch <span class="at">-d</span> NAME <span class="co"># we can use this as long as branches have no conflicts</span></span>
-<span id="cb30-5"><a href=""></a><span class="fu">git</span> branch <span class="at">-D</span> NAME <span class="co"># ignore any conflicts, forcefully delete the branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href=""></a><span class="co"># git branch delete command syntax</span></span>
+<span id="cb29-2"><a href=""></a><span class="fu">git</span> branch <span class="at">--delete</span> NAME</span>
+<span id="cb29-3"><a href=""></a><span class="co"># Alternative Option</span></span>
+<span id="cb29-4"><a href=""></a><span class="fu">git</span> branch <span class="at">-d</span> NAME <span class="co"># we can use this as long as branches have no conflicts</span></span>
+<span id="cb29-5"><a href=""></a><span class="fu">git</span> branch <span class="at">-D</span> NAME <span class="co"># ignore any conflicts, forcefully delete the branch</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>These sequence of doing things is also called git flow.</p>
-<h4 id="git-flow">Git flow</h4>
+<!-- ## Git Flow -->
+<!-- - Feature / Fix branch -->
+<!-- - Make changes -->
+<!-- - Merge changes to main branch -->
+<!-- - Delete the feature / fix branch -->
+<!-- ## Merge Conflicts -->
+<!-- Conflicts happen when we try to merge two branches, but there are changes made in the file.  -->
+<!-- ###  Git Stash -->
+<!-- Stashing is a way of putting away code temporarily. We can do that via `git stash` command. -->
+<!-- ```bash -->
+<!-- # stashing command syntax -->
+<!-- git stash -->
+<!-- # Checking git stash command -->
+<!-- git stash list # for checking what has been stored -->
+<!-- git stash apply # apply a set of changes from stash -->
+<!-- git stash pop # remove the git stash from the list -->
+<!-- ``` -->
+<!-- It's can be think of as a deck of cards, we can stash on top of another stash. -->
+<!-- ## Merge Conflicts -->
+<!-- ### Git Clean -->
+<!-- remove all untracked files and directories from your branch super quicky. Nice way of removing files that we don't need anymore. -->
+<!-- ```bash -->
+<!-- # git clean command syntax -->
+<!-- git clean -n # dry run -->
+<!-- git clean -d # directories -->
+<!-- git clean -f # force -->
+<!-- ``` -->
+<!-- We can combine these commands together as well, i.e. `git clean -dn` to remove both untracked file and directories -->
+</section>
+<section id="best-practices" class="slide level2">
+<h2>Best practices</h2>
+<p>When working alone:</p>
 <ul>
-<li>Feature / Fix branch</li>
-<li>Make changes</li>
-<li>Merge changes to main branch</li>
-<li>Delete the feature / fix branch</li>
+<li>Commit often</li>
+<li>Use descriptive commit messages</li>
+<li>Review code regularly</li>
+<li>Use .gitignore to exclude files</li>
+<li>Don’t commit data (only very small test data)</li>
+<li>Don’t commit passwords</li>
 </ul>
-<h3 id="merge-conflicts">Merge Conflicts</h3>
-<p>Conflicts happen when we try to merge two branches, but there are changes made in the file.</p>
-<h3 id="git-stash">Git Stash</h3>
-<p>Stashing is a way of putting away code temporarily. We can do that via <code>git stash</code> command.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href=""></a><span class="co"># stashing command syntax</span></span>
-<span id="cb31-2"><a href=""></a><span class="fu">git</span> stash</span>
-<span id="cb31-3"><a href=""></a><span class="co"># Checking git stash command</span></span>
-<span id="cb31-4"><a href=""></a><span class="fu">git</span> stash list <span class="co"># for checking what has been stored</span></span>
-<span id="cb31-5"><a href=""></a><span class="fu">git</span> stash apply <span class="co"># apply a set of changes from stash</span></span>
-<span id="cb31-6"><a href=""></a><span class="fu">git</span> stash pop <span class="co"># remove the git stash from the list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>It’s can be think of as a deck of cards, we can stash on top of another stash.</p>
-<h3 id="git-clean">Git Clean</h3>
-<p>remove all untracked files and directories from your branch super quicky. Nice way of removing files that we don’t need anymore.</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href=""></a><span class="co"># git clean command syntax</span></span>
-<span id="cb32-2"><a href=""></a><span class="fu">git</span> clean <span class="at">-n</span> <span class="co"># dry run</span></span>
-<span id="cb32-3"><a href=""></a><span class="fu">git</span> clean <span class="at">-d</span> <span class="co"># directories</span></span>
-<span id="cb32-4"><a href=""></a><span class="fu">git</span> clean <span class="at">-f</span> <span class="co"># force</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>We can combine these commands together as well, i.e.&nbsp;<code>git clean -dn</code> to remove both untracked file and directories</p>
-</section></section>
-<section>
-<section id="description-of-files-in-github-repo" class="title-slide slide level1 center">
-<h1>Description of files in GitHub repo</h1>
-<p>It’s good practice to include some files in our github repo which will help people understand a bit more about our project. It makes the project self explanatory and well documented.</p>
+<p>When working with a team:</p>
 <ul>
-<li><p><strong>README.md:</strong> It tells about the purpose of the project, which is essentially describing what the project does and why it’s useful. It also works as a homepage for the repo. It can provide table of contents, dependencies for the project, installation guidelines and so on.</p></li>
-<li><p><strong>LICENCE:</strong> Public repositories are normally used to share open source software, but we need to define how developers can use, change or distribute the software. For doing so, we need a <strong>LICENCE</strong> file and the location of the file is in the root folder.</p></li>
-<li><p><strong>CODE_OF_CONDUCT.md:</strong> This file establishes the expectations as to how people are supposed to behave when using your public repo or open source software.</p></li>
-<li><p><strong>SECURITY.md:</strong> This file specify the security support and where to report vulnerabilities.</p></li>
-<li><p><strong>CONTRIBUTING.md:</strong> This file defines the guidelines for other developers on how they can contribute to the project.</p></li>
-<li><p><strong>SUPPORT.md:</strong> This file defines the rules on regulations about how other people can get support for the open source project.</p></li>
-<li><p><strong>CODEOWNERS:</strong> This is a simple text file where describes the list of persons who are responsible for maintaining the repo up to date and who changes the code. The format for this file is pretty similar to <code>.gitignore</code> file.</p></li>
+<li>Keep pull requests small and focused</li>
+<li>Use “issues” to track work</li>
 </ul>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <p>Huge thanks the following people who have generated and shared most of the content of this lecture:</p>
 <ul>
-<li>Bernd Weiß: <a href="https://jobreu.github.io/reproducible-research-gesis-2022/slides/comp-literacy.html#1">Tools and Workflows for Reproducible Research in the Quantitative Social Sciences - Computer Literacy</a></li>
+<li><p>Zoë Turner: <a href="https://intro-git-github.nhsrcommunity.com/session-prework.html">Introduction to Git and GitHub Session - Prework for a computer</a></p></li>
+<li><p>Miguel Xochicale: <a href="https://mxochicale.github.io/intro-to-git-and-github/">Introduction to git and GitHub</a></p></li>
+<li><p>James Emberton, Amy Pike and Marion Weinzierl: <a href="https://github.com/Cambridge-ICCS/Summer-school-Intro-Git">Git for beginners</a></p></li>
+<li><p>Joe Wallwork and Tom Meltzer: <a href="https://hackmd.io/@jwallwork/2024-07-10-intermediate-git-tools?type=slide#/1">Intermediate Git and GitHub</a></p></li>
 </ul>
 <p><br></p>
 
-<img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"><div class="quarto-auto-generated-content">
+<img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section" class="slide level2" data-background="#43464B">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+img.circle {border-radius:50%;}
+</style>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img class="circle" src="https://github.com/damien-dupre.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Thanks for your attention and don’t hesitate to ask if you have any questions!</strong><br>
+<a href="https://datasci.social/@damien_dupre"><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"></path></svg> <span class="citation" data-cites="damien_dupre">@damien_dupre</span></a><br>
+<a href="https://github.com/damien-dupre"><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <span class="citation" data-cites="damien-dupre">@damien-dupre</span></a><br>
+<a href="https://damien-dupre.github.io"><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> https://damien-dupre.github.io</a><br>
+<a href="mailto:damien.dupre@dcu.ie"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"></path></svg> damien.dupre@dcu.ie</a></p>
+</div>
+</div>
+</div>
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>

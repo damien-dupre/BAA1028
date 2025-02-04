@@ -776,6 +776,8 @@ Huge thanks the following people who have generated and shared most of the conte
 
 - Athanasia Monika Mowinckel: [Mind your data - Creating Organised Research Projects](https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/)
 
+- Bernd Weiß: [Tools and Workflows for Reproducible Research in the Quantitative Social Sciences - Computer Literacy](https://jobreu.github.io/reproducible-research-gesis-2022/slides/comp-literacy.html#1)
+
 <br>
 
 ```{r}
