@@ -28,3 +28,736 @@ include_img <- function(img_name) {
 }
 ```
 
+## Your turn!
+
+1/ Download the file `hello.ipynb` 
+- from here: https://quarto.org/docs/get-started/hello/jupyter.html
+- or by clicking here: <a href="https://quarto.org/docs/get-started/hello/_hello.ipynb" download="hello.ipynb" data-original-href="https://quarto.org/docs/get-started/hello/_hello.ipynb">Download hello.ipynb</a>
+
+2/ Open Jupyter Lab and drop the `hello.ipynb` in the list of files in Jupyter (left pane)
+
+3/ Open a new Terminal window (on Jupyter Lab or on your OS) and run the following instructions:
+
+```markdown
+quarto render hello.ipynb --to html
+```
+
+and then:
+
+```markdown
+open hello.html
+```
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+# 2. Create a website with Markdown and Python Code embedded
+
+## Quarto Websites
+
+Quarto Websites are a convenient way to publish groups of documents. Documents published as part of a website share navigational elements, rendering options, and visual style.
+
+Website navigation can be provided through a global navbar, a sidebar with links, or a combination of both for sites that have multiple levels of content. You can also enable full text search for websites.
+
+```{r}
+include_graphics("https://www.paulbarrs.com/wp-content/uploads/2017/09/painful.jpg")
+```
+
+## Your turn!
+
+1/ Open a new Terminal window (on Jupyter Lab or on your OS) and run the following instructions:
+
+```markdown
+quarto create project website mysite
+```
+
+and then:
+
+```markdown
+quarto preview mysite
+```
+
+```{r}
+countdown(minutes = 2, warn_when = 60)
+```
+
+## Quarto Websites
+
+```markdown
+quarto create project website mysite
+```
+
+Creates a new website project from the Terminal. This website project is initiated by a folder called `mysite` located on the root of your terminal.
+
+--
+
+The folder contains only 4 files:
+- `_quarto.yml` is a yaml file, it design the overall style and the navbar
+- `index.qmd` is a quarto file, it corresponds to the homepage
+- `about.qmd` is another quarto file which is displayed when about is clicked on the navbar
+- `styles.css` is for additional style not defined in `_quarto.yml`
+
+--
+
+Improve your Website:
+
+- Navigation instructions here: https://quarto.org/docs/websites/website-navigation.html
+- Option instructions here: https://quarto.org/docs/reference/projects/websites.html
+
+## Quarto Websites
+
+```markdown
+quarto preview mysite
+```
+
+This command is used to render the website by converting all the `.qmd` files to `.html` files stored in a `_site` folder. 
+
+The website preview will open in a new web browser. As you edit and save `index.qmd` (or other files like `about.qmd`) the preview is automatically updated.
+
+```{r}
+include_graphics("https://ucsb-meds.github.io/creating-quarto-websites/media/rendered_site.png")
+```
+
+## qmd Files
+
+Unfortunately `.ipynb` files cannot be used to build a website. 
+
+Thankfully they can be converted to `.qmd` format by quarto with the instruction: 
+
+```markdown
+quarto convert myfile.ipynb
+```
+--
+
+`.qmd` files are actually very similar to `.ipynb` files and are tailored for quarto:
+- They have a yaml displayed between two series of `---` signs
+- They have markdown text
+- They can have code cell, also called chunks
+
+--
+
+Chunks are delimited by 3 backticks on each end ` ``` ` followed by the engine (`python`) between curly braces `{python}`  
+
+````markdown
+`r ''````{python}
+print('Hello, world!')
+```````
+
+## Your turn!
+
+.pull-left[
+1/ Open a new Terminal window (on Jupyter Lab or on your OS) and run the following instructions:
+
+```markdown
+quarto convert hello.ipynb
+```
+
+2/ Drag and drop the file `hello.qmd` created in the root of the `mysite` folder
+]
+
+.pull-right[
+3/ Open the file `_quarto.yml` in Jupyter and modify it as follow:
+
+```markdown
+website:
+  title: "Mysite"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      - hello.qmd
+```
+
+4/ In the same Terminal window, run the following instructions:
+
+```markdown
+quarto preview mysite
+```
+]
+
+```{r}
+countdown(minutes = 10, warn_when = 60)
+```
+
+# 3. Publish this website on GitHub
+
+## Overview
+
+There are three ways to publish Quarto websites and documents to GitHub Pages:
+
+- **Render sites on your local machine to the docs directory**, check the rendered site into GitHub, and then configure your GitHub repo to publish from the docs directory.
+
+- **Use the quarto publish command** to publish content rendered on your local machine.
+
+- **Use a GitHub Action** to automatically render your files (a single Quarto document or a Quarto project) and publish the resulting content whenever you push a source code change to your repository.
+
+#### The simplest way to publish using GitHub Pages is to render to the docs directory and then upload that directory into your repository...
+
+--
+
+.pull-left[
+#### ... but it won't be as easy as it looks I'm afraid!
+]
+
+.pull-right[
+```{r out.width='90%'}
+include_graphics("http://techrights.org/wp-content/uploads/2021/10/github-dark-side.jpg")
+```
+]
+
+## Render the Website docs Folder
+
+In the `_quarto.yml` file, simply **change the output directory folder** to a folder named `docs` as follow:
+
+```markdown
+project:
+  type: website
+  output-dir: docs
+```
+
+--
+
+Then preview or render the website:
+
+.pull-left[
+```markdown
+quarto render mysite
+```
+]
+
+.pull-right[
+```markdown
+quarto preview mysite
+```
+]
+
+--
+
+.pull-left[
+Your website default folder should look like that → 
+
+Note: the old folder `_site` will not be used any more and is now useless.
+]
+
+.pull-right[
+```{r out.width='80%'}
+include_img("mysite_docs.png")
+```
+]
+
+## Add a .nojekyll File
+
+Add a `.nojekyll` file to the root of your repository that tells GitHub Pages not to do additional processing of your published site using Jekyll (the GitHub default site generation tool):
+
+You can create an empty text file by yourself or you can download this `nojekyll` file here:
+```{r}
+# downloadthis::download_file(
+#   path = here::here("nojekyll"),
+#   output_name = "nojekyll",
+#   button_label = "Click here to download nojekyll",
+#   has_icon = TRUE,
+#   icon = "fa fa-save",
+#   self_contained = FALSE
+# )
+```
+
+
+
+--
+
+You could also create it from the terminal when the website folder is the current directory:
+
+.pull-left[
+Mac/Linux:
+```markdown
+cd mysite
+touch .nojekyll
+```
+]
+
+.pull-right[
+Windows:
+```markdown
+cd mysite
+copy NUL .nojekyll
+```
+]
+
+## Upload your Files to GitHub
+
+In a perfect world, you could just drag and drop all the files in GitHub at once like this:
+
+```{r out.width='90%'}
+include_img("github_drop_mysite.gif")
+```
+
+## Upload your Files to GitHub
+
+However, sometimes drag and drop in GitHub doesn't work (server limitations)
+
+```{r}
+include_img("commit_failed.png")
+```
+
+If your upload from the website fail, there are some alternatives
+
+## Upload your Files to GitHub
+
+### Solution 1: Use GitHub.dev
+
+Replace `.com` in your repository url to `.dev`
+
+For example:
+- https://github.com/damiendupre/mysite
+- https://github.dev/damiendupre/mysite
+
+Then, in **Source Control**, drag and drop your files and click **Commit & Push**
+
+```{r}
+include_img("github_com_dev.png")
+```
+
+## Upload your Files to GitHub
+
+### Solution 2: Use Git
+
+GitHub is nothing without Git and you should install from https://git-scm.com/
+
+```{r out.width='60%'}
+include_graphics("https://pbs.twimg.com/media/Fgg4vIWWIAAUJiq.jpg")
+```
+
+## Upload your Files to GitHub
+
+### Solution 2: Use Git
+
+When GitHub suggests ways how to upload files, it gives instructions to **create a new repository on the command line** with git.
+
+For example:
+
+```markdown
+cd mysite #if not done yet
+git init
+git add .
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/damiendupre/mysite.git
+git push -u origin main
+```
+
+You should see all your files uploaded in your GitHub repository
+
+## Your turn!
+
+.pull-left[
+1/ **Change the output directory folder** to a folder named `docs` in the `_quarto.yml` file:
+
+```markdown
+project:
+  type: website
+  output-dir: docs
+```
+
+Then, preview or render the website
+
+```markdown
+quarto render mysite
+```
+
+2/ **Upload and commit all the files contained in the website folder** on your GitHub repository, not the website folder itself.
+]
+
+.pull-right[
+3/ **Upload and commit a nojekyll file** that tells GitHub to not run its default html website processing
+
+You can download this `nojekyll` file here:
+
+```{r}
+# downloadthis::download_file(
+#   path = here::here("nojekyll"),
+#   output_name = "nojekyll",
+#   button_label = "Click here to download nojekyll",
+#   has_icon = TRUE,
+#   icon = "fa fa-save",
+#   self_contained = FALSE
+# )
+```
+
+4/ Finally, in **GitHub**, click **Settings** -> **Pages** choose:
+- `main` branch
+- `/docs` folder
+- and Save
+]
+
+```{r}
+countdown(minutes = 10, warn_when = 60)
+```
+
+
+# Quarto
+
+## What is quarto? {.smaller}
+ - Quarto is a piece of software that works "under the hood" in your IDE (VScode in our case) to allow you to:
+    - Write documents in a simple, plain text format.
+    - Format those documents using a simple syntax.
+    - Include code (for data analysis for example) and the output of that code in your documents.
+    - Include references and citations in your documents.
+    - Include tables and images in your documents.
+    - And much more!
+
+
+
+:::{.notes}
+You can mention pandoc, rmarkdown etc here, but this isn't a history lesson. 
+:::
+
+
+
+## Why am Quarto?{.smaller}
+ - Quarto was developed (essentially) by the scientific community to allow researchers to take advantage of modern work flow:
+    - To allow remove the tedium of working formatting documents by hand.
+    - To not have to care about what the document will look like while you're writing.
+    - To allow you to analyse your data and write about it in the same place.
+
+. . . 
+
+In the links for this presentation you'll find wider info about quarto, but for now, let's just get you started.
+
+
+
+## Quarto Documents{.smaller}
+Quarto documents are essentially `plain text` with some extra `syntax` added in to tell the computer how to format the document.
+
+ - `Plain Text` is just that, plain. It's like the text you type in a text message, or an email without any formatting.
+ - `Syntax` is the set of rules that govern how the computer will interpret various symbols that you put into the `plain text` to tell *the computer how to format it*.
+
+. . . 
+  
+There are [lots of resources to help you learn the quarto syntax](https://quarto.org/docs/get-started/hello/vscode.html), and indeed there are lots of resources to help you learn the syntax of other similar tools, but we're going to focus on the basics for now.
+
+
+## Quarto Documents{.smaller}
+### The Basics  
+ - Quarto documents are written in `markdown` (a type of `plain text`).
+ - They have a `.qmd` file extension (but other kinds of files like `.ipynb` and `.rmd` can be used too).
+ - They have a `yaml` header at the top of the file (which is where you tell the computer how to format the document).
+     - It's where we put things like the author and title, but also the format that we want the document to 'render to'.
+ - They use really simple symbols to indicate things like headings, lists, italics, bold, images, and links. 
+
+
+## Quarto Documents{.smaller}
+
+### markdown basics : Headings. 
+
+#### Headings are indicated by a `#` symbol at the start of a line.
+```markdown 
+---
+title: "example.qmd"
+author: "pfft, some nerd"
+---
+
+# This is a level 1 heading
+It's at the top of the document and is the largest heading.
+
+## This is a level 2 heading
+It's a little smaller and is used to indicate a new section.
+ 
+### This is a level 3 heading
+It's a little smaller again and is used to indicate a new subsection.
+```
+
+
+
+# This is a level 1 heading
+It's at the top of the document and is the largest heading.
+
+## This is a level 2 heading
+It's a little smaller and is used to indicate a new section.
+
+### This is a level 3 heading
+It's a little smaller again and is used to indicate a new subsection. 
+
+
+## Quarto Documents{.smaller}
+### markdown basics : Headings. 
+
+
+```markdown 
+---
+title: "example.qmd"
+author: "pfft, some nerd"
+---
+
+# This is a level 1 heading
+It's at the top of the document and is the largest heading.
+
+## This is a level 2 heading
+It's a little smaller and is used to indicate a new section.
+ 
+### This is a level 3 heading
+It's a little smaller again and is used to indicate a new subsection.
+```
+
+
+::: {.notes}
+Say that we're ignoring lines 1-4, call out line 6, and then walk through the rest of the example.
+:::
+
+
+## Quarto Documents{.smaller}
+### markdown basics : Bold and Italics.
+#### Markdown uses `*` (the star symbol, shift+8) and `_` (the underline symbol, shift+-) to indicate bold and italics.
+
+```markdown
+
+### Italics
+*This is in italics*
+
+_This is also in italics_
+
+### Bold
+**This is in bold**
+
+__This is also in bold__
+
+### Bold and Italics
+***This is in bold and italics***
+
+
+```
+
+
+## Quarto Documents{.smaller}
+
+
+###  Italics
+*This is in italics*
+
+_This is also in italics_
+
+### Bold
+**This is in bold**
+
+__This is also in bold__
+
+### Bold and Italics
+***This is in bold and italics***
+
+## Quarto Documents{.smaller}
+### markdown basics : Lists
+
+ - #### Markdown supports both numbered (ordered) and unnumbered (unordered) lists. 
+ - #### It's straightforward to create them using numbers for ordered lists and dashes or asterisks for unordered lists.
+
+```markdown
+### Numbered Lists
+1. First item
+2. Second item
+    - Sub item
+3. Third item
+
+### Unnumbered Lists
+- First item
+- Second item
+    1. Sub item
+    2. Sub item 2
+- Third item
+```
+
+::: {.notes}
+Don't forget to highlight that you can mix and match the two types of lists
+:::
+
+## Quarto Documents{.smaller}
+### markdown basics : Lists
+
+
+### Numbered Lists
+1. First item
+2. Second item
+    - Sub item
+3. Third item
+
+### Unnumbered Lists
+- First item
+- Second item
+    1. Sub item
+    2. Sub item 2
+*  Third item
+
+::: {.notes}
+For the numbered lists, each item starts with a number followed by a dot. Markdown automatically numbers the items correctly, even if you use `1.` for all items. For unnumbered lists, you can use either `-` or `*` to start each item. The choice between dashes and asterisks is purely stylistic.
+:::
+
+## Quarto Documents{.smaller}
+### markdown basics : Links
+
+ - #### Creating hyperlinks in Markdown is simple. 
+ - #### You enclose the link text in square brackets and the URL in parentheses immediately after the text.
+
+```markdown
+[Quarto](https://quarto.org)
+```
+
+## Quarto Documents{.smaller}
+### markdown basics : Links
+
+### Example Links
+[Quarto](https://quarto.org)
+
+::: {.notes}
+When creating links, ensure there is no space between the closing square bracket and the opening parenthesis. This syntax will render the text in the square brackets as a clickable hyperlink pointing to the URL in the parentheses.
+:::
+
+
+## Quarto Documents{.smaller}
+### markdown basics : Recap
+
+```markdown
+---
+title: "example.qmd"
+author: "pfft, some nerd"
+---
+<<I've skipped the level 1 heading>>
+
+## This is a level 2 heading
+
+*This text is in italics*
+**This text is in bold**
+***This text is in bold and italics***
+
+### Numbered Lists
+1. First item
+2. Second item
+    - Sub item
+
+### Unnumbered Lists
+- First item
+- Second item
+    1. Sub item
+    2. Sub item 2
+
+[Link to the Quarto website](https://quarto.org)
+
+```
+
+## Quarto Practice{.smaller}
+
+OK that's the basics of markdown, and the basics of quarto, but it's a lot. Let's take a few minutes to practice.
+
+Rather than editing the `example.qmd` file, let's create a new file to practice in.
+
+ - If you hover over the 'explorer' area on the left of the window, you'll see a little icon that looks like a piece of paper with a plus sign on it. Click on that to create a new file.
+ - Type `intentions.qmd` into the box that pops up and press enter. (Yay!! You now know how to create a new file in VScode!)
+
+## Quarto Practice{.smaller}
+
+ - In this new document using the markdown syntax we've just learned, write a few paragraphs about your intentions for the summer school.
+    1. What do you hope to learn?
+    2. Is there a particular project you might use this knowledge for?
+    3. What are you most excited about?
+    4. What are you most nervous about?
+    5. Look around for a website that you think might be useful to you, and include a link to it in your document.
+
+. . . 
+
+Unless you share it no one else will be able to see that file, so don't worry about what you write. 
+
+When you want to save what you've written, just press `ctrl+s` (or `cmd+s` on a mac). 
+
+
+## Quarto: Rendering and Previewing{.smaller}
+
+ - The computer uses the `syntax` to format the `plain text` into a `pretty document`.
+ - This process is called `rendering` (you've heard me say that already).
+ - You can `render` your document at any time to see what it looks like.
+ - You can also `preview` your document in a separate window to see what it looks like. 
+
+## Quarto: Rendering and Previewing{.smaller}
+This is the first time we'll use the `terminal` in VScode, and it's really simple. 
+ - Click on the `terminal` icon in the bar along the top of the VS Code window.
+ - Click 'new terminal' from the menu that pops up.
+
+. . . 
+ 
+You should see a new panel open at the bottom of the window. This is the terminal.
+
+![](https://raw.githubusercontent.com/spider-z3r0/ULpsych_programing_club/d255dbfb57b15526461820e891773577fc10b829/presentations/Day%200/images/VSCODEterminal_isolated.png){fig-align="center"}
+
+## Rendering and Previewing{.smaller}
+And now we just need to use the `terminal` to tell Quarto to `render` our document. 
+
+Now these commands can be really *really* complex, so you're really going to have to pay attention here. 
+
+## Rendering and Previewing{.smaller}
+Seriously, it's really complex.
+
+## Rendering and Previewing{.smaller}
+Actually... maybe you're not ready for this yet.
+
+
+## Rendering and Previewing{.smaller}
+
+. . . 
+
+Oh OK. 
+
+ - It's `quarto render` followed by the (full)name of the file you want to render 
+     - (in this case `intentions.qmd`).
+
+```bash
+> quarto render intentions.qmd
+```
+
+. . . 
+
+You OK? 
+
+## Rendering and Previewing{.smaller}
+
+. . . 
+
+You can also `preview` your document in a separate window to see what it looks like. 
+
+```bash
+> quarto preview intentions.qmd
+```
+
+. . .
+
+ - Every time you save the document, the preview will update to show you what the document looks like.
+ - Do that now, try to make a change to your document, save it (ctrl+s), and then see how the preview updates to show you the change.
+
+# Well Done!
+
+## Summary{.smaller}
+ - We've introduced you to the tools you'll be using to write your documents and handle your files and folders.
+ - We've introduced you to the basics of VScode.
+ - We've introduced you to the basics of markdown and quarto.
+ - We've introduced you to the basics of rendering and previewing your documents.
+
+## And you nailed it!{.smaller}
+ - You've created a new file in VScode.
+ - You've written a document in markdown.
+ - You've rendered and previewed your document.
+
+## Quiz time!{.smaller}
+ If you go to the brightspace site (we've added you all to the course), you'll find a quiz there that will help you to remember what we've covered in this session. 
+
+ The quiz is called 'Session 0.0' and it's just a few questions to help you remember what we've covered today.
+
+**YOU ARE NOT BEING GRADED ON THIS QUIZ!** 
+
+It's just another form of practice to help you remember what we've covered today.
+
+## Next bits{.smaller}
+ - Before you take a well deserved break, make another new file in VScode. 
+ - Call this file `exemplar.qmd`.
+ - This is where you'll be working in the next session after the break. 
+ - All you need to do in this file is:
+     1. Write a level 1 heading with the name of someone you really admire (preferably someone you can research online, so not a family member).
+     2. Write a list of 5 things you admire about them.
+     3. Include a link to a website about them.
+
