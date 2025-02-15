@@ -8,7 +8,7 @@
 <link href="lecture_1_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="lecture_1_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="lecture_1_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.55">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Damien Dupré">
   <title>Lecture 1: Introduction to ePortfolios</title>
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.cf { color: #003b4f; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.kw { color: #003b4f; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -425,13 +425,11 @@ Damien Dupré
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="module-content" class="slide level2">
 <h2>Module Content</h2>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -625,9 +623,6 @@ Damien Dupré
 </section>
 <section id="eportfolio-requirements" class="slide level2 smaller">
 <h2>ePortfolio Requirements</h2>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -674,7 +669,7 @@ Damien Dupré
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_15360fe4" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_3543a008" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -734,134 +729,467 @@ Damien Dupré
 •   .yml / .yaml: Data serialisation formats, often for configuration files.
 •   .zip / .tar.gz / .7z: Compressed archive formats for distributing multiple files.
 •   .dat: Generic data files.</code></pre>
-</div></div>
+</div>
+</div>
 </div>
 </section></section>
 <section>
-<section id="what-is-an-html-file" class="title-slide slide level1 center">
-<h1>What is an HTML file?</h1>
+<section id="keep-your-projects-tidy" class="title-slide slide level1 center">
+<h1>Keep your Projects Tidy</h1>
 
 </section>
-<section id="hypertext-markup-language-file" class="slide level2">
-<h2>HyperText Markup Language file</h2>
-<p>An HTML file (HyperText Markup Language file) is a plain text document used to create and structure the content of a web page.</p>
-<p>It contains the essential code that browsers interpret to display text, images, links, videos, and other elements on a webpage.</p>
-<p>The file typically has a <code>.html</code> or <code>.htm</code> extension.</p>
-<p>In essence, an HTML file serves as the backbone of a website, working in tandem with CSS (Cascading Style Sheets) for design and JavaScript for functionality to deliver a complete web experience.</p>
+<section id="project-organisation" class="slide level2">
+<h2>Project Organisation</h2>
+<p>Keep your projects tidy: 1 folder per projects and all the projects folders in 1 “project” folder.</p>
 </section>
-<section id="role-of-an-html-file" class="slide level2 smaller">
-<h2>Role of an HTML file</h2>
-<h4 id="foundation-of-a-web-page">1. Foundation of a Web Page:</h4>
-<p>HTML provides the basic structure of a webpage, defining elements such as headings, paragraphs, links, lists, and multimedia content.</p>
-<h4 id="organisation-of-content">2. Organisation of Content:</h4>
-<p>HTML uses tags (e.g., <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>) to organise and label different sections and types of content, making it clear how they should appear and behave.</p>
-<h4 id="linking-resources">3. Linking Resources:</h4>
-<p>It can link to external resources such as CSS files for styling, JavaScript files for interactivity, and multimedia assets like images or videos.</p>
-<h4 id="navigation">4. Navigation:</h4>
-<p>HTML is used to create navigational structures, such as menus and hyperlinks, enabling users to move between pages on the site or to external resources.</p>
-<h4 id="semantic-markup">5. Semantic Markup:</h4>
-<p>Modern HTML includes semantic tags (e.g., <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>) that provide additional meaning and improve accessibility and search engine optimisation (SEO).</p>
-</section>
-<section id="open-html-file-and-access-to-its-source" class="slide level2">
-<h2>Open HTML file and access to its source</h2>
-<h3 id="method-1-use-your-webrowser">Method 1: Use your webrowser</h3>
-<p>Right-click on the webpage in your browser and select “View Page Source” (name may vary by browser). Then, copy the source code displayed, open Notepad/TextEdit, and paste it in to view or edit.</p>
-<h3 id="method-2-use-your-most-basic-text-editor">Method 2: Use your most basic text editor</h3>
-<ul>
-<li>Notepad: Just open the file</li>
-<li>TextEdit: Choose File &gt; Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.</li>
-</ul>
-<h3 id="method-3-open-it-with-your-coding-tool">Method 3: Open it with your coding tool</h3>
-<p>e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, …</p>
-</section>
-<section id="exercise-2-structure-of-an-html-file" class="slide level2" data-background="#43464B">
-<h2>Exercise 2: Structure of an HTML file</h2>
+<section id="exercise-2-create-your-project-folder" class="slide level2" data-background="#43464B">
+<h2>Exercise 2: Create your “project” folder</h2>
 <ol type="1">
-<li>Go to the following URL with your web browser:</li>
+<li>Go to the root/home of your computer using your file explorer</li>
+<li>Create a “Project” folder</li>
+<li>In this “Project” folder, create a folder called “my_first_project”</li>
+<li>Print the path of “my_first_project” folder</li>
 </ol>
-<p><a href="https://damien-dupre.github.io/my-first-web-page.html">https://damien-dupre.github.io/my-first-web-page.html</a></p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_0339257d" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="project-management" class="slide level2">
+<h2>Project Management</h2>
+<p>Why do we care about project management?</p>
+<p><br></p>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="portability">Portability</h3>
+<p>The ability to move the project without breaking code or needing adapting</p>
+<ul>
+<li>you will change computers</li>
+<li>you will reorganise your file structure</li>
+<li>you will share your code with others</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="reproducibility">Reproducibility</h3>
+<p>The ability to rerun the entire process from scratch</p>
+<ul>
+<li>not just for reviews</li>
+<li>not just for best-practice analytics</li>
+<li>also for future (or even present) you</li>
+<li>and for your collaborators/helpers</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="project-workflows" class="slide level2">
+<h2>Project Workflows</h2>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="portability-1">Portability</h3>
+<ul>
+<li>All necessary files should be contained in the project and referenced relatively</li>
+<li>All necessary outputs are created by code in the project and stored in the project</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="reproducibility-1">Reproducibility</h3>
+<ul>
+<li>All code can be run in fresh sessions and produce the same output</li>
+<li>Does not force other users to alter their own work setup</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="what-is-a-path" class="slide level2">
+<h2>What is a path?</h2>
+<blockquote>
+<p>A path is a string of characters used to uniquely identify a location in a directory structure. It is composed by following the directory tree hierarchy in which components, separated by a delimiting character, represent each directory.</p>
+</blockquote>
+<blockquote>
+<p>The <strong>delimiting character</strong> is most commonly the <strong>slash (“/”)</strong>, the <strong>backslash character (“\”)</strong>, or colon (“:”), though some operating systems may use a different delimiter.</p>
+</blockquote>
+<blockquote>
+<p>Resources can be represented by either <strong>absolute or relative paths</strong></p>
+</blockquote>
+<p>See <a href="https://en.wikipedia.org/wiki/Path_(computing)">https://en.wikipedia.org/wiki/Path_(computing)</a></p>
+</section>
+<section id="delimiting-characters" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Delimiting characters <code>/</code> or <code>\</code> vary by operating system</p>
+<ul>
+<li>MS Windows:
+<ul>
+<li>Use a colon <code>:</code> to specify the drive name (e.g., <code>c:</code>, <code>d:</code>, <code>e:</code>)</li>
+<li>Folders and files are seperated by a backslash character (<code>\</code>)</li>
+<li>Example: <code>J:\Work\PARI\PARI-F\data\pari-f_data_v0-1.dta</code></li>
+</ul></li>
+<li>Linux/macOS:
+<ul>
+<li>No colon (<code>:</code>)</li>
+<li>Use only the slash (<code>/</code>) character</li>
+<li>Example: <code>/E/syncwork/projects/confer/ps2021-10-ws-repro-research</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="delimiting-characters-1" class="slide level2">
+<h2>Delimiting characters</h2>
+<ul>
+<li><p>Software, such as R, <span class="math inline">\(\LaTeX\)</span>, and Python, with a Linux/UNIX background behaves differently under MS Windows when it comes to specifying file/folder paths</p></li>
+<li><p>That is, when specifying a path (e.g., in R or <span class="math inline">\(\LaTeX\)</span>) in MS Windows, these programs do not like the backslash character (<code>\</code>) (the backslash is used for “escaping” other characters)</p></li>
+</ul>
+</section>
+<section id="delimiting-characters-2" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Two solutions in MS Windows:</p>
+<ol type="1">
+<li>Use the slash character <code>/</code> instead of <code>\</code>, e.g.:</li>
+</ol>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb9-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:/Damien/myfolder/mysubfolder/mydata.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ol start="2" type="1">
-<li><p>Display the source code</p></li>
-<li><p>List the different HTML tags</p></li>
+<li>Escape the backslash character via <code>\\</code>, e.g.:</li>
 </ol>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_74c70621" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb10-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:</span><span class="ch">\\</span><span class="st">Damien</span><span class="ch">\\</span><span class="st">myfolder</span><span class="ch">\\</span><span class="st">mysubfolder</span><span class="ch">\\</span><span class="st">mydata.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="delimiting-characters-3" class="slide level2">
+<h2>Delimiting characters</h2>
+<p>Note: Many programming languages/statistical packages (R, Python, …) can dynamically create a full path that follows the rules of the respective operating system</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb11-2"><a href=""></a>os.path.join(<span class="st">"e:"</span>, <span class="st">"folder1"</span>, <span class="st">"folder2"</span>, <span class="st">"file"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>returns: <code>'e:folder1\\folder2\\file'</code> (in Windows)</p>
+<p>A handy tool when working on both operating system: <a href="https://pathcopycopy.github.io/">Path Copy Copy – Copy file paths from Windows explorer’s contextual menu</a></p>
+<p>Mac users can left-click and press <kbd>option</kbd> to “copy as a Pathname”</p>
+</section>
+<section id="relative-vs.-absolute-paths" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>An absolute path specifies a file or directory location from the root directory.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>Mac/Linux:</strong></li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">/Users/username/Documents/file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>Windows:</strong></li>
+</ul>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="ex">C:\Users\Username\Documents\file.txt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="relative-vs.-absolute-paths-1" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>A relative path specifies a location relative to the current directory which is a “fixed location” on your computer</p>
+<p>Often, this “fixed location” is the so-called “working directory”</p>
+<ul>
+<li>The dot <code>.</code> denotes the current working directory</li>
+<li>The dot dot <code>..</code> denotes the parent directory, i.e., it points upwards in the folder hierarchy</li>
+<li>Finally, the tilde symbol <code>~</code> will bring you back to your home directory, e.g.&nbsp;<code>cd ~</code></li>
+</ul>
+<p>Examples:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="ex">subfolder/file.txt</span>  <span class="co"># Inside a subfolder</span></span>
+<span id="cb14-2"><a href=""></a><span class="ex">./file.txt</span>       <span class="co"># Current directory</span></span>
+<span id="cb14-3"><a href=""></a><span class="ex">../file.txt</span>      <span class="co"># Parent directory</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Works differently based on where the command is run.</p>
+</section>
+<section id="relative-vs.-absolute-paths-2" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>So, let’s assume the project “PARI-F” is located on drive <code>J:</code>, the full absolute path is <code>J:\Work\PARI\PARI-F</code></p>
+<ul>
+<li>The content of the project’s folder <code>PARI-F</code> is:</li>
+</ul>
+<pre><code>.
+|-- analysis
+|-- data
+|-- doc
+|-- pari-f.stpr
+`-- report</code></pre>
+</section>
+<section id="relative-vs.-absolute-paths-3" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>All other file- or folder-related operations are defined relative to this working directory</p>
+<p><strong>The huge benefit: when you share your project with a colleague or move it to a new computer, you only have to define the working directory once, everything else should work flawelessly</strong></p>
+<p>How to define a working directory?</p>
+<p><code>import os; os.chdir("full-path-to-working-directory")</code></p>
+<p>How to get information about the current working directory?</p>
+<p><code>import os; os.getcwd()</code> (cwd = current working directory); see below for an example</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="im">import</span> os </span>
+<span id="cb16-2"><a href=""></a>os.getcwd()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="checking-your-current-directory" class="slide level2">
+<h2>Checking Your Current Directory</h2>
+<p>From a terminal/command line:</p>
+<ul>
+<li><p><strong>Mac/Linux:</strong></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href=""></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Windows (Git Bash or WSL):</strong></p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href=""></a><span class="bu">pwd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Windows (Command Prompt):</strong></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource cmd number-lines code-with-copy"><code class="sourceCode dosbat"><span id="cb19-1"><a href=""></a><span class="bu">cd</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="navigating-with-paths" class="slide level2">
+<h2>Navigating with Paths</h2>
+<ul>
+<li><p>Moving between directories:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href=""></a><span class="bu">cd</span> /absolute/path  <span class="co"># Go to absolute path is always correct</span></span>
+<span id="cb20-2"><a href=""></a><span class="bu">cd</span> relative/path   <span class="co"># Move to relative path only if the path exists</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Special notations:</p>
+<ul>
+<li><code>.</code> (current directory)</li>
+<li><code>..</code> (parent directory)</li>
+</ul></li>
+</ul>
+</section>
+<section id="practical-examples" class="slide level2">
+<h2>Practical Examples</h2>
+<ul>
+<li><p>Moving into a subdirectory:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href=""></a><span class="bu">cd</span> Documents/Projects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Moving up one level:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href=""></a><span class="bu">cd</span> ..</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Accessing a file in a parent directory:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a href=""></a><span class="fu">cat</span> ../notes.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+<p>See here for <a href="https://www.earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python">more examples</a></p>
+</section>
+<section id="portability-2" class="slide level2">
+<h2>Portability</h2>
+<p>In your code, do not use:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb24-2"><a href=""></a>os.chdir(<span class="st">'/path/to/your/directory'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Prefer:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href=""></a><span class="co">#| eval: false</span></span>
+<span id="cb25-2"><a href=""></a><span class="co"># pip</span></span>
+<span id="cb25-3"><a href=""></a><span class="ex">python</span> <span class="at">-m</span> pip install pyprojroot</span>
+<span id="cb25-4"><a href=""></a></span>
+<span id="cb25-5"><a href=""></a><span class="co"># conda</span></span>
+<span id="cb25-6"><a href=""></a><span class="ex">conda</span> install <span class="at">-c</span> conda-forge pyprojroot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="im">from</span> pyprojroot.here <span class="im">import</span> here</span>
+<span id="cb26-2"><a href=""></a></span>
+<span id="cb26-3"><a href=""></a>here()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="portability-3" class="slide level2">
+<h2>Portability</h2>
+<p>What’s wrong with <code>os.chdir('/path/to/your/directory')</code>?</p>
+<ul>
+<li><p>It will only ever work for the user creating the file</p></li>
+<li><p>It is not portable</p>
+<ul>
+<li>Moving the folder/file will break the code</li>
+<li>Collaborators will need to change any setwd path</li>
+</ul></li>
+<li><p>Increases likelihood that work from other processes leaks into current work</p></li>
+</ul>
+</section>
+<section id="portability-4" class="slide level2">
+<h2>Portability</h2>
+<p>The <code>pyprojroot</code> library:</p>
+<p>If all files are contained in the project folder reference files with the here() function from the <code>pyprojroot</code> library creates relative paths from project root allows several ways to indicate project root folder</p>
+
+<img data-src="https://raw.githubusercontent.com/allisonhorst/stats-illustrations/master/rstats-artwork/here.png" class="r-stretch"></section>
+<section id="self-contained-projects" class="slide level2">
+<h2>Self-Contained Projects</h2>
+<p>Contains all necessary files for your project, eportfolio or any repository in general:</p>
+<ul>
+<li>data</li>
+<li>results</li>
+<li>documentation</li>
+<li>scripts</li>
+<li>images</li>
+<li>designs (css/sass)</li>
+<li>tabs/topics</li>
+</ul>
+</section>
+<section id="folderfile-structure" class="slide level2">
+<h2>Folder/File structure</h2>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="data"><code>data</code></h3>
+<ul>
+<li>all raw data files, organised in meaningful ways</li>
+<li>never, ever write back to this folder, read only</li>
+<li>if using git, never commit to history, place in .gitignore</li>
+</ul>
+<h3 id="results"><code>results</code></h3>
+<ul>
+<li>write all analysis etc. results to treat as disposable, can be overwritten</li>
+<li>may also include figures etc if wanted</li>
+</ul>
+<h3 id="docs"><code>docs</code></h3>
+<ul>
+<li>documentation</li>
+<li>Quarto files</li>
+</ul>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<h3 id="src-or-py"><code>src</code> or <code>py</code></h3>
+<ul>
+<li>if you write functions that are used in several places</li>
+<li>this is the standard python folder for keeping these files that might be called in python scripts</li>
+</ul>
+<h3 id="scriptsanalysis"><code>scripts/analysis</code></h3>
+<ul>
+<li>files with full analysis pipelines</li>
+<li>might have source calls to files in python</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<section id="exercise-2-structure-of-an-html-file-1" class="slide level2" data-background="#43464B">
-<h2>Exercise 2: Structure of an HTML file</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href=""></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb9-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb9-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb9-4"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>My First Web Page<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb9-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb9-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> bgcolor</span><span class="op">=</span><span class="st">"#BBCCFF"</span><span class="dt">&gt;</span></span>
-<span id="cb9-7"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to my first webpage<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb9-8"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>I hope you will like this page.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb9-9"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb9-10"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="folderfile-structure-1" class="slide level2">
+<h2>Folder/File structure</h2>
+<h3 id="readme.md"><code>README.md</code></h3>
 <ul>
-<li><p>All HTML documents must start with a document type declaration: <code>&lt;!DOCTYPE html&gt;</code>.</p></li>
-<li><p>The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.</p></li>
-<li><p>The visible part of the HTML document is between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.</p></li>
+<li>markdown file describing the project content and intent</li>
+<li>maybe also explains which files to look in for what</li>
+<li>ideal to have if saving the folder to github</li>
 </ul>
-<div class="footer">
-<p>Learn more: <a href="https://www.w3schools.com/html/html_basic.asp">https://www.w3schools.com/html/html_basic.asp</a></p>
+<h3 id="licence"><code>LICENCE</code></h3>
+<ul>
+<li>dictates how code can be reused</li>
+<li>not covering that in this series, ask me at need</li>
+</ul>
+</section>
+<section id="file-naming" class="slide level2">
+<h2>File Naming</h2>
+<p>Organising files in data/, results/, docs/, and scripts/ require some ideas of how to name files for:</p>
+<ul>
+<li>easy machine reading</li>
+<li>easy human reading</li>
+<li>easy understanding of file content</li>
+<li>choosing the correct type of file to store</li>
+</ul>
+<p>If you are using the py/ folder to store python-functions, these might need somewhat different naming conventions than the other folders, as these are functions you can use across the other files.</p>
+<p>Here, naming should be particularly thought in terms of content rather than structural organisation.</p>
+</section>
+<section id="file-naming-1" class="slide level2">
+<h2>File Naming</h2>
+<p>An important part of project management, code automation, and data analytics in general is to have your files read by a piece of code or software.</p>
+<p>Machines are clever, but extremely pedantic.</p>
+<p>Be consistent, be meticulous.</p>
+<p>Some machines are more clever than others, so name files in a way that the “dumbest” of them can deal with.</p>
+</section>
+<section id="file-naming-2" class="slide level2">
+<h2>File Naming</h2>
+<ul>
+<li>Don’t use white space
+<ul>
+<li>decide on a separator and use consistently</li>
+<li>recommend the dash -</li>
+</ul></li>
+<li>Use small case letters
+<ul>
+<li>certain machines care about capitalization</li>
+</ul></li>
+<li>Use numbers smartly
+<ul>
+<li>numbers are awesome to use and can help organise files meaningfully</li>
+<li>but needs some thinking about before implementing</li>
+</ul></li>
+</ul>
+</section>
+<section id="file-naming-3" class="slide level2">
+<h2>File Naming</h2>
+<p><strong>Naming</strong> - variables and filenames should have meaningful names in <em><code>snake_case</code></em> format, preferring all lower case.</p>
+
+<img data-src="https://raw.githubusercontent.com/Public-Health-Scotland/python-training/1b2302fdf8c6a57e2782e9ed96d613afd40e047c/images/r_coding_cases.png" class="r-stretch"></section>
+<section id="file-naming-4" class="slide level2">
+<h2>File Naming</h2>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Machines will first list files starting with numbers (ascdendingly) then in alphabetic order.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a>1_file.txt</span>
+<span id="cb27-2"><a href=""></a>2_file.txt</span>
+<span id="cb27-3"><a href=""></a>file_one.txt</span>
+<span id="cb27-4"><a href=""></a>file_three.txt</span>
+<span id="cb27-5"><a href=""></a>file_two.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>But they wont understand the difference between 1 and 10</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a>10_file.txt</span>
+<span id="cb28-2"><a href=""></a>1_file.txt</span>
+<span id="cb28-3"><a href=""></a>2_file.txt</span>
+<span id="cb28-4"><a href=""></a>file_1.txt</span>
+<span id="cb28-5"><a href=""></a>file_10.txt</span>
+<span id="cb28-6"><a href=""></a>file_2.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>‘zero-padding’ is a way of preserving file order</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a>01_file.txt</span>
+<span id="cb29-2"><a href=""></a>02_file.txt</span>
+<span id="cb29-3"><a href=""></a>10_file.txt</span>
+<span id="cb29-4"><a href=""></a>file_01.txt</span>
+<span id="cb29-5"><a href=""></a>file_02.txt</span>
+<span id="cb29-6"><a href=""></a>file_10.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </section>
-<section id="exercise-3-modify-of-an-html-file" class="slide level2" data-background="#43464B">
-<h2>Exercise 3: Modify of an HTML file</h2>
-<ul>
-<li>Copy the following HTML code:</li>
-</ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb10-1"><a href=""></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
-<span id="cb10-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb10-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-4"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>My First Web Page<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
-<span id="cb10-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb10-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> bgcolor</span><span class="op">=</span><span class="st">"#BBCCFF"</span><span class="dt">&gt;</span></span>
-<span id="cb10-7"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to my first webpage<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb10-8"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>I hope you will like this page.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb10-9"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb10-10"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li><p>Go to <a href="https://jsfiddle.net/">https://jsfiddle.net/</a>, paste it in the HTML box, and Click the RUN button</p></li>
-<li><p>Change the text and observe your changes with the RUN button</p></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_a3f8d534" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
+<section id="file-naming-5" class="slide level2">
+<h2>File Naming</h2>
+<p>Using dates in file names may also ensure decent organisation but be consistent. Recommend using YYYY-MM-DD formatting</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a>13-11-21_initial-submission-results.txt</span>
+<span id="cb30-2"><a href=""></a>22-01-03_revised-results.txt</span>
+<span id="cb30-3"><a href=""></a>2022-02-28_results.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>vs</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a>2021-11-13_initial-submission-results.txt</span>
+<span id="cb31-2"><a href=""></a>2022-02-28_results.txt</span>
+<span id="cb31-3"><a href=""></a>2022-03-01_revised-results.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="homework-exercise-prepare-your-content" class="slide level2" data-background="#43464B">
-<h2>Homework Exercise: Prepare your Content</h2>
-<p>Write a piece of text for each of the following pages:</p>
-<ul>
-<li>About Me (pubic professional description of yourself)</li>
-<li>Project 1 (a first project that you want to describe and present)</li>
-<li>Project 2 (a second project that you want to describe and present)</li>
-<li>Project 3 (a third project that you want to describe and present)</li>
-</ul>
-<p>Find pictures of yourself or that represents you to be published online and view by recruiters.</p>
+<section id="file-naming-6" class="slide level2">
+<h2>File Naming</h2>
+<p>Consider using different space separators for different parts of the file name</p>
+<p>This way you can use the file name it self, programatically, if needed</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a>2021-11-13_initial_submission_results.txt</span>
+<span id="cb32-2"><a href=""></a>2022-02-28_results.txt</span>
+<span id="cb32-3"><a href=""></a>2022-03-01_revised_results.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="file-naming-7" class="slide level2">
+<h2>File Naming</h2>
+<p>Optimising file names for computers is great, but ultimately its us humans that need to choose files to work with. Naming files in a way that makes the file content obvious (or at least give an idea of content) by the file name is good for such interactions.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a>2021-11-13_final-results.txt</span>
+<span id="cb33-2"><a href=""></a>2022-02-28_finalfinal-results.txt</span>
+<span id="cb33-3"><a href=""></a>2022-03-01_finished-results.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>vs.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a>2021-11-13_first-submission-results.txt</span>
+<span id="cb34-2"><a href=""></a>2022-02-28_revision-round1-results.txt</span>
+<span id="cb34-3"><a href=""></a>2022-03-01_revision-round2-results.txt</span>
+<span id="cb34-4"><a href=""></a>2022-03-01_revision-round2-no-sex-results.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="image-types" class="slide level2">
+<h2>Image Types</h2>
+<p>Images from plots should use png or svg</p>
+<ul>
+<li><p>.png supports transparency and has no quality loss upon re-saving</p></li>
+<li><p>.svg can rescale to infinity without getting grainy</p></li>
+<li><p>.jpg best for photos, quality loss on rescale, blurry edges and poor text rendering</p></li>
+</ul>
+<p>Images can also some times be saved in pdf, but pdf while a vector format, cannot support transparency.</p>
+<p>Tiff has fallen out of favour due to high file sizes, but are preferable to jpeg for photos.</p>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<p>Huge thanks the following people who have generated and shared most of the content of this lecture:</p>
+<ul>
+<li><p>Athanasia Monika Mowinckel: <a href="https://drmowinckels.io/talks_repo/slides/2023.03.28-promenta-fileorg/">Mind your data - Creating Organised Research Projects</a></p></li>
+<li><p>Bernd Weiß: <a href="https://jobreu.github.io/reproducible-research-gesis-2022/slides/comp-literacy.html#1">Tools and Workflows for Reproducible Research in the Quantitative Social Sciences - Computer Literacy</a></p></li>
+</ul>
+<p><br></p>
+
+<img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="section" class="slide level2" data-background="#43464B">
 <h2></h2>
 <div class="cell">
 <style type="text/css">
 img.circle {border-radius:50%;}
 </style>
-</div>
-<div>
-
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -1163,7 +1491,18 @@ img.circle {border-radius:50%;}
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1195,29 +1534,7 @@ img.circle {border-radius:50%;}
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1225,7 +1542,7 @@ img.circle {border-radius:50%;}
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

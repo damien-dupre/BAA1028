@@ -1,5 +1,5 @@
 ---
-title: "Lecture 5: The Final Workflow: Git, GitHub and Quarto with VS Code"
+title: "Lecture 5: The Final Workflow of Git, GitHub and Quarto with VS Code"
 subtitle: BAA1028 - Workflow & Data Management 
 author: Damien Dupré
 format:
@@ -456,6 +456,17 @@ Quarto needs both `python` and the `jupyterlab` libraries
 
 If you don't have them, install them, but you should have them already.
 
+## Troubleshooting Quarto
+
+When multiple versions of `python` are installed on your computer, quarto might connect to a version without `jupyter`.
+
+Windows user can specify the anaconda `python` path by following the steps indicated here from the 6th minute: [https://www.youtube.com/watch?v=uOwCiZKj2rg&t=376s](https://www.youtube.com/watch?v=uOwCiZKj2rg&t=376s)
+
+```{=html}
+<!-- <iframe width="780" height="500" src="https://www.youtube.com/embed/uOwCiZKj2rg?si=q7Ibe2FcBYvASGe3" title="YouTube video player"></iframe> -->
+```
+
+
 <!-- ## Step 3: Verify Quarto in VS Code -->
 
 <!-- 1. Open VS Code and create a new file `example.qmd` -->
@@ -504,18 +515,15 @@ And it has a template for websites, see tutorial here: [https://adtarie.net/post
 
 ## Rendering Notebooks
 
-- ### Code files (like .py or .r) only contain code plus comments introduced by `#`
-
-- ### Notebook files (like .ipynb, .Rmd, or .qmd) can contain both text and code.
-
-- ### Rendering a notebook, is the activity of creating a shareable report from your notebook 
-
-- ### Different format are possible: html, pdf, word, ...
-
-- ### The way to format text in a notebook to render it nicely uses a style called **Markdown**
+- Code files (like .py or .r) only contain code plus comments
+- Notebook files (like .ipynb, .Rmd, or .qmd) can contain both text and code
+- When you **Render** a notebook, you create a shareable report
+- Different format are possible: html, pdf, word, ...
+- **Markdown** is the markup language that formats a rendered text
 
 ::: {.callout-warning}
-You cannot share a notebook files with the format .ipynb, .Rmd, or .qmd, they are only for your own use or a team work.
+Notebooks and Code files are only working documents, they are not made to report your analyses and results to other 
+stakeholders/clients.
 :::
 
 ## Exercise 2: Rendering Notebooks {background="#43464B"}
@@ -528,6 +536,31 @@ While your file `hello-world.ipynb` is open:
 ```{r}
 countdown(minutes = 3, warn_when = 60)
 ```
+
+<!-- ## Your turn! -->
+
+<!-- 1/ Download the file `hello.ipynb`  -->
+<!-- - from here: https://quarto.org/docs/get-started/hello/jupyter.html -->
+<!-- - or by clicking here: <a href="https://quarto.org/docs/get-started/hello/_hello.ipynb" download="hello.ipynb" data-original-href="https://quarto.org/docs/get-started/hello/_hello.ipynb">Download hello.ipynb</a> -->
+
+<!-- 2/ Open Jupyter Lab and drop the `hello.ipynb` in the list of files in Jupyter (left pane) -->
+
+<!-- 3/ Open a new Terminal window (on Jupyter Lab or on your OS) and run the following instructions: -->
+
+<!-- ```markdown -->
+<!-- quarto render hello.ipynb --to html -->
+<!-- ``` -->
+
+<!-- and then: -->
+
+<!-- ```markdown -->
+<!-- open hello.html -->
+<!-- ``` -->
+
+<!-- ```{r} -->
+<!-- countdown(minutes = 5, warn_when = 60) -->
+<!-- ``` -->
+
 
 ##  Quarto Editor vs Output
 

@@ -138,6 +138,134 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 # Light intro to HTML
 
+## HyperText Markup Language file
+
+An HTML file (HyperText Markup Language file) is a plain text document used to create and structure the content of a web page. 
+
+It contains the essential code that browsers interpret to display text, images, links, videos, and other elements on a webpage. 
+
+The file typically has a `.html` or `.htm` extension.
+
+In essence, an HTML file serves as the backbone of a website, working in tandem with CSS (Cascading Style Sheets) for design and JavaScript for functionality to deliver a complete web experience.
+
+## Role of an HTML file {.smaller}
+
+#### 1.	Foundation of a Web Page:
+HTML provides the basic structure of a webpage, defining elements such as headings, paragraphs, links, lists, and multimedia content.
+
+#### 2. Organisation of Content:
+HTML uses tags (e.g., `<h1>`, `<p>`, `<img>`, `<a>`) to organise and label different sections and types of content, making it clear how they should appear and behave.
+
+#### 3. Linking Resources:
+It can link to external resources such as CSS files for styling, JavaScript files for interactivity, and multimedia assets like images or videos.
+
+#### 4. Navigation:
+HTML is used to create navigational structures, such as menus and hyperlinks, enabling users to move between pages on the site or to external resources.
+
+#### 5. Semantic Markup:
+Modern HTML includes semantic tags (e.g., `<header>`, `<article>`, `<footer>`) that provide additional meaning and improve accessibility and search engine optimisation (SEO).
+
+## Open HTML file and access to its source
+
+### Method 1: Use your webrowser
+Right-click on the webpage in your browser and select “View Page Source” (name may vary by browser). Then, copy the source code displayed, open Notepad/TextEdit, and paste it in to view or edit.
+
+### Method 2: Use your most basic text editor
+- Notepad: Just open the file
+- TextEdit: Choose File > Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.
+
+### Method 3: Open it with your coding tool
+e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
+
+## Why plain text?
+
+- Version control (e.g., Git) works well (efficient, differences between versions are easy to understand) with plain text documents, `.docx` et al. not so much
+
+- Future proof 
+
+- Can easily manipulated with external tools
+
+- ...
+
+Canonical reference: [The Plain Person’s Guide to Plain Text Social
+Science](https://plain-text.co/) by Kieran Healy
+
+## Exercise 2: Structure of an HTML file {background="#43464B"}
+
+1. Go to the following URL with your web browser:
+
+[https://damien-dupre.github.io/my-first-web-page.html](https://damien-dupre.github.io/my-first-web-page.html)
+
+2. Display the source code
+
+3. List the different HTML tags
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+## Exercise 2: Structure of an HTML file {background="#43464B"}
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page</title>
+  </head>
+  <body bgcolor="#BBCCFF">
+    <h1>Welcome to my first webpage</h1>
+    <p>I hope you will like this page.</p>
+  </body>
+</html>
+```
+
+- All HTML documents must start with a document type declaration: `<!DOCTYPE html>`.
+
+- The HTML document itself begins with `<html>` and ends with `</html>`.
+
+- The visible part of the HTML document is between `<body>` and `</body>`. 
+
+::: footer
+Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3schools.com/html/html_basic.asp)
+:::
+
+## Exercise 3: Modify of an HTML file {background="#43464B"}
+
+- Copy the following HTML code:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page</title>
+  </head>
+  <body bgcolor="#BBCCFF">
+    <h1>Welcome to my first webpage</h1>
+    <p>I hope you will like this page.</p>
+  </body>
+</html>
+```
+
+- Go to [https://jsfiddle.net/](https://jsfiddle.net/), paste it in the HTML box, and Click the RUN button
+
+- Change the text and observe your changes with the RUN button
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
+## Homework Exercise: Prepare your Content {background="#43464B"}
+
+Write a piece of text for each of the following pages:
+
+- About Me (pubic professional description of yourself)
+- Project 1 (a first project that you want to describe and present)
+- Project 2 (a second project that you want to describe and present)
+- Project 3 (a third project that you want to describe and present)
+
+Find pictures of yourself or that represents you to be published online and view by recruiters.
+
+
 ## HTML Code
       
 An **HTML5** document consists of 4 core elements:  

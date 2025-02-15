@@ -8,7 +8,7 @@
 <link href="lecture_2_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="lecture_2_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="lecture_2_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.5.55">
+  <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Damien Dupré">
   <title>Lecture 2: HTML and CSS</title>
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -70,7 +70,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.cf { color: #003b4f; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -84,7 +84,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.kw { color: #003b4f; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -429,7 +429,7 @@ Damien Dupré
 <p>See, all the documents downloaded to display the page!</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_677dc99d" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_39e25956" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -483,7 +483,8 @@ Damien Dupré
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section>
 <section id="css-adds-style-to-web-page-renderings" class="slide level2">
 <h2>CSS adds style to web page renderings</h2>
@@ -509,86 +510,215 @@ Damien Dupré
 </div>
 </div>
 </div>
-</div></div>
+</div>
+</div>
 </section></section>
 <section>
 <section id="light-intro-to-html" class="title-slide slide level1 center">
 <h1>Light intro to HTML</h1>
 
 </section>
+<section id="hypertext-markup-language-file" class="slide level2">
+<h2>HyperText Markup Language file</h2>
+<p>An HTML file (HyperText Markup Language file) is a plain text document used to create and structure the content of a web page.</p>
+<p>It contains the essential code that browsers interpret to display text, images, links, videos, and other elements on a webpage.</p>
+<p>The file typically has a <code>.html</code> or <code>.htm</code> extension.</p>
+<p>In essence, an HTML file serves as the backbone of a website, working in tandem with CSS (Cascading Style Sheets) for design and JavaScript for functionality to deliver a complete web experience.</p>
+</section>
+<section id="role-of-an-html-file" class="slide level2 smaller">
+<h2>Role of an HTML file</h2>
+<h4 id="foundation-of-a-web-page">1. Foundation of a Web Page:</h4>
+<p>HTML provides the basic structure of a webpage, defining elements such as headings, paragraphs, links, lists, and multimedia content.</p>
+<h4 id="organisation-of-content">2. Organisation of Content:</h4>
+<p>HTML uses tags (e.g., <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code>, <code>&lt;a&gt;</code>) to organise and label different sections and types of content, making it clear how they should appear and behave.</p>
+<h4 id="linking-resources">3. Linking Resources:</h4>
+<p>It can link to external resources such as CSS files for styling, JavaScript files for interactivity, and multimedia assets like images or videos.</p>
+<h4 id="navigation">4. Navigation:</h4>
+<p>HTML is used to create navigational structures, such as menus and hyperlinks, enabling users to move between pages on the site or to external resources.</p>
+<h4 id="semantic-markup">5. Semantic Markup:</h4>
+<p>Modern HTML includes semantic tags (e.g., <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>) that provide additional meaning and improve accessibility and search engine optimisation (SEO).</p>
+</section>
+<section id="open-html-file-and-access-to-its-source" class="slide level2">
+<h2>Open HTML file and access to its source</h2>
+<h3 id="method-1-use-your-webrowser">Method 1: Use your webrowser</h3>
+<p>Right-click on the webpage in your browser and select “View Page Source” (name may vary by browser). Then, copy the source code displayed, open Notepad/TextEdit, and paste it in to view or edit.</p>
+<h3 id="method-2-use-your-most-basic-text-editor">Method 2: Use your most basic text editor</h3>
+<ul>
+<li>Notepad: Just open the file</li>
+<li>TextEdit: Choose File &gt; Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.</li>
+</ul>
+<h3 id="method-3-open-it-with-your-coding-tool">Method 3: Open it with your coding tool</h3>
+<p>e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, …</p>
+</section>
+<section id="why-plain-text" class="slide level2">
+<h2>Why plain text?</h2>
+<ul>
+<li><p>Version control (e.g., Git) works well (efficient, differences between versions are easy to understand) with plain text documents, <code>.docx</code> et al.&nbsp;not so much</p></li>
+<li><p>Future proof</p></li>
+<li><p>Can easily manipulated with external tools</p></li>
+<li><p>…</p></li>
+</ul>
+<p>Canonical reference: <a href="https://plain-text.co/">The Plain Person’s Guide to Plain Text Social Science</a> by Kieran Healy</p>
+</section>
+<section id="exercise-2-structure-of-an-html-file" class="slide level2" data-background="#43464B">
+<h2>Exercise 2: Structure of an HTML file</h2>
+<ol type="1">
+<li>Go to the following URL with your web browser:</li>
+</ol>
+<p><a href="https://damien-dupre.github.io/my-first-web-page.html">https://damien-dupre.github.io/my-first-web-page.html</a></p>
+<ol start="2" type="1">
+<li><p>Display the source code</p></li>
+<li><p>List the different HTML tags</p></li>
+</ol>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_90989cd6" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2-structure-of-an-html-file-1" class="slide level2" data-background="#43464B">
+<h2>Exercise 2: Structure of an HTML file</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href=""></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb1-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>My First Web Page<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb1-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb1-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> bgcolor</span><span class="op">=</span><span class="st">"#BBCCFF"</span><span class="dt">&gt;</span></span>
+<span id="cb1-7"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to my first webpage<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb1-8"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>I hope you will like this page.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb1-9"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb1-10"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>All HTML documents must start with a document type declaration: <code>&lt;!DOCTYPE html&gt;</code>.</p></li>
+<li><p>The HTML document itself begins with <code>&lt;html&gt;</code> and ends with <code>&lt;/html&gt;</code>.</p></li>
+<li><p>The visible part of the HTML document is between <code>&lt;body&gt;</code> and <code>&lt;/body&gt;</code>.</p></li>
+</ul>
+<div class="footer">
+<p>Learn more: <a href="https://www.w3schools.com/html/html_basic.asp">https://www.w3schools.com/html/html_basic.asp</a></p>
+</div>
+</section>
+<section id="exercise-3-modify-of-an-html-file" class="slide level2" data-background="#43464B">
+<h2>Exercise 3: Modify of an HTML file</h2>
+<ul>
+<li>Copy the following HTML code:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href=""></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span></span>
+<span id="cb2-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">title</span><span class="dt">&gt;</span>My First Web Page<span class="dt">&lt;/</span><span class="kw">title</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="ot"> bgcolor</span><span class="op">=</span><span class="st">"#BBCCFF"</span><span class="dt">&gt;</span></span>
+<span id="cb2-7"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>Welcome to my first webpage<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>I hope you will like this page.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-10"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>Go to <a href="https://jsfiddle.net/">https://jsfiddle.net/</a>, paste it in the HTML box, and Click the RUN button</p></li>
+<li><p>Change the text and observe your changes with the RUN button</p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_a26b88a5" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="homework-exercise-prepare-your-content" class="slide level2" data-background="#43464B">
+<h2>Homework Exercise: Prepare your Content</h2>
+<p>Write a piece of text for each of the following pages:</p>
+<ul>
+<li>About Me (pubic professional description of yourself)</li>
+<li>Project 1 (a first project that you want to describe and present)</li>
+<li>Project 2 (a second project that you want to describe and present)</li>
+<li>Project 3 (a third project that you want to describe and present)</li>
+</ul>
+<p>Find pictures of yourself or that represents you to be published online and view by recruiters.</p>
+</section>
 <section id="html-code" class="slide level2">
 <h2>HTML Code</h2>
 <p>An <strong>HTML5</strong> document consists of 4 core elements:<br>
 <code>doctype</code>, <code>html</code>, <code>head</code>, and <code>body</code><br>
 <strong>All websites</strong> have the following fundamental <em>structure</em>!</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a href=""></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
-<span id="cb1-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
-<span id="cb1-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-4"><a href=""></a>    <span class="co">&lt;!-- some **information** the browser needs --&gt;</span></span>
-<span id="cb1-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
-<span id="cb1-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-7"><a href=""></a>    <span class="co">&lt;!-- what actually **appears** in the browser --&gt;</span></span>
-<span id="cb1-8"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
-<span id="cb1-9"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href=""></a><span class="dt">&lt;!doctype</span> html<span class="dt">&gt;</span></span>
+<span id="cb3-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb3-3"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-4"><a href=""></a>    <span class="co">&lt;!-- some **information** the browser needs --&gt;</span></span>
+<span id="cb3-5"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb3-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-7"><a href=""></a>    <span class="co">&lt;!-- what actually **appears** in the browser --&gt;</span></span>
+<span id="cb3-8"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb3-9"><a href=""></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="html-code-encoding" class="slide level2">
+<h2>HTML Code Encoding</h2>
+<p>Sometimes you will see the term <code>utf-8</code> in the HTML code, it is the encoding</p>
+<p>See here for more details on <a href="https://en.wikipedia.org/wiki/Character_encoding">(character) encoding</a>?</p>
+<p>See also <a href="https://www.w3.org/International/questions/qa-what-is-encoding.en">here</a></p>
+<p>My only rule: Use utf-8</p>
 </section>
 <section id="html-code-1" class="slide level2">
 <h2>HTML Code</h2>
 <p>Content is between <strong>matching pairs</strong> of HTML tags:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span>The box at the top<span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb2-2"><a href=""></a></span>
-<span id="cb2-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>A heading element<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb2-4"><a href=""></a></span>
-<span id="cb2-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Some text in a paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb2-6"><a href=""></a></span>
-<span id="cb2-7"><a href=""></a><span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;</span>The box at the bottom<span class="dt">&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span>The box at the top<span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href=""></a></span>
+<span id="cb4-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>A heading element<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb4-4"><a href=""></a></span>
+<span id="cb4-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Some text in a paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb4-6"><a href=""></a></span>
+<span id="cb4-7"><a href=""></a><span class="dt">&lt;</span><span class="kw">footer</span><span class="dt">&gt;</span>The box at the bottom<span class="dt">&lt;/</span><span class="kw">footer</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="html-code-2" class="slide level2">
 <h2>HTML Code</h2>
 <p>Some tags <strong>don’t need ‘closing’</strong> e.g.&nbsp;the <code>img</code> tag:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"imgs/my-lovely-horse.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"nice horse"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"imgs/my-lovely-horse.png"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"nice horse"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The only other <strong>‘self-closing’ tags</strong> you might use are:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> <span class="co">&lt;!-- a line break --&gt;</span></span>
-<span id="cb4-2"><a href=""></a></span>
-<span id="cb4-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"horses"</span><span class="dt">&gt;</span></span>
-<span id="cb4-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"cats"</span><span class="dt">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">br</span><span class="dt">&gt;</span> <span class="co">&lt;!-- a line break --&gt;</span></span>
+<span id="cb6-2"><a href=""></a></span>
+<span id="cb6-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"checkbox"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"horses"</span><span class="dt">&gt;</span></span>
+<span id="cb6-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">input</span><span class="ot"> type</span><span class="op">=</span><span class="st">"radio"</span><span class="ot"> name</span><span class="op">=</span><span class="st">"cats"</span><span class="dt">&gt;</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="html-code-3" class="slide level2">
 <h2>HTML Code</h2>
 <p>A <strong>hyperlink</strong> goes to <em>another page</em>, a separate <em>website</em>,<br>
 or can jump to a <em>specific section</em> on the same page,<br>
 marked by an HTML <code>id</code> attribute:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb5-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"another-page.html"</span><span class="dt">&gt;</span>Go to another page<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://xkcd.com"</span><span class="dt">&gt;</span>Go to another website<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-4"><a href=""></a></span>
-<span id="cb5-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#my_section"</span><span class="dt">&gt;</span>Jump to an ID on the page<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb5-6"><a href=""></a></span>
-<span id="cb5-7"><a href=""></a><span class="dt">&lt;</span><span class="kw">section</span><span class="ot"> id</span><span class="op">=</span><span class="st">"my_section"</span><span class="dt">&gt;</span></span>
-<span id="cb5-8"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>The link above will jump to this section<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb5-9"><a href=""></a><span class="dt">&lt;/</span><span class="kw">section</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"another-page.html"</span><span class="dt">&gt;</span>Go to another page<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb7-2"><a href=""></a></span>
+<span id="cb7-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"http://xkcd.com"</span><span class="dt">&gt;</span>Go to another website<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb7-4"><a href=""></a></span>
+<span id="cb7-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"#my_section"</span><span class="dt">&gt;</span>Jump to an ID on the page<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb7-6"><a href=""></a></span>
+<span id="cb7-7"><a href=""></a><span class="dt">&lt;</span><span class="kw">section</span><span class="ot"> id</span><span class="op">=</span><span class="st">"my_section"</span><span class="dt">&gt;</span></span>
+<span id="cb7-8"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>The link above will jump to this section<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb7-9"><a href=""></a><span class="dt">&lt;/</span><span class="kw">section</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="html-code-4" class="slide level2">
 <h2>HTML Code</h2>
 <p>⚠️ <em>IMPORTANT SLIDE !!</em></p>
 <p>most HTML tags are <strong>nested inside</strong> other HTML tags: (watch your indentation!)</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb6-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
-<span id="cb6-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>The main heading<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb6-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span>  </span>
-<span id="cb6-4"><a href=""></a></span>
-<span id="cb6-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">section</span><span class="dt">&gt;</span></span>
-<span id="cb6-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>A section heading<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb6-7"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Some text in a paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb6-8"><a href=""></a><span class="dt">&lt;/</span><span class="kw">section</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb8-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">header</span><span class="dt">&gt;</span></span>
+<span id="cb8-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>The main heading<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb8-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">header</span><span class="dt">&gt;</span>  </span>
+<span id="cb8-4"><a href=""></a></span>
+<span id="cb8-5"><a href=""></a><span class="dt">&lt;</span><span class="kw">section</span><span class="dt">&gt;</span></span>
+<span id="cb8-6"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>A section heading<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb8-7"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Some text in a paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb8-8"><a href=""></a><span class="dt">&lt;/</span><span class="kw">section</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="html-code-5" class="slide level2">
 <h2>HTML Code</h2>
 <p>You can add <strong>HTML comments</strong> in your code:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb7-1"><a href=""></a><span class="co">&lt;!-- The figure tag is for image/captions boxes --&gt;</span></span>
-<span id="cb7-2"><a href=""></a></span>
-<span id="cb7-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="dt">&gt;</span></span>
-<span id="cb7-4"><a href=""></a>  <span class="co">&lt;!-- The img tag goes here --&gt;</span></span>
-<span id="cb7-5"><a href=""></a>  <span class="co">&lt;!-- The figcaption tag goes here --&gt;</span></span>
-<span id="cb7-6"><a href=""></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a href=""></a><span class="co">&lt;!-- The figure tag is for image/captions boxes --&gt;</span></span>
+<span id="cb9-2"><a href=""></a></span>
+<span id="cb9-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">figure</span><span class="dt">&gt;</span></span>
+<span id="cb9-4"><a href=""></a>  <span class="co">&lt;!-- The img tag goes here --&gt;</span></span>
+<span id="cb9-5"><a href=""></a>  <span class="co">&lt;!-- The figcaption tag goes here --&gt;</span></span>
+<span id="cb9-6"><a href=""></a><span class="dt">&lt;/</span><span class="kw">figure</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Text between <code>&lt;!--</code> and <code>--&gt;</code> won’t show on screen.</p>
 <p>My slides are using a Fira Font type, which makes the ligature between corresponding signs but <code>&lt;!--</code> and <code>--&gt;</code> are actually <code>&lt; ! - -</code> and <code>- - &gt;</code> without the spaces.</p>
 </section>
@@ -601,7 +731,7 @@ marked by an HTML <code>id</code> attribute:</p>
 <section id="commonly-used-html-tags" class="slide level2 smaller">
 <h2>Commonly used HTML tags</h2>
 <p>Browse a complete <a href="https://www.w3schools.com/tags/default.asp">list of HTML tags</a>.</p>
-<table class="caption-top">
+<table>
 <colgroup>
 <col style="width: 25%">
 <col style="width: 74%">
@@ -684,7 +814,7 @@ marked by an HTML <code>id</code> attribute:</p>
 <p>Note: Use TextEdit (MacOS) / Notepad (Win) to open and modify the html code. In the TextEdit app on your Mac, choose TextEdit &gt; Settings, then click Open and Save. Select <strong>“Display HTML files as HTML code instead of formatted text”</strong>.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9d48ae43" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_093506da" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -713,15 +843,15 @@ marked by an HTML <code>id</code> attribute:</p>
 <section id="css-rules-2" class="slide level2">
 <h2>CSS Rules</h2>
 <p>A CSS <strong>rule</strong> inside <code>{}</code> can contain <strong>multiple</strong> CSS <strong>declarations</strong>:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a href=""></a>main {</span>
-<span id="cb8-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span> <span class="co">/* 10 pixels all round */</span></span>
-<span id="cb8-3"><a href=""></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">%</span><span class="op">;</span> <span class="co">/* always 80% of the screen width */</span></span>
-<span id="cb8-4"><a href=""></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#eee</span><span class="op">;</span></span>
-<span id="cb8-5"><a href=""></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Tahoma</span><span class="op">,</span> <span class="dv">Helvetica</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
-<span id="cb8-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a href=""></a>main {</span>
+<span id="cb10-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span> <span class="co">/* 10 pixels all round */</span></span>
+<span id="cb10-3"><a href=""></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">80</span><span class="dt">%</span><span class="op">;</span> <span class="co">/* always 80% of the screen width */</span></span>
+<span id="cb10-4"><a href=""></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#eee</span><span class="op">;</span></span>
+<span id="cb10-5"><a href=""></a>  <span class="kw">font-family</span><span class="ch">:</span> <span class="dv">Tahoma</span><span class="op">,</span> <span class="dv">Helvetica</span><span class="op">,</span> <span class="dv">sans-serif</span><span class="op">;</span></span>
+<span id="cb10-6"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>or be on <strong>one line</strong> (<em>harder to read</em> when developing):</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb9-1"><a href=""></a>main { <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span> <span class="kw">width</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a href=""></a>main{<span class="kw">margin</span><span class="ch">:</span><span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span><span class="kw">width</span><span class="ch">:</span><span class="dv">50</span><span class="dt">%</span><span class="op">;</span>}input{<span class="kw">background</span><span class="ch">:</span><span class="cn">yellow</span><span class="op">;</span><span class="kw">width</span><span class="ch">:</span><span class="dv">100</span><span class="dt">px</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href=""></a>main { <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span> <span class="kw">width</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span> }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb12-1"><a href=""></a>main{<span class="kw">margin</span><span class="ch">:</span><span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span><span class="kw">width</span><span class="ch">:</span><span class="dv">50</span><span class="dt">%</span><span class="op">;</span>}input{<span class="kw">background</span><span class="ch">:</span><span class="cn">yellow</span><span class="op">;</span><span class="kw">width</span><span class="ch">:</span><span class="dv">100</span><span class="dt">px</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="types-of-selectors" class="slide level2">
 <h2>Types of Selectors</h2>
@@ -742,20 +872,21 @@ marked by an HTML <code>id</code> attribute:</p>
 <div class="column" style="width:30%;">
 <p><strong>CSS</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb11-1"><a href=""></a>h1 {</span>
-<span id="cb11-2"><a href=""></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
-<span id="cb11-3"><a href=""></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb11-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href=""></a>h1 {</span>
+<span id="cb13-2"><a href=""></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span></span>
+<span id="cb13-3"><a href=""></a>  <span class="kw">letter-spacing</span><span class="ch">:</span> <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb13-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:63%;">
 <p><strong>HTML</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb12-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb12-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will not be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb12-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Neither will this paragaph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb12-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>But this second level one header will be<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb14-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will not be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb14-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Neither will this paragaph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb14-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>But this second level one header will be<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div></div>
+</div>
+</div>
 
 <img data-src="https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/element_selector.png?raw=true" class="r-stretch"></section>
 <section id="grouping-selectors" class="slide level2">
@@ -765,18 +896,19 @@ marked by an HTML <code>id</code> attribute:</p>
 <div class="column" style="width:30%;">
 <p><strong>CSS</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb13-1"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> p {</span>
-<span id="cb13-2"><a href=""></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb13-3"><a href=""></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">purple</span><span class="op">;</span></span>
-<span id="cb13-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href=""></a>h1<span class="op">,</span> h2<span class="op">,</span> p {</span>
+<span id="cb15-2"><a href=""></a>  <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span></span>
+<span id="cb15-3"><a href=""></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">purple</span><span class="op">;</span></span>
+<span id="cb15-4"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div><div class="column" style="width:63%;">
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb14-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb14-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb14-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>This level three header will not be styled<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
-<span id="cb14-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This paragraph will be styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb16-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb16-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb16-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">h3</span><span class="dt">&gt;</span>This level three header will not be styled<span class="dt">&lt;/</span><span class="kw">h3</span><span class="dt">&gt;</span></span>
+<span id="cb16-4"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This paragraph will be styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 
 <img data-src="https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/grouping_selector.png?raw=true" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="class-selectors" class="slide level2">
@@ -788,11 +920,11 @@ marked by an HTML <code>id</code> attribute:</p>
 <h2>Class selectors</h2>
 <p>A class selector uses the <em><code>class</code> attribute</em> of an HTML element to style that specific element. Class selectors are written using a <code>.</code> followed by the selector name, e.g.&nbsp;<code>.selector</code>. HTML elements can have more than one class, e.g.&nbsp;<code>&lt;p class="class1 class2"&gt;</code></p>
 <p><strong>CSS</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a href=""></a><span class="fu">.blue-italicized</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span> <span class="kw">font-style</span><span class="ch">:</span> <span class="dv">italic</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href=""></a><span class="fu">.blue-italicized</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span> <span class="kw">font-style</span><span class="ch">:</span> <span class="dv">italic</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb16-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"blue-italicized"</span><span class="dt">&gt;</span>My first paragraph is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb16-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>But my second paragraph is not<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb16-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>We can use span tags to target <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"blue-italicized"</span><span class="dt">&gt;</span>parts of an element<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> as well<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"blue-italicized"</span><span class="dt">&gt;</span>My first paragraph is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb18-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>But my second paragraph is not<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb18-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>We can use span tags to target <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"blue-italicized"</span><span class="dt">&gt;</span>parts of an element<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> as well<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 <img data-src="https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/class_selector.png?raw=true" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="other-selector-types" class="slide level2 smaller">
@@ -803,11 +935,11 @@ marked by an HTML <code>id</code> attribute:</p>
 <div id="tabset-1-1">
 <p>An ID selector uses the <em><code>id</code> attribute</em> of an HTML element to style that specific element. IDs must be unique within a page and therefore can only be used to select and style <em>one</em> unique element. ID selectors are written using a <code>#</code> followed by the selector name, e.g.&nbsp;<code>#selector</code>.</p>
 <p><strong>CSS</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a href=""></a><span class="pp">#para1</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span> <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb19-1"><a href=""></a><span class="pp">#para1</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">red</span><span class="op">;</span> <span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb18-1"><a href=""></a>#| echo: true</span>
-<span id="cb18-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"para1"</span><span class="dt">&gt;</span>My first paragraph is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb18-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>But my second paragraph is not<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href=""></a>#| echo: true</span>
+<span id="cb20-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> id</span><span class="op">=</span><span class="st">"para1"</span><span class="dt">&gt;</span>My first paragraph is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb20-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>But my second paragraph is not<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -821,11 +953,11 @@ marked by an HTML <code>id</code> attribute:</p>
 <div id="tabset-1-2">
 <p>The universal selector selects <em>all</em> HTML elements on the page. It is written using only an asterisk, <code>*</code>.</p>
 <p><strong>CSS</strong></p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb19-1"><a href=""></a><span class="op">*</span> {<span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">orange</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb21-1"><a href=""></a><span class="op">*</span> {<span class="kw">text-align</span><span class="ch">:</span> <span class="dv">center</span><span class="op">;</span> <span class="kw">color</span><span class="ch">:</span> <span class="cn">orange</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb20-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb20-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
-<span id="cb20-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This paragaph will also be styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb22-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>My level one header will be styled<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb22-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>This level two header will be styled<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb22-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This paragaph will also be styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -839,9 +971,9 @@ marked by an HTML <code>id</code> attribute:</p>
 <div id="tabset-1-3">
 <p>You may define styles directly inline using the <em><code>style</code> attribute</em>. However, it’s best practice to use these sparingly as it mixes content (HTML) with presentation (CSS) and cannot be reused with other elements like defined CSS rules can.</p>
 <p><strong>HTML with inline styling</strong></p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb21-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a normal paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb21-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color: red; font-style: italic;"</span><span class="dt">&gt;</span>This paragraph has inline styling<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb21-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Here, only the word <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color: red; font-style: italic;"</span><span class="dt">&gt;</span>paragraph<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb23-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is a normal paragraph<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb23-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color: red; font-style: italic;"</span><span class="dt">&gt;</span>This paragraph has inline styling<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb23-3"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Here, only the word <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"color: red; font-style: italic;"</span><span class="dt">&gt;</span>paragraph<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> is styled<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -858,15 +990,15 @@ marked by an HTML <code>id</code> attribute:</p>
 <section id="other-selector-types-1" class="slide level2">
 <h2>Other selector types</h2>
 <p>the <strong>selector</strong> is the element to be styled:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb22-1"><a href=""></a>main { <span class="co">/* targets tag main */</span></span>
-<span id="cb22-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb22-3"><a href=""></a>}</span>
-<span id="cb22-4"><a href=""></a>aside<span class="fu">.sidebar</span> { <span class="co">/* targets tag aside with class sidebar */</span></span>
-<span id="cb22-5"><a href=""></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb22-6"><a href=""></a>}</span>
-<span id="cb22-7"><a href=""></a>form<span class="pp">#myForm</span> { <span class="co">/* targets tag form with id myForm */</span></span>
-<span id="cb22-8"><a href=""></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#666</span><span class="op">;</span></span>
-<span id="cb22-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb24-1"><a href=""></a>main { <span class="co">/* targets tag main */</span></span>
+<span id="cb24-2"><a href=""></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">0</span> <span class="bu">auto</span><span class="op">;</span></span>
+<span id="cb24-3"><a href=""></a>}</span>
+<span id="cb24-4"><a href=""></a>aside<span class="fu">.sidebar</span> { <span class="co">/* targets tag aside with class sidebar */</span></span>
+<span id="cb24-5"><a href=""></a>  <span class="kw">width</span><span class="ch">:</span> <span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
+<span id="cb24-6"><a href=""></a>}</span>
+<span id="cb24-7"><a href=""></a>form<span class="pp">#myForm</span> { <span class="co">/* targets tag form with id myForm */</span></span>
+<span id="cb24-8"><a href=""></a>  <span class="kw">background</span><span class="ch">:</span> <span class="cn">#666</span><span class="op">;</span></span>
+<span id="cb24-9"><a href=""></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="other-selector-types-2" class="slide level2">
 <h2>Other selector types</h2>
@@ -880,12 +1012,12 @@ marked by an HTML <code>id</code> attribute:</p>
 <h2>Conflicting CSS rules</h2>
 <p>It is often the case that more than one CSS rule will point to the same element. For example, say you have a style sheet and HTML that look like the following:</p>
 <p><strong>CSS</strong></p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb23-1"><a href=""></a><span class="op">*</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">orange</span><span class="op">;</span>}</span>
-<span id="cb23-2"><a href=""></a>h1 {<span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span>}</span>
-<span id="cb23-3"><a href=""></a><span class="fu">.green-text</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource css number-lines code-with-copy"><code class="sourceCode css"><span id="cb25-1"><a href=""></a><span class="op">*</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">orange</span><span class="op">;</span>}</span>
+<span id="cb25-2"><a href=""></a>h1 {<span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span>}</span>
+<span id="cb25-3"><a href=""></a><span class="fu">.green-text</span> {<span class="kw">color</span><span class="ch">:</span> <span class="cn">green</span><span class="op">;</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>HTML</strong></p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb24-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>This is my header<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
-<span id="cb24-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is my paragraph with <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"green-text"</span><span class="dt">&gt;</span>some green text<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span>This is my header<span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb26-2"><a href=""></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This is my paragraph with <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> style</span><span class="op">=</span><span class="st">"green-text"</span><span class="dt">&gt;</span>some green text<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>In this case, we have a universal selector that styles all of our text orange, but we also have an element selector that colors our <code>&lt;h1&gt;</code> elements blue and a class selector that is applied inline to color a subset of text green. <em>How do you know which style will be declared and applied to each of our HTML elements?</em></p>
 </section>
 <section id="css-specificity" class="slide level2">
@@ -894,9 +1026,6 @@ marked by an HTML <code>id</code> attribute:</p>
 </section>
 <section id="css-specificity-1" class="slide level2">
 <h2>CSS Specificity</h2>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -927,13 +1056,13 @@ marked by an HTML <code>id</code> attribute:</p>
 <section id="css-stylesheet-in-html-code" class="slide level2">
 <h2>CSS Stylesheet in HTML Code</h2>
 <p>the stylesheet needs to be linked in the <code>head</code> section</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb25-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"path/to/styles.css"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb27-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"path/to/styles.css"</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>technically, it can go between <code>style</code> tags directly in the <code>head</code> section, but it should really go into an external file</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb26-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
-<span id="cb26-2"><a href=""></a>  body {</span>
-<span id="cb26-3"><a href=""></a>    <span class="kw">background</span><span class="ch">:</span> <span class="cn">beige</span><span class="op">;</span></span>
-<span id="cb26-4"><a href=""></a>  }</span>
-<span id="cb26-5"><a href=""></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb28-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">style</span><span class="dt">&gt;</span></span>
+<span id="cb28-2"><a href=""></a>  body {</span>
+<span id="cb28-3"><a href=""></a>    <span class="kw">background</span><span class="ch">:</span> <span class="cn">beige</span><span class="op">;</span></span>
+<span id="cb28-4"><a href=""></a>  }</span>
+<span id="cb28-5"><a href=""></a><span class="dt">&lt;/</span><span class="kw">style</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="keep-your-code-tidy" class="title-slide slide level1 center">
@@ -963,9 +1092,6 @@ marked by an HTML <code>id</code> attribute:</p>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
@@ -1015,7 +1141,7 @@ marked by an HTML <code>id</code> attribute:</p>
 <p>Notes: This will not be accepted as a submission to the module’s assignment but you will be able to use the content created in your future Quarto website. However, we will use it next week in our lecture about GitHub.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_70f5f6ca" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_c2b5dc75" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">20</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1028,9 +1154,6 @@ marked by an HTML <code>id</code> attribute:</p>
 <style type="text/css">
 img.circle {border-radius:50%;}
 </style>
-</div>
-<div>
-
 </div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
@@ -1332,7 +1455,18 @@ img.circle {border-radius:50%;}
         }
         return false;
       }
-      const onCopySuccess = function(e) {
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1364,29 +1498,7 @@ img.circle {border-radius:50%;}
         }, 1000);
         // clear code selection
         e.clearSelection();
-      }
-      const getTextToCopy = function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-      }
-      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-        text: getTextToCopy
       });
-      clipboard.on('success', onCopySuccess);
-      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-        // For code content inside modals, clipBoardJS needs to be initialized with a container option
-        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-          text: getTextToCopy,
-          container: window.document.getElementById('quarto-embedded-source-code-modal')
-        });
-        clipboardModal.on('success', onCopySuccess);
-      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1394,7 +1506,7 @@ img.circle {border-radius:50%;}
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {

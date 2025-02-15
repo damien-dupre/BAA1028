@@ -230,6 +230,12 @@ Each subcommand has its own set of options and arguments.
 
 > It has a super cool feature like multiverse aka **Branching**, that lets us create an alternate version of our code. A branch is a copy of project and it's super useful when working in groups, allowing us the capability of working on with or without changing the original code. We can also synchronize the changes that happened across different branches and that's called **Merging**.
 
+## GitHub is nothing without Git 
+
+```{r out.width='60%'}
+include_graphics("https://pbs.twimg.com/media/Fgg4vIWWIAAUJiq.jpg")
+```
+
 ## What is a Git repository?
 
  - A place where you can store your code, your files, and each file's revision history.
@@ -293,6 +299,28 @@ To set up the basic changes we will run `git config` command.
 # git config command
 git config --global user.name "Your Name"
 git config --global user.email "Your Email"
+```
+
+## Exercise 1: Setting up Git {background="#43464B" .smaller}
+
+In your terminal, type your GitHub Name and Email:
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "Your Email"
+```
+
+example
+
+```bash
+git config --global user.name "damien-dupre"
+git config --global user.email "damien.dupre@dcu.ie"
+```
+
+Warning, if done correctly there is no output to these commandes
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
 ```
 
 ## Setting up Git
@@ -370,6 +398,22 @@ It will display that git has created a several files to keep the tracks of our c
 <!-- A hidden ".git" folder has been created in your folder. This contains everything Git needs to work. -->
 <!-- ::: -->
 
+## Exercise 2: Clone Repository {background="#43464B" .smaller}
+
+1. Go the the GitHub repository of your website,
+2. Find the git clone url
+3. Be sure that your terminal path has moved to your "project" folder
+3. Clone this repository from your terminal
+
+```bash
+cd ~ # brings you back to the root/home of your computer
+cd project # moves the terminal to the "project" folder
+git clone https://github.com/username/repository.git # copy the website repository/folder in the "project" folder
+```
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
 
 ## Git Add
 
@@ -510,6 +554,21 @@ git commit message should be like email subject.
 <!-- </code></pre> -->
 <!-- </div> -->
 
+## Exercise 3: First Command Line Commit {background="#43464B" .smaller}
+
+1. Open the index.html file
+2. Modify 1 word in the text diplayed in the website (title or content)
+3. Perform your first commit with the following code:
+
+```bash
+git add .
+git commit -m "My first command line commit"
+```
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
+```
+
 ## Working with remote repositories  
 
 * `git clone`: creates a copy of the codebase on your local machine.
@@ -540,6 +599,19 @@ Be sure that your git project folder is connected to GitHub repository:
 
 ```bash
 git remote add origin https://github.com/username/repository.git
+```
+
+## Exercise 4: First Push to GitHub{background="#43464B" .smaller}
+
+Just type: 
+
+```bash
+git push
+```
+And observe the results on your GitHub repository
+
+```{r}
+countdown(minutes = 5, warn_when = 60)
 ```
 
 ## Git and GitHub

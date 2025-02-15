@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.4.553">
 
   <meta name="author" content="Damien Dupré">
-  <title>Lecture 5: The Final Workflow: Git, GitHub and Quarto with VS Code</title>
+  <title>Lecture 5: The Final Workflow of Git, GitHub and Quarto with VS Code</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -393,7 +393,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-iframe="logo-fall/index.html" class="quarto-title-block center">
-  <h1 class="title">Lecture 5: The Final Workflow: Git, GitHub and Quarto with VS Code</h1>
+  <h1 class="title">Lecture 5: The Final Workflow of Git, GitHub and Quarto with VS Code</h1>
   <p class="subtitle">BAA1028 - Workflow &amp; Data Management</p>
 
 <div class="quarto-title-authors">
@@ -615,7 +615,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_1bcd35fa" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_9385902c" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -815,6 +815,12 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 <div class="sourceCode" id="cb13"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Quarto needs both <code>python</code> and the <code>jupyterlab</code> libraries</p>
 <p>If you don’t have them, install them, but you should have them already.</p>
+</section>
+<section id="troubleshooting-quarto" class="slide level2">
+<h2>Troubleshooting Quarto</h2>
+<p>When multiple versions of <code>python</code> are installed on your computer, quarto might connect to a version without <code>jupyter</code>.</p>
+<p>Windows user can specify the anaconda <code>python</code> path by following the steps indicated here from the 6th minute: <a href="https://www.youtube.com/watch?v=uOwCiZKj2rg&amp;t=376s">https://www.youtube.com/watch?v=uOwCiZKj2rg&amp;t=376s</a></p>
+<!-- <iframe width="780" height="500" src="https://www.youtube.com/embed/uOwCiZKj2rg?si=q7Ibe2FcBYvASGe3" title="YouTube video player"></iframe> -->
 <!-- ## Step 3: Verify Quarto in VS Code -->
 <!-- 1. Open VS Code and create a new file `example.qmd` -->
 <!-- 2. Write some sample Quarto Markdown: -->
@@ -860,11 +866,11 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 <section id="rendering-notebooks" class="slide level2">
 <h2>Rendering Notebooks</h2>
 <ul>
-<li><h3 id="code-files-like-.py-or-.r-only-contain-code-plus-comments-introduced-by">Code files (like .py or .r) only contain code plus comments introduced by <code>#</code></h3></li>
-<li><h3 id="notebook-files-like-.ipynb-.rmd-or-.qmd-can-contain-both-text-and-code.">Notebook files (like .ipynb, .Rmd, or .qmd) can contain both text and code.</h3></li>
-<li><h3 id="rendering-a-notebook-is-the-activity-of-creating-a-shareable-report-from-your-notebook">Rendering a notebook, is the activity of creating a shareable report from your notebook</h3></li>
-<li><h3 id="different-format-are-possible-html-pdf-word">Different format are possible: html, pdf, word, …</h3></li>
-<li><h3 id="the-way-to-format-text-in-a-notebook-to-render-it-nicely-uses-a-style-called-markdown">The way to format text in a notebook to render it nicely uses a style called <strong>Markdown</strong></h3></li>
+<li>Code files (like .py or .r) only contain code plus comments</li>
+<li>Notebook files (like .ipynb, .Rmd, or .qmd) can contain both text and code</li>
+<li>When you <strong>Render</strong> a notebook, you create a shareable report</li>
+<li>Different format are possible: html, pdf, word, …</li>
+<li><strong>Markdown</strong> is the markup language that formats a rendered text</li>
 </ul>
 <div class="callout callout-warning callout-titled callout-style-default">
 <div class="callout-body">
@@ -875,7 +881,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 <p><strong>Warning</strong></p>
 </div>
 <div class="callout-content">
-<p>You cannot share a notebook files with the format .ipynb, .Rmd, or .qmd, they are only for your own use or a team work.</p>
+<p>Notebooks and Code files are only working documents, they are not made to report your analyses and results to other stakeholders/clients.</p>
 </div>
 </div>
 </div>
@@ -889,12 +895,28 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4bef9f73" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_5570e77a" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
+<!-- ## Your turn! -->
+<!-- 1/ Download the file `hello.ipynb`  -->
+<!-- - from here: https://quarto.org/docs/get-started/hello/jupyter.html -->
+<!-- - or by clicking here: <a href="https://quarto.org/docs/get-started/hello/_hello.ipynb" download="hello.ipynb" data-original-href="https://quarto.org/docs/get-started/hello/_hello.ipynb">Download hello.ipynb</a> -->
+<!-- 2/ Open Jupyter Lab and drop the `hello.ipynb` in the list of files in Jupyter (left pane) -->
+<!-- 3/ Open a new Terminal window (on Jupyter Lab or on your OS) and run the following instructions: -->
+<!-- ```markdown -->
+<!-- quarto render hello.ipynb --to html -->
+<!-- ``` -->
+<!-- and then: -->
+<!-- ```markdown -->
+<!-- open hello.html -->
+<!-- ``` -->
+<!-- ```{r} -->
+<!-- countdown(minutes = 5, warn_when = 60) -->
+<!-- ``` -->
 </section>
 <section id="quarto-editor-vs-output" class="slide level2">
 <h2>Quarto Editor vs Output</h2>
