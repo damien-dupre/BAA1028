@@ -247,7 +247,7 @@ Do these choices matter? Not really so don't stress. They are aesthetic choices,
 2. Install [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python) and [Jupyter](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) extensions (if it's not done yet)
 3. Open a new Jupyter Notebook and run the code:
 
-```python
+```{.python filename="Untitled-1.ipynb"}
 print("Hello World")
 ```
 
@@ -261,20 +261,20 @@ VS Code has its own terminal, click on `Terminal` -> `New Terminal` to run shell
 
 You can run python code directly in the terminal after initiating the terminal with:
 
-``` {.bash filename="Terminal"}
+```{.bash filename="Terminal"}
 python
 ```
 
 Then run python code like:
 
-``` {.python filename="Terminal"}
+```{.python filename="Terminal"}
 print("Hello World")
 ```
 
 To quit python, just type:
 
 
-``` {.python filename="Terminal"}
+```{.python filename="Terminal"}
 quit()
 ```
 
@@ -286,7 +286,7 @@ Let's do all these following steps together
 
 After downloading and installing git from [git-scm.com](https://git-scm.com/) you can verify your installation by typing in the VS Code terminal:
 
-``` {.bash filename="Terminal"}
+```{.bash filename="Terminal"}
 git --version
 ```
 
@@ -339,7 +339,7 @@ include_img("vscode_github.jpg")
 
 These actions are the same and could be done from the terminal using the following code:
 
-``` {.bash filename="Terminal"}
+```{.bash filename="Terminal"}
 git clone git@github.com:your-username/your-repo.git
 git add .
 git commit -m "update"
@@ -365,11 +365,11 @@ Let's repeat these steps, but this time without cloning an already existing repo
 - First, create a new folder called "my-coding-project"
 - Create a Jupyter Notebook and type some code like:
 
-```markdown
+```{.python filename="hello.ipynb"}
 print('Hello, world!')
 ```
 
-- Save it as `hello-world.ipynb` in the folder "my-coding-project"
+- Save it as `hello.ipynb` in the folder "my-coding-project"
 - Then, in the `Source Control` panel, click <kbd>Initialize Repository</kbd>
 - The green U means untrack, let's add it by clicking on <kbd>+</kbd> 
 - Then, add a mandatory message and click <kbd>✔️ Commit</kbd>
@@ -391,28 +391,28 @@ Your python environement need to have the jupyterlab package already installed.
 
 In VS Code, open a terminal and check that jupyterlab has been installed:
 
-```sh
+```{.bash filename="Terminal"}
 which jupyter
 ```
 
 If none is found install jupyterlab using:
 
-```sh
+```{.bash filename="Terminal"}
 conda install jupyterlab
 ```
 
 ## Quarto Requirements
 
-For this introduction, we are going to use `numpy` and `matplotlib`, check that they are installed by adding and running in `hello-world.ipynb` the following chunks of code:
+For this introduction, we are going to use `numpy` and `matplotlib`, check that they are installed by adding and running in `hello.ipynb` the following chunks of code:
 
-```python
+```{.python filename="hello.ipynb"}
 import numpy as np
 import matplotlib.pyplot as plt
 ```
 
 Then, generate the following figure:
 
-```python
+```{.python filename="hello.ipynb"}
 r = np.arange(0, 2, 0.01)
 theta = 2 * np.pi * r
 fig, ax = plt.subplots(
@@ -432,7 +432,7 @@ plt.show()
 
 In VS Code, open a terminal and install Quarto from the command line:
 
-```sh
+```{.bash filename="Terminal"}
 pip install quarto-cli
 ```
 
@@ -448,7 +448,7 @@ Outside VS Code (Quarto has it own app)
 
 Verify Quarto's installation by running:
 
-```sh
+```{.bash filename="Terminal"}
 quarto check
 ```
 
@@ -528,7 +528,7 @@ stakeholders/clients.
 
 ## Exercise 2: Rendering Notebooks {background="#43464B"}
 
-While your file `hello-world.ipynb` is open:
+While your file `hello.ipynb` is open:
 
 1. go to the top URL
 2. Type `> Quarto Preview`

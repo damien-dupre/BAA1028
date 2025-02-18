@@ -12,6 +12,9 @@ format:
 title-slide-attributes:
     data-background-iframe: logo-fall/index.html
 preload-iframes: true
+knitr: 
+  opts_chunk:
+    fig.align: center
 ---
 
 ```{r setup, include = FALSE}
@@ -32,16 +35,16 @@ include_img <- function(img_name) {
 
 #### Requirements:
 
-- Having Git Installed and its Config done
-- Having VS Code Installed with all required Extensions installed
-- Having Quarto Installed and Properly Working
-- GitHub Account Created
+- ✅ Having Git Installed and its Config done
+- ✅ Having VS Code Installed with all required Extensions installed
+- ✅ Having Quarto Installed and Properly Working
+- ✅ GitHub Account Created
 
 #### Programme
 
 1. Creating your Quarto Website
-2. Push it to GitHub with GitHub Pages activated
-3. Customising your Website
+2. Push it to GitHub 
+3. Activating GitHub Pages
 
 ### Any questions?
 
@@ -59,29 +62,37 @@ include_graphics("https://www.paulbarrs.com/wp-content/uploads/2017/09/painful.j
 
 ## Exercise 1: Quarto Website {background="#43464B"}
 
-1. Open a new Terminal window in VS Code and run the following instructions:
+1. Open VS Code, open a new Terminal window in VS Code and run the following instructions:
 
-```markdown
-quarto create project website mysite
+```{.bash filename="Terminal"}
+cd ~
+mkdir Project
+cd Project
 ```
 
-and then:
+2. Create a new Quarto website from the same terminal by using your GitHub username + .github.io (e.g. damien-dupre.github.io):
 
-```markdown
-quarto preview mysite
+```{.bash filename="Terminal"}
+quarto create project website your-github-username.github.io
+```
+
+When asked for the name of your website, use your name (e.g. Damien Dupré), and then:
+
+```{.bash filename="Terminal"}
+quarto preview
 ```
 
 ```{r}
-countdown(minutes = 2, warn_when = 60)
+countdown(minutes = 5, warn_when = 60)
 ```
 
 ## Quarto Websites
 
-```markdown
-quarto create project website mysite
+```{.bash filename="Terminal"}
+quarto create project website your-github-username.github.io
 ```
 
-Creates a new website project from the Terminal. This website project is initiated by a folder called `mysite` located on the root of your terminal.
+Creates a new website project from the Terminal. This website project is initiated by a folder called `your-github-username.github.io` located on the root of your terminal.
 
 The folder contains only 4 files:
 
@@ -99,8 +110,8 @@ Improve your Website:
 
 ## Quarto Websites
 
-```markdown
-quarto preview mysite
+```{.bash filename="Terminal"}
+quarto preview
 ```
 
 This command is used to render the website by converting all the `.qmd` files to `.html` files stored in a `_site` folder. 
@@ -117,7 +128,7 @@ Unfortunately `.ipynb` files cannot be used to build a website.
 
 Thankfully they can be converted to `.qmd` format by quarto with the instruction: 
 
-```markdown
+```{.bash filename="Terminal"}
 quarto convert myfile.ipynb
 ```
 
@@ -143,19 +154,19 @@ print('Hello, world!')
 ::: {#first-column}
 1. Open a new Terminal window in VS Code and run the following instructions:
 
-```markdown
+```{.bash filename="Terminal"}
 quarto convert hello.ipynb
 ```
 
-2. Drag and drop the file `hello.qmd` created in the root of the `mysite` folder
+2. Drag and drop the file `hello.qmd` created in the root of the `your-github-username.github.io` folder
 :::
 
 ::: {#second-column}
 3. Open the file `_quarto.yml` in Jupyter and modify it as follow:
 
-```markdown
+```{.yml filename="_quarto.yml"}
 website:
-  title: "Mysite"
+  title: "Damien Dupré"
   navbar:
     left:
       - href: index.qmd
@@ -166,8 +177,8 @@ website:
 
 4. In the same Terminal window, run the following instructions:
 
-```markdown
-quarto preview mysite
+```{.bash filename="Terminal"}
+quarto preview
 ```
 :::
 ::::
@@ -203,7 +214,7 @@ include_graphics("http://techrights.org/wp-content/uploads/2021/10/github-dark-s
 
 In the `_quarto.yml` file, simply **change the output directory folder** to a folder named `docs` as follow:
 
-```markdown
+```{.yml filename="_quarto.yml"}
 project:
   type: website
   output-dir: docs
@@ -213,14 +224,14 @@ Then preview or render the website:
 
 :::: {layout="[1,1]"}
 ::: {#first-column}
-```markdown
-quarto render mysite
+```{.bash filename="Terminal"}
+quarto render
 ```
 :::
 
 ::: {#second-column}
-```markdown
-quarto preview mysite
+```{.bash filename="Terminal"}
+quarto preview
 ```
 :::
 ::::
@@ -237,9 +248,9 @@ Note: the old folder `_site` will not be used any more and is now useless.
 
 ## Add a .nojekyll File
 
-Add a `.nojekyll` file to the root of your repository that tells GitHub Pages not to do additional processing of your published site using Jekyll (the GitHub default site generation tool):
+Add a `.nojekyll` file to the root of your repository that tells GitHub Pages not to do additional processing of your published site using Jekyll (the GitHub default site generation tool).
 
-You can create an empty text file by yourself or you can download this `nojekyll` file here:
+<!-- You can create an empty text file by yourself or you can download this `nojekyll` file here: -->
 ```{r}
 # downloadthis::download_file(
 #   path = here::here("nojekyll"),
@@ -251,25 +262,11 @@ You can create an empty text file by yourself or you can download this `nojekyll
 # )
 ```
 
-You could also create it from the terminal when the website folder is the current directory:
+You can create it from the terminal when the website folder is the current directory:
 
-:::: {layout="[1,1]"}
-::: {#first-column}
-Mac/Linux:
-```markdown
-cd mysite
+```{.bash filename="Terminal"}
 touch .nojekyll
 ```
-:::
-
-::: {#second-column}
-Windows:
-```markdown
-cd mysite
-copy NUL .nojekyll
-```
-:::
-::::
 
 ## Upload your Files to GitHub
 
@@ -277,13 +274,13 @@ When GitHub suggests ways how to upload files, it gives instructions to **create
 
 For example:
 
-```markdown
-cd mysite #if not done yet
+```{.bash filename="Terminal"}
+cd your-github-username.github.io #if not done yet
 git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/damiendupre/mysite.git
+git remote add origin https://github.com/your-github-username/your-github-username.github.io.git
 git push -u origin main
 ```
 
@@ -293,9 +290,15 @@ You should see all your files uploaded in your GitHub repository
 
 :::: {layout="[1,1]"}
 ::: {#first-column}
-1. **Change the output directory folder** to a folder named `docs` in the `_quarto.yml` file:
+1. Add a .nojekyll File:
 
-```markdown
+```{.bash filename="Terminal"}
+touch .nojekyll
+```
+
+2. **Change the output directory folder** to a folder named `docs` in the `_quarto.yml` file:
+
+```{.yml filename="_quarto.yml"}
 project:
   type: website
   output-dir: docs
@@ -303,40 +306,25 @@ project:
 
 Then, preview or render the website
 
-```markdown
-quarto render mysite
+```{.bash filename="Terminal"}
+quarto render
 ```
-
-2. **Upload and commit all the files contained in the website folder** on your GitHub repository, not the website folder itself.
 :::
-
 ::: {#second-column}
-3. **Upload and commit a nojekyll file** that tells GitHub to not run its default html website processing
+3. In the `Source Control` panel, click <kbd>Initialize Repository</kbd>, add all files by clicking on <kbd>+</kbd>, add a mandatory message and click <kbd>✔️ Commit</kbd>. Finally, click <kbd>Publish Branch</kbd>
 
-You can download this `nojekyll` file here:
+4. In **GitHub**, click **Settings** -> **Pages** choose:
+  - `main` branch
+  - `/docs` folder
+  - and Save
 
-```{r}
-# downloadthis::download_file(
-#   path = here::here("nojekyll"),
-#   output_name = "nojekyll",
-#   button_label = "Click here to download nojekyll",
-#   has_icon = TRUE,
-#   icon = "fa fa-save",
-#   self_contained = FALSE
-# )
-```
-
-4. Finally, in **GitHub**, click **Settings** -> **Pages** choose:
-- `main` branch
-- `/docs` folder
-- and Save
 :::
 ::::
+
 
 ```{r}
 countdown(minutes = 10, warn_when = 60)
 ```
-
 
 ## {background="#43464B"}
 
