@@ -34,7 +34,7 @@ include_img <- function(img_name) {
 # browseURL("https://github.com/ZoeLawson/mcc_tools_tech/tree/Winter2024")
 # browseURL("https://websitesetup.org/html5-cheat-sheet/")
 # browseURL("https://github.com/b2renger/Introduction_HTML-CSS-JS")
-# https://js4shiny.com/slides/how-to-www#13
+# browseURL("https://js4shiny.com/slides/how-to-www#13")
 ```
 
 # How Websites Work?

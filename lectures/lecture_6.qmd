@@ -1,5 +1,5 @@
 ---
-title: "Lecture 6: Advanced Quarto for Website Creation"
+title: "Lecture 6: Quarto for Website Creation"
 subtitle: BAA1028 - Workflow & Data Management 
 author: Damien Dupré
 format:
