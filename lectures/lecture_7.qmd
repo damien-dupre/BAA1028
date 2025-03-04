@@ -28,7 +28,9 @@ library(anicon)
 library(countdown)
 library(fontawesome)
 library(knitr)
-library(here)
+library(DT)
+library(googlesheets4)
+library(tidyverse)
 
 # functions --------------------------------------------------------------------
 include_img <- function(img_name) {
@@ -36,8 +38,37 @@ include_img <- function(img_name) {
   include_graphics()
 }
 
+headerCallback <- c(
+  "function(thead, data, start, end, display){",
+  "  $('th', thead).css('border-bottom', '5px solid black');",
+  "}"
+)
+
+
+overview_table <- function(x) {
+  x |> 
+    datatable(
+      rownames = FALSE,
+      extensions = 'Responsive',
+      options = list(
+        headerCallback = JS(headerCallback),
+        dom = 't',
+        pageLength = -1,
+        ordering = FALSE,
+        columnDefs = list(
+          list(className = 'dt-center', targets = 0),
+          list(width = '300px', targets = 0)
+          )
+      ),
+      # class = 'cell-border stripe',
+      escape = FALSE
+    ) |> 
+    formatStyle(c('Variable', 'Notes'), fontSize = '70%')
+}
+
+
 # data -------------------------------------------------------------------------
-# sass_variables <- read.csv(here("data/sass_variables.csv"))
+sass_variables <- read.csv("https://raw.githubusercontent.com/damien-dupre/BAA1028/refs/heads/main/data/sass_variables.csv")
 
 # Glittr.org 
 # https://jhudatascience.org/Adv_Reproducibility_in_Cancer_Informatics/
@@ -749,67 +780,35 @@ Note that the variables section is denoted by the `/*-- scss:defaults --*/` comm
 
 ## Sass Variables
 
-The following Sass Variables can be specified within SCSS files (note that these variables should always be prefixed with a `$` and are specified within theme files rather than within YAML options):
+The following Sass Variables can be specified within SCSS files (note that these variables should always be prefixed with a `$` and are specified within theme files rather than within YAML options)
 
-### Colors
+## Colors
 
-+---------------+------------------------------------------------------------------------------------+
-| Variable      | Notes                                                                              |
-+===============+====================================================================================+
-| `$body-bg`    | The page background color.                                                         |
-+---------------+------------------------------------------------------------------------------------+
-| `$body-color` | The page text color.                                                               |
-+---------------+------------------------------------------------------------------------------------+
-| `$link-color` | The link color.                                                                    |
-+---------------+------------------------------------------------------------------------------------+
-| `$input-bg`   | The background color for HTML inputs.                                              |
-+---------------+------------------------------------------------------------------------------------+
-| `$popover-bg` | The background color for popovers (for example, when a citation preview is shown). |
-+---------------+------------------------------------------------------------------------------------+
+```{r}
+sass_variables |> 
+  filter(Object == "Colors") |> 
+  select(-Object) |> 
+  overview_table()
+```
 
-### Fonts
 
-+---------------------------+------------------------------------------+
-| Variable                  | Notes                                    |
-+===========================+==========================================+
-| `$font-family-sans-serif` | The sans-serif font family for the page. |
-+---------------------------+------------------------------------------+
-| `$font-family-monospace`  | The monospace font family for the page.  |
-+---------------------------+------------------------------------------+
-| `$font-size-root`         | The base font size for the page.         |
-+---------------------------+------------------------------------------+
-| `$toc-font-size`          | The font size for the page TOC.          |
-+---------------------------+------------------------------------------+
-| `$h1-font-size`           | Font sizes for the specified headings.   |
-|                           |                                          |
-| `$h2-font-size`           |                                          |
-|                           |                                          |
-| `$h3-font-size`           |                                          |
-|                           |                                          |
-| `$h4-font-size`           |                                          |
-|                           |                                          |
-| `$h5-font-size`           |                                          |
-+---------------------------+------------------------------------------+
+## Fonts
 
-### Code Blocks
+```{r}
+sass_variables |> 
+  filter(Object == "Fonts") |> 
+  select(-Object) |> 
+  overview_table()
+```
 
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Variable                        | Notes                                                                                                                                                            |
-+=================================+==================================================================================================================================================================+
-| `$code-block-border-left`       | By default, Quarto does not display a left border on code blocks. Set this variable to a truthy value or a CSS color to enable the left border.                  |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-border-left-style` | The style of the left border displayed on code blocks. Defaults to `solid`.                                                                                      |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-border-left-size`  | The thickness of the left border displayed on code blocks. Defaults to `3px`;                                                                                    |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-padding-left`      | The amount of padding applied between the code and the border. Defaults to `0.6em`.                                                                              |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-bg`                | By default, Quarto sets a background on code blocks by adding transparency to the theme's `progress-bg` color. Set this variable to truthy value or a CSS color. |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-bg-padding`        | The padding applied to the code block. Defaults to `0.4em`.                                                                                                      |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| `$code-block-bg-alpha`          | The amount to alter the transparency fo the `progress-bg` color. This is not used if an explicit background color is set. Defaults to `-0.35`.                   |
-+---------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+## Code Blocks
+
+```{r}
+sass_variables |> 
+  filter(Object == "Code Blocks") |> 
+  select(-Object) |> 
+  overview_table()
+```
 
 #### Code Annotation
 

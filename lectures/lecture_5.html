@@ -7,7 +7,9 @@
 <link href="lecture_5_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="lecture_5_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="lecture_5_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="lecture_5_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<link href="lecture_5_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="lecture_5_files/libs/quarto-contrib/kbd/kbd.js"></script>
+<link href="lecture_5_files/libs/quarto-contrib/kbd/kbd.css" rel="stylesheet"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Damien Dupré">
@@ -385,6 +387,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="lecture_5_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="lecture_5_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="lecture_5_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
   <link href="lecture_5_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
   <script src="lecture_5_files/libs/countdown-0.4.0/countdown.js"></script>
 </head>
@@ -623,7 +628,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_597f0a55" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_7ffa390a" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -938,7 +943,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0fc8a5cb" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_ce5dc15c" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1045,94 +1050,741 @@ format:
 <h1>2. Markdown Style</h1>
 
 </section>
-<section id="emphasising-text" class="slide level2">
-<h2>Emphasising Text</h2>
+<section id="overview" class="slide level2">
+<h2>Overview</h2>
+<p>Markdown is a plain text format that is designed to be easy to write, and, even more importantly, easy to read:</p>
+<blockquote>
+<p>A Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. – <a href="https://daringfireball.net/projects/markdown/syntax#philosophy">John Gruber</a></p>
+</blockquote>
+<p>This document provides examples of the most commonly used markdown syntax. See the full documentation of <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Markdown</a> for more in-depth documentation.</p>
+</section>
+<section id="text-formatting" class="slide level2">
+<h2>Text Formatting</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href=""></a>*italics*, **bold**, ***bold italics***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><em>italics</em>, <strong>bold</strong>, <strong><em>bold italics</em></strong></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a>superscript^2^ / subscript~2~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>superscript<sup>2</sup> / subscript<sub>2</sub></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a>~~strikethrough~~</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><del>strikethrough</del></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a><span class="in">`verbatim code`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><code>verbatim code</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="headings" class="slide level2">
+<h2>Headings</h2>
+<table class="caption-top" style="width:75%;">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a><span class="fu"># Header 1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h1 id="header-1" class="heading-output">Header 1</h1></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a><span class="fu">## Header 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h2 id="header-2" class="heading-output">Header 2</h2></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="fu">### Header 3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h3 id="header-3" class="heading-output">Header 3</h3></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb26"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href=""></a><span class="fu">#### Header 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h4 id="header-4" class="heading-output">Header 4</h4></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb27"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb27-1"><a href=""></a><span class="fu">##### Header 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h5 id="header-5" class="heading-output">Header 5</h5></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb28"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href=""></a><span class="fu">###### Header 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><h6 id="header-6" class="heading-output">Header 6</h6></td>
+</tr>
+</tbody>
+</table>
+<style type="text/css">
+.heading-output {
+  border-bottom: none;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+</style>
+</section>
+<section id="links" class="slide level2">
+<h2>Links</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb29"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb29-1"><a href=""></a><span class="ot">&lt;https://quarto.org&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://quarto.org" class="uri">https://quarto.org</a></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb30"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href=""></a><span class="co">[</span><span class="ot">Quarto</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://quarto.org">Quarto</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="images" class="slide level2">
+<h2>Images</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href=""></a><span class="al">![](image.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><img data-src="image.png"></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb32"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb32-1"><a href=""></a><span class="al">![Caption](image.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="image.png"></p>
+<figcaption>Caption</figcaption>
+</figure>
+</div></td>
+</tr>
+<tr class="odd">
+<td><div class="sourceCode" id="cb33"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href=""></a><span class="co">[</span><span class="al">![Caption](image.png)</span><span class="co">](https://quarto.org)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><a href="https://quarto.org"><img data-src="image.png" alt="Caption"></a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="list" class="slide level2">
+<h2>List</h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-type">What you type…</h3>
-<p><br></p>
-<pre><code>
-this is *italics*
-
-this is **bold**
-
-this is ***bold italics***</code></pre>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb34-1"><a href=""></a><span class="ss">* </span>unordered list         </span>
+<span id="cb34-2"><a href=""></a><span class="ss">    + </span>sub-item 1         </span>
+<span id="cb34-3"><a href=""></a><span class="ss">    + </span>sub-item 2         </span>
+<span id="cb34-4"><a href=""></a><span class="ss">        - </span>sub-sub-item 1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-get">What you get…</h3>
-<p><br></p>
-<p>this is <em>italics</em></p>
-<p>this is <strong>bold</strong></p>
-<p>this is <strong><em>bold italics</em></strong></p>
+<ul>
+<li>unordered list
+<ul>
+<li>sub-item 1<br>
+</li>
+<li>sub-item 2
+<ul>
+<li>sub-sub-item 1</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb35-1"><a href=""></a><span class="ss">*   </span>item 2                     </span>
+<span id="cb35-2"><a href=""></a>                               </span>
+<span id="cb35-3"><a href=""></a>    Continued (indent 4 spaces)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li><p>item 2</p>
+<p>Continued (indent 4 spaces)</p></li>
+</ul>
 </div>
 </div>
 </div>
 </section>
-<section id="creating-lists" class="slide level2">
-<h2>Creating Lists</h2>
+<section id="list-1" class="slide level2">
+<h2>List</h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-type-1">What you type…</h3>
-<p><br></p>
-<pre><code>- unnumbered lists
-- look like this
-
-1. numbered lists
-2. look like this</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href=""></a><span class="ss">1. </span>ordered list             </span>
+<span id="cb36-2"><a href=""></a><span class="ss">2. </span>item 2                   </span>
+<span id="cb36-3"><a href=""></a>    i) sub-item 1           </span>
+<span id="cb36-4"><a href=""></a>         A.  sub-sub-item 1 </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-get-1">What you get…</h3>
-<p><br></p>
-<ul>
-<li>unnumbered lists</li>
-<li>look like this</li>
-</ul>
 <ol type="1">
-<li>numbered lists</li>
-<li>look like this</li>
+<li>ordered list<br>
+</li>
+<li>item 2
+<ol type="i">
+<li>sub-item 1
+<ol type="A">
+<li>sub-sub-item 1</li>
+</ol></li>
+</ol></li>
 </ol>
 </div>
 </div>
 </div>
-</section>
-<section id="creating-headings" class="slide level2">
-<h2>Creating Headings</h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-type-2">What you type…</h3>
-<p><br></p>
-<pre><code># Level 1 heading
-## Level 2 heading
-### Level 3 heading
-</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb37-1"><a href=""></a><span class="ss">- </span><span class="va">[ ]</span> Task 1  </span>
+<span id="cb37-2"><a href=""></a><span class="ss">- </span><span class="va">[x]</span> Task 2  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p><br><br></p>
-<h3 id="what-you-get-2">What you get…</h3>
-<p><br></p>
-<h3 id="level-1-heading">Level 1 heading</h3>
-<h4 id="level-2-heading">Level 2 heading</h4>
-<h5 id="level-3-heading">Level 3 heading</h5>
+<ul class="task-list">
+<li><label><input type="checkbox">Task 1<br>
+</label></li>
+<li><label><input type="checkbox" checked="">Task 2<br>
+</label></li>
+</ul>
 </div>
 </div>
 </div>
+</section>
+<section id="list-2" class="slide level2">
+<h2>List</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb38-1"><a href=""></a>(@)  A list whose numbering</span>
+<span id="cb38-2"><a href=""></a>                           </span>
+<span id="cb38-3"><a href=""></a>continues after            </span>
+<span id="cb38-4"><a href=""></a>                           </span>
+<span id="cb38-5"><a href=""></a>(@)  an interruption       </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ol type="1">
+<li>A list whose numbering</li>
+</ol>
+<p>continues after</p>
+<ol start="2" type="1">
+<li>an interruption</li>
+</ol>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb39-1"><a href=""></a>::: {}                      </span>
+<span id="cb39-2"><a href=""></a><span class="ss">1. </span>A list                   </span>
+<span id="cb39-3"><a href=""></a>:::                         </span>
+<span id="cb39-4"><a href=""></a>                            </span>
+<span id="cb39-5"><a href=""></a>::: {}                      </span>
+<span id="cb39-6"><a href=""></a><span class="ss">1. </span>Followed by another list </span>
+<span id="cb39-7"><a href=""></a>:::                         </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div>
+<ol type="1">
+<li>A list<br>
+</li>
+</ol>
+</div>
+<div>
+<ol type="1">
+<li>Followed by another list</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb40-1"><a href=""></a>term             </span>
+<span id="cb40-2"><a href=""></a>: definition     </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<dl>
+<dt>term</dt>
+<dd>
+definition
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</section>
+<section id="list-3" class="slide level2">
+<h2>List</h2>
+<p>Note that unlike other Markdown renderers (notably Jupyter and GitHub), lists in Quarto require an entire blank line above the list.</p>
+<p>Otherwise the list will not be rendered in list form, rather it will all appear as normal text along a single line.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href=""></a><span class="an">Some text:</span></span>
+<span id="cb41-2"><a href=""></a></span>
+<span id="cb41-3"><a href=""></a><span class="ss">* </span>First bullet point</span>
+<span id="cb41-4"><a href=""></a><span class="ss">* </span>Second bullet point</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Some text:</p>
+<ul>
+<li>First bullet point</li>
+<li>Second bullet point</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb42-1"><a href=""></a><span class="an">Some text:</span></span>
+<span id="cb42-2"><a href=""></a><span class="ss">* </span>First bullet point</span>
+<span id="cb42-3"><a href=""></a><span class="ss">* </span>Second bullet point</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Some text: * First bullet point * Second bullet point</p>
+</div>
+</div>
+</div>
+</section>
+<section id="footnotes" class="slide level2">
+<h2>Footnotes</h2>
+<p>Markdown supports numbering and formatting footnotes using the following syntax:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb43-1"><a href=""></a>Here is a footnote reference,<span class="ot">[^1]</span> and another.<span class="ot">[^longnote]</span></span>
+<span id="cb43-2"><a href=""></a></span>
+<span id="cb43-3"><a href=""></a><span class="ot">[^1]: </span>Here is the footnote.</span>
+<span id="cb43-4"><a href=""></a></span>
+<span id="cb43-5"><a href=""></a><span class="ot">[^longnote]: </span>Here's one with multiple blocks.</span>
+<span id="cb43-6"><a href=""></a></span>
+<span id="cb43-7"><a href=""></a><span class="in">    Subsequent paragraphs are indented to show that they</span></span>
+<span id="cb43-8"><a href=""></a>belong to the previous footnote.</span>
+<span id="cb43-9"><a href=""></a></span>
+<span id="cb43-10"><a href=""></a><span class="in">        { some.code }</span></span>
+<span id="cb43-11"><a href=""></a></span>
+<span id="cb43-12"><a href=""></a><span class="in">    The whole paragraph can be indented, or just the first</span></span>
+<span id="cb43-13"><a href=""></a><span class="in">    line.  In this way, multi-paragraph footnotes work like</span></span>
+<span id="cb43-14"><a href=""></a><span class="in">    multi-paragraph list items.</span></span>
+<span id="cb43-15"><a href=""></a></span>
+<span id="cb43-16"><a href=""></a>This paragraph won't be part of the note, because it</span>
+<span id="cb43-17"><a href=""></a>isn't indented.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="footnotes-1" class="slide level2">
+<h2>Footnotes</h2>
+<p>The above syntax generates the following output:</p>
+<p>Here is a footnote reference,<sup>1</sup> and another.<sup>2</sup></p>
+<p>This paragraph won’t be part of the note, because it isn’t indented.</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Here is the footnote.</p></li><li id="fn2"><p>Here’s one with multiple blocks.</p>
+<p>Subsequent paragraphs are indented to show that they belong to the previous footnote.</p>
+<pre><code>{ some.code }</code></pre>
+<p>The whole paragraph can be indented, or just the first line. In this way, multi-paragraph footnotes work like multi-paragraph list items.</p></li></ol></aside></section>
+<section id="footnotes-2" class="slide level2">
+<h2>Footnotes</h2>
+<p>In addition, you can also write single paragraph footnotes inline using the following syntax:</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href=""></a>Here is an inline note.^[Inlines notes are easier to write,</span>
+<span id="cb45-2"><a href=""></a>since you don't have to pick an identifier and move down to</span>
+<span id="cb45-3"><a href=""></a>type the note.]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This syntax generates the following output:</p>
+<div class="border p-3">
+<p>Here is an inline note.<sup>1</sup></p>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn3"><p>Inlines notes are easier to write, since you don’t have to pick an identifier and move down to type the note.</p></li></ol></aside></section>
+<section id="footnotes-3" class="slide level2">
+<h2>Footnotes</h2>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Footnote IDs should be unique</strong></p>
+</div>
+<div class="callout-content">
+<p>Footnote identifiers, e.g., the <code>1</code> in <code>^1</code>, need to be unique within a document. In Quarto books, chapters are combined into a single document for certain formats (including PDF, DOCX, and EPUB), so footnote identifiers need to be unique <strong>across</strong> chapters.</p>
+</div>
+</div>
+</div>
+<p>The footnotes that are generated from the above examples are included in the <a href="https://quarto.org/docs/authoring/markdown-basics.html#example-footnotes">Example Footnotes</a> section at the bottom of the page. See the <a href="https://pandoc.org/MANUAL.html#footnotes">Markdown Footnotes</a> for additional information.</p>
+</section>
+<section id="tables" class="slide level2">
+<h2>Tables</h2>
+<h4 id="markdown-syntax">Markdown Syntax</h4>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb46-1"><a href=""></a>| Right | Left | Default | Center |</span>
+<span id="cb46-2"><a href=""></a>|------:|:-----|---------|:------:|</span>
+<span id="cb46-3"><a href=""></a>|   12  |  12  |    12   |    12  |</span>
+<span id="cb46-4"><a href=""></a>|  123  |  123 |   123   |   123  |</span>
+<span id="cb46-5"><a href=""></a>|    1  |    1 |     1   |     1  |</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="output">Output</h4>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Right</th>
+<th style="text-align: left;">Left</th>
+<th>Default</th>
+<th style="text-align: center;">Center</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">12</td>
+<td>12</td>
+<td style="text-align: center;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">123</td>
+<td style="text-align: left;">123</td>
+<td>123</td>
+<td style="text-align: center;">123</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">1</td>
+<td>1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p>Learn more in the article on <a href="https://quarto.org/docs/authoring/tables.html">Tables</a>.</p>
+</section>
+<section id="source-code" class="slide level2">
+<h2>Source Code</h2>
+<p>Use <code>```</code> to delimit blocks of source code:</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb47-1"><a href=""></a><span class="in">```</span></span>
+<span id="cb47-2"><a href=""></a><span class="in">code</span></span>
+<span id="cb47-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Add a language to syntax highlight code blocks:</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb48-1"><a href=""></a><span class="in">```python</span></span>
+<span id="cb48-2"><a href=""></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb48-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Markdown supports syntax highlighting for over <a href="https://github.com/jgm/skylighting/tree/master/skylighting-core/xml">140 different languages</a>. If your language is not supported then you can use the <code>default</code> language to get a similar visual treatment:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href=""></a><span class="in">```default</span></span>
+<span id="cb49-2"><a href=""></a><span class="in">code</span></span>
+<span id="cb49-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="source-code-1" class="slide level2">
+<h2>Source Code</h2>
+<p>Equivalent to the short form used in the examples above is a longer form that uses the language as a class (i.e.&nbsp;<code>.python</code>) inside braces:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb50-1"><a href=""></a><span class="in">```{.python}</span></span>
+<span id="cb50-2"><a href=""></a><span class="in">1 + 1</span></span>
+<span id="cb50-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The longer form allows you to add attributes to the block in a similar way to <a href="">Divs</a>. Some specific features that use this syntax are <a href="https://quarto.org/docs/output-formats/html-code.qmd#line-numbers">Lines Numbers</a> and <a href="https://quarto.org/docs/output-formats/html-code.qmd#code-filename">Code Filename</a>. Here is an example of the latter:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>run.py</strong></pre>
+</div>
+<div class="sourceCode" id="cb51" data-filename="run.py"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb51-1"><a href=""></a><span class="in">```{.python filename="run.py"}</span></span>
+<span id="cb51-2"><a href=""></a><span class="in">code</span></span>
+<span id="cb51-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you are creating HTML output there is a wide variety of options available for code block output. See the article on <a href="https://quarto.org/docs/output-formats/html-code.html">HTML Code</a> for additional details.</p>
+</section>
+<section id="raw-content" class="slide level2">
+<h2>Raw Content</h2>
+<p>Raw content can be included directly without Quarto parsing it using <a href="https://pandoc.org/MANUAL.html#extension-raw_attribute">Pandoc’s raw attribute</a>. A raw block starts with <code>```{=</code> followed by a format and closing <code>}</code>, e.g.&nbsp;here’s a raw HTML block:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb52-1"><a href=""></a><span class="in">```{=html}</span></span>
+<span id="cb52-2"><a href=""></a><span class="in">&lt;iframe src="https://quarto.org/" width="500" height="400"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb52-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also include raw content inline:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb53-1"><a href=""></a> Here's some raw inline HTML: <span class="in">`&lt;a&gt;html&lt;/a&gt;`</span>{=html}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="equations" class="slide level2">
+<h2>Equations</h2>
+<p>Use <code>$</code> delimiters for inline math and <code>$$</code> delimiters for display math. For example:</p>
+<table class="caption-top" style="width:75%;">
+<colgroup>
+<col style="width: 38%">
+<col style="width: 36%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb54"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb54-1"><a href=""></a><span class="an">inline math:</span><span class="co"> $E = mc^{2}$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>inline math: <span class="math inline">\(E=mc^{2}\)</span></td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb55"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb55-1"><a href=""></a><span class="an">display math:</span></span>
+<span id="cb55-2"><a href=""></a></span>
+<span id="cb55-3"><a href=""></a>$$E = mc^{2}$$</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td><p>display math:</p>
+<p><span class="math display">\[E = mc^{2}\]</span></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diagrams" class="slide level2">
+<h2>Diagrams</h2>
+<p>Quarto has native support for embedding <a href="https://mermaid-js.github.io/mermaid/#/">Mermaid</a> and <a href="https://graphviz.org/">Graphviz</a> diagrams. This enables you to create flowcharts, sequence diagrams, state diagrams, Gantt charts, and more using a plain text syntax inspired by markdown.</p>
+<p>For example, here we embed a flowchart created using Mermaid:</p>
+<div class="cell" data-reveal="true" data-layout-align="default">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb56-1"><a href=""></a><span class="in">```{mermaid}</span></span>
+<span id="cb56-2"><a href=""></a><span class="in">flowchart LR</span></span>
+<span id="cb56-3"><a href=""></a><span class="in">  A[Hard edge] --&gt; B(Round edge)</span></span>
+<span id="cb56-4"><a href=""></a><span class="in">  B --&gt; C{Decision}</span></span>
+<span id="cb56-5"><a href=""></a><span class="in">  C --&gt; D[Result one]</span></span>
+<span id="cb56-6"><a href=""></a><span class="in">  C --&gt; E[Result two]</span></span>
+<span id="cb56-7"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Hard edge] --&gt; B(Round edge)
+  B --&gt; C{Decision}
+  C --&gt; D[Result one]
+  C --&gt; E[Result two]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>Learn more in the article on <a href="https://quarto.org/docs/authoring/diagrams.html">Diagrams</a>.</p>
+</section>
+<section id="videos" class="slide level2">
+<h2>Videos</h2>
+<p>You can include videos in documents using the <code>{{&lt; video &gt;}}</code> <a href="https://quarto.org/docs/authoring/shortcodes.html">shortcode</a>. For example, here we embed a YouTube video:</p>
+<div class="sourceCode" id="cb57" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb57-1"><a href=""></a>{{&lt; video https://www.youtube.com/embed/_f3latmOhew &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can also use raw html code chunks:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb58-1"><a href=""></a><span class="in">```{=html}</span></span>
+<span id="cb58-2"><a href=""></a><span class="in">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/_f3latmOhew"&gt;&lt;/iframe&gt;</span></span>
+<span id="cb58-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Videos can refer to video files (e.g.&nbsp;MPEG) or can be links to videos published on YouTube, Vimeo, or Brightcove. Learn more in the article on <a href="https://quarto.org/docs/authoring/videos.html">Videos</a>.</p>
+</section>
+<section id="page-breaks" class="slide level2">
+<h2>Page Breaks</h2>
+<p>The <code>pagebreak</code> <a href="https://quarto.org/docs/authoring/shortcodes.html">shortcode</a> enables you to insert a native pagebreak into a document (.e.g in LaTeX this would be a <code>\newpage</code>, in MS Word a docx-native pagebreak, in HTML a <code>page-break-after: always</code> CSS directive, etc.):</p>
+<div class="sourceCode" id="cb59" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb59-1"><a href=""></a>page 1</span>
+<span id="cb59-2"><a href=""></a></span>
+<span id="cb59-3"><a href=""></a>{{&lt; pagebreak &gt;}}</span>
+<span id="cb59-4"><a href=""></a></span>
+<span id="cb59-5"><a href=""></a>page 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Native pagebreaks are supported for HTML, LaTeX, Context, MS Word, Open Document, and ePub (for other formats a form-feed character <code>\f</code> is inserted).</p>
+</section>
+<section id="divs-and-spans" class="slide level2">
+<h2>Divs and Spans</h2>
+<p>You can add classes, attributes, and other identifiers to regions of content using Divs and Spans (you’ll see an example of this below in <a href="#/callout-blocks">Callout Blocks</a>).</p>
+<p>For example, here we add the “border” class to a region of content using a div (<code>:::</code>):</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb60-1"><a href=""></a>::: {.border}</span>
+<span id="cb60-2"><a href=""></a>This content can be styled with a border</span>
+<span id="cb60-3"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb61-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"border"</span><span class="dt">&gt;</span></span>
+<span id="cb61-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>This content can be styled with a border<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb61-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="divs-and-spans-1" class="slide level2">
+<h2>Divs and Spans</h2>
+<p>Divs start with a fence containing at least three consecutive colons plus some attributes. The Div ends with another line containing a string of at least three consecutive colons. The Div should be separated by blank lines from preceding and following blocks.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Divs may also be nested. For example:</p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb62-1"><a href=""></a>::::: {#special .sidebar}</span>
+<span id="cb62-2"><a href=""></a></span>
+<span id="cb62-3"><a href=""></a>::: {.warning}</span>
+<span id="cb62-4"><a href=""></a>Here is a warning.</span>
+<span id="cb62-5"><a href=""></a>:::</span>
+<span id="cb62-6"><a href=""></a></span>
+<span id="cb62-7"><a href=""></a>More content.</span>
+<span id="cb62-8"><a href=""></a>:::::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
+<div class="sourceCode" id="cb63"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb63-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> id</span><span class="op">=</span><span class="st">"special"</span><span class="ot"> class</span><span class="op">=</span><span class="st">"sidebar"</span><span class="dt">&gt;</span></span>
+<span id="cb63-2"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"warning"</span><span class="dt">&gt;</span></span>
+<span id="cb63-3"><a href=""></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>Here is a warning.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb63-4"><a href=""></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb63-5"><a href=""></a>  <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span>More content.<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb63-6"><a href=""></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="divs-and-spans-2" class="slide level2">
+<h2>Divs and Spans</h2>
+<p>A bracketed sequence of inlines, as one would use to begin a link, will be treated as a <code>Span</code> with attributes if it is followed immediately by attributes:</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb64-1"><a href=""></a><span class="co">[</span><span class="ot">This is *some text*</span><span class="co">]</span>{.class key="val"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Once rendered to HTML, Quarto will translate the markdown into:</p>
+<div class="sourceCode" id="cb65"><pre class="sourceCode numberSource html number-lines code-with-copy"><code class="sourceCode html"><span id="cb65-1"><a href=""></a><span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"class"</span><span class="ot"> data-key</span><span class="op">=</span><span class="st">"val"</span><span class="dt">&gt;</span></span>
+<span id="cb65-2"><a href=""></a>  This is <span class="dt">&lt;</span><span class="kw">em</span><span class="dt">&gt;</span>some text<span class="dt">&lt;/</span><span class="kw">em</span><span class="dt">&gt;</span></span>
+<span id="cb65-3"><a href=""></a><span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Typically, you’ll use CSS and/or a <a href="https://quarto.org/docs/extensions/filters.qmd">Filter</a> along with Divs and Spans to provide styling or other behavior within rendered documents.</p>
+</section>
+<section id="ordering-of-attributes" class="slide level2">
+<h2>Ordering of Attributes</h2>
+<p>Both divs and spans in Pandoc can have any combination of identifiers, classes, and (potentially many) key-value attributes. In order for these to be recognized, they have to be provided in a specific order: identifiers, classes, and then key-value attributes. Any of these can be omitted, but must follow that order if they are provided. For example, the following is valid:</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb66-1"><a href=""></a><span class="co">[</span><span class="ot">This is good</span><span class="co">]</span>{#id .class key1="val1" key2="val2"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>However, the following <em>will not be recognized</em>:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb67-1"><a href=""></a><span class="co">[</span><span class="ot">This does *not* work!</span><span class="co">]</span>{.class key="val" #id}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This ordering restriction applies to both divs and spans. See the documentation on <a href="https://pandoc.org/MANUAL.html#divs-and-spans">Divs and Spans</a> for additional details.</p>
+</section>
+<section id="callout-blocks" class="slide level2">
+<h2>Callout Blocks</h2>
+<h4 id="markdown-syntax-1">Markdown Syntax</h4>
+<div class="sourceCode" id="cb68"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb68-1"><a href=""></a>:::{.callout-note}</span>
+<span id="cb68-2"><a href=""></a>Note that there are five types of callouts, including: </span>
+<span id="cb68-3"><a href=""></a><span class="in">`note`</span>, <span class="in">`tip`</span>, <span class="in">`warning`</span>, <span class="in">`caution`</span>, and <span class="in">`important`</span>.</span>
+<span id="cb68-4"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<h4 id="output-1">Output</h4>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Note</strong></p>
+</div>
+<div class="callout-content">
+<p>Note that there are five types of callouts, including <code>note</code>, <code>tip</code>, <code>warning</code>, <code>caution</code>, and <code>important</code>.</p>
+</div>
+</div>
+</div>
+<p>Learn more in the article on <a href="https://quarto.org/docs/authoring/callouts.html">Callout Blocks</a>.</p>
+</section>
+<section id="other-blocks" class="slide level2">
+<h2>Other Blocks</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb69"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb69-1"><a href=""></a><span class="at">&gt; Blockquote</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<blockquote>
+<p>Blockquote</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb70-1"><a href=""></a>::: {.classname}</span>
+<span id="cb70-2"><a href=""></a>Div             </span>
+<span id="cb70-3"><a href=""></a>:::             </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="classname">
+<p>Div</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb71-1"><a href=""></a>| Line Block           </span>
+<span id="cb71-2"><a href=""></a>|   Spaces and newlines</span>
+<span id="cb71-3"><a href=""></a>|   are preserved      </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="second-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="line-block">Line Block<br>
+&nbsp;&nbsp;&nbsp;Spaces and newlines<br>
+&nbsp;&nbsp;&nbsp;are preserved</div>
+</div>
+</div>
+</div>
+</section>
+<section id="special-characters" class="slide level2">
+<h2>Special Characters</h2>
+<table class="caption-top" style="width:47%;">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 22%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Markdown Syntax</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><div class="sourceCode" id="cb72"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb72-1"><a href=""></a><span class="an">endash:</span><span class="co"> --</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>endash: –</td>
+</tr>
+<tr class="even">
+<td><div class="sourceCode" id="cb73"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb73-1"><a href=""></a><span class="an">emdash:</span><span class="co"> ---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></td>
+<td>emdash: —</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="keyboard-shortcuts" class="slide level2">
+<h2>Keyboard Shortcuts</h2>
+<p>The <code>kbd</code> <a href="https://quarto.org/docs/authoring/shortcodes.html">shortcode</a> can be used to describe keyboard shortcuts in documentation. On Javascript formats, it will attempt to detect the operating system of the format and show the correct shortcut. On print formats, it will print the keyboard shortcut information for all operating systems.</p>
+<p>For example, writing the following markdown:</p>
+<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource md number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb74-1"><a href=""></a>To print, press {{&lt; kbd Shift-Ctrl-P &gt;}}. To open an existing new project, press {{&lt; kbd mac=Shift-Command-O win=Shift-Control-O linux=Shift-Ctrl-L &gt;}}.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>will render the keyboard shortcuts as:</p>
+<p>To print, press <kbd aria-hidden="true">Shift-Ctrl-P</kbd><span class="visually-hidden">Shift-Ctrl-P</span>. To open an existing new project, press <kbd aria-hidden="true" data-linux="Shift-Ctrl-L" data-mac="Shift-Command-O" data-windows="Shift-Control-O"></kbd><span class="visually-hidden"></span>.</p>
 </section>
 <section id="markdown-example" class="slide level2">
 <h2>Markdown Example</h2>
@@ -1176,11 +1828,11 @@ about Quarto.
 </section>
 <section id="anatomy-of-a-code-cell" class="slide level2">
 <h2>Anatomy of a Code Cell</h2>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb23-2"><a href=""></a><span class="in">#| label: hello-world</span></span>
-<span id="cb23-3"><a href=""></a><span class="in">#| echo: false</span></span>
-<span id="cb23-4"><a href=""></a><span class="in">print('Hello, world!')</span></span>
-<span id="cb23-5"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb76-2"><a href=""></a><span class="in">#| label: hello-world</span></span>
+<span id="cb76-3"><a href=""></a><span class="in">#| echo: false</span></span>
+<span id="cb76-4"><a href=""></a><span class="in">print('Hello, world!')</span></span>
+<span id="cb76-5"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Place options underneath, behind the <code>#|</code> (hashpipe): <code>#| option1: value</code></p>
 <p>Cells output can be customized with this hashpipe options (i.e., arguments set after the <code>#|</code>). Above, we use 1 argument:</p>
 <p>See the <strong><a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto Reference Guide</a></strong> for a complete list of chunk options.</p>
@@ -1188,27 +1840,27 @@ about Quarto.
 <section id="figures-in-the-output-document" class="slide level2">
 <h2>Figures in the Output Document</h2>
 <p>As long as the data frame object created in the first setup chunk, then a <strong>visualisation can be used in a separated cell</strong>:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb24-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb24-2"><a href=""></a><span class="an">title:</span><span class="co"> "Untitled"</span></span>
-<span id="cb24-3"><a href=""></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb24-4"><a href=""></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb24-5"><a href=""></a><span class="co">---</span></span>
-<span id="cb24-6"><a href=""></a></span>
-<span id="cb24-7"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb24-8"><a href=""></a><span class="in"># libraries</span></span>
-<span id="cb24-9"><a href=""></a><span class="in">import plotly.express as px  </span></span>
-<span id="cb24-10"><a href=""></a><span class="in"># code</span></span>
-<span id="cb24-11"><a href=""></a><span class="in">fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])</span></span>
-<span id="cb24-12"><a href=""></a><span class="in">```</span></span>
-<span id="cb24-13"><a href=""></a></span>
-<span id="cb24-14"><a href=""></a><span class="fu"># My Section Title</span></span>
-<span id="cb24-15"><a href=""></a></span>
-<span id="cb24-16"><a href=""></a>My text followed by my figure.</span>
-<span id="cb24-17"><a href=""></a></span>
-<span id="cb24-18"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb24-19"><a href=""></a></span>
-<span id="cb24-20"><a href=""></a><span class="in">fig.show()</span></span>
-<span id="cb24-21"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb77-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb77-2"><a href=""></a><span class="an">title:</span><span class="co"> "Untitled"</span></span>
+<span id="cb77-3"><a href=""></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb77-4"><a href=""></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb77-5"><a href=""></a><span class="co">---</span></span>
+<span id="cb77-6"><a href=""></a></span>
+<span id="cb77-7"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb77-8"><a href=""></a><span class="in"># libraries</span></span>
+<span id="cb77-9"><a href=""></a><span class="in">import plotly.express as px  </span></span>
+<span id="cb77-10"><a href=""></a><span class="in"># code</span></span>
+<span id="cb77-11"><a href=""></a><span class="in">fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])</span></span>
+<span id="cb77-12"><a href=""></a><span class="in">```</span></span>
+<span id="cb77-13"><a href=""></a></span>
+<span id="cb77-14"><a href=""></a><span class="fu"># My Section Title</span></span>
+<span id="cb77-15"><a href=""></a></span>
+<span id="cb77-16"><a href=""></a>My text followed by my figure.</span>
+<span id="cb77-17"><a href=""></a></span>
+<span id="cb77-18"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb77-19"><a href=""></a></span>
+<span id="cb77-20"><a href=""></a><span class="in">fig.show()</span></span>
+<span id="cb77-21"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="visualisation-specific-options" class="slide level2">
 <h2>Visualisation Specific Options</h2>
@@ -1219,13 +1871,13 @@ about Quarto.
 <li>fig-width: 5</li>
 </ul>
 <p>Note, the default unit for height and width is inches.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb25-1"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb25-2"><a href=""></a><span class="in">#| fig-cap: "caption of the figure"</span></span>
-<span id="cb25-3"><a href=""></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb25-4"><a href=""></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb25-5"><a href=""></a></span>
-<span id="cb25-6"><a href=""></a><span class="in">fig.show()</span></span>
-<span id="cb25-7"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb78-2"><a href=""></a><span class="in">#| fig-cap: "caption of the figure"</span></span>
+<span id="cb78-3"><a href=""></a><span class="in">#| fig-height: 5</span></span>
+<span id="cb78-4"><a href=""></a><span class="in">#| fig-width: 5</span></span>
+<span id="cb78-5"><a href=""></a></span>
+<span id="cb78-6"><a href=""></a><span class="in">fig.show()</span></span>
+<span id="cb78-7"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quarto-platforms" class="slide level2">
 <h2>Quarto platforms</h2>
@@ -1263,6 +1915,7 @@ img.circle {border-radius:50%;}
 </div>
 </div>
 </section></section>
+
     </div>
   </div>
 
