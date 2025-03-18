@@ -1030,12 +1030,482 @@ Damien Dupré
 <span id="cb22-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span><span class="at"> </span></span>
 <span id="cb22-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section></section>
+<section>
+<section id="project-listings" class="title-slide slide level1 center">
+<h1>Project Listings</h1>
+
+</section>
+<section id="before-we-proceed-1" class="slide level2">
+<h2>Before we proceed…</h2>
+<p>We have created a subfolder <code>projects</code> at the root of the website with quarto file <code>index.qmd</code> inside this folder.</p>
+<p>We have referenced this <code>projects/index.qmd</code> in the navbar inside the <code>_quarto.yml</code> file.</p>
+<p>Today, we will populate the content of <code>projects/index.qmd</code> with a list of different projects!</p>
+</section>
+<section id="lets-add-more-pages" class="slide level2">
+<h2>Let’s Add more Pages!</h2>
+<ul>
+<li>Create a new subfolder called <code>list</code> inside <code>/projects</code></li>
+<li>In this <code>list</code> sub-subfolder, create 3 quarto files: <code>project_1.qmd</code>, <code>project_2.qmd</code>, and <code>project_3.qmd</code></li>
+</ul>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Displaying a listing on <code>projects/index.qmd</code> is as simple as:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb23-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb23-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Projects</span></span>
+<span id="cb23-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb23-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Explicit default options:</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb24-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb24-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Projects</span></span>
+<span id="cb24-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb24-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> /</span></span>
+<span id="cb24-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort</span><span class="kw">:</span><span class="at"> </span><span class="st">"date"</span></span>
+<span id="cb24-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb24-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
+<span id="cb24-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-listing-is" class="slide level2">
+<h2>A listing is…</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li>an automatically generated list of content</li>
+<li>styled via a template, (built-in <code>type</code>, or custom <code>template</code>)</li>
+<li>can be included on any page</li>
+</ul>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-default.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="generated-from-documents-in-contents" class="slide level2">
+<h2>Generated from documents in <code>contents</code></h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-first.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>blog/third-post/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb25" data-filename="blog/third-post/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb25-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb25-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"First Post"</span></span>
+<span id="cb25-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Post description for first post"</span></span>
+<span id="cb25-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Alicia"</span></span>
+<span id="cb25-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"5/22/2021"</span></span>
+<span id="cb25-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"cover.jpg"</span></span>
+<span id="cb25-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
+<span id="cb25-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Science</span></span>
+<span id="cb25-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Technology</span></span>
+<span id="cb25-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="why-use-a-listing" class="slide level2">
+<h2>Why use a listing?</h2>
+<ul>
+<li>Great for large collections</li>
+<li>Great for collections that grow</li>
+</ul>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your Turn</h2>
+<ol type="1">
+<li>(Repeat) Make a new page <code>blog/index.qmd</code> which is a listing</li>
+<li>Experiment with <code>type</code> and <code>categories</code>:
+<ul>
+<li><code>type</code>: <code>grid</code> or <code>table</code></li>
+<li><code>categories</code>: <code>true</code>, <code>unnumbered</code>, <code>cloud</code></li>
+</ul>
+<a href="https://quarto.org/docs/websites/website-listings.html#listing-options">Other listing options</a></li>
+<li>Discuss with your neighbor:
+<ul>
+<li>What makes this a blog?</li>
+<li>What would you change if this was a gallery of your projects?</li>
+</ul></li>
+</ol>
+</section>
+<section id="default" class="slide level2">
+<h2>Default</h2>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-default.png" class="r-stretch"></section>
+<section id="grid" class="slide level2">
+<h2>Grid</h2>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-grid.png" class="r-stretch"></section>
+<section id="table" class="slide level2">
+<h2>Table</h2>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-table.png" class="r-stretch"></section>
+<section id="categories" class="slide level2">
+<h2>Categories</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/listings-categories-true.png"></p>
+<figcaption><code>true</code>/<code>numbered</code></figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/listings-categories-unnumbered.png"></p>
+<figcaption><code>unnumbered</code></figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/listings-categories-cloud.png"></p>
+<figcaption><code>cloud</code></figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="use-listings-for-_-projects-_" class="slide level2">
+<h2>Use listings for _ projects _</h2>
+<p><a href="https://ivelasq.rbind.io/project" class="uri">https://ivelasq.rbind.io/project</a></p>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-projects-example.png" class="r-stretch"><div class="footer">
+<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+</div>
+</section>
+<section id="use-listings-for-_-talks-_" class="slide level2">
+<h2>Use listings for _ talks _</h2>
+<p><a href="https://meghan.rbind.io/talks/" class="uri">https://meghan.rbind.io/talks/</a></p>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-talks.png" class="r-stretch"><div class="footer">
+<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+</div>
+</section>
+<section id="use-listings-for-_-publications-_" class="slide level2">
+<h2>Use listings for _ publications _</h2>
+<p><a href="https://mickael.canouil.fr/publications" class="uri">https://mickael.canouil.fr/publications</a></p>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-publications.png" class="r-stretch"><div class="footer">
+<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+</div>
+</section>
+<section id="use-listings-for" class="slide level2">
+<h2>Use listings for …</h2>
+<p><a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
+<iframe src="https://charlotte.quarto.pub/listings/" width="100%" height="550" title="Listing Examples"></iframe>
+</section>
+<section id="contents-can-be-a-yaml-file" class="slide level2">
+<h2><code>contents</code> can be a YAML file</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projects/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb26" data-filename="projects/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb26-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb26-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Projects</span></span>
+<span id="cb26-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb26-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
+<span id="cb26-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb26-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max-description-length</span><span class="kw">:</span><span class="at"> </span><span class="dv">250</span></span>
+<span id="cb26-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>project/projects.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb27" data-filename="project/projects.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb27-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Predicting House Prices with Machine Learning</span></span>
+<span id="cb27-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> https://example.com/house-prices</span></span>
+<span id="cb27-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">  # Photo by Breno Assis on Unsplash https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q </span></span>
+<span id="cb27-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg</span></span>
+<span id="cb27-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">  description</span><span class="kw">: </span><span class="ch">&gt;</span></span>
+<span id="cb27-6"><a href="" aria-hidden="true" tabindex="-1"></a>    This project involves using machine learning algorithms to predict house prices based on</span>
+<span id="cb27-7"><a href="" aria-hidden="true" tabindex="-1"></a>    various features such as location, size, and amenities. It includes data cleaning,</span>
+<span id="cb27-8"><a href="" aria-hidden="true" tabindex="-1"></a>    feature engineering, and model selection.</span>
+<span id="cb27-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Python</span><span class="kw">,</span><span class="at"> Machine Learning</span><span class="kw">,</span><span class="at"> Data Cleaning</span><span class="kw">]</span></span>
+<span id="cb27-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">date</span><span class="kw">:</span><span class="at"> 2024-01-01</span></span>
+<span id="cb27-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>path</code> can be a relative path to a file in your site, or a URL</p>
+<p>You can use <a href="https://quarto.org/docs/websites/website-listings.html#listing-fields">Listing Fields</a>, or create custom ones.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="contents-can-be-a-yaml-file-1" class="slide level2">
+<h2><code>contents</code> can be a YAML file</h2>
+
+<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-projects.png" class="r-stretch"></section>
+<section id="simple-customization-select-fields" class="slide level2">
+<h2>Simple Customization: Select Fields</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Use <code>fields</code> to specify which <a href="https://quarto.org/docs/websites/website-listings.html#listing-fields">Listing Fields</a> are displayed.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>E.g. Exclude <code>date</code>:</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb28-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb28-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
+<span id="cb28-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
+<span id="cb28-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"image"</span><span class="kw">,</span><span class="at"> </span><span class="st">"title"</span><span class="kw">,</span><span class="at"> </span><span class="st">"categories"</span><span class="kw">,</span><span class="at"> </span><span class="st">"description"</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-customization-rename-fields" class="slide level2">
+<h2>Simple Customization: Rename Fields</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Use <code>field-display-names</code> to provide a different label for a field</p>
+<p>Mostly useful for <code>type: table</code>.</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>E.g. Rename <code>title</code> to <code>Project</code></p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb29-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb29-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
+<span id="cb29-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
+<span id="cb29-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">field-display-names</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb29-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Project</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-1" class="slide level2">
+<h2>Your Turn</h2>
+<ol type="1">
+<li><p>Switch to <code>type: table</code></p></li>
+<li><p>Omit the <code>image</code> field from the listing</p></li>
+<li><p>Change the name of the “Categories” column to “Skills”</p></li>
+<li><p>Brainstorm: What could you use a listing for on your own site?</p></li>
+</ol>
+</section>
+<section id="advanced-customization" class="slide level2">
+<h2>Advanced Customization</h2>
+<p>Example: <a href="https://www.andrewheiss.com/teaching/" class="uri">https://www.andrewheiss.com/teaching/</a></p>
+<p>Source: <a href="https://github.com/andrewheiss/ath-quarto/blob/main/teaching/index.qmd" class="uri">https://github.com/andrewheiss/ath-quarto/blob/main/teaching/index.qmd</a></p>
+<ul>
+<li>Listing in a custom location on a page</li>
+<li>More than one listing on a page</li>
+<li>Custom Template</li>
+</ul>
+</section>
+<section id="custom-location" class="slide level2">
+<h2>Custom Location</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>teaching/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb30" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb30-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb30-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
+<span id="cb30-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb30-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
+<span id="cb30-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
+<span id="cb30-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Give the listing an <code>id</code></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>teaching/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb31" data-filename="teaching/index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb31-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2023–24</span></span>
+<span id="cb31-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_23-24}</span>
+<span id="cb31-4"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb31-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2022–23</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Use the <code>id</code> in a fenced div where you want it to appear</p>
+</div>
+</div>
+</div>
+</section>
+<section id="multiple-listings" class="slide level2">
+<h2>Multiple Listings</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>teaching/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb32" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb32-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb32-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
+<span id="cb32-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb32-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
+<span id="cb32-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
+<span id="cb32-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_22-23</span></span>
+<span id="cb32-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_22-23.yml</span></span>
+<span id="cb32-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Make <code>listing</code> an array, use <code>id</code>s</p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>teaching/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb33" data-filename="teaching/index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb33-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2023–24</span></span>
+<span id="cb33-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_23-24}</span>
+<span id="cb33-4"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb33-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2022–23</span></span>
+<span id="cb33-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-8"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_22-23}</span>
+<span id="cb33-9"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Place listings in the page by <code>id</code></p>
+</div>
+</div>
+</div>
+</section>
+<section id="custom-template" class="slide level2">
+<h2>Custom template</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>teaching/index.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb34" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb34-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb34-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
+<span id="cb34-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
+<span id="cb34-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
+<span id="cb34-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
+<span id="cb34-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> ../html/teaching/listing.ejs</span></span>
+<span id="cb34-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Provide an <code>ejs</code> file to <code>template</code></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>../html/teaching/listing.ejs</strong></pre>
+</div>
+<div class="sourceCode" id="cb35" data-filename="../html/teaching/listing.ejs"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb35-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
+<span id="cb35-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"teaching"</span><span class="dt">&gt;</span></span>
+<span id="cb35-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>% for (const course of items) { %&gt;</span>
+<span id="cb35-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-entry"</span><span class="dt">&gt;</span></span>
+<span id="cb35-5"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"logo"</span><span class="dt">&gt;</span></span>
+<span id="cb35-6"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% if (course.url) { %&gt;</span>
+<span id="cb35-7"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.url %&gt;"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.logo %&gt;"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> </span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
+<span id="cb35-8"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% } else { %&gt;</span>
+<span id="cb35-9"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.logo %&gt;"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
+<span id="cb35-10"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-11"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb35-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"body"</span><span class="dt">&gt;</span></span>
+<span id="cb35-13"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-title"</span><span class="dt">&gt;</span></span>
+<span id="cb35-14"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (course.url) { %&gt;</span>
+<span id="cb35-15"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.url %&gt;"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.title %&gt;<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> </span>
+<span id="cb35-16"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } else { %&gt;</span>
+<span id="cb35-17"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>%= course.title %&gt; </span>
+<span id="cb35-18"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-19"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb35-20"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-details"</span><span class="dt">&gt;</span></span>
+<span id="cb35-21"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-number"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.number %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> | </span>
+<span id="cb35-22"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-university"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.university %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb35-23"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (course.role) { %&gt;</span>
+<span id="cb35-24"><a href="" aria-hidden="true" tabindex="-1"></a>                | <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-role"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.role %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb35-25"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-26"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb35-27"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-description"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.description %&gt;<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb35-28"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-29"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-semesters"</span><span class="dt">&gt;</span></span>
+<span id="cb35-30"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% for (const semester of course.semester) { %&gt;</span>
+<span id="cb35-31"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (semester.url) { %&gt;</span>
+<span id="cb35-32"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= semester.url %&gt;"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-building-columns"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> <span class="er">&lt;</span>%= semester.name %&gt;<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb35-33"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } else { %&gt; </span>
+<span id="cb35-34"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"no-link"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-building-columns"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> <span class="er">&lt;</span>%= semester.name %&gt;<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
+<span id="cb35-35"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-36"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-37"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
+<span id="cb35-38"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb35-39"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb35-40"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>% } %&gt;</span>
+<span id="cb35-41"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb35-42"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Define how item in <code>items</code> should be generated</p>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn-2" class="slide level2">
+<h2>Your Turn</h2>
+<p><strong>Add a listing page to your site</strong>:</p>
+<ol type="1">
+<li><p>Create a page to house the listing</p></li>
+<li><p>Either:</p>
+<ul>
+<li>populate a <code>.yml</code> file with a couple of items (use <code>projects/project.yml</code> as a template), or</li>
+<li>create some placeholder <code>.qmd</code> files.</li>
+</ul></li>
+<li><p>Add the page to your site navigation</p></li>
+<li><p>Clean up any template listing pages/files/folders you don’t want</p></li>
+</ol>
 </section>
 <section id="references" class="slide level2">
 <h2>References</h2>
 <p>Huge thanks the following people who have generated and shared most of the content of this lecture:</p>
 <ul>
-<li>Charlotte Wickham: <a href="https://posit-conf-2024.github.io/quarto-websites/04-navigation.html">Quarto Websites: Navigation</a></li>
+<li><p>Charlotte Wickham: <a href="https://posit-conf-2024.github.io/quarto-websites/04-navigation.html">Quarto Websites: Navigation</a></p></li>
+<li><p>Charlotte Wickham: <a href="https://posit-conf-2024.github.io/quarto-websites/06-listings#/listings">Quarto Websites: Listings</a></p></li>
 </ul>
 <p><br></p>
 
