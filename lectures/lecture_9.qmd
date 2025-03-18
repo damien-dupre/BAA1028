@@ -45,7 +45,7 @@ You have made incredible progress with your eportfolio but you should not mess i
 In the terminal of VS Code type:
 
 ```{.bash filename="Terminal"}
-quarto create project website baa1030-lecture9
+quarto create project website baa1028-lecture9
 quarto preview
 ```
 
