@@ -19,7 +19,7 @@ knitr:
     
 # https://github.com/jjallaire/pydata-quarto-dashboards/blob/f62a2494caffe1942bac7dc100d1eae9b6a7e188/pydata-quarto-dashboards.qmd#L2
 # https://github.com/posit-conf-2024/quarto-dashboards/blob/b17b848ee4bfc83ce02e31e00e46057eb928f29b/2-dashboard-components/2-dashboard-components.qmd#L10
-
+#https://github.com/arcus/intro-to-r-for-clinical-data/blob/f812d4a9704c646b44f31f87d90cd8da4a7307b7/quarto_slides/dashboards.qmd#L3
 ---
 
 ```{r setup, include = FALSE}
@@ -96,10 +96,10 @@ quarto preview notebook.qmd --to pdf
 
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/jupyterlab.png)
 
-## Plain Text Notebooks with .qmd Files {.smaller}
+## Plain Text Notebooks w/`.qmd` Files {.smaller}
 
-::::{layout="[1,1]"}
-:::{}
+:::: {.columns}
+::: {.column width="46%"}
 ```` {.markdown filename="penguins.qmd" style="overflow-y: hidden" code-line-numbers="|1-7|9-16|18-20|22-31"}
 ---
 title: "Palmer Penguins"
@@ -300,12 +300,6 @@ format: dashboard
 
 # content goes here...
 ```
-
-
-See for example:
-
-  - Dashboard: <https://mine.quarto.pub/dashing-through-snow-py>
-  - Code: <https://github.com/mine-cetinkaya-rundel/dashing-through-snow/blob/main/snowdash-py.qmd>
 
 ## Dashboard Components
 
@@ -514,10 +508,11 @@ format: dashboard
 
 ![](https://vizdata.org/slides/20/images/dashboards/mynorfolk.png)
 
-## Plots {.smaller}
+## Plots {.component-slide}
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+::: {.column .fragment .smaller width="46%"}
 [plotly](https://plotly.com/python/)
 ````python
 ```{{python}}
@@ -534,13 +529,17 @@ px.scatter(
 ```
 ````
 :::
-::: {}
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/plotly-interactive.png)
-:::
+
+::: {.column .fragment width="46%"}
+![](https://jjallaire.github.io/pydata-quarto-dashboards/images/plotly-interactive.png){width="85%"}
 :::
 
-::::{layout="[1,1]"}
-:::{}
+:::
+
+
+::: {.columns}
+
+::: {.column .fragment .smaller width="46%"}
 [ipyleaflet](https://ipyleaflet.readthedocs.io)
 ````python
 ```{{python}}
@@ -552,15 +551,21 @@ Map(basemap=basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),
 ```
 ````
 :::
-::: {}
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/leaflet-card-title-padding.png)
-:::
+
+::: {.column .fragment width="46%"}
+![](https://jjallaire.github.io/pydata-quarto-dashboards/images/leaflet-card-title-padding.png){width="85%"}
 :::
 
-## Tables
+:::
 
-::::{layout="[1,1]"}
-:::{}
+
+
+
+## Tables {#component-tables .component-slide}
+
+::: columns
+
+::: {.column .fragment width="46%"}
 [tabulate](https://pypi.org/project/tabulate/)
 
 ````python
@@ -572,13 +577,15 @@ Markdown(tabulate(penguins, showindex=False)}
 ````
 :::
 
-::: {}
+::: {.column .fragment width="46%"}
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/tabulate.png)
 :::
+
 :::
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+::: {.column .fragment width="46%"}
 [itables](https://pypi.org/project/itables/)
 
 ````python
@@ -588,16 +595,32 @@ show(penguins)
 ```
 ````
 :::
-::: {}
+
+::: {.column .fragment width="46%"}
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/itables-scrolling.png)
 :::
 
 :::
 
-## Value Boxes
+```{=html}
+<style type="text/css">
+.component-slide .column > p {
+  margin-top: 0;
+}
+.component-slide .column > p > img {
+  margin-top: -8px;
+}
+#component-tables .column > div.sourceCode {
+  margin-top: 30px;
+}
+</style>
+```
 
-::::{layout="[1,1]"}
-:::{}
+## Value Boxes {#value-box-component .component-slide}
+
+::: columns
+
+::: {.column width="46%"}
 ````{.python .pymd style="margin-top: 45px;" code-line-numbers="|3-9|14-17|"}
 ## Row
 
@@ -619,15 +642,27 @@ dict(value = change['amount'],
 ```
 ````
 :::
-::: {}
+
+::: {.column .fragment width="46%"}
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/value-box-app.png){.border width="80%"}
 :::
+
+
 :::
+
+```{=html}
+<style type="text/css">
+#value-box-component pre.sourceCode code {
+  max-height: 750px;
+}
+</style>
+```
 
 ## Text Content {.component-slide}
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+::: {.column width="46%"}
 ````{.python .pymd code-line-numbers="|17-22|"}
 ## Column
 
@@ -653,10 +688,13 @@ dataset at <https://www.gapminder.org/data/>.
 :::
 ````
 :::
-::: {}
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/text-content-column.png)
+
+::: {.column .fragment width="46%"}
+![](https://jjallaire.github.io/pydata-quarto-dashboards/images/text-content-column.png){width="100%"}
 :::
+
 :::
+
 
 ## Expanding Cards
 
@@ -711,11 +749,14 @@ Dashboards are typically just static HTML pages so can be deployed to any web se
 
 ## Parameterized Dashboards
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+::: column
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/stock-explorer-dashboard.png)
 :::
-:::{}
+
+::: column
+
 Add a parameters tag to the first cell
 (based on [papermill](https://papermill.readthedocs.io/en/latest/usage-parameterize.html)) :
 
@@ -732,14 +773,19 @@ Use the `-P` command line option to vary the parameter:
 quarto render dashboard.qmd -P ticker:GOOG
 ````
 :::
+
 :::
+
+
 
 ## Interactive Dashboards
 
 <https://quarto.org/docs/dashboards/interactivity/shiny-python/>
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+
+::: {.column width=40%}
 
 - For interactive exploration, some dashboards can benefit from a live Python backend
 
@@ -748,15 +794,18 @@ quarto render dashboard.qmd -P ticker:GOOG
 -  _Note that this requires a server for deployment_
 
 :::
-::: {}
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/shiny-homepage.png)
+
+::: {.column width=60%}
+![](https://jjallaire.github.io/pydata-quarto-dashboards/images/shiny-homepage.png){.border}
 :::
-:::
+
+::: 
 
 ## Hello, Shiny {.smaller}
 
-::::{layout="[1,1]"}
-:::{}
+::: columns
+
+::: column
 ````{.python .pymd code-line-numbers="|15-19|25-29|29|"}
 ---
 title: "Penguin Bills"
@@ -790,43 +839,63 @@ def displot():
 ```
 ````
 :::
-::: {}
+
+::: column
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/hello-shiny-slide.png)
 :::
+
+
 :::
 
-## Hello, Shiny 
+##  {.no-line background-image="images/dashboards/shiny-penguins.png" background-size="contain"}
 
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/dashboards/shiny-penguins.png)
+
 
 ## Shiny Deployment
 
+::: {style="margin-bottom: 1em;"}
 Shiny for Python applications are built on [Starlette](https://www.starlette.io) and [ASGI](https://asgi.readthedocs.io), and can deployed in server environments that support WebSockets and sticky sessions. 
+:::
 
-::::{layout="[1,1]"}
-:::{}
-Cloud
+::: {.columns}
+
+::: column
+### Cloud
 
 - [shinyapps.io](https://shiny.posit.co/py/docs/deploy.html#deploy-to-shinyapps.io-cloud-hosting)
 - [Hugging Face](https://huggingface.co/docs/hub/spaces-sdks-docker-shiny)
 - [Roll your own](https://shiny.posit.co/py/docs/deploy.html#other-hosting-options)
 :::
-::: {}
-On-Prem
+
+::: column
+### On-Prem
 
 - [Shiny Server](https://shiny.posit.co/py/docs/deploy.html#deploy-to-shiny-server-open-source) (open source)
 - [Posit Connect](https://shiny.posit.co/py/docs/deploy.html#deploy-to-posit-connect-commercial) (commercial)
 - [Roll your own](https://shiny.posit.co/py/docs/deploy.html#other-hosting-options)
 :::
-::::
+
+:::
 
 ::: {.fragment style="margin-top: 0.7em;"}
 Alternatively, deploy serverless using [Pyodide](https://pyodide.org/). See the [Retirement Simulation](https://github.com/wch/retirement-simulation-dashboard) example for details.
 :::
 
-## Shiny Deployment
+##  {.no-line background-image="images/dashboards/retirement.png" background-size="contain"}
 
-![](https://jjallaire.github.io/pydata-quarto-dashboards/images/dashboards/retirement.png)
+## Interactive Dashboards
+
+-   For interactive exploration, some dashboards need a could computing instance instead of a static web hosting
+
+-   To do this with Quarto Dashboards, add interactive [Shiny](https://shiny.posit.co) components
+
+## Quarto dashboard, but make it Python!
+
+<https://github.com/mine-cetinkaya-rundel/dashing-through-snow>
+
+Python: 
+  - Dashboard: <https://mine.quarto.pub/dashing-through-snow-py>
+  - Code: <https://github.com/mine-cetinkaya-rundel/dashing-through-snow/blob/main/snowdash-py.qmd>
 
 ## Learn more
 
@@ -835,33 +904,3 @@ Alternatively, deploy serverless using [Pyodide](https://pyodide.org/). See the 
 ```{=html}
 <iframe width="1000" height="400" src="https://quarto.org/docs/dashboards" frameborder="1" style="background:white;"></iframe>
 ```
-
-## References
-
-Huge thanks the following people who have generated and shared most of the content of this lecture:
-
-- Mine Çetinkaya-Rundel: [Build-a-Dashboard Workshop](https://posit-conf-2024.github.io/quarto-dashboards/)
-
-- J.J. Allaire: [Dashboards with Jupyter and Quarto](https://jjallaire.github.io/pydata-quarto-dashboards)
-
-<br>
-
-```{r}
-include_graphics("https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif")
-```
-
-## {background="#43464B"}
-
-```{css, echo = FALSE}
-img.circle {border-radius:50%;}
-```
-
-::: {layout-ncol="2"}
-<img class="circle" src="https://github.com/damien-dupre.png" />
-
-**Thanks for your attention and don't hesitate to ask if you have any questions!**  
-[`r fa(name = "mastodon")` @damien_dupre](https://datasci.social/@damien_dupre)  
-[`r fa(name = "github")` @damien-dupre](https://github.com/damien-dupre)  
-[`r fa(name = "link")` https://damien-dupre.github.io](https://damien-dupre.github.io)  
-[`r fa(name = "paper-plane")` damien.dupre@dcu.ie](mailto:damien.dupre@dcu.ie)
-:::

@@ -980,8 +980,6 @@ Define how item in `items` should be generated
 
 4. Clean up any template listing pages/files/folders you don't want
 
-
-
 ## References
 
 Huge thanks the following people who have generated and shared most of the content of this lecture:

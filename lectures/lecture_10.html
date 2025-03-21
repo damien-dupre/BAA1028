@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.5.57">
 
   <meta name="author" content="Damien Dupré">
-  <title>Lecture 10: Displaying Projects in a Quarto Website</title>
+  <title>Lecture 10: Quarto Dashboards</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -391,7 +391,7 @@
     <div class="slides">
 
 <section id="title-slide" data-background-iframe="logo-fall/index.html" class="quarto-title-block center">
-  <h1 class="title">Lecture 10: Displaying Projects in a Quarto Website</h1>
+  <h1 class="title">Lecture 10: Quarto Dashboards</h1>
   <p class="subtitle">BAA1028 - Workflow &amp; Data Management</p>
 
 <div class="quarto-title-authors">
@@ -403,475 +403,884 @@ Damien Dupré
 </div>
 
 </section>
-<section id="before-we-proceed" class="slide level2">
-<h2>Before we proceed…</h2>
-<p>We have created a subfolder <code>projects</code> at the root of the website with quarto file <code>index.qmd</code> inside this folder.</p>
-<p>We have referenced this <code>projects/index.qmd</code> in the navbar inside the <code>_quarto.yml</code> file.</p>
-<p>Today, we will populate the content of <code>projects/index.qmd</code> with a list of different projects!</p>
-</section>
-<section id="lets-add-more-pages" class="slide level2">
-<h2>Let’s Add more Pages!</h2>
-<ul>
-<li>Create a new subfolder called <code>list</code> inside <code>/projects</code></li>
-<li>In this <code>list</code> sub-subfolder, create 3 quarto files: <code>project_1.qmd</code>, <code>project_2.qmd</code>, and <code>project_3.qmd</code></li>
-</ul>
+<section id="quarto-httpsquarto.org" class="slide level2">
+<h2>Quarto — <a href="https://quarto.org" class="uri">https://quarto.org</a></h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Displaying a listing on <code>projects/index.qmd</code> is as simple as:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Projects</span></span>
-<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Explicit default options:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> My Projects</span></span>
-<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> /</span></span>
-<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">sort</span><span class="kw">:</span><span class="at"> </span><span class="st">"date"</span></span>
-<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> default</span></span>
-<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span>
-<span id="cb2-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="a-listing-is" class="slide level2">
-<h2>A listing is…</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>An open-source scientific and technical publishing system that builds on standard markdown with features essential for scientific communication.</p>
 <ul>
-<li>an automatically generated list of content</li>
-<li>styled via a template, (built-in <code>type</code>, or custom <code>template</code>)</li>
-<li>can be included on any page</li>
+<li><p>Pandoc Markdown</p></li>
+<li><p>Jupyter Kernels</p></li>
+<li><p>Dozens of Output Formats</p></li>
+<li><p>Specialized Project Types</p></li>
 </ul>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-default.png"></p>
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/what-is-quarto.png"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="generated-from-documents-in-contents" class="slide level2">
-<h2>Generated from documents in <code>contents</code></h2>
+<section id="how-does-quarto-work" class="slide level2 nostretch">
+<h2>How does Quarto work?</h2>
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/ipynb-how-it-works.png" style="margin-left: 35px;;width:80.0%"></p>
+<ul>
+<li>Computations: <a href="https://jupyter.org">Jupyter</a><sup>1</sup></li>
+<li>Markdown: <a href="https://pandoc.org">Pandoc</a> w/ many enhancements</li>
+<li>Output: Documents, presentations, websites, books, blogs</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://yihui.name/knitr/">Knitr</a> and <a href="https://observablehq.com/@observablehq/observable-javascript">ObservableJS</a> also supported.</p></li></ol></aside></section>
+<section id="render-and-preview" class="slide level2">
+<h2>Render and Preview</h2>
+<p>Render to output formats:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># ipynb notebook</span></span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render notebook.ipynb</span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render notebook.ipynb <span class="at">--to</span> docx</span>
+<span id="cb1-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># plain text qmd</span></span>
+<span id="cb1-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render notebook.qmd </span>
+<span id="cb1-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render notebook.qmd <span class="at">--to</span> pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Live preview server (re-render on save):</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># ipynb notebook</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview notebook.ipynb</span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview notebook.ipynb <span class="at">--to</span> docx</span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co"># plain text qmd</span></span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview notebook.qmd</span>
+<span id="cb2-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview notebook.qmd <span class="at">--to</span> pdf</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="render-and-preview-1" class="slide level2">
+<h2>Render and Preview</h2>
+
+<img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/jupyterlab.png" class="r-stretch"></section>
+<section id="plain-text-notebooks-with-.qmd-files" class="slide level2 smaller">
+<h2>Plain Text Notebooks with .qmd Files</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>penguins.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="penguins.qmd" style="overflow-y: hidden" data-code-line-numbers="|1-7|9-16|18-20|22-31"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb3-2"><a href=""></a><span class="an">title:</span><span class="co"> "Palmer Penguins"</span></span>
+<span id="cb3-3"><a href=""></a><span class="an">author:</span><span class="co"> Norah Jones</span></span>
+<span id="cb3-4"><a href=""></a><span class="an">date:</span><span class="co"> March 12, 2023  </span></span>
+<span id="cb3-5"><a href=""></a><span class="an">format:</span><span class="co"> html</span></span>
+<span id="cb3-6"><a href=""></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
+<span id="cb3-7"><a href=""></a><span class="co">---</span></span>
+<span id="cb3-8"><a href=""></a></span>
+<span id="cb3-9"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb3-10"><a href=""></a><span class="in">#| echo: false</span></span>
+<span id="cb3-11"><a href=""></a></span>
+<span id="cb3-12"><a href=""></a><span class="in">import pandas as pd</span></span>
+<span id="cb3-13"><a href=""></a><span class="in">df = pd.read_csv("palmer-penguins.csv") </span></span>
+<span id="cb3-14"><a href=""></a><span class="in">df = df[["species", "island", "year", \</span></span>
+<span id="cb3-15"><a href=""></a><span class="in">         "bill_length_mm", "bill_depth_mm"]]</span></span>
+<span id="cb3-16"><a href=""></a><span class="in">```</span></span>
+<span id="cb3-17"><a href=""></a></span>
+<span id="cb3-18"><a href=""></a><span class="fu">## Exploring the Data</span></span>
+<span id="cb3-19"><a href=""></a></span>
+<span id="cb3-20"><a href=""></a>See @fig-bill-sizes for an exploration of bill sizes.</span>
+<span id="cb3-21"><a href=""></a></span>
+<span id="cb3-22"><a href=""></a><span class="in">```{python}</span></span>
+<span id="cb3-23"><a href=""></a><span class="in">#| label: fig-bill-sizes</span></span>
+<span id="cb3-24"><a href=""></a><span class="in">#| fig-cap: Bill Sizes by Species</span></span>
+<span id="cb3-25"><a href=""></a></span>
+<span id="cb3-26"><a href=""></a><span class="in">import matplotlib.pyplot as plt</span></span>
+<span id="cb3-27"><a href=""></a><span class="in">import seaborn as sns</span></span>
+<span id="cb3-28"><a href=""></a><span class="in">g = sns.FacetGrid(df, hue="species", height=3)</span></span>
+<span id="cb3-29"><a href=""></a><span class="in">g.map(plt.scatter, "bill_length_mm", "bill_depth_mm") \</span></span>
+<span id="cb3-30"><a href=""></a><span class="in">  .add_legend()</span></span>
+<span id="cb3-31"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="column quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<ul>
+<li><p>Editable with any text editor (extensions for VS Code, Neovim, and Emacs)</p></li>
+<li><p>Cells always run in the same order</p></li>
+<li><p>Integrates well with version control</p></li>
+<li><p>Cache output with Jupyter Cache or Quarto freezer</p></li>
+<li><p>Lots of pros and cons visa-vi traditional <code>.ipynb</code> format/editors, use the right tool for each job</p></li>
+</ul>
+</div></div>
+</div>
+</section>
+<section id="rendering-pipeline" class="slide level2">
+<h2>Rendering Pipeline</h2>
+<p>Notebook workflow (no execution occurs by default):</p>
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/ipynb-how-it-works.png" style="width:63.0%"></p>
+<p>Plain text workflow (<code>.qmd</code> =&gt; <code>.ipynb</code> then execute cells):</p>
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/qmd-how-it-works.png" style="width:80.0%"></p>
+</section>
+<section id="render-notebook-to-pdf" class="slide level2">
+<h2>Render Notebook to PDF</h2>
 <div>
 
 </div>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<p><img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-first.png"></p>
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-pdf.png"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>blog/third-post/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb3" data-filename="blog/third-post/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"First Post"</span></span>
-<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">description</span><span class="kw">:</span><span class="at"> </span><span class="st">"Post description for first post"</span></span>
-<span id="cb3-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span><span class="at"> </span><span class="st">"Alicia"</span></span>
-<span id="cb3-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">date</span><span class="kw">:</span><span class="at"> </span><span class="st">"5/22/2021"</span></span>
-<span id="cb3-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">image</span><span class="kw">:</span><span class="at"> </span><span class="st">"cover.jpg"</span></span>
-<span id="cb3-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">categories</span><span class="kw">:</span></span>
-<span id="cb3-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Science</span></span>
-<span id="cb3-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> Technology</span></span>
-<span id="cb3-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-pdf-output.png"></p>
 </div>
 </div>
 </div>
 </section>
-<section id="why-use-a-listing" class="slide level2">
-<h2>Why use a listing?</h2>
+<section id="render-notebook-to-revealjs" class="slide level2">
+<h2>Render Notebook to Revealjs</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-presentation.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-presentation-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="render-notebook-to-html" class="slide level2">
+<h2>Render Notebook to HTML</h2>
+<h3 id="default-options">default options</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-basics.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-basics-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="render-notebook-to-html-1" class="slide level2">
+<h2>Render Notebook to HTML</h2>
+<h3 id="document-level-options">document level options</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-doc-options.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-doc-options-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="render-notebook-to-html-2" class="slide level2">
+<h2>Render Notebook to HTML</h2>
+<h3 id="document-and-cell-level-options">document and cell level options</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-cell-options.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-cell-options-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="render-notebook-to-html-3" class="slide level2">
+<h2>Render Notebook to HTML</h2>
+<h3 id="document-and-cell-level-options-1">document and cell level options</h3>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-cell-options.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-cell-options-output-2.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="notebook-dashboard" class="slide level2">
+<h2>Notebook ➝ Dashboard</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-gapminder-notebook-1.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-gapminder-notebook-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="notebook-dashboard-1" class="slide level2">
+<h2>Notebook ➝ Dashboard</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-gapminder-notebook-data.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/demo-gapminder-notebook-data-output.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1" class="slide level2">
+<h2>Example 1</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/dashing-through-snow.png" class="r-stretch"></section>
+<section id="example-2" class="slide level2">
+<h2>Example 2</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/customer-churn.png" class="r-stretch"></section>
+<section id="example-3" class="slide level2">
+<h2>Example 3</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/mynorfolk.png" class="r-stretch"></section>
+<section id="example-4" class="slide level2">
+<h2>Example 4</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/earthquakes.png" class="r-stretch"></section>
+<section id="example-5" class="slide level2">
+<h2>Example 5</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/model-card.png" class="r-stretch"></section>
+<section id="example-6" class="slide level2">
+<h2>Example 6</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/shiny-penguins.png" class="r-stretch"></section>
+<section id="example-7" class="slide level2">
+<h2>Example 7</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/gapminder.png" class="r-stretch"></section>
+<section id="qmd-dashboard" class="slide level2">
+<h2>.qmd ➝ Dashboard</h2>
+<div class="sourceCode" id="cb4" data-code-line-numbers="|3"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href=""></a><span class="co">---</span></span>
+<span id="cb4-2"><a href=""></a><span class="an">title:</span><span class="co"> "Dashing through the snow ❄️"</span></span>
+<span id="cb4-3"><a href=""></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb4-4"><a href=""></a><span class="co">---</span></span>
+<span id="cb4-5"><a href=""></a></span>
+<span id="cb4-6"><a href=""></a><span class="fu"># content goes here...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>See for example:</p>
 <ul>
-<li>Great for large collections</li>
-<li>Great for collections that grow</li>
+<li>Dashboard: <a href="https://mine.quarto.pub/dashing-through-snow-py" class="uri">https://mine.quarto.pub/dashing-through-snow-py</a></li>
+<li>Code: <a href="https://github.com/mine-cetinkaya-rundel/dashing-through-snow/blob/main/snowdash-py.qmd" class="uri">https://github.com/mine-cetinkaya-rundel/dashing-through-snow/blob/main/snowdash-py.qmd</a></li>
 </ul>
 </section>
-<section id="your-turn" class="slide level2">
-<h2>Your Turn</h2>
+<section id="dashboard-components" class="slide level2">
+<h2>Dashboard Components</h2>
+<div>
 <ol type="1">
-<li>(Repeat) Make a new page <code>blog/index.qmd</code> which is a listing</li>
-<li>Experiment with <code>type</code> and <code>categories</code>:
+<li class="fragment"><p><strong>Navigation Bar and Pages</strong> — Icon, title, and author along with links to sub-pages (if more than one page is defined).</p></li>
+<li class="fragment"><p><strong>Sidebars, Rows &amp; Columns, and Tabsets</strong> — Rows and columns using markdown heading (with optional attributes to control height, width, etc.). Sidebars for interactive inputs. Tabsets to further divide content.</p></li>
+<li class="fragment"><p><strong>Cards (Plots, Tables, Value Boxes, Content)</strong> — Cards are containers for cell outputs and free form markdown text. The content of cards typically maps to <em>cells</em> in your notebook or source document.</p></li>
+</ol>
+</div>
+<div class="fragment">
+<p><em>All of these components can be authored and customized within notebook UI or plain text qmd.</em></p>
+</div>
+</section>
+<section id="navigation-bar-and-pages" class="slide level2">
+<h2>Navigation Bar and Pages</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/navigation-toolbar.png" class="quarto-figure quarto-figure-center r-stretch" style="width:100.0%"><div style="margin-top: 0.7em;">
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">--- </span></span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Palmer Penguins"</span></span>
+<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Cobblepot Analytics"</span></span>
+<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">  dashboard:</span></span>
+<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">    logo: images/penguins.png</span></span>
+<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">    nav-buttons: [linkedin, twitter, github]</span></span>
+<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Bills</span></span>
+<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Flippers</span></span>
+<span id="cb5-13"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sidebars-page-level" class="slide level2">
+<h2>Sidebars: Page Level</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb6" style="margin-top: 45px;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Sidebar"</span></span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb6-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb6-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Page 1</span></span>
+<span id="cb6-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## {.sidebar}</span></span>
+<span id="cb6-9"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Column </span></span>
+<span id="cb6-14"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb6-17"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb6-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://vizdata.org/slides/20/images/chart-input-sidebar.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="sidebars-global" class="slide level2">
+<h2>Sidebars: Global</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb7" style="margin-top: 45px;"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Global Sidebar"</span></span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb7-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># {.sidebar}</span></span>
+<span id="cb7-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-8"><a href="" aria-hidden="true" tabindex="-1"></a>Sidebar content (e.g. inputs)</span>
+<span id="cb7-9"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Plot</span></span>
+<span id="cb7-11"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb7-14"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu"># Data</span></span>
+<span id="cb7-16"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb7-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://vizdata.org/slides/20/images/global-sidebar.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="layout-rows" class="slide level2">
+<h2>Layout: Rows</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Focal (Top)"</span></span>
+<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row {height=70%}</span></span>
+<span id="cb8-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb8-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-10"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row {height=30%}</span></span>
+<span id="cb8-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb8-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-15"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb8-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://vizdata.org/slides/20/images/chart-focal-top.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/customer-churn.png" class="r-stretch"></section>
+<section id="layout-columns" class="slide level2">
+<h2>Layout: Columns</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Focal (Top)"</span></span>
+<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">  dashboard:</span></span>
+<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">    orientation: columns</span></span>
+<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb9-7"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb9-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Column {width=60%}</span></span>
+<span id="cb9-9"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Column {width=40%}</span></span>
+<span id="cb9-14"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-16"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb9-17"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb9-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://vizdata.org/slides/20/images/chart-focal-left.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-8" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/housing-market.png" class="r-stretch"></section>
+<section id="tabset" class="slide level2">
+<h2>Tabset</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Palmer Penguins"</span></span>
+<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> dashboard</span></span>
+<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row</span></span>
+<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb10-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-10"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## Row {.tabset}</span></span>
+<span id="cb10-12"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb10-14"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">#| title: Chart 2</span></span>
+<span id="cb10-15"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-16"><a href="" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb10-18"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">#| title: Chart 3</span></span>
+<span id="cb10-19"><a href="" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://vizdata.org/slides/20/images/chart-tabset-row.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="example-9" class="slide level2">
+<h2>Example</h2>
+
+<img data-src="https://vizdata.org/slides/20/images/dashboards/mynorfolk.png" class="r-stretch"></section>
+<section id="plots" class="slide level2 smaller">
+<h2>Plots</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><a href="https://plotly.com/python/">plotly</a></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: GDP and Life Expectancy</span></span>
+<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> px.data.gapminder()</span>
+<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a>px.scatter(</span>
+<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a>  df, x<span class="op">=</span><span class="st">"gdpPercap"</span>, y<span class="op">=</span><span class="st">"lifeExp"</span>, </span>
+<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a>  animation_frame<span class="op">=</span><span class="st">"year"</span>, animation_group<span class="op">=</span><span class="st">"country"</span>,</span>
+<span id="cb11-8"><a href="" aria-hidden="true" tabindex="-1"></a>  size<span class="op">=</span><span class="st">"pop"</span>, color<span class="op">=</span><span class="st">"continent"</span>, hover_name<span class="op">=</span><span class="st">"country"</span>, </span>
+<span id="cb11-9"><a href="" aria-hidden="true" tabindex="-1"></a>  facet_col<span class="op">=</span><span class="st">"continent"</span>, log_x<span class="op">=</span><span class="va">True</span>, size_max<span class="op">=</span><span class="dv">45</span>, </span>
+<span id="cb11-10"><a href="" aria-hidden="true" tabindex="-1"></a>  range_x<span class="op">=</span>[<span class="dv">100</span>,<span class="dv">100000</span>], range_y<span class="op">=</span>[<span class="dv">25</span>,<span class="dv">90</span>]</span>
+<span id="cb11-11"><a href="" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-12"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/plotly-interactive.png"></p>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><a href="https://ipyleaflet.readthedocs.io">ipyleaflet</a></p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| title: "World Map"</span></span>
+<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| padding: 0px</span></span>
+<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> ipyleaflet <span class="im">import</span> Map, basemaps, basemap_to_tiles</span>
+<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a>Map(basemap<span class="op">=</span>basemap_to_tiles(basemaps.OpenStreetMap.Mapnik),</span>
+<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a>    center<span class="op">=</span>(<span class="fl">48.204793</span>, <span class="fl">350.121558</span>), zoom<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/leaflet-card-title-padding.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="tables" class="slide level2">
+<h2>Tables</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><a href="https://pypi.org/project/tabulate/">tabulate</a></p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown</span>
+<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a>Markdown(tabulate(penguins, showindex<span class="op">=</span><span class="va">False</span>)}</span>
+<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/tabulate.png"></p>
+</div>
+</div>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><a href="https://pypi.org/project/itables/">itables</a></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb14-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> itables <span class="im">import</span> show</span>
+<span id="cb14-3"><a href="" aria-hidden="true" tabindex="-1"></a>show(penguins)</span>
+<span id="cb14-4"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/itables-scrolling.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="value-boxes" class="slide level2">
+<h2>Value Boxes</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb15" style="margin-top: 45px;" data-code-line-numbers="|3-9|14-17|"><pre class="sourceCode numberSource python pymd number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="co">## Row</span></span>
+<span id="cb15-2"><a href=""></a></span>
+<span id="cb15-3"><a href=""></a>```{python}</span>
+<span id="cb15-4"><a href=""></a><span class="co">#| component: valuebox</span></span>
+<span id="cb15-5"><a href=""></a><span class="co">#| title: "Current Price"</span></span>
+<span id="cb15-6"><a href=""></a><span class="bu">dict</span>(icon <span class="op">=</span> <span class="st">"currency-dollar"</span>,</span>
+<span id="cb15-7"><a href=""></a>     color <span class="op">=</span> <span class="st">"secondary"</span>,</span>
+<span id="cb15-8"><a href=""></a>     value <span class="op">=</span> get_price(data))</span>
+<span id="cb15-9"><a href=""></a>```</span>
+<span id="cb15-10"><a href=""></a></span>
+<span id="cb15-11"><a href=""></a>```{python}</span>
+<span id="cb15-12"><a href=""></a><span class="co">#| component: valuebox</span></span>
+<span id="cb15-13"><a href=""></a><span class="co">#| title: "Change"</span></span>
+<span id="cb15-14"><a href=""></a>change <span class="op">=</span> get_change(data)</span>
+<span id="cb15-15"><a href=""></a><span class="bu">dict</span>(value <span class="op">=</span> change[<span class="st">'amount'</span>],</span>
+<span id="cb15-16"><a href=""></a>     icon <span class="op">=</span> change[<span class="st">'icon'</span>],</span>
+<span id="cb15-17"><a href=""></a>     color <span class="op">=</span> change[<span class="st">'color'</span>]) </span>
+<span id="cb15-18"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/value-box-app.png" class="border"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="text-content" class="slide level2 component-slide">
+<h2>Text Content</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb16" data-code-line-numbers="|17-22|"><pre class="sourceCode numberSource python pymd number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="co">## Column</span></span>
+<span id="cb16-2"><a href=""></a></span>
+<span id="cb16-3"><a href=""></a>```{python}</span>
+<span id="cb16-4"><a href=""></a><span class="co">#| title: Population</span></span>
+<span id="cb16-5"><a href=""></a>px.area(df, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"pop"</span>, </span>
+<span id="cb16-6"><a href=""></a>        color<span class="op">=</span><span class="st">"continent"</span>, </span>
+<span id="cb16-7"><a href=""></a>        line_group<span class="op">=</span><span class="st">"country"</span>)</span>
+<span id="cb16-8"><a href=""></a>```</span>
+<span id="cb16-9"><a href=""></a></span>
+<span id="cb16-10"><a href=""></a>```{python}</span>
+<span id="cb16-11"><a href=""></a><span class="co">#| title: Life Expectancy</span></span>
+<span id="cb16-12"><a href=""></a>px.line(df, x<span class="op">=</span><span class="st">"year"</span>, y<span class="op">=</span><span class="st">"lifeExp"</span>, </span>
+<span id="cb16-13"><a href=""></a>        color<span class="op">=</span><span class="st">"continent"</span>, </span>
+<span id="cb16-14"><a href=""></a>        line_group<span class="op">=</span><span class="st">"country"</span>)</span>
+<span id="cb16-15"><a href=""></a>```</span>
+<span id="cb16-16"><a href=""></a></span>
+<span id="cb16-17"><a href=""></a>::: {.card}</span>
+<span id="cb16-18"><a href=""></a>Gapminder combines data <span class="im">from</span> multiple sources</span>
+<span id="cb16-19"><a href=""></a>into unique coherent time<span class="op">-</span>series that can’t be</span>
+<span id="cb16-20"><a href=""></a>found elsewhere. Learn more about the Gampminder</span>
+<span id="cb16-21"><a href=""></a>dataset at <span class="op">&lt;</span>https:<span class="op">//</span>www.gapminder.org<span class="op">/</span>data<span class="op">/&gt;</span>.</span>
+<span id="cb16-22"><a href=""></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/text-content-column.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="expanding-cards" class="slide level2">
+<h2>Expanding Cards</h2>
+<p>Cards provide an <strong>Expand</strong> button which appears at bottom right on hover:</p>
+
+<img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/expanding-cards.png" class="r-stretch"></section>
+<section id="expanding-cards-1" class="slide level2">
+<h2>Expanding Cards</h2>
+
+<img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/expanding-cards-expanded.png" class="r-stretch"></section>
+<section id="dashboard-deployment" class="slide level2">
+<h2>Dashboard Deployment</h2>
+<p>Dashboards are typically just static HTML pages so can be deployed to any web server or web host.</p>
+<table id="deployment-table" class="caption-top" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 65%">
+</colgroup>
+<tbody>
+<tr class="odd fragment">
+<td>Static</td>
+<td><span>Rendered a single time (e.g.&nbsp;when underlying data won’t ever change)</span></td>
+</tr>
+<tr class="even fragment">
+<td>Scheduled</td>
+<td><span>Rendered on a schedule (e.g.&nbsp;via <code>cron</code> job) to accommodate changing data.</span></td>
+</tr>
+<tr class="odd fragment">
+<td>Parameterized</td>
+<td><span>Variations of static or scheduled dashboards based on parameters.</span></td>
+</tr>
+<tr class="even fragment">
+<td>Interactive</td>
+<td><span>Fully interactive dashboard using Shiny (requires a server for deployment).</span></td>
+</tr>
+</tbody>
+</table>
+
+
+<style type="text/css">
+#deployment-table td {
+  border-bottom: none;
+}
+#deployment-table td:first-of-type {
+  font-weight: 800;
+}
+</style>
+</section>
+<section id="parameterized-dashboards" class="slide level2">
+<h2>Parameterized Dashboards</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/stock-explorer-dashboard.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Add a parameters tag to the first cell (based on <a href="https://papermill.readthedocs.io/en/latest/usage-parameterize.html">papermill</a>) :</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{python}</span>
+<span id="cb17-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">#| tags: [parameters]</span></span>
+<span id="cb17-3"><a href="" aria-hidden="true" tabindex="-1"></a>ticker <span class="op">=</span> <span class="st">"BA"</span></span>
+<span id="cb17-4"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Use the <code>-P</code> command line option to vary the parameter:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render dashboard.qmd <span class="at">-P</span> ticker:GOOG</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interactive-dashboards" class="slide level2">
+<h2>Interactive Dashboards</h2>
+<p><a href="https://quarto.org/docs/dashboards/interactivity/shiny-python/" class="uri">https://quarto.org/docs/dashboards/interactivity/shiny-python/</a></p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <ul>
-<li><code>type</code>: <code>grid</code> or <code>table</code></li>
-<li><code>categories</code>: <code>true</code>, <code>unnumbered</code>, <code>cloud</code></li>
+<li><p>For interactive exploration, some dashboards can benefit from a live Python backend</p></li>
+<li><p>To do this with Quarto Dashboards, add interactive <a href="https://shiny.posit.co/py/">Shiny</a> components</p></li>
+<li><p><em>Note that this requires a server for deployment</em></p></li>
 </ul>
-<a href="https://quarto.org/docs/websites/website-listings.html#listing-options">Other listing options</a></li>
-<li>Discuss with your neighbor:
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/shiny-homepage.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hello-shiny" class="slide level2 smaller">
+<h2>Hello, Shiny</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="sourceCode" id="cb19" data-code-line-numbers="|15-19|25-29|29|"><pre class="sourceCode numberSource python pymd number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="op">---</span></span>
+<span id="cb19-2"><a href=""></a>title: <span class="st">"Penguin Bills"</span></span>
+<span id="cb19-3"><a href=""></a><span class="bu">format</span>: dashboard</span>
+<span id="cb19-4"><a href=""></a>server: shiny</span>
+<span id="cb19-5"><a href=""></a><span class="op">---</span></span>
+<span id="cb19-6"><a href=""></a></span>
+<span id="cb19-7"><a href=""></a>```{python}</span>
+<span id="cb19-8"><a href=""></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb19-9"><a href=""></a>penguins <span class="op">=</span> sns.load_dataset(<span class="st">"penguins"</span>)</span>
+<span id="cb19-10"><a href=""></a>```</span>
+<span id="cb19-11"><a href=""></a></span>
+<span id="cb19-12"><a href=""></a><span class="co">## {.sidebar}</span></span>
+<span id="cb19-13"><a href=""></a></span>
+<span id="cb19-14"><a href=""></a>```{python}</span>
+<span id="cb19-15"><a href=""></a><span class="im">from</span> shiny <span class="im">import</span> render, ui</span>
+<span id="cb19-16"><a href=""></a>ui.input_select(<span class="st">"x"</span>, <span class="st">"Variable:"</span>,</span>
+<span id="cb19-17"><a href=""></a>                choices<span class="op">=</span>[<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>])</span>
+<span id="cb19-18"><a href=""></a>ui.input_select(<span class="st">"dist"</span>, <span class="st">"Distribution:"</span>, choices<span class="op">=</span>[<span class="st">"hist"</span>, <span class="st">"kde"</span>])</span>
+<span id="cb19-19"><a href=""></a>ui.input_checkbox(<span class="st">"rug"</span>, <span class="st">"Show rug marks"</span>, value <span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb19-20"><a href=""></a>```</span>
+<span id="cb19-21"><a href=""></a></span>
+<span id="cb19-22"><a href=""></a><span class="co">## Column</span></span>
+<span id="cb19-23"><a href=""></a></span>
+<span id="cb19-24"><a href=""></a>```{python}</span>
+<span id="cb19-25"><a href=""></a><span class="at">@render.plot</span></span>
+<span id="cb19-26"><a href=""></a><span class="kw">def</span> displot():</span>
+<span id="cb19-27"><a href=""></a>    sns.displot(</span>
+<span id="cb19-28"><a href=""></a>        data<span class="op">=</span>penguins, hue<span class="op">=</span><span class="st">"species"</span>, multiple<span class="op">=</span><span class="st">"stack"</span>,</span>
+<span id="cb19-29"><a href=""></a>        x<span class="op">=</span><span class="bu">input</span>.x(), rug<span class="op">=</span><span class="bu">input</span>.rug(),kind<span class="op">=</span><span class="bu">input</span>.dist())</span>
+<span id="cb19-30"><a href=""></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/hello-shiny-slide.png"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="hello-shiny-1" class="slide level2">
+<h2>Hello, Shiny</h2>
+
+<img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/dashboards/shiny-penguins.png" class="r-stretch"></section>
+<section id="shiny-deployment" class="slide level2">
+<h2>Shiny Deployment</h2>
+<p>Shiny for Python applications are built on <a href="https://www.starlette.io">Starlette</a> and <a href="https://asgi.readthedocs.io">ASGI</a>, and can deployed in server environments that support WebSockets and sticky sessions.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[1,1]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p>Cloud</p>
 <ul>
-<li>What makes this a blog?</li>
-<li>What would you change if this was a gallery of your projects?</li>
-</ul></li>
-</ol>
-</section>
-<section id="default" class="slide level2">
-<h2>Default</h2>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-default.png" class="r-stretch"></section>
-<section id="grid" class="slide level2">
-<h2>Grid</h2>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-grid.png" class="r-stretch"></section>
-<section id="table" class="slide level2">
-<h2>Table</h2>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-table.png" class="r-stretch"></section>
-<section id="categories" class="slide level2">
-<h2>Categories</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/listings-categories-true.png"></p>
-<figcaption><code>true</code>/<code>numbered</code></figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/listings-categories-unnumbered.png"></p>
-<figcaption><code>unnumbered</code></figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/listings-categories-cloud.png"></p>
-<figcaption><code>cloud</code></figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="use-listings-for-_-projects-_" class="slide level2">
-<h2>Use listings for _ projects _</h2>
-<p><a href="https://ivelasq.rbind.io/project" class="uri">https://ivelasq.rbind.io/project</a></p>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-projects-example.png" class="r-stretch"><div class="footer">
-<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
-</div>
-</section>
-<section id="use-listings-for-_-talks-_" class="slide level2">
-<h2>Use listings for _ talks _</h2>
-<p><a href="https://meghan.rbind.io/talks/" class="uri">https://meghan.rbind.io/talks/</a></p>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-talks.png" class="r-stretch"><div class="footer">
-<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
-</div>
-</section>
-<section id="use-listings-for-_-publications-_" class="slide level2">
-<h2>Use listings for _ publications _</h2>
-<p><a href="https://mickael.canouil.fr/publications" class="uri">https://mickael.canouil.fr/publications</a></p>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-publications.png" class="r-stretch"><div class="footer">
-<p>More examples at: <a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
-</div>
-</section>
-<section id="use-listings-for" class="slide level2">
-<h2>Use listings for …</h2>
-<p><a href="https://charlotte.quarto.pub/listings/" class="uri">https://charlotte.quarto.pub/listings/</a></p>
-<iframe src="https://charlotte.quarto.pub/listings/" width="100%" height="550" title="Listing Examples"></iframe>
-</section>
-<section id="contents-can-be-a-yaml-file" class="slide level2">
-<h2><code>contents</code> can be a YAML file</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>projects/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb4" data-filename="projects/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> Projects</span></span>
-<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
-<span id="cb4-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
-<span id="cb4-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">max-description-length</span><span class="kw">:</span><span class="at"> </span><span class="dv">250</span></span>
-<span id="cb4-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>project/projects.yml</strong></pre>
-</div>
-<div class="sourceCode" id="cb5" data-filename="project/projects.yml"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="kw">-</span><span class="at"> </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Predicting House Prices with Machine Learning</span></span>
-<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">path</span><span class="kw">:</span><span class="at"> https://example.com/house-prices</span></span>
-<span id="cb5-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="co">  # Photo by Breno Assis on Unsplash https://unsplash.com/photos/aerial-photography-of-rural-r3WAWU5Fi5Q </span></span>
-<span id="cb5-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">image</span><span class="kw">:</span><span class="at"> images/breno-assis-r3WAWU5Fi5Q-unsplash.jpg</span></span>
-<span id="cb5-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">  description</span><span class="kw">: </span><span class="ch">&gt;</span></span>
-<span id="cb5-6"><a href="" aria-hidden="true" tabindex="-1"></a>    This project involves using machine learning algorithms to predict house prices based on</span>
-<span id="cb5-7"><a href="" aria-hidden="true" tabindex="-1"></a>    various features such as location, size, and amenities. It includes data cleaning,</span>
-<span id="cb5-8"><a href="" aria-hidden="true" tabindex="-1"></a>    feature engineering, and model selection.</span>
-<span id="cb5-9"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">categories</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">Python</span><span class="kw">,</span><span class="at"> Machine Learning</span><span class="kw">,</span><span class="at"> Data Cleaning</span><span class="kw">]</span></span>
-<span id="cb5-10"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">date</span><span class="kw">:</span><span class="at"> 2024-01-01</span></span>
-<span id="cb5-11"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  ...</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p><code>path</code> can be a relative path to a file in your site, or a URL</p>
-<p>You can use <a href="https://quarto.org/docs/websites/website-listings.html#listing-fields">Listing Fields</a>, or create custom ones.</p>
-</div>
-</div>
-</div>
-</section>
-<section id="contents-can-be-a-yaml-file-1" class="slide level2">
-<h2><code>contents</code> can be a YAML file</h2>
-
-<img data-src="https://raw.githubusercontent.com/posit-conf-2024/quarto-websites/refs/heads/main/images/listings-projects.png" class="r-stretch"></section>
-<section id="simple-customization-select-fields" class="slide level2">
-<h2>Simple Customization: Select Fields</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Use <code>fields</code> to specify which <a href="https://quarto.org/docs/websites/website-listings.html#listing-fields">Listing Fields</a> are displayed.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>E.g. Exclude <code>date</code>:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
-<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> grid</span></span>
-<span id="cb6-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">fields</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="st">"image"</span><span class="kw">,</span><span class="at"> </span><span class="st">"title"</span><span class="kw">,</span><span class="at"> </span><span class="st">"categories"</span><span class="kw">,</span><span class="at"> </span><span class="st">"description"</span><span class="kw">]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="simple-customization-rename-fields" class="slide level2">
-<h2>Simple Customization: Rename Fields</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>Use <code>field-display-names</code> to provide a different label for a field</p>
-<p>Mostly useful for <code>type: table</code>.</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<p>E.g. Rename <code>title</code> to <code>Project</code></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> projects.yml</span></span>
-<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">type</span><span class="kw">:</span><span class="at"> table</span></span>
-<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">field-display-names</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb7-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">title</span><span class="kw">:</span><span class="at"> Project</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn</h2>
-<ol type="1">
-<li><p>Switch to <code>type: table</code></p></li>
-<li><p>Omit the <code>image</code> field from the listing</p></li>
-<li><p>Change the name of the “Categories” column to “Skills”</p></li>
-<li><p>Brainstorm: What could you use a listing for on your own site?</p></li>
-</ol>
-</section>
-<section id="advanced-customization" class="slide level2">
-<h2>Advanced Customization</h2>
-<p>Example: <a href="https://www.andrewheiss.com/teaching/" class="uri">https://www.andrewheiss.com/teaching/</a></p>
-<p>Source: <a href="https://github.com/andrewheiss/ath-quarto/blob/main/teaching/index.qmd" class="uri">https://github.com/andrewheiss/ath-quarto/blob/main/teaching/index.qmd</a></p>
-<ul>
-<li>Listing in a custom location on a page</li>
-<li>More than one listing on a page</li>
-<li>Custom Template</li>
+<li><a href="https://shiny.posit.co/py/docs/deploy.html#deploy-to-shinyapps.io-cloud-hosting">shinyapps.io</a></li>
+<li><a href="https://huggingface.co/docs/hub/spaces-sdks-docker-shiny">Hugging Face</a></li>
+<li><a href="https://shiny.posit.co/py/docs/deploy.html#other-hosting-options">Roll your own</a></li>
 </ul>
-</section>
-<section id="custom-location" class="slide level2">
-<h2>Custom Location</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>teaching/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb8" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb8-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
-<span id="cb8-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
-<span id="cb8-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
-<span id="cb8-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Give the listing an <code>id</code></p>
 </div>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>teaching/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb9" data-filename="teaching/index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2023–24</span></span>
-<span id="cb9-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_23-24}</span>
-<span id="cb9-4"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb9-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2022–23</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Use the <code>id</code> in a fenced div where you want it to appear</p>
-</div>
-</div>
-</div>
-</section>
-<section id="multiple-listings" class="slide level2">
-<h2>Multiple Listings</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>teaching/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb10" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb10-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
-<span id="cb10-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb10-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
-<span id="cb10-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
-<span id="cb10-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_22-23</span></span>
-<span id="cb10-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_22-23.yml</span></span>
-<span id="cb10-8"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Make <code>listing</code> an array, use <code>id</code>s</p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>teaching/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb11" data-filename="teaching/index.qmd"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2023–24</span></span>
-<span id="cb11-2"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_23-24}</span>
-<span id="cb11-4"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb11-5"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">## 2022–23</span></span>
-<span id="cb11-7"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="" aria-hidden="true" tabindex="-1"></a>:::{#ay_22-23}</span>
-<span id="cb11-9"><a href="" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Place listings in the page by <code>id</code></p>
-</div>
-</div>
-</div>
-</section>
-<section id="custom-template" class="slide level2">
-<h2>Custom template</h2>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>teaching/index.qmd</strong></pre>
-</div>
-<div class="sourceCode" id="cb12" data-filename="teaching/index.qmd"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
-<span id="cb12-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Teaching"</span></span>
-<span id="cb12-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">listing</span><span class="kw">:</span></span>
-<span id="cb12-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">id</span><span class="kw">:</span><span class="at"> ay_23-24</span></span>
-<span id="cb12-5"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">contents</span><span class="kw">:</span><span class="at"> ay_23-24.yml</span></span>
-<span id="cb12-6"><a href="" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">template</span><span class="kw">:</span><span class="at"> ../html/teaching/listing.ejs</span></span>
-<span id="cb12-7"><a href="" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Provide an <code>ejs</code> file to <code>template</code></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>../html/teaching/listing.ejs</strong></pre>
-</div>
-<div class="sourceCode" id="cb13" data-filename="../html/teaching/listing.ejs"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a href="" aria-hidden="true" tabindex="-1"></a>```{=html}</span>
-<span id="cb13-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"teaching"</span><span class="dt">&gt;</span></span>
-<span id="cb13-3"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>% for (const course of items) { %&gt;</span>
-<span id="cb13-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-entry"</span><span class="dt">&gt;</span></span>
-<span id="cb13-5"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"logo"</span><span class="dt">&gt;</span></span>
-<span id="cb13-6"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% if (course.url) { %&gt;</span>
-<span id="cb13-7"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.url %&gt;"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.logo %&gt;"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> </span><span class="dt">/&gt;&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span></span>
-<span id="cb13-8"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% } else { %&gt;</span>
-<span id="cb13-9"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> src</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.logo %&gt;"</span><span class="ot"> alt</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> title</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.title %&gt;"</span><span class="ot"> </span><span class="dt">/&gt;</span></span>
-<span id="cb13-10"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-11"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-12"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"body"</span><span class="dt">&gt;</span></span>
-<span id="cb13-13"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-title"</span><span class="dt">&gt;</span></span>
-<span id="cb13-14"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (course.url) { %&gt;</span>
-<span id="cb13-15"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= course.url %&gt;"</span><span class="ot"> target</span><span class="op">=</span><span class="st">"_blank"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.title %&gt;<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;</span> </span>
-<span id="cb13-16"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } else { %&gt;</span>
-<span id="cb13-17"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>%= course.title %&gt; </span>
-<span id="cb13-18"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-19"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb13-20"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-details"</span><span class="dt">&gt;</span></span>
-<span id="cb13-21"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-number"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.number %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span> | </span>
-<span id="cb13-22"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-university"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.university %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb13-23"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (course.role) { %&gt;</span>
-<span id="cb13-24"><a href="" aria-hidden="true" tabindex="-1"></a>                | <span class="dt">&lt;</span><span class="kw">span</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-role"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.role %&gt;<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
-<span id="cb13-25"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-26"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb13-27"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">p</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-description"</span><span class="dt">&gt;</span><span class="er">&lt;</span>%= course.description %&gt;<span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
-<span id="cb13-28"><a href="" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-29"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;</span><span class="kw">ul</span><span class="ot"> class</span><span class="op">=</span><span class="st">"course-semesters"</span><span class="dt">&gt;</span></span>
-<span id="cb13-30"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% for (const semester of course.semester) { %&gt;</span>
-<span id="cb13-31"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% if (semester.url) { %&gt;</span>
-<span id="cb13-32"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="dt">&gt;&lt;</span><span class="kw">a</span><span class="ot"> href</span><span class="op">=</span><span class="st">"</span><span class="er">&lt;</span><span class="st">%= semester.url %&gt;"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-building-columns"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> <span class="er">&lt;</span>%= semester.name %&gt;<span class="dt">&lt;/</span><span class="kw">a</span><span class="dt">&gt;&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb13-33"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } else { %&gt; </span>
-<span id="cb13-34"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="dt">&lt;</span><span class="kw">li</span><span class="ot"> class</span><span class="op">=</span><span class="st">"no-link"</span><span class="dt">&gt;&lt;</span><span class="kw">i</span><span class="ot"> class</span><span class="op">=</span><span class="st">"fa-solid fa-building-columns"</span><span class="dt">&gt;&lt;/</span><span class="kw">i</span><span class="dt">&gt;</span> <span class="er">&lt;</span>%= semester.name %&gt;<span class="dt">&lt;/</span><span class="kw">li</span><span class="dt">&gt;</span></span>
-<span id="cb13-35"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-36"><a href="" aria-hidden="true" tabindex="-1"></a>                <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-37"><a href="" aria-hidden="true" tabindex="-1"></a>            <span class="dt">&lt;/</span><span class="kw">ul</span><span class="dt">&gt;</span></span>
-<span id="cb13-38"><a href="" aria-hidden="true" tabindex="-1"></a>        <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-39"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-40"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="er">&lt;</span>% } %&gt;</span>
-<span id="cb13-41"><a href="" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
-<span id="cb13-42"><a href="" aria-hidden="true" tabindex="-1"></a>```</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Define how item in <code>items</code> should be generated</p>
-</div>
-</div>
-</div>
-</section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your Turn</h2>
-<p><strong>Add a listing page to your site</strong>:</p>
-<ol type="1">
-<li><p>Create a page to house the listing</p></li>
-<li><p>Either:</p>
+<p>On-Prem</p>
 <ul>
-<li>populate a <code>.yml</code> file with a couple of items (use <code>projects/project.yml</code> as a template), or</li>
-<li>create some placeholder <code>.qmd</code> files.</li>
-</ul></li>
-<li><p>Add the page to your site navigation</p></li>
-<li><p>Clean up any template listing pages/files/folders you don’t want</p></li>
-</ol>
+<li><a href="https://shiny.posit.co/py/docs/deploy.html#deploy-to-shiny-server-open-source">Shiny Server</a> (open source)</li>
+<li><a href="https://shiny.posit.co/py/docs/deploy.html#deploy-to-posit-connect-commercial">Posit Connect</a> (commercial)</li>
+<li><a href="https://shiny.posit.co/py/docs/deploy.html#other-hosting-options">Roll your own</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="fragment" style="margin-top: 0.7em;">
+<p>Alternatively, deploy serverless using <a href="https://pyodide.org/">Pyodide</a>. See the <a href="https://github.com/wch/retirement-simulation-dashboard">Retirement Simulation</a> example for details.</p>
+</div>
+</section>
+<section id="shiny-deployment-1" class="slide level2">
+<h2>Shiny Deployment</h2>
+
+<img data-src="https://jjallaire.github.io/pydata-quarto-dashboards/images/dashboards/retirement.png" class="r-stretch"></section>
+<section id="learn-more" class="slide level2">
+<h2>Learn more</h2>
+<p><a href="https://quarto.org/docs/dashboards" class="uri">https://quarto.org/docs/dashboards</a></p>
+<iframe width="1000" height="400" src="https://quarto.org/docs/dashboards" frameborder="1" style="background:white;"></iframe>
+</section>
+<section id="references" class="slide level2">
+<h2>References</h2>
+<p>Huge thanks the following people who have generated and shared most of the content of this lecture:</p>
+<ul>
+<li><p>Mine Çetinkaya-Rundel: <a href="https://posit-conf-2024.github.io/quarto-dashboards/">Build-a-Dashboard Workshop</a></p></li>
+<li><p>J.J. Allaire: <a href="https://jjallaire.github.io/pydata-quarto-dashboards">Dashboards with Jupyter and Quarto</a></p></li>
+</ul>
+<p><br></p>
+
+<img data-src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdGdyMnhseGczY3NheHU1cHhtdGRzdWRxaXJ1Z3BsdWF6MWdwZm84ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3ohs7JG6cq7EWesFcQ/giphy.gif" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="section" class="slide level2" data-background="#43464B">
+<h2></h2>
+<div class="cell" data-layout-align="center">
+<style type="text/css">
+img.circle {border-radius:50%;}
+</style>
+</div>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><img class="circle" src="https://github.com/damien-dupre.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<p><strong>Thanks for your attention and don’t hesitate to ask if you have any questions!</strong><br>
+<a href="https://datasci.social/@damien_dupre"><svg aria-hidden="true" role="img" viewbox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M433 179.11c0-97.2-63.71-125.7-63.71-125.7-62.52-28.7-228.56-28.4-290.48 0 0 0-63.72 28.5-63.72 125.7 0 115.7-6.6 259.4 105.63 289.1 40.51 10.7 75.32 13 103.33 11.4 50.81-2.8 79.32-18.1 79.32-18.1l-1.7-36.9s-36.31 11.4-77.12 10.1c-40.41-1.4-83-4.4-89.63-54a102.54 102.54 0 0 1-.9-13.9c85.63 20.9 158.65 9.1 178.75 6.7 56.12-6.7 105-41.3 111.23-72.9 9.8-49.8 9-121.5 9-121.5zm-75.12 125.2h-46.63v-114.2c0-49.7-64-51.6-64 6.9v62.5h-46.33V197c0-58.5-64-56.6-64-6.9v114.2H90.19c0-122.1-5.2-147.9 18.41-175 25.9-28.9 79.82-30.8 103.83 6.1l11.6 19.5 11.6-19.5c24.11-37.1 78.12-34.8 103.83-6.1 23.71 27.3 18.4 53 18.4 175z"></path></svg> <span class="citation" data-cites="damien_dupre">@damien_dupre</span></a><br>
+<a href="https://github.com/damien-dupre"><svg aria-hidden="true" role="img" viewbox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg> <span class="citation" data-cites="damien-dupre">@damien-dupre</span></a><br>
+<a href="https://damien-dupre.github.io"><svg aria-hidden="true" role="img" viewbox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg> https://damien-dupre.github.io</a><br>
+<a href="mailto:damien.dupre@dcu.ie"><svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M16.1 260.2c-22.6 12.9-20.5 47.3 3.6 57.3L160 376V479.3c0 18.1 14.6 32.7 32.7 32.7c9.7 0 18.9-4.3 25.1-11.8l62-74.3 123.9 51.6c18.9 7.9 40.8-4.5 43.9-24.7l64-416c1.9-12.1-3.4-24.3-13.5-31.2s-23.3-7.5-34-1.4l-448 256zm52.1 25.5L409.7 90.6 190.1 336l1.2 1L68.2 285.7zM403.3 425.4L236.7 355.9 450.8 116.6 403.3 425.4z"></path></svg> damien.dupre@dcu.ie</a></p>
+</div>
+</div>
+</div>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
 </section>
+
     </div>
   </div>
 
