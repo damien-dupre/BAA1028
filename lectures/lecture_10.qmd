@@ -836,6 +836,43 @@ Alternatively, deploy serverless using [Pyodide](https://pyodide.org/). See the 
 <iframe width="1000" height="400" src="https://quarto.org/docs/dashboards" frameborder="1" style="background:white;"></iframe>
 ```
 
+## 🛠️ Your Turn!
+
+Create a Dashboard with the following widgets:
+
+::::{layout="[1,1]"}
+:::{}
+```{.python}
+import plotly.express as px
+
+df = px.data.stocks()
+fig = px.line(df, x='date', y="GOOG")
+fig.show()
+```
+:::
+::: {}
+```{.python}
+from ipyleaflet import Map, Marker
+
+center = (53.3868, -6.2569)
+map = Map(center=center, zoom=12)
+display(map)
+```
+:::
+::::
+
+Remember to use in your YAML:
+
+```yaml
+---
+format: dashboard
+---
+```
+
+```{r}
+countdown(minutes = 10, warn_when = 60)
+```
+
 ## References
 
 Huge thanks the following people who have generated and shared most of the content of this lecture:
