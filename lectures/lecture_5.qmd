@@ -733,6 +733,31 @@ This document provides examples of the most commonly used markdown syntax. See t
 | ```                                                          |                                                                                                        |
 +--------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
+## Images
+
+Images are created using a similar notation to links.
+
+They are done in the format
+
+`![]()`
+
+- The ! lets markdown know it's an image
+- Inside the [] you can optionally put a caption.
+- Inside the () you place a link to the image relative to the location of the document OR on the web.
+
+### Web Image Example
+
+`![](https://avatars.githubusercontent.com/u/107476423?s=400&u=84c1b49966ea958785a8954726c116b7952b2041&v=4)`
+
+![](https://avatars.githubusercontent.com/u/107476423?s=400&u=84c1b49966ea958785a8954726c116b7952b2041&v=4)
+
+### Local Image Example
+
+`![Image of a white robot surrounded by dashboards, holding a magnifying glass and thinking](resources/cover_image.jpeg)`
+
+This points towards an image where there is a folder called 'resources' at the same level as the .qmd file being written. It moves into the resources folder, then looks for an image called `cover_image.jpeg`.
+
+![Image of a white robot surrounded by dashboards, holding a magnifying glass and thinking](resources/cover_image.jpeg)
 
 ## Images
 
@@ -1030,52 +1055,6 @@ The footnotes that are generated from the above examples are included in the [Ex
 
 Learn more in the article on [Tables](https://quarto.org/docs/authoring/tables.html).
 
-## Source Code
-
-Use ```` ``` ```` to delimit blocks of source code:
-
-```` markdown
-```
-code
-```
-````
-
-Add a language to syntax highlight code blocks:
-
-```` markdown
-```python
-1 + 1
-```
-````
-
-Markdown supports syntax highlighting for over [140 different languages](https://github.com/jgm/skylighting/tree/master/skylighting-core/xml). If your language is not supported then you can use the `default` language to get a similar visual treatment:
-
-```` markdown
-```default
-code
-```
-````
-
-## Source Code
-
-Equivalent to the short form used in the examples above is a longer form that uses the language as a class (i.e. `.python`) inside braces:
-
-```` markdown
-```{.python}
-1 + 1
-```
-````
-
-The longer form allows you to add attributes to the block in a similar way to [Divs]().  Some specific features that use this syntax are [Lines Numbers](https://quarto.org/docs/output-formats/html-code.qmd#line-numbers) and [Code Filename](https://quarto.org/docs/output-formats/html-code.qmd#code-filename). Here is an example of the latter:
-
-````{.markdown filename="run.py"}
-```{.python filename="run.py"}
-code
-```
-````
-
-If you are creating HTML output there is a wide variety of options available for code block output. See the article on [HTML Code](https://quarto.org/docs/output-formats/html-code.html) for additional details.
-
 ## Raw Content
 
 Raw content can be included directly without Quarto parsing it using [Pandoc's raw attribute](https://pandoc.org/MANUAL.html#extension-raw_attribute). A raw block starts with ` ```{=` followed by a format and closing `}`, e.g. here's a raw HTML block:
@@ -1143,20 +1122,6 @@ You can also use raw html code chunks:
 ````
 
 Videos can refer to video files (e.g. MPEG) or can be links to videos published on YouTube, Vimeo, or Brightcove. Learn more in the article on [Videos](https://quarto.org/docs/authoring/videos.html).
-
-## Page Breaks
-
-The `pagebreak` [shortcode](https://quarto.org/docs/authoring/shortcodes.html) enables you to insert a native pagebreak into a document (.e.g in LaTeX this would be a `\newpage`, in MS Word a docx-native pagebreak, in HTML a `page-break-after: always` CSS directive, etc.):
-
-```{.markdown shortcodes="false"}
-page 1
-
-{{< pagebreak >}}
-
-page 2
-```
-
-Native pagebreaks are supported for HTML, LaTeX, Context, MS Word, Open Document, and ePub (for other formats a form-feed character `\f` is inserted).
 
 ## Divs and Spans
 
@@ -1376,8 +1341,83 @@ all kinds of useful things about Quarto.
 :::
 ::::
 
+# 3. The Code Cells 
 
-# 3. The Python Code Cells 
+## Source Code
+
+Use ```` ``` ```` to delimit blocks of source code:
+
+```` markdown
+```
+code
+```
+````
+
+Add a language to syntax highlight code blocks:
+
+:::: {layout="[1,1]"}
+::: {}
+```` markdown
+```python
+print("Hello world")
+```
+````
+
+:::
+::: {}
+```` markdown
+```sql
+SELECT first_name, last_name
+FROM employees
+WHERE first_name = 'Luca';
+```
+````
+
+:::
+::::
+
+Markdown supports syntax highlighting for over [140 different languages](https://github.com/jgm/skylighting/tree/master/skylighting-core/xml). If your language is not supported then you can use the `default` language to get a similar visual treatment:
+
+```` markdown
+```default
+code
+```
+````
+
+## Source Code
+
+Equivalent to the short form used in the examples above is a longer form that uses the language as a class (i.e. `.python`) inside braces:
+
+:::: {layout="[1,1]"}
+::: {}
+```` markdown
+```{.python}
+print("Hello world")
+```
+````
+
+:::
+::: {}
+```` markdown
+```{.sql}
+SELECT first_name, last_name
+FROM employees
+WHERE first_name = 'Luca';
+```
+````
+
+:::
+::::
+
+The longer form allows you to add attributes to the block in a similar way to [Divs]().  Some specific features that use this syntax are [Lines Numbers](https://quarto.org/docs/output-formats/html-code.qmd#line-numbers) and [Code Filename](https://quarto.org/docs/output-formats/html-code.qmd#code-filename). Here is an example of the latter:
+
+````{.markdown filename="run.py"}
+```{.python filename="run.py"}
+code
+```
+````
+
+If you are creating HTML output there is a wide variety of options available for code block output. See the article on [HTML Code](https://quarto.org/docs/output-formats/html-code.html) for additional details.
 
 ## Anatomy of a Code Cell
 

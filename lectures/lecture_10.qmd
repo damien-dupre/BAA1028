@@ -49,10 +49,11 @@ An open-source scientific and technical publishing system that builds on standar
 -   Dozens of Output Formats
 
 -   Specialized Project Types
-:::
 
+:::
 ::: {}
 ![](https://jjallaire.github.io/pydata-quarto-dashboards/images/what-is-quarto.png){height="630px"}
+
 :::
 :::
 

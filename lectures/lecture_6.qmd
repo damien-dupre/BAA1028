@@ -151,17 +151,17 @@ print('Hello, world!')
 ## Exercise 2: Convert a Notebook to .qmd {background="#43464B"}
 
 :::: {layout="[1,1]"}
-::: {#first-column}
+::: {}
 1. Open a new Terminal window in VS Code and run the following instructions:
 
 ```{.bash filename="Terminal"}
 quarto convert hello.ipynb
 ```
 
-2. Drag and drop the file `hello.qmd` created in the root of the `your-github-username.github.io` folder
-:::
+2. Drag and drop the file `hello.qmd` created in the root of the `your-github-username.github.io` folder\
 
-::: {#second-column}
+:::
+::: {}
 3. Open the file `_quarto.yml` in Jupyter and modify it as follow:
 
 ```{.yml filename="_quarto.yml"}
@@ -180,6 +180,7 @@ website:
 ```{.bash filename="Terminal"}
 quarto preview
 ```
+
 :::
 ::::
 

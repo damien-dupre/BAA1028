@@ -26,5 +26,10 @@ include_img <- function(img_name) {
   paste0("https://raw.githubusercontent.com/damien-dupre/img/main/", img_name) |> 
   knitr::include_graphics()
 }
+
+# https://github.com/luissattelmayer/intro-css/blob/642c840b8d0d4bf857b1d0ff3ed38d63c2105e8d/slides/01_corpus_webscraping_slides.qmd#L6
+# https://github.com/lukaslehner/UCL-NCRM-Tools-for-Efficient-Workflows-2023/blob/d1a84da4e81b5fd28db5dc746783f63c5723c031/A-Slides/lecture6.qmd
+# https://github.com/cornelius-erfort/web-data-and-text-r/blob/831fff2a667c7b66b05e416eced829ae784d9eed/slides/09-ethics-and-legal.qmd#L4
+# https://github.com/solmos/user2024-talk/blob/9e362e7ca525877aad23862fe581f5988bb33919/index.qmd#L7
 ```
 
