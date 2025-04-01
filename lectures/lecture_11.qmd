@@ -362,7 +362,7 @@ for x in range(1, 6):
 
 ## {quarto-pyodide}: In Action
 
-![{quarto-pyodide} Extension in Action](assets/gifs/quarto-pyodide-initial-demo.gif)
+![{quarto-pyodide} Extension in Action](https://talks.thecoatlessprofessor.com/stats352-guest-lectures-on-dynamic-interactions-wasm/assets/gifs/quarto-pyodide-initial-demo.gif)
 
 ## Use cases
 
