@@ -628,7 +628,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_9a6084e1" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_874cf4e0" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -943,7 +943,7 @@ Source <a href="https://survey.stackoverflow.co/2024/technology#3-integrated-dev
 </ol>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div class="countdown" id="timer_2f9a32b0" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_98707ddd" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1801,128 +1801,6 @@ about Quarto.
 </div>
 </div>
 </div>
-</section></section>
-<section>
-<section id="the-code-cells" class="title-slide slide level1 center">
-<h1>3. The Code Cells</h1>
-
-</section>
-<section id="source-code" class="slide level2">
-<h2>Source Code</h2>
-<p>Use <code>```</code> to delimit blocks of source code:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb70-1"><a href=""></a><span class="in">```</span></span>
-<span id="cb70-2"><a href=""></a><span class="in">code</span></span>
-<span id="cb70-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Add a language to syntax highlight code blocks:</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb71"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb71-1"><a href=""></a><span class="in">```python</span></span>
-<span id="cb71-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Hello world"</span>)</span>
-<span id="cb71-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb72"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb72-1"><a href=""></a><span class="in">```sql</span></span>
-<span id="cb72-2"><a href=""></a><span class="kw">SELECT</span> first_name, last_name</span>
-<span id="cb72-3"><a href=""></a><span class="kw">FROM</span> employees</span>
-<span id="cb72-4"><a href=""></a><span class="kw">WHERE</span> first_name <span class="op">=</span> <span class="st">'Luca'</span>;</span>
-<span id="cb72-5"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>Markdown supports syntax highlighting for over <a href="https://github.com/jgm/skylighting/tree/master/skylighting-core/xml">140 different languages</a>. If your language is not supported then you can use the <code>default</code> language to get a similar visual treatment:</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb73-1"><a href=""></a><span class="in">```default</span></span>
-<span id="cb73-2"><a href=""></a><span class="in">code</span></span>
-<span id="cb73-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="source-code-1" class="slide level2">
-<h2>Source Code</h2>
-<p>Equivalent to the short form used in the examples above is a longer form that uses the language as a class (i.e.&nbsp;<code>.python</code>) inside braces:</p>
-<div>
-
-</div>
-<div class="quarto-layout-panel" data-layout="[1,1]">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb74"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb74-1"><a href=""></a><span class="in">```{.python}</span></span>
-<span id="cb74-2"><a href=""></a><span class="in">print("Hello world")</span></span>
-<span id="cb74-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div class="sourceCode" id="cb75"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb75-1"><a href=""></a><span class="in">```{.sql}</span></span>
-<span id="cb75-2"><a href=""></a><span class="in">SELECT first_name, last_name</span></span>
-<span id="cb75-3"><a href=""></a><span class="in">FROM employees</span></span>
-<span id="cb75-4"><a href=""></a><span class="in">WHERE first_name = 'Luca';</span></span>
-<span id="cb75-5"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-<p>The longer form allows you to add attributes to the block in a similar way to <a href="">Divs</a>. Some specific features that use this syntax are <a href="https://quarto.org/docs/output-formats/html-code.qmd#line-numbers">Lines Numbers</a> and <a href="https://quarto.org/docs/output-formats/html-code.qmd#code-filename">Code Filename</a>. Here is an example of the latter:</p>
-<div class="code-with-filename">
-<div class="code-with-filename-file">
-<pre><strong>run.py</strong></pre>
-</div>
-<div class="sourceCode" id="cb76" data-filename="run.py"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb76-1"><a href=""></a><span class="in">```{.python filename="run.py"}</span></span>
-<span id="cb76-2"><a href=""></a><span class="in">code</span></span>
-<span id="cb76-3"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>If you are creating HTML output there is a wide variety of options available for code block output. See the article on <a href="https://quarto.org/docs/output-formats/html-code.html">HTML Code</a> for additional details.</p>
-</section>
-<section id="anatomy-of-a-code-cell" class="slide level2">
-<h2>Anatomy of a Code Cell</h2>
-<div class="sourceCode" id="cb77"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb77-1"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb77-2"><a href=""></a><span class="in">#| label: hello-world</span></span>
-<span id="cb77-3"><a href=""></a><span class="in">#| echo: false</span></span>
-<span id="cb77-4"><a href=""></a><span class="in">print('Hello, world!')</span></span>
-<span id="cb77-5"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Place options underneath, behind the <code>#|</code> (hashpipe): <code>#| option1: value</code></p>
-<p>Cells output can be customized with this hashpipe options (i.e., arguments set after the <code>#|</code>). Above, we use 1 argument:</p>
-<p>See the <strong><a href="https://quarto.org/docs/reference/cells/cells-knitr.html">Quarto Reference Guide</a></strong> for a complete list of chunk options.</p>
-</section>
-<section id="figures-in-the-output-document" class="slide level2">
-<h2>Figures in the Output Document</h2>
-<p>As long as the data frame object created in the first setup chunk, then a <strong>visualisation can be used in a separated cell</strong>:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb78-1"><a href=""></a><span class="co">---</span></span>
-<span id="cb78-2"><a href=""></a><span class="an">title:</span><span class="co"> "Untitled"</span></span>
-<span id="cb78-3"><a href=""></a><span class="an">format:</span><span class="co"> html</span></span>
-<span id="cb78-4"><a href=""></a><span class="an">jupyter:</span><span class="co"> python3</span></span>
-<span id="cb78-5"><a href=""></a><span class="co">---</span></span>
-<span id="cb78-6"><a href=""></a></span>
-<span id="cb78-7"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb78-8"><a href=""></a><span class="in"># libraries</span></span>
-<span id="cb78-9"><a href=""></a><span class="in">import plotly.express as px  </span></span>
-<span id="cb78-10"><a href=""></a><span class="in"># code</span></span>
-<span id="cb78-11"><a href=""></a><span class="in">fig = px.scatter(x=[0, 1, 2, 3, 4], y=[0, 1, 4, 9, 16])</span></span>
-<span id="cb78-12"><a href=""></a><span class="in">```</span></span>
-<span id="cb78-13"><a href=""></a></span>
-<span id="cb78-14"><a href=""></a><span class="fu"># My Section Title</span></span>
-<span id="cb78-15"><a href=""></a></span>
-<span id="cb78-16"><a href=""></a>My text followed by my figure.</span>
-<span id="cb78-17"><a href=""></a></span>
-<span id="cb78-18"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb78-19"><a href=""></a></span>
-<span id="cb78-20"><a href=""></a><span class="in">fig.show()</span></span>
-<span id="cb78-21"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="visualisation-specific-options" class="slide level2">
-<h2>Visualisation Specific Options</h2>
-<p>Some cell options are specific to visualisations outputs:</p>
-<ul>
-<li>fig-cap: “caption of the figure”</li>
-<li>fig-height: 5</li>
-<li>fig-width: 5</li>
-</ul>
-<p>Note, the default unit for height and width is inches.</p>
-<div class="sourceCode" id="cb79"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb79-1"><a href=""></a><span class="in">```{python}</span></span>
-<span id="cb79-2"><a href=""></a><span class="in">#| fig-cap: "caption of the figure"</span></span>
-<span id="cb79-3"><a href=""></a><span class="in">#| fig-height: 5</span></span>
-<span id="cb79-4"><a href=""></a><span class="in">#| fig-width: 5</span></span>
-<span id="cb79-5"><a href=""></a></span>
-<span id="cb79-6"><a href=""></a><span class="in">fig.show()</span></span>
-<span id="cb79-7"><a href=""></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="quarto-platforms" class="slide level2">
 <h2>Quarto platforms</h2>
