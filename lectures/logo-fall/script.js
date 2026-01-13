@@ -38,9 +38,9 @@
             height: 188
           },
           {
-            src: "jupyter.png",
-            width: 180,
-            height: 208
+            src: "Python.png",
+            width: 512,
+            height: 512
           },
           {
             src: "markdown.png",
