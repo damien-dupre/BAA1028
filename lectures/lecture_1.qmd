@@ -73,7 +73,7 @@ Available on the module's loop page and, more importantly, online at:
 - Who already has an account on GitHub, GitLab, or an equivalent platform?
 - Who has a personal website built with WordPress, Google Sites, or a similar service?
 - Who knows how to read and write HTML files?
-- Which coding environment do you currently use: Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, RStudio, Atom, Positron, or something else?
+- Which coding environment do you currently use: Spyder, JupyterLab, Jupyter Notebook (collab or local), PyCharm, VS Code, Neovim, RStudio, Atom, Positron, or something else?
 - Who knows what Quarto is? what bash or zsh is?
 - Do you know where to find Notepad on Windows or TextEdit on macOS?
 :::
@@ -432,8 +432,23 @@ A new zsh terminal on MacOS
 ## Your Turn: Access your Terminal {background="#43464B"}
 
 1. Open a Terminal window
-2. Show current path using `cd` or `pwd`
-3. Print the path of your python installation using `where python` or `which python`
+2. Show current path using 
+
+- `cd` with cmd
+- `pwd` with zsh or PowerShell
+
+Note, Terminals always start from your home. You, it should print something like:
+
+- `C:\Users\YourUserName`
+- `/Users/YourUserName`
+
+3. Print the path of your python installation using 
+
+- `where python` with cmd
+- `where.exe python` with PowerShell
+- `which python` with zsh
+
+Note, if python is not installed, noting will be printed
 
 ```{r}
 countdown(minutes = 3, warn_when = 60)
@@ -446,10 +461,6 @@ countdown(minutes = 3, warn_when = 60)
 > A path is a string of characters used to uniquely identify a location in a
 directory structure. It is composed by following the directory tree hierarchy in which components, separated by a delimiting character, represent each directory.
 
-> The **delimiting character** is most commonly the **slash ("/")**, the
-**backslash character ("\\")**, or colon (":"), though some operating systems
-may use a different delimiter. 
-
 > Resources can be represented by either **absolute or relative paths**
 
 See [https://en.wikipedia.org/wiki/Path_(computing)](https://en.wikipedia.org/wiki/Path_(computing))
@@ -459,7 +470,7 @@ See [https://en.wikipedia.org/wiki/Path_(computing)](https://en.wikipedia.org/wi
 Delimiting characters `/` or `\` vary by operating system
 
 - MS Windows: 
-  - Use a colon `:` to specify the drive name (e.g., `c:`, `d:`, `e:`)
+  - Use a colon `:` to specify the drive name (e.g., `C:`, `D:`, `E:`)
   - Folders and files are separated by a backslash character (`\`)
   - Example: `C:\Damien\Documents\projects\damien-dupre.github.io\index.qmd`
 
@@ -476,7 +487,14 @@ Delimiting characters `/` or `\` vary by operating system
 
 ## Delimiting characters
 
-Two solutions in MS Windows:
+In MS Windows, the following will not work!
+
+```python
+import pandas
+csv_file = pandas.read_csv('C:\Damien\myfolder\mysubfolder\mydata.csv')
+```
+
+Two solutions:
 
 1. Use the slash character `/` instead of `\`, e.g.:   
 
@@ -500,9 +518,9 @@ operating system
 
 ```python
 import os
-os.path.join("e:", "folder1", "folder2", "file")
+os.path.join("E:", "folder1", "folder2", "file")
 ```
-returns: `'e:folder1\\folder2\\file'` (in Windows)
+returns: `E:folder1\\folder2\\file` (in Windows)
 
 A handy tool when working on both operating system: [Path
 Copy Copy -- Copy file paths from Windows explorer's contextual
@@ -529,6 +547,13 @@ When accessing folders and files that you have created, the root directory is  f
 
 ## Relative vs. Absolute Paths
 
+So, let's assume the project "damien-dupre.github.io", the full absolute path is:
+
+- `C:\Users\Damien\Projects\damien-dupre.github.io`
+- `Users/Damien/Projects/damien-dupre.github.io`
+
+## Relative vs. Absolute Paths
+
 A relative path specifies a location relative to the current directory which is a "fixed location" on your computer
 
 Often, this "fixed location" is the so-called "working directory" 
@@ -548,81 +573,34 @@ Works differently based on where the command is run.
 
 ## Relative vs. Absolute Paths
 
-So, let's assume the project "damien-dupre.github.io", the full absolute path is:
-
-- `C:\Users\Damien\Projects\damien-dupre.github.io`
-- `Users/Damien/Projects/damien-dupre.github.io`
-
-The content of the project's folder `damien-dupre.github.io` is:
-```
-.
-|-- assets
-|-- posts
-|-- courses
-|-- about.qmd
-`-- and so on
-```
-
-## Relative vs. Absolute Paths
-
 All other file- or folder-related operations are defined relative to this working directory
 
 **The huge benefit: when you share your project with a colleague or move it to
 a new computer, you only have to define the working directory once, everything
 else should work flawelessly**
 
-How to define a working directory?
-
-`import os; os.chdir("full-path-to-working-directory")`
-
-How to get information about the current working directory?
-
-`import os; os.getcwd()` (cwd = current working directory); see below for an example
-
-```python
-import os 
-os.getcwd()
-```
-
-## Checking Your Current Directory 
-
-From a terminal/command line:
-
-- **Mac/Linux:**
-  ```bash
-  pwd
-  ```
-- **Windows:**
-  ```cmd
-  cd
-  ```
-
 ## Navigating with Paths
 
-- Moving between directories:
-  ```bash
-  cd /absolute/path  # Go to absolute path is always correct
-  cd relative/path   # Move to relative path only if the path exists
-  ```
-- Special notations:
-  - `.` (current directory)
-  - `..` (parent directory)
+Using `cd` in the Terminal, it is possible to move between directories with either:
 
-## Practical Examples
+- Absolute Paths
 
-- Moving into a subdirectory:
-  ```bash
-  cd Documents/Projects
-  ```
-- Moving up one level:
-  ```bash
-  cd ..
-  ```
-- Accessing a file in a parent directory:
-  ```bash
-  cat ../notes.txt
-  ```
-  
+```bash
+  cd C:\Users\Username\Documents
+```
+
+```bash
+  cd /Users/Username/Documents
+```
+
+- Relative Paths
+
+```bash
+  cd Users
+  cd Username
+  cd Documents
+```
+
 See here for [more examples](https://earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python/)
 
 ## Self-Contained Projects
@@ -685,19 +663,6 @@ Contains all necessary files for your project, eportfolio or any repository in g
 
 ## File Naming
 
-Organising files in data/, results/, docs/, and scripts/ require some ideas of how to name files for:
-
-- easy machine reading
-- easy human reading
-- easy understanding of file content
-- choosing the correct type of file to store
-
-If you are using the py/ folder to store python-functions, these might need somewhat different naming conventions than the other folders, as these are functions you can use across the other files.
-
-Here, naming should be particularly thought in terms of content rather than structural organisation.
-
-## File Naming
-
 An important part of project management, code automation, and data analytics in general is to have your files read by a piece of code or software.
 
 Machines are clever, but extremely pedantic.
@@ -719,7 +684,7 @@ Some machines are more clever than others, so name files in a way that the "dumb
   
 ## File Naming
 
-Variables and filenames should have meaningful names in `snake_case` format, preferring all lower case.
+Variables and filenames should have meaningful names in `kebab-case` or `snake_case` format, preferring all lower case.
 
 ```{r}
 knitr::include_graphics("https://raw.githubusercontent.com/Public-Health-Scotland/python-training/1b2302fdf8c6a57e2782e9ed96d613afd40e047c/images/r_coding_cases.png")
@@ -849,17 +814,23 @@ Keep your projects tidy
 
 ```
 
-## Your Turn: Create your "Projects" folder  {background="#43464B"}
+## Your Turn: Create your "Projects" folder  {background="#43464B" .smaller}
 
-1. Go to the root/home of your computer using your file explorer
-2. Create a "Projects" folder
-3. In this "Projects" folder, create a folder called "my_first_project"
-4. In a terminal use the code to print the path of "my_first_project" folder:
+1. Open your Terminal again and run `cd ~` to go back to your home directory
 
-- `cd C:\Users\YourUsername\Projects\my_first_project`
-- `cd Users/YourUsername/Projects/my_first_project`
+2. Create a "Projects" folder using `mkdir Projects` (cmd, powershell, zsh, bash)
 
-Note, adapt the code to your home username and specific path if it's on a different location.
+3. Move to this new folder directory using `cd Projects`
+
+Note, the message `no such file or directory` will be printed if it hasn't worked
+
+4. In this "Projects" folder, create a subfolder called "my_first_project" using `mkdir my_first_project` (cmd, powershell, zsh, bash)
+
+5. Move to this folder using absolute path:
+
+- `cd C:\Users\YourUsername\Projects\my_first_project` (Windows)
+
+- `cd Users/YourUsername/Projects/my_first_project` (MacOS/Linux)
 
 ```{r}
 countdown(minutes = 5, warn_when = 60)

@@ -262,7 +262,7 @@ Damien Dupré
 <li class="fragment">Who already has an account on GitHub, GitLab, or an equivalent platform?</li>
 <li class="fragment">Who has a personal website built with WordPress, Google Sites, or a similar service?</li>
 <li class="fragment">Who knows how to read and write HTML files?</li>
-<li class="fragment">Which coding environment do you currently use: Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, RStudio, Atom, Positron, or something else?</li>
+<li class="fragment">Which coding environment do you currently use: Spyder, JupyterLab, Jupyter Notebook (collab or local), PyCharm, VS Code, Neovim, RStudio, Atom, Positron, or something else?</li>
 <li class="fragment">Who knows what Quarto is? what bash or zsh is?</li>
 <li class="fragment">Do you know where to find Notepad on Windows or TextEdit on macOS?</li>
 </ul>
@@ -668,12 +668,29 @@ Damien Dupré
 <h2>Your Turn: Access your Terminal</h2>
 <ol type="1">
 <li>Open a Terminal window</li>
-<li>Show current path using <code>cd</code> or <code>pwd</code></li>
-<li>Print the path of your python installation using <code>where python</code> or <code>which python</code></li>
+<li>Show current path using</li>
 </ol>
+<ul>
+<li><code>cd</code> with cmd</li>
+<li><code>pwd</code> with zsh or PowerShell</li>
+</ul>
+<p>Note, Terminals always start from your home. You, it should print something like:</p>
+<ul>
+<li><code>C:\Users\YourUserName</code></li>
+<li><code>/Users/YourUserName</code></li>
+</ul>
+<ol start="3" type="1">
+<li>Print the path of your python installation using</li>
+</ol>
+<ul>
+<li><code>where python</code> with cmd</li>
+<li><code>where.exe python</code> with PowerShell</li>
+<li><code>which python</code> with zsh</li>
+</ul>
+<p>Note, if python is not installed, noting will be printed</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_ba38d4f2" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_e6ae5c89" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -691,9 +708,6 @@ Damien Dupré
 <p>A path is a string of characters used to uniquely identify a location in a directory structure. It is composed by following the directory tree hierarchy in which components, separated by a delimiting character, represent each directory.</p>
 </blockquote>
 <blockquote>
-<p>The <strong>delimiting character</strong> is most commonly the <strong>slash (“/”)</strong>, the <strong>backslash character (“\”)</strong>, or colon (“:”), though some operating systems may use a different delimiter.</p>
-</blockquote>
-<blockquote>
 <p>Resources can be represented by either <strong>absolute or relative paths</strong></p>
 </blockquote>
 <p>See <a href="https://en.wikipedia.org/wiki/Path_(computing)">https://en.wikipedia.org/wiki/Path_(computing)</a></p>
@@ -704,7 +718,7 @@ Damien Dupré
 <ul>
 <li>MS Windows:
 <ul>
-<li>Use a colon <code>:</code> to specify the drive name (e.g., <code>c:</code>, <code>d:</code>, <code>e:</code>)</li>
+<li>Use a colon <code>:</code> to specify the drive name (e.g., <code>C:</code>, <code>D:</code>, <code>E:</code>)</li>
 <li>Folders and files are separated by a backslash character (<code>\</code>)</li>
 <li>Example: <code>C:\Damien\Documents\projects\damien-dupre.github.io\index.qmd</code></li>
 </ul></li>
@@ -725,24 +739,27 @@ Damien Dupré
 </section>
 <section id="delimiting-characters-2" class="slide level2">
 <h2>Delimiting characters</h2>
-<p>Two solutions in MS Windows:</p>
+<p>In MS Windows, the following will not work!</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb1-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:</span><span class="er">\</span><span class="st">Damien</span><span class="er">\</span><span class="st">myfolder</span><span class="er">\</span><span class="st">mysubfolder</span><span class="er">\</span><span class="st">mydata.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Two solutions:</p>
 <ol type="1">
 <li>Use the slash character <code>/</code> instead of <code>\</code>, e.g.:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas</span>
-<span id="cb1-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:/Damien/myfolder/mysubfolder/mydata.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb2-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:/Damien/myfolder/mysubfolder/mydata.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ol start="2" type="1">
 <li>Escape the backslash character via <code>\\</code>, e.g.:</li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="im">import</span> pandas</span>
-<span id="cb2-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:</span><span class="ch">\\</span><span class="st">Damien</span><span class="ch">\\</span><span class="st">myfolder</span><span class="ch">\\</span><span class="st">mysubfolder</span><span class="ch">\\</span><span class="st">mydata.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> pandas</span>
+<span id="cb3-2"><a href=""></a>csv_file <span class="op">=</span> pandas.read_csv(<span class="st">'C:</span><span class="ch">\\</span><span class="st">Damien</span><span class="ch">\\</span><span class="st">myfolder</span><span class="ch">\\</span><span class="st">mysubfolder</span><span class="ch">\\</span><span class="st">mydata.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="delimiting-characters-3" class="slide level2">
 <h2>Delimiting characters</h2>
 <p>Note: Many programming languages/statistical packages (R, Python, …) can dynamically create a full path that follows the rules of the respective operating system</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a><span class="im">import</span> os</span>
-<span id="cb3-2"><a href=""></a>os.path.join(<span class="st">"e:"</span>, <span class="st">"folder1"</span>, <span class="st">"folder2"</span>, <span class="st">"file"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>returns: <code>'e:folder1\\folder2\\file'</code> (in Windows)</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> os</span>
+<span id="cb4-2"><a href=""></a>os.path.join(<span class="st">"E:"</span>, <span class="st">"folder1"</span>, <span class="st">"folder2"</span>, <span class="st">"file"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>returns: <code>E:folder1\\folder2\\file</code> (in Windows)</p>
 <p>A handy tool when working on both operating system: <a href="https://pathcopycopy.github.io/">Path Copy Copy – Copy file paths from Windows explorer’s contextual menu</a></p>
 <p>Mac users can left-click and press <kbd>option</kbd> to “copy as a Pathname”</p>
 </section>
@@ -753,14 +770,22 @@ Damien Dupré
 <ul>
 <li><strong>Mac/Linux:</strong></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href=""></a><span class="ex">/Users/Username/Documents/file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">/Users/Username/Documents/file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><strong>Windows:</strong></li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href=""></a><span class="ex">C:\Users\Username\Documents\file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">C:\Users\Username\Documents\file.txt</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When accessing folders and files that you have created, the root directory is followed by your home folder</p>
 </section>
 <section id="relative-vs.-absolute-paths-1" class="slide level2">
+<h2>Relative vs.&nbsp;Absolute Paths</h2>
+<p>So, let’s assume the project “damien-dupre.github.io”, the full absolute path is:</p>
+<ul>
+<li><code>C:\Users\Damien\Projects\damien-dupre.github.io</code></li>
+<li><code>Users/Damien/Projects/damien-dupre.github.io</code></li>
+</ul>
+</section>
+<section id="relative-vs.-absolute-paths-2" class="slide level2">
 <h2>Relative vs.&nbsp;Absolute Paths</h2>
 <p>A relative path specifies a location relative to the current directory which is a “fixed location” on your computer</p>
 <p>Often, this “fixed location” is the so-called “working directory”</p>
@@ -770,70 +795,30 @@ Damien Dupré
 <li>Finally, the tilde symbol <code>~</code> will bring you back to your home directory, e.g.&nbsp;<code>cd ~</code></li>
 </ul>
 <p>Examples:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href=""></a><span class="ex">subfolder/file.txt</span>  <span class="co"># Inside a subfolder</span></span>
-<span id="cb6-2"><a href=""></a><span class="ex">./file.txt</span>       <span class="co"># Current directory</span></span>
-<span id="cb6-3"><a href=""></a><span class="ex">../file.txt</span>      <span class="co"># Parent directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href=""></a><span class="ex">subfolder/file.txt</span>  <span class="co"># Inside a subfolder</span></span>
+<span id="cb7-2"><a href=""></a><span class="ex">./file.txt</span>       <span class="co"># Current directory</span></span>
+<span id="cb7-3"><a href=""></a><span class="ex">../file.txt</span>      <span class="co"># Parent directory</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Works differently based on where the command is run.</p>
-</section>
-<section id="relative-vs.-absolute-paths-2" class="slide level2">
-<h2>Relative vs.&nbsp;Absolute Paths</h2>
-<p>So, let’s assume the project “damien-dupre.github.io”, the full absolute path is:</p>
-<ul>
-<li><code>C:\Users\Damien\Projects\damien-dupre.github.io</code></li>
-<li><code>Users/Damien/Projects/damien-dupre.github.io</code></li>
-</ul>
-<p>The content of the project’s folder <code>damien-dupre.github.io</code> is:</p>
-<pre><code>.
-|-- assets
-|-- posts
-|-- courses
-|-- about.qmd
-`-- and so on</code></pre>
 </section>
 <section id="relative-vs.-absolute-paths-3" class="slide level2">
 <h2>Relative vs.&nbsp;Absolute Paths</h2>
 <p>All other file- or folder-related operations are defined relative to this working directory</p>
 <p><strong>The huge benefit: when you share your project with a colleague or move it to a new computer, you only have to define the working directory once, everything else should work flawelessly</strong></p>
-<p>How to define a working directory?</p>
-<p><code>import os; os.chdir("full-path-to-working-directory")</code></p>
-<p>How to get information about the current working directory?</p>
-<p><code>import os; os.getcwd()</code> (cwd = current working directory); see below for an example</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="im">import</span> os </span>
-<span id="cb8-2"><a href=""></a>os.getcwd()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="checking-your-current-directory" class="slide level2">
-<h2>Checking Your Current Directory</h2>
-<p>From a terminal/command line:</p>
-<ul>
-<li><p><strong>Mac/Linux:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a><span class="bu">pwd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><strong>Windows:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource cmd number-lines code-with-copy"><code class="sourceCode dosbat"><span id="cb10-1"><a href=""></a><span class="bu">cd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
 </section>
 <section id="navigating-with-paths" class="slide level2">
 <h2>Navigating with Paths</h2>
+<p>Using <code>cd</code> in the Terminal, it is possible to move between directories with either:</p>
 <ul>
-<li><p>Moving between directories:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href=""></a><span class="bu">cd</span> /absolute/path  <span class="co"># Go to absolute path is always correct</span></span>
-<span id="cb11-2"><a href=""></a><span class="bu">cd</span> relative/path   <span class="co"># Move to relative path only if the path exists</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Special notations:</p>
-<ul>
-<li><code>.</code> (current directory)</li>
-<li><code>..</code> (parent directory)</li>
-</ul></li>
+<li>Absolute Paths</li>
 </ul>
-</section>
-<section id="practical-examples" class="slide level2">
-<h2>Practical Examples</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href=""></a>  <span class="bu">cd</span> C:<span class="dt">\U</span>sers<span class="dt">\U</span>sername<span class="dt">\D</span>ocuments</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href=""></a>  <span class="bu">cd</span> /Users/Username/Documents</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
-<li><p>Moving into a subdirectory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="bu">cd</span> Documents/Projects</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Moving up one level:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href=""></a><span class="bu">cd</span> ..</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>Accessing a file in a parent directory:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href=""></a><span class="fu">cat</span> ../notes.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li>Relative Paths</li>
 </ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href=""></a>  <span class="bu">cd</span> Users</span>
+<span id="cb10-2"><a href=""></a>  <span class="bu">cd</span> Username</span>
+<span id="cb10-3"><a href=""></a>  <span class="bu">cd</span> Documents</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>See here for <a href="https://earthdatascience.org/courses/intro-to-earth-data-science/python-code-fundamentals/work-with-files-directories-paths-in-python/">more examples</a></p>
 </section>
 <section id="self-contained-projects" class="slide level2">
@@ -902,24 +887,12 @@ Damien Dupré
 </section>
 <section id="file-naming" class="slide level2">
 <h2>File Naming</h2>
-<p>Organising files in data/, results/, docs/, and scripts/ require some ideas of how to name files for:</p>
-<ul>
-<li>easy machine reading</li>
-<li>easy human reading</li>
-<li>easy understanding of file content</li>
-<li>choosing the correct type of file to store</li>
-</ul>
-<p>If you are using the py/ folder to store python-functions, these might need somewhat different naming conventions than the other folders, as these are functions you can use across the other files.</p>
-<p>Here, naming should be particularly thought in terms of content rather than structural organisation.</p>
-</section>
-<section id="file-naming-1" class="slide level2">
-<h2>File Naming</h2>
 <p>An important part of project management, code automation, and data analytics in general is to have your files read by a piece of code or software.</p>
 <p>Machines are clever, but extremely pedantic.</p>
 <p>Be consistent, be meticulous.</p>
 <p>Some machines are more clever than others, so name files in a way that the “dumbest” of them can deal with.</p>
 </section>
-<section id="file-naming-2" class="slide level2">
+<section id="file-naming-1" class="slide level2">
 <h2>File Naming</h2>
 <ul>
 <li>Don’t use white space
@@ -938,72 +911,72 @@ Damien Dupré
 </ul></li>
 </ul>
 </section>
-<section id="file-naming-3" class="slide level2">
+<section id="file-naming-2" class="slide level2">
 <h2>File Naming</h2>
-<p>Variables and filenames should have meaningful names in <code>snake_case</code> format, preferring all lower case.</p>
+<p>Variables and filenames should have meaningful names in <code>kebab-case</code> or <code>snake_case</code> format, preferring all lower case.</p>
 
 <img data-src="https://raw.githubusercontent.com/Public-Health-Scotland/python-training/1b2302fdf8c6a57e2782e9ed96d613afd40e047c/images/r_coding_cases.png" class="r-stretch"></section>
-<section id="file-naming-4" class="slide level2">
+<section id="file-naming-3" class="slide level2">
 <h2>File Naming</h2>
 <div class="quarto-layout-panel" data-layout="[1,1]">
 <div class="quarto-layout-row">
 <div id="first-column" class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>Machines will first list files starting with numbers (ascdendingly) then in alphabetic order.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>1_file.txt</span>
-<span id="cb15-2"><a href=""></a>2_file.txt</span>
-<span id="cb15-3"><a href=""></a>file_one.txt</span>
-<span id="cb15-4"><a href=""></a>file_three.txt</span>
-<span id="cb15-5"><a href=""></a>file_two.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href=""></a>1_file.txt</span>
+<span id="cb11-2"><a href=""></a>2_file.txt</span>
+<span id="cb11-3"><a href=""></a>file_one.txt</span>
+<span id="cb11-4"><a href=""></a>file_three.txt</span>
+<span id="cb11-5"><a href=""></a>file_two.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>But they wont understand the difference between 1 and 10</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a>10_file.txt</span>
-<span id="cb16-2"><a href=""></a>1_file.txt</span>
-<span id="cb16-3"><a href=""></a>2_file.txt</span>
-<span id="cb16-4"><a href=""></a>file_1.txt</span>
-<span id="cb16-5"><a href=""></a>file_10.txt</span>
-<span id="cb16-6"><a href=""></a>file_2.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href=""></a>10_file.txt</span>
+<span id="cb12-2"><a href=""></a>1_file.txt</span>
+<span id="cb12-3"><a href=""></a>2_file.txt</span>
+<span id="cb12-4"><a href=""></a>file_1.txt</span>
+<span id="cb12-5"><a href=""></a>file_10.txt</span>
+<span id="cb12-6"><a href=""></a>file_2.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div id="second-column" class="fragment quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <p>‘zero-padding’ is a way of preserving file order</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a>01_file.txt</span>
-<span id="cb17-2"><a href=""></a>02_file.txt</span>
-<span id="cb17-3"><a href=""></a>10_file.txt</span>
-<span id="cb17-4"><a href=""></a>file_01.txt</span>
-<span id="cb17-5"><a href=""></a>file_02.txt</span>
-<span id="cb17-6"><a href=""></a>file_10.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href=""></a>01_file.txt</span>
+<span id="cb13-2"><a href=""></a>02_file.txt</span>
+<span id="cb13-3"><a href=""></a>10_file.txt</span>
+<span id="cb13-4"><a href=""></a>file_01.txt</span>
+<span id="cb13-5"><a href=""></a>file_02.txt</span>
+<span id="cb13-6"><a href=""></a>file_10.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
+</section>
+<section id="file-naming-4" class="slide level2">
+<h2>File Naming</h2>
+<p>Using dates in file names may also ensure decent organisation but be consistent. Recommend using YYYY-MM-DD formatting</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href=""></a>13-11-21_initial-submission-results.txt</span>
+<span id="cb14-2"><a href=""></a>22-01-03_revised-results.txt</span>
+<span id="cb14-3"><a href=""></a>2022-02-28_results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>vs</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href=""></a>2021-11-13_initial-submission-results.txt</span>
+<span id="cb15-2"><a href=""></a>2022-02-28_results.txt</span>
+<span id="cb15-3"><a href=""></a>2022-03-01_revised-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="file-naming-5" class="slide level2">
 <h2>File Naming</h2>
-<p>Using dates in file names may also ensure decent organisation but be consistent. Recommend using YYYY-MM-DD formatting</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a>13-11-21_initial-submission-results.txt</span>
-<span id="cb18-2"><a href=""></a>22-01-03_revised-results.txt</span>
-<span id="cb18-3"><a href=""></a>2022-02-28_results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>vs</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb19-1"><a href=""></a>2021-11-13_initial-submission-results.txt</span>
-<span id="cb19-2"><a href=""></a>2022-02-28_results.txt</span>
-<span id="cb19-3"><a href=""></a>2022-03-01_revised-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Consider using different space separators for different parts of the file name</p>
+<p>This way you can use the file name it self, programatically, if needed</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb16-1"><a href=""></a>2021-11-13_initial_submission_results.txt</span>
+<span id="cb16-2"><a href=""></a>2022-02-28_results.txt</span>
+<span id="cb16-3"><a href=""></a>2022-03-01_revised_results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="file-naming-6" class="slide level2">
 <h2>File Naming</h2>
-<p>Consider using different space separators for different parts of the file name</p>
-<p>This way you can use the file name it self, programatically, if needed</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href=""></a>2021-11-13_initial_submission_results.txt</span>
-<span id="cb20-2"><a href=""></a>2022-02-28_results.txt</span>
-<span id="cb20-3"><a href=""></a>2022-03-01_revised_results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</section>
-<section id="file-naming-7" class="slide level2">
-<h2>File Naming</h2>
 <p>Optimising file names for computers is great, but ultimately its us humans that need to choose files to work with. Naming files in a way that makes the file content obvious (or at least give an idea of content) by the file name is good for such interactions.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb21"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb21-1"><a href=""></a>2021-11-13_final-results.txt</span>
-<span id="cb21-2"><a href=""></a>2022-02-28_finalfinal-results.txt</span>
-<span id="cb21-3"><a href=""></a>2022-03-01_finished-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href=""></a>2021-11-13_final-results.txt</span>
+<span id="cb17-2"><a href=""></a>2022-02-28_finalfinal-results.txt</span>
+<span id="cb17-3"><a href=""></a>2022-03-01_finished-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>vs.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb22-1"><a href=""></a>2021-11-13_first-submission-results.txt</span>
-<span id="cb22-2"><a href=""></a>2022-02-28_revision-round1-results.txt</span>
-<span id="cb22-3"><a href=""></a>2022-03-01_revision-round2-results.txt</span>
-<span id="cb22-4"><a href=""></a>2022-03-01_revision-round2-no-sex-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb18-1"><a href=""></a>2021-11-13_first-submission-results.txt</span>
+<span id="cb18-2"><a href=""></a>2022-02-28_revision-round1-results.txt</span>
+<span id="cb18-3"><a href=""></a>2022-03-01_revision-round2-results.txt</span>
+<span id="cb18-4"><a href=""></a>2022-03-01_revision-round2-no-sex-results.txt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="image-types" class="slide level2">
 <h2>Image Types</h2>
@@ -1034,22 +1007,25 @@ Damien Dupré
   |-- damien-dupre.github.io
 </code></pre>
 </section>
-<section id="your-turn-create-your-projects-folder" class="slide level2" data-background="#43464B">
+<section id="your-turn-create-your-projects-folder" class="slide level2 smaller" data-background="#43464B">
 <h2>Your Turn: Create your “Projects” folder</h2>
 <ol type="1">
-<li>Go to the root/home of your computer using your file explorer</li>
-<li>Create a “Projects” folder</li>
-<li>In this “Projects” folder, create a folder called “my_first_project”</li>
-<li>In a terminal use the code to print the path of “my_first_project” folder:</li>
+<li><p>Open your Terminal again and run <code>cd ~</code> to go back to your home directory</p></li>
+<li><p>Create a “Projects” folder using <code>mkdir Projects</code> (cmd, powershell, zsh, bash)</p></li>
+<li><p>Move to this new folder directory using <code>cd Projects</code></p></li>
+</ol>
+<p>Note, the message <code>no such file or directory</code> will be printed if it hasn’t worked</p>
+<ol start="4" type="1">
+<li><p>In this “Projects” folder, create a subfolder called “my_first_project” using <code>mkdir my_first_project</code> (cmd, powershell, zsh, bash)</p></li>
+<li><p>Move to this folder using absolute path:</p></li>
 </ol>
 <ul>
-<li><code>cd C:\Users\YourUsername\Projects\my_first_project</code></li>
-<li><code>cd Users/YourUsername/Projects/my_first_project</code></li>
+<li><p><code>cd C:\Users\YourUsername\Projects\my_first_project</code> (Windows)</p></li>
+<li><p><code>cd Users/YourUsername/Projects/my_first_project</code> (MacOS/Linux)</p></li>
 </ul>
-<p>Note, adapt the code to your home username and specific path if it’s on a different location.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_29bd7bf8" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_76f9bbf4" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -1114,7 +1090,7 @@ Damien Dupré
 </ol>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_8920ff1e" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_dfea9098" data-warn-when="60" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
