@@ -41,18 +41,18 @@ include_img <- function(img_name) {
       
 ## Back-end: “SERVER”
       
-A **web server** handles your [DNS](https://en.wikipedia.org/wiki/Domain_Name_System) requests for a website, does background **processing** and **retrieval** (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser** using [http](https://http.cat/).
+A **web server** handles your Domain Name System (aka  [DNS](https://en.wikipedia.org/wiki/Domain_Name_System)) requests for a website, does background **processing** and **retrieval** (e.g. from databases), finds `.html`,`.css`, `.js` **files**, plus **images**, **fonts**, **audio** etc., then **serves** it all to your **browser** using [http](https://http.cat/).
 
 ## Front-end: “CLIENT”
       
-A 'client'—usually a **web browser**—receives **files** from the server using using [http](https://http.cat/) and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (*parsing*) **JavaScript** code.
+A 'client' (i.e., usually a **web browser**) receives **files** from the server using using [http](https://http.cat/) and **displays** the pages you requested by rendering the **HTML**, applying **CSS** styles to the HTML **elements**, and reading (parsing) **JavaScript** code.
 
-## Exercise 1: Observe your web browser in action {background="#43464B"}
+## Your Turn: Observe your Web Browser {background="#43464B"}
 
 1. Open your web browser (Chrome, Firefox, Edge, ...)
 2. Go to the URL [https://damien-dupre.github.io/](https://damien-dupre.github.io/)
 3. In the menu of your web browser, find "Developer Tools" (Chrome), "Web Developer Tools" (Firefox), or equivalent
-4. Click `Network` and Reload the page
+4. Click `Network` and Reload/Refresh the page
 
 See, all the documents downloaded to display the page!
 
@@ -73,20 +73,26 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 ## The building blocks of web pages
 
-**HTML** (Hypertext Markup Language) is a *markup language*<sup>1</sup> that tells web browsers how to *structure* web pages. You can think of HTML as the *skeleton* of a web page. It gives authors the means to create elements like headings, text, tables, lists, add media, etc.
+**HTML** (Hypertext Markup Language) is a markup language that tells web browsers how to structure web pages. You can think of HTML as the skeleton of a web page. It gives authors the means to create elements like headings, text, tables, lists, add media, etc.
 
+:::: {layout="[1,1]"}
+::: {#first-column}
 ```{r}
 #| fig-align: "center"
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html.png?raw=true")
 ```
+:::
 
+::: {#second-column}
 Source: Adapted from [Nicolas Karasiak](https://github.com/nkarasiak/Illustration)
+:::
+::::
 
-<sup>1</sup>[**Markdown**](https://www.markdownguide.org/) is also a lightweight markup languages -- it is a bit easier for humans to write and read than HTML. HTML is more expressive and allows for customization that is difficult or impossible to do in Markdown.
+Note: [**Markdown**](https://www.markdownguide.org/) is also a markup languages but it is a bit easier for humans to write and read than HTML. HTML is more expressive and allows for customization that is difficult or impossible to do in Markdown.
 
 ## The building blocks of web pages
 
-**CSS** (Cascading Style Sheets) is a programming language that allows you to control how HTML elements *look* on a web page. You can think of CSS as the *outfit* that is styling the skeleton. It allows authors to control aspects such as the colors, layout, and font style.
+**CSS** (Cascading Style Sheets) is a programming language that allows you to control how HTML elements look on a web page. You can think of CSS as the outfit that is styling the skeleton. It allows authors to control aspects such as the colors, layout, and font style.
 
 ```{r}
 #| fig-align: "center"
@@ -99,17 +105,16 @@ Source: Adapted from [Nicolas Karasiak](https://github.com/nkarasiak/Illustratio
 
 Your browser will style HTML documents using an internal style sheet, which ensures that headings are larger than normal text, links are highlighted, lists and tables are structured correctly, etc.
 
-:::: {.columns}
-::: {.column width="47%"}
+:::: {layout="[1,1]"}
+::: {#first-column}
 ```{r}
 #| fig-align: "center"
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html-github.png?raw=true")
 ```
 :::
-::: {.column width="47%"}
+
+::: {#second-column}
 ```{r}
-
-
 #| fig-align: "center"
 #| out-width: "90%" 
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/browser-styling-github.png?raw=true")
@@ -121,14 +126,15 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 CSS allows website developers to add additional styling to web browser defaults. Otherwise, websites would be pretty boring to look at (and they'd all generally look the same).
 
-:::: {.columns}
-::: {.column width="47%"}
+:::: {layout="[1,1]"}
+::: {#first-column}
 ```{r}
 #| fig-align: "center"
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/browser-styling-github.png?raw=true")
 ```
 :::
-::: {.column width="47%"}
+
+::: {#second-column}
 ```{r}
 #| fig-align: "center"
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/css-styling-github.png?raw=true")
@@ -136,9 +142,9 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 :::
 ::::
 
-# Light intro to HTML
+# Light Intro to HTML
 
-## HyperText Markup Language file
+## HyperText Markup Language File
 
 An HTML file (HyperText Markup Language file) is a plain text document used to create and structure the content of a web page. 
 
@@ -148,7 +154,7 @@ The file typically has a `.html` or `.htm` extension.
 
 In essence, an HTML file serves as the backbone of a website, working in tandem with CSS (Cascading Style Sheets) for design and JavaScript for functionality to deliver a complete web experience.
 
-## Role of an HTML file {.smaller}
+## Role of an HTML File {.smaller}
 
 #### 1.	Foundation of a Web Page:
 HTML provides the basic structure of a webpage, defining elements such as headings, paragraphs, links, lists, and multimedia content.
@@ -165,7 +171,7 @@ HTML is used to create navigational structures, such as menus and hyperlinks, en
 #### 5. Semantic Markup:
 Modern HTML includes semantic tags (e.g., `<header>`, `<article>`, `<footer>`) that provide additional meaning and improve accessibility and search engine optimisation (SEO).
 
-## Open HTML file and access to its source
+## Open HTML Files and Sources
 
 ### Method 1: Use your webrowser
 Right-click on the webpage in your browser and select “View Page Source” (name may vary by browser). Then, copy the source code displayed, open Notepad/TextEdit, and paste it in to view or edit.
@@ -175,9 +181,9 @@ Right-click on the webpage in your browser and select “View Page Source” (na
 - TextEdit: Choose File > Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.
 
 ### Method 3: Open it with your coding tool
-e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
+e.g., Spyder, JupyterLab, PyCharm, VS Code, Neovim, ...
 
-## Why plain text?
+## Why Plain Text?
 
 - Version control (e.g., Git) works well (efficient, differences between versions are easy to understand) with plain text documents, `.docx` et al. not so much
 
@@ -187,14 +193,11 @@ e.g., Spyder, JupyterLab, Jupyter Notebook, PyCharm, VS Code, Neovim, ...
 
 - ...
 
-Canonical reference: [The Plain Person’s Guide to Plain Text Social
-Science](https://plain-text.co/) by Kieran Healy
-
-## Exercise 2: Structure of an HTML file {background="#43464B"}
+## Your Turn: Structure of an HTML file {background="#43464B"}
 
 1. Go to the following URL with your web browser:
 
-[https://damien-dupre.github.io/my-first-web-page.html](https://damien-dupre.github.io/my-first-web-page.html)
+<https://damien-dupre.github.io/my-first-web-page.html>
 
 2. Display the source code
 
@@ -204,7 +207,7 @@ Science](https://plain-text.co/) by Kieran Healy
 countdown(minutes = 5, warn_when = 60)
 ```
 
-## Exercise 2: Structure of an HTML file {background="#43464B"}
+## Your Turn: Structure of an HTML File {background="#43464B"}
 
 ```html
 <!DOCTYPE html>
@@ -229,7 +232,7 @@ countdown(minutes = 5, warn_when = 60)
 Learn more: [https://www.w3schools.com/html/html_basic.asp](https://www.w3schools.com/html/html_basic.asp)
 :::
 
-## Exercise 3: Modify of an HTML file {background="#43464B"}
+## Your Turn: Modify an HTML File {background="#43464B"}
 
 - Copy the following HTML code:
 
@@ -265,12 +268,11 @@ Write a piece of text for each of the following pages:
 
 Find pictures of yourself or that represents you to be published online and view by recruiters.
 
-
 ## HTML Code
       
 An **HTML5** document consists of 4 core elements:  
 `doctype`, `html`, `head`, and `body`  
-**All websites** have the following fundamental *structure*!
+**All websites** have the following fundamental structure!
 
 ```html
 <!doctype html>
@@ -286,17 +288,22 @@ An **HTML5** document consists of 4 core elements:
 
 ## HTML Code Encoding
 
-Sometimes you will see the term `utf-8` in the HTML code, it is the encoding
+Sometimes you will see the term `UTF-8` in the HTML code, it is the encoding
 
 See here for more details on [(character) encoding](https://en.wikipedia.org/wiki/Character_encoding)?
 
 See also [here](https://www.w3.org/International/questions/qa-what-is-encoding.en) 
 
-My only rule: Use utf-8
+My only rule: **Use UTF-8**
 
 ## HTML Code
 
-Content is between **matching pairs** of HTML tags:
+Content is between **matching pairs** of HTML tags
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+
+What you see:
 
 ```html
 <header>The box at the top</header>
@@ -307,14 +314,48 @@ Content is between **matching pairs** of HTML tags:
 
 <footer>The box at the bottom</footer>
 ```
+:::
+
+::: {#second-column}
+
+What you get:
+
+<header>The box at the top</header>
+
+<h2>A heading element</h2>
+
+<p>Some text in a paragraph</p>
+
+<footer>The box at the bottom</footer>
+:::
+::::
 
 ## HTML Code
 
-Some tags **don't need 'closing'** e.g. the `img` tag:
+Some tags **don't need 'closing'** e.g. the `img` tag
+
+:::: {layout="[1,1]"}
+::: {#first-column}
+
+What you see:
 
 ```html
 <img src="imgs/my-lovely-horse.png" alt="nice horse">
 ```
+:::
+
+::: {#second-column}
+
+What you get:
+
+```{r}
+#| fig-align: "center"
+#| out-width: "40%" 
+knitr::include_graphics("https://ih1.redbubble.net/image.4958265935.4144/flat,750x,075,f-pad,750x1000,f8f8f8.u1.webp")
+```
+:::
+::::
+
 The only other **'self-closing' tags** you might use are:
 
 ```html
@@ -326,9 +367,7 @@ The only other **'self-closing' tags** you might use are:
 
 ## HTML Code
 
-A **hyperlink** goes to *another page*, a separate *website*,  
-or can jump to a *specific section* on the same page,  
-marked by an HTML `id` attribute:
+A **hyperlink** goes to another page, a separate website, or can jump to a specific section on the same page, marked by an HTML `id` attribute:
 
 ```html
 <a href="another-page.html">Go to another page</a>
@@ -344,10 +383,11 @@ marked by an HTML `id` attribute:
 
 ## HTML Code
 
-⚠️ *IMPORTANT SLIDE !!*
+::: {.callout-important}
+## Important
 
-most HTML tags are **nested inside** other HTML tags:
-(watch your indentation!)
+Most HTML tags are **nested inside** other HTML tags (watch your indentation!)
+:::
 
 ```html
 <header>
@@ -360,24 +400,7 @@ most HTML tags are **nested inside** other HTML tags:
 </section>
 ```
 
-## HTML Code
-
-You can add **HTML comments** in your code:
-
-```html
-<!-- The figure tag is for image/captions boxes -->
-
-<figure>
-  <!-- The img tag goes here -->
-  <!-- The figcaption tag goes here -->
-</figure>
-```
-
-Text between `<!--` and `-->` won't show on screen.
-
-My slides are using a Fira Font type, which makes the ligature between corresponding signs but `<!--` and `-->` are actually `< ! - - ` and `- - >` without the spaces.
-
-##  HTML elements
+## HTML Elements
 
 [Elements](https://www.w3schools.com/html/html_elements.asp) comprise **start tags** and **end tags** that render some form of content in a particular way.
 
@@ -388,7 +411,26 @@ My slides are using a Fira Font type, which makes the ligature between correspon
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html_element.png?raw=true")
 ```
 
-## Commonly used HTML tags {.smaller}
+Remember to close out tags from the inside-out to avoid unexpected renderings.
+
+## Nested HTML Elements
+
+Tags can be used within tags:
+
+```{r}
+#| fig-align: "center"
+knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/nested_html_elements.png?raw=true")
+```
+
+::: {.callout-important}
+## Important
+
+**Take extra care to never skip (or incorrectly type) an end tag!**
+
+Some elements will still display correctly if you forget an end tag, but you cannot rely on this. Forgotten end tags will cause you headaches as you try troubleshoot unexpected results and errors.
+:::
+
+## Commonly Used HTML Tags {.smaller}
 
 Browse a complete [list of HTML tags](https://www.w3schools.com/tags/default.asp).
 
@@ -405,29 +447,36 @@ Browse a complete [list of HTML tags](https://www.w3schools.com/tags/default.asp
 | `<br>`              | add a line break (empty element)                             |
 | `<span></span>`     | an inline container used to markup part of a text or document|
 
-**Note:** Some HTML elements have no content (e.g. the `<br>`, or "break" element) -- these are called *empty* elements and do not have an end tag.
+**Note:** Some HTML elements have no content (e.g. the `<br>`, or "break" element). These are called empty elements and do not have an end tag.
 
-## Nested HTML elements
+## HTML Comments
 
-Remember to close out tags from the inside-out to avoid unexpected renderings.
+You can add **HTML comments** in your code:
 
-**Nested HTML elements:**
+```html
+<!-- The figure tag is for image/captions boxes -->
 
-```{r}
-#| fig-align: "center"
-knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/nested_html_elements.png?raw=true")
+<figure>
+  <!-- The img tag goes here -->
+  <!-- The figcaption tag goes here -->
+</figure>
 ```
 
-**IMPORTANT: Take extra care to never skip (or incorrectly type) an end tag!**
-Some elements will still display correctly if you forget an end tag, but you cannot rely on this. Forgotten end tags will cause you headaches as you try troubleshoot unexpected results and errors.
+Text between `<!--` and `-->` won't show on screen.
+
+::: {.callout-important}
+## Important
+
+My slides are using a Fira Font type, which makes the ligature between corresponding signs but `<!--` and `-->` are actually `< ! - - ` and `- - >` without the spaces.
+:::
 
 ## HTML Cheat Sheet
 
 <a href="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" target="_blank" rel="noopener noreferrer"><img fetchpriority="high" decoding="async" class="shadow-2 aligncenter wp-image-11758 size-full" src="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png" alt="HTML Cheat Sheet" width="1024" height="11407" srcset="https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET.png 1024w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-768x8555.png 768w, https://websitesetup.org/wp-content/uploads/2019/08/HTML-CHEAT-SHEET-92x1024.png 92w" sizes="(max-width: 1024px) 100vw, 1024px" /></a>If you spot any errors in this cheat sheet, please contact us &#8211; info@websitesetup.org
 
-## Exercise 2: Modify an HTML File Localy {background="#43464B" .smaller}
+## Your Turn: Modify an HTML File Localy {background="#43464B" .smaller}
 
-1. Download the Repository [https://github.com/damien-dupre/damien-dupre.github.io](https://github.com/damien-dupre/damien-dupre.github.io)
+1. If you haven't done it already, download the Repository <https://github.com/damien-dupre/damien-dupre.github.io>
 2. Find the file `about.html` in the `docs` folder
 3. Modify this file to:
  - Add a **h2 title with your name**
@@ -442,13 +491,13 @@ Note: Use TextEdit (MacOS) / Notepad (Win) to open and modify the html code. In 
 countdown(minutes = 5, warn_when = 60)
 ```
 
-# Light intro to CSS
+# Light Intro to CSS
 
 ## CSS Rules
 
 CSS is a rule-based language, meaning that it allows you to **define groups of styles that should be applied to particular elements or groups of elements on a web page.** 
 
-For example, *"I want all level one (`<h1>`) headings to be green text with a bit of extra space between each letter"* could be coded as:
+For example, "I want all level one (`<h1>`) headings to be green text with a bit of extra space between each letter" could be coded as:
 
 ## CSS Rules {.smaller}
 
@@ -457,9 +506,9 @@ For example, *"I want all level one (`<h1>`) headings to be green text with a bi
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/CSS_syntax.png?raw=true")
 ```
 
-- **Selectors**select the HTML element(s) you want to style *(e.g. level one headings, `<h1>`)*
+- **Selectors** select the HTML element(s) you want to style (e.g. level one headings, `<h1>`)
 
-- **Declarations** sit inside curly brackets, `{}`, and are made up of **[property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)** and **[value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units)** pairs. Each pair specifies the property of the HTML element(s) you're selecting *(e.g. the color property of the element `<h1>`)*, and a value you'd like to assign to that property *(e.g. green)*
+- **Declarations** sit inside curly brackets, `{}`, and are made up of **[property](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)** and **[value](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Values_and_Units)** pairs. Each pair specifies the property of the HTML element(s) you're selecting (e.g. the color property of the element `<h1>`), and a value you'd like to assign to that property (e.g. green)
 
 - A property and its corresponding value are separated by a colon, `:`. Declarations end with a semicolon, `;`
 
@@ -476,7 +525,7 @@ main {
 }
 ```
 
-or be on **one line** (*harder to read* when developing):
+or be on **one line** (harder to read when developing):
 
 ```css
 main { margin: 0 auto; width: 50%; }
@@ -501,7 +550,7 @@ There are many different CSS selector types, but the following will get you pret
 
 - **Inline styling:** (not a selector type, but an alternative way to apply CSS styling)
 
-## Element selectors
+## Element Selectors
 
 Any HTML element can be used as a selector. The declarations specified apply to all HTML elements of that type.
 
@@ -537,14 +586,12 @@ h1 {
 ::::
 
 ```{r}
-
-
 #| fig-align: "center"
 #| out-width: "90%" 
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/element_selector.png?raw=true")
 ```
 
-## Grouping selectors
+## Grouping Selectors
 
 Group multiple element selectors together (separated by commas) if you want them all styled the same way.
 
@@ -582,18 +629,18 @@ h1, h2, p {
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/grouping_selector.png?raw=true")
 ```
 
-## Class selectors
+## Class Selectors
 
-[Attributes](https://www.w3schools.com/html/html_attributes.asp) provide extra information about elements. They are always **specified in the start tag** and usually come in **value/name pairs** (e.g. `attributeName="attributeValue"`). We can use attributes (e.g. the **`class`** attribute) to apply **targeted styling** using class selectors.
+[Attributes](https://www.w3schools.com/html/html_attributes.asp) provide extra information about elements. They are always **specified in the start tag** and usually come in **value/name pairs** (e.g. `attributeName="attributeValue"`). We can use attributes (e.g. the `class` attribute) to apply **targeted styling** using class selectors.
 
 ```{r}
 #| fig-align: "center"
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/html_attribute.png?raw=true")
 ```
 
-## Class selectors {.smaller}
+## Class Selectors {.smaller}
 
-A class selector uses the *`class` attribute* of an HTML element to style that specific element. Class selectors are written using a `.` followed by the selector name, e.g. `.selector`. HTML elements can have more than one class, e.g. `<p class="class1 class2">`
+A class selector uses the `class` attribute of an HTML element to style that specific element. Class selectors are written using a `.` followed by the selector name, e.g. `.selector`. HTML elements can have more than one class, e.g. `<p class="class1 class2">`
 
 **CSS**
 
@@ -615,13 +662,13 @@ A class selector uses the *`class` attribute* of an HTML element to style that s
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/class_selector.png?raw=true")
 ```
 
-## Other selector types {.smaller}
+## Other Selector Types {.smaller}
 
 ::: {.panel-tabset}
 
 ### ID Selectors
 
-An ID selector uses the *`id` attribute* of an HTML element to style that specific element. IDs must be unique within a page and therefore can only be used to select and style *one* unique element. ID selectors are written using a `#` followed by the selector name, e.g. `#selector`.
+An ID selector uses the `id` attribute of an HTML element to style that specific element. IDs must be unique within a page and therefore can only be used to select and style one unique element. ID selectors are written using a `#` followed by the selector name, e.g. `#selector`.
 
 **CSS**
 
@@ -644,7 +691,7 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 ### Universal Selector
 
-The universal selector selects *all* HTML elements on the page. It is written using only an asterisk, `*`.
+The universal selector selects **all** HTML elements on the page. It is written using only an asterisk, `*`.
 
 **CSS**
 
@@ -665,9 +712,9 @@ The universal selector selects *all* HTML elements on the page. It is written us
 knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-websites/blob/main/images/universal_selector.png?raw=true")
 ```
 
-### Inline styling
+### Inline Styling
 
-You may define styles directly inline using the *`style` attribute*. However, it's best practice to use these sparingly as it mixes content (HTML) with presentation (CSS) and cannot be reused with other elements like defined CSS rules can.
+You may define styles directly inline using the `style` attribute. However, it's best practice to use these sparingly as it mixes content (HTML) with presentation (CSS) and cannot be reused with other elements like defined CSS rules can.
 
 **HTML with inline styling**
 
@@ -683,7 +730,7 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 ```
 :::
 
-## Other selector types
+## Other Selector Types
 
 the **selector** is the element to be styled:
 
@@ -699,19 +746,21 @@ form#myForm { /* targets tag form with id myForm */
 }
 ```
 
-## Other selector types
+## Other Selector Types
 
-⚠️ *IMPORTANT SLIDE !!*
+::: {.callout-important}
+## Important
 
-**IDs** should always be *unique*! (CSS **#NameOfID**)
+- **IDs** should always be unique! (CSS **#NameOfID**)
 
-IDs are often used to identify things in JavaScript
+- IDs are often used to identify things in JavaScript
 
-**classes** can be applied to *multiple* tags (CSS **.NameofClass**)
+- **classes** can be applied to multiple tags (CSS **.NameofClass**)
 
-Classes are often used to style similar things in CSS
+- Classes are often used to style similar things in CSS
+:::
 
-## Conflicting CSS rules {.smaller}
+## Conflicting CSS Rules {.smaller}
 
 It is often the case that more than one CSS rule will point to the same element. For example, say you have a style sheet and HTML that look like the following:
 
@@ -730,11 +779,17 @@ h1 {color: blue;}
 <p>This is my paragraph with <span style="green-text">some green text</span></p>
 ```
 
-In this case, we have a universal selector that styles all of our text orange, but we also have an element selector that colors our `<h1>` elements blue and a class selector that is applied inline to color a subset of text green. *How do you know which style will be declared and applied to each of our HTML elements?*
+In this case, we have a universal selector that styles all of our text orange, but we also have an element selector that colors our `<h1>` elements blue and a class selector that is applied inline to color a subset of text green. 
+
+> How do you know which style will be declared and applied to each of our HTML elements?
 
 ## CSS Specificity
 
-[Specificity](https://www.w3schools.com/css/css_specificity.asp) can be complicated (especially when you consider all the other types of selectors we haven't covered in these slides). For the purposes of this workshop and getting started on your CSS journeys, a general rule of thumb is as follows: Inline styles are the most specific and will override ID selectors, which will override class selectors, which will override element selectors, etc. The order that rules are written in your stylesheet matters as well -- since rules are read top to bottom, a directly competing rule farther down your stylesheet will take precedent.
+[Specificity](https://www.w3schools.com/css/css_specificity.asp) can be complicated (especially when you consider all the other types of selectors we haven't covered in these slides). 
+
+For the purposes of this workshop and getting started on your CSS journeys, a general rule of thumb is as follows: Inline styles are the most specific and will override ID selectors, which will override class selectors, which will override element selectors, etc. 
+
+The order that rules are written in your stylesheet matters as well, since rules are read top to bottom, a directly competing rule farther down your stylesheet will take precedent.
 
 ## CSS Specificity
 
@@ -769,13 +824,13 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 ## CSS Stylesheet in HTML Code
 
-the stylesheet needs to be linked in the `head` section
+the stylesheet needs to be linked in the `head` section:
 
 ```html
 <link rel="stylesheet" href="path/to/styles.css">
 ```
 
-technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
+Technically, it can go between `style` tags directly in the `head` section, but it should really go into an external file
 
 ```html
 <style>
@@ -788,23 +843,32 @@ technically, it can go between `style` tags directly in the `head` section, but 
 # Keep Your Code Tidy
 
 ## TIDY CODE
-  
-⚠️ *IMPORTANT SLIDE !!*
+
+::: {.callout-important}
+## Important
 
 - **indent all your code** as you go, with **2 spaces**!
-- **HTML** in `.html` files (`<`angle brackets`>`)
-- **CSS** in `.css` files (`{`curly braces`}`)
 
+- **HTML** in `.html` files (`<`angle brackets`>`)
+
+- **CSS** in `.css` files (`{`curly braces`}`)
+:::
+  
 ### KEEPING **CODE TIDY** WILL HELP YOU **A LOT**
 
 ## TIDY FILES
 
-⚠️ *IMPORTANT SLIDE !!*
+::: {.callout-important}
+## Important
 
 - **YES** all file & folder names **lower-case**!
+
 - **YES** all **resized images** in an `images` folder!
-- **NO** *spaces* in filenames (incl. images etc.)!
+
+- **NO** spaces in filenames (including images etc.)!
+
 - **NO** unused, old files in folder (e.g. photoshop files)!
+:::
 
 ### Clean up at the end of every session
 
@@ -864,7 +928,7 @@ Huge thanks the following people who have generated and shared most of the conte
 knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzNHJxcXNsMjFoczM1cjVzMmw5MWo4aTFqNmx5c3UyNXQ2MzB5ZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fxI1G5PNC5esyNlIUs/giphy.gif")
 ```
 
-## Exercise 3: Create your Website {background="#43464B"}
+## Your Turn: Create your Website {background="#43464B"}
 
 1. Go to [https://html5up.net/](https://html5up.net/).
 
@@ -872,7 +936,13 @@ knitr::include_graphics("https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjlzN
 
 3. Fill the template with your informations and observe the changes on your local computer.
 
-Notes: This will not be accepted as a submission to the module's assignment but you will be able to use the content created in your future Quarto website. However, we will use it next week in our lecture about GitHub.
+::: {.callout-important}
+## Important
+
+This will not be accepted as a submission to the module's assignment but you will be able to use the content created in your future Quarto website.
+
+However, we will use it next week in our lecture about GitHub.
+:::
 
 ```{r}
 countdown(minutes = 20, warn_when = 60)
