@@ -732,16 +732,16 @@ knitr::include_graphics("https://github.com/UCSB-MEDS/customizing-quarto-website
 
 ## Other Selector Types
 
-the **selector** is the element to be styled:
+the **selector** can combine 2 elements:
 
 ```css
-main { /* targets tag main */
+main { /* 1 element: targets tag main */
   margin: 0 auto;
 }
-aside.sidebar { /* targets tag aside with class sidebar */
+aside.sidebar { /* 2 elements: targets tag aside with class sidebar */
   width: 50%;
 }
-form#myForm { /* targets tag form with id myForm */
+form#myForm { /* 2 elements: targets tag form with id myForm */
   background: #666;
 }
 ```
@@ -839,38 +839,6 @@ Technically, it can go between `style` tags directly in the `head` section, but 
   }
 </style>
 ```
-
-# Keep Your Code Tidy
-
-## TIDY CODE
-
-::: {.callout-important}
-## Important
-
-- **indent all your code** as you go, with **2 spaces**!
-
-- **HTML** in `.html` files (`<`angle brackets`>`)
-
-- **CSS** in `.css` files (`{`curly braces`}`)
-:::
-  
-### KEEPING **CODE TIDY** WILL HELP YOU **A LOT**
-
-## TIDY FILES
-
-::: {.callout-important}
-## Important
-
-- **YES** all file & folder names **lower-case**!
-
-- **YES** all **resized images** in an `images` folder!
-
-- **NO** spaces in filenames (including images etc.)!
-
-- **NO** unused, old files in folder (e.g. photoshop files)!
-:::
-
-### Clean up at the end of every session
 
 ## References
 
