@@ -125,13 +125,17 @@ include_graphics("http://www.quickmeme.com/img/75/7509f68823389e4af3777ca6d3744c
 
 ### And even more that I am not aware of!
 
-## Exercise 1: Sign In or Sign Up {background="#43464B"}
+## Your Turn: Sign In or Sign Up {background="#43464B"}
 
 1. Go to [https://github.com](https://github.com),
 2. Click <kbd>Sign In</kbd> or <kbd>Sign Up</kbd> (if you have already done it),
 3. If you are creating an account, fill all requested information.
 
-Note: Your user name will become extremely important in your future, `firstname-name` is usually good
+::: {.callout-important}
+## Important
+
+Your user name will become extremely important in your future (i.e., working with data teams, visibility of employers), `firstname-name` is usually good.
+:::
 
 ```{r}
 countdown(minutes = 2, warn_when = 60)
@@ -151,7 +155,9 @@ include_graphics("https://miro.medium.com/v2/resize:fit:1400/1*cgJlPulU9t3djbf9T
 include_img("github_dd_profile.png")
 ```
 
-## Exercise 2: Your First Repository {background="#43464B"}
+# Your First Repository
+
+## Your First Repository {background="#43464B"}
 
 Follow the steps here after [to create a Repository](https://docs.github.com/en/get-started/quickstart/create-a-repo):
 
@@ -161,13 +167,13 @@ Follow the steps here after [to create a Repository](https://docs.github.com/en/
 include_graphics("https://docs.github.com/assets/cb-11427/mw-1000/images/help/repository/repo-create.webp")
 ```
 
-## Exercise 2: Your First Repository {background="#43464B"}
+## Your First Repository {background="#43464B"}
 
 ```{r}
 include_graphics("https://proclusacademy.com/images/32-github-new-repo-1.webp")
 ```
 
-## Exercise 2: Your First Repository {background="#43464B"}
+## Your First Repository {background="#43464B"}
 
 2. Type a short, memorable name for your repository, like `hello-world`.
 
@@ -175,9 +181,15 @@ include_graphics("https://proclusacademy.com/images/32-github-new-repo-1.webp")
 include_graphics("https://docs.github.com/assets/cb-61138/mw-1440/images/help/repository/create-repository-name.webp")
 ```
 
+::: {.callout-important}
+## Important
+
+In the future, these test repositories should be removed to have a clean account.
+:::
+
 3. Optionally, add a description of your repository. For example, `My first repository on GitHub`. 
 
-## Exercise 2: Your First Repository {background="#43464B"}
+## Your First Repository {background="#43464B"}
 
 4. Choose a **PUBLIC** repository visibility. For more information, see [about repositories](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories),
 
@@ -197,9 +209,15 @@ In GitHub, a commit is a saved change to a project's source code or other files.
 
 **A commit contains a snapshot of the changes** you've made to one or more files, along with a message that describes the changes. This **message should be descriptive and clear**, so that other developers can understand what changes you've made and why.
 
-### Everytime you want to take into account a change in your repository, you need to commit these changes
+::: {.callout-important}
+## Important
 
-## Exercise 3: Your First Commit {background="#43464B"}
+Everytime you want to make a change in your repository, you need to commit these changes.
+:::
+
+# Your First Commit
+
+## Your First Commit {background="#43464B"}
 
 When you created your new repository, you initialized it with a README file. README files are a great place to describe your project in more detail, or add some documentation such as how to install or use your project. The contents of your README file are automatically shown on the front page of your repository.
 
@@ -211,7 +229,7 @@ When you created your new repository, you initialized it with a README file. REA
 include_graphics("https://docs.github.com/assets/cb-21025/mw-1440/images/help/repository/create-commit-open-readme.webp")
 ```
 
-## Exercise 3: Your First Commit {background="#43464B"}
+## Your First Commit {background="#43464B"}
 
 2. In the upper right corner of the file view, click on the pen icon to open the file editor ✏️,
 
@@ -221,7 +239,7 @@ include_graphics("https://docs.github.com/assets/cb-47677/mw-1440/images/help/re
 
 3. In the text box, **type some information about the project**.
 
-## Exercise 3: Your First Commit {background="#43464B"}
+## Your First Commit {background="#43464B"}
 
 4. Above the new content, click <kbd>Preview</kbd> to review the changes you made to the file.
 
@@ -229,34 +247,31 @@ include_graphics("https://docs.github.com/assets/cb-47677/mw-1440/images/help/re
 include_graphics("https://docs.github.com/assets/cb-35443/mw-1440/images/help/repository/edit-readme-preview-changes.webp")
 ```
 
-
 6. Click <kbd>Commit changes...</kbd>.
 
-## Exercise 3: Your First Commit {background="#43464B"}
+## Your First Commit {background="#43464B"}
 
-7. In the "Commit message" field, type a short, meaningful **commit message** that describes the change you made to the file,
+:::: {layout="[0.7,0.3]"}
+::: {#first-column}
+7. In the "Commit message" field, type a short, meaningful **commit message** that describes the change you made to the file.
+:::
 
+::: {#second-column}
 ```{r}
 include_img("github_commit.png")
 ```
+:::
+::::
 
 8. Below the commit message fields, decide whether to add your commit to the current branch or to a new branch. Select **commit directly to the `main` branch** for now. 
 
 9. Click <kbd>Commit changes</kbd>.
 
-⚠️ Warning: For collaborative projects never commit to the main branch
+::: {.callout-important}
+## Important
 
-## Exercise 4: Add New Files to your Repository {background="#43464B"}
-
-1. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
-
-2. **Drop** or **choose** all the files necessary to your transformed template website,
-
-3. In the main box and **commit your changes**
-
-```{r}
-countdown(minutes = 2, warn_when = 60)
-```
+For collaborative projects never commit to the main branch
+:::
 
 ## GitHub Pages
 
@@ -268,7 +283,7 @@ Your website will then be published at a URL based on your GitHub username and r
 include_graphics("https://miro.medium.com/v2/resize:fit:1400/format:webp/1*uHia-SKJPkWqbxbGJPfCCA.jpeg")
 ```
 
-## Exercise 5: Turn on GitHub Page {background="#43464B"}
+## Your Turn: Turn on GitHub Page {background="#43464B"}
 
 Turn on GitHub Pages for your project repository:
 
@@ -276,12 +291,62 @@ Turn on GitHub Pages for your project repository:
 
 2. In **Branch**, instead of None select **Main** and click <kbd>Save</kbd>,
 
-3. Click on <kbd>Actions</kbd>Actions and wait that "pages build and deployment" finishes,
+3. Click on <kbd>Actions</kbd> and wait that "pages build and deployment" finishes,
 
-4. When it's done, go to **https://username.github.io/repository/nameofyourfile.html**.
+4. When it's done, go to <https://username.github.io/repositoryname>.
 
 ```{r}
 countdown(minutes = 3, warn_when = 60)
+```
+
+## Your Turn: Add New Files to your Repository {background="#43464B"}
+
+::: {.callout-important}
+## Important
+
+For this exercise, you need the `index.html` file from the website template that you have downloaded and modified last time.
+:::
+
+1. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
+
+2. **Drop** or **choose** all the file `index.html`
+
+3. In the main box and **commit your changes** and observe the changes on your website.
+
+```{r}
+countdown(minutes = 2, warn_when = 60)
+```
+
+## Your Turn: Add New Files to your Repository {background="#43464B"}
+
+::: {.callout-important}
+## Important
+
+For this exercise, you need the `.css` files from the website template that you have downloaded and modified last time.
+:::
+
+1. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
+
+2. **Drop** or **choose** all the `.css` files
+
+3. In the main box and **commit your changes** and observe the changes on your website.
+
+```{r}
+countdown(minutes = 2, warn_when = 60)
+```
+
+## Your Turn: Add Supporting Files {background="#43464B"}
+
+1. Open the `index.html` in GitHub, change the profile image path from web to relative in order to display your picture,
+
+2. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
+
+3. **Drop** or **choose** all images by repecting their relative path, `.js` files, and any required files,
+
+4. In the main box and **commit your changes** and observe the changes on your website.
+
+```{r}
+countdown(minutes = 4, warn_when = 60)
 ```
 
 ## {background="#43464B"}

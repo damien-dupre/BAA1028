@@ -38,9 +38,9 @@
             height: 188
           },
           {
-            src: "Python.png",
-            width: 512,
-            height: 512
+            src: "vscode.png",
+            width: 300,
+            height: 300
           },
           {
             src: "markdown.png",

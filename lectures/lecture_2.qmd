@@ -178,7 +178,7 @@ Right-click on the webpage in your browser and select “View Page Source” (na
 
 ### Method 2: Use your most basic text editor
 - Notepad: Just open the file
-- TextEdit: Choose File > Open, then select the document. Click Show Options at the bottom of the TextEdit dialogue, then select “Ignore rich text commands”.
+- TextEdit: Choose TextEdit > Settings, then click "Open and Save" tab. Tick **“Display HTML files as HTML code instead of formatted text”**.
 
 ### Method 3: Open it with your coding tool
 e.g., Spyder, JupyterLab, PyCharm, VS Code, Neovim, ...
@@ -476,16 +476,22 @@ My slides are using a Fira Font type, which makes the ligature between correspon
 
 ## Your Turn: Modify an HTML File Localy {background="#43464B" .smaller}
 
-1. If you haven't done it already, download the Repository <https://github.com/damien-dupre/damien-dupre.github.io>
+1. Download the Repository (if not done):  <https://github.com/damien-dupre/damien-dupre.github.io>
 2. Find the file `about.html` in the `docs` folder
 3. Modify this file to:
- - Add a **h2 title with your name**
- - Modify the **text with your own description**
- - Replace the picture with **another image found on the web** (your picture or any other)
+ - Line 148, replace the **h1 title with your name**
+ - Line 168 to 170, modify the **text with your own description**
+ - Line 167, replace the picture with **another image found on the web** (your picture or any other)
 
-Then open this page on your web browser!
+Then, open this page on your web browser!
 
-Note: Use TextEdit (MacOS) / Notepad (Win) to open and modify the html code. In the TextEdit app on your Mac, choose TextEdit > Settings, then click Open and Save. Select **“Display HTML files as HTML code instead of formatted text”**.
+::: {.callout-important}
+## Note
+
+- With the Windows OS, after downloading the repository, Click "Extract all" to unzip it.
+- Use TextEdit (MacOS) / Notepad (Win) to open and modify the html code. 
+- In the TextEdit app on your Mac, choose TextEdit > Settings, then click Open and Save. Select **“Display HTML files as HTML code instead of formatted text”**.
+:::
 
 ```{r}
 countdown(minutes = 5, warn_when = 60)
