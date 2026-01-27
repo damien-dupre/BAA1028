@@ -40,189 +40,43 @@ include_img <- function(img_name) {
 # https://github.com/DHI/datatalks
 ```
 
-## For Today
-
-#### 1. Look back at Lecture 3 with new slides about Absolute vs. Relative paths.
-
-#### 2. Introduction to Command-Line Interface
-
-#### 3. Introduction to Git
-
-<!-- #### 4. Git from command line and from VS Code -->
-
-<br>
-
-### Any questions?
-
-## Demonstration {background="#43464B"}
-
-Here is my own workflow with Git, GitHub, R, and Rstudio!
-
-```{r}
-include_graphics("https://docs.ropensci.org/magick/reference/figures/Rlogo-banana.gif")
-```
-
-# Command-Line Interface
-
-## What is a command-line interface (CLI)? 
-
-> A command-line interface (CLI) **processes commands** to a computer program in the form of **lines of text**. The program which handles the interface is called a command-line interpreter or command-line processor. 
-
-> Operating systems implement a command-line interface in a shell for interactive access to operating system functions or services. Such access was primarily provided to users by computer terminals starting in the mid-1960s, and continued to be used throughout the 1970s and 1980s on VAX/VMS, Unix systems and personal computer systems including DOS, CP/M and Apple DOS.
-
-See [https://en.wikipedia.org/wiki/Command-line_interface](https://en.wikipedia.org/wiki/Command-line_interface)
-
-## What is a command-line interface (CLI)? 
-
-:::: {layout="[1,1]"}
-::: {#first-column}
-### Command-Line Interface
-- Text-based commands.
-- Efficient for automation.
-- Preferred by tech experts.
-:::
-
-::: {#second-column}
-### Graphical User Interface
-- Visual elements (icons, windows).
-- User-friendly.
-- Immediate visual feedback.
-- Common for everyday tasks.
-:::
-::::
-
-## Evolution of Computer Interfaces
-
-- **1969**: UNIX introduces Command Line Interface (CLI)
-- **1980**: MS-DOS popularizes Command Line Interface (CLI)
-- **1984**: Apple Macintosh brings GUI to mainstream
-- **1985**: Microsoft introduces Windows 1.0, a graphical user interface (GUI).
-- **1991**: Linux introduces CLI to open source
-- **1995**: Windows 95 merges GUI and CLI
-- **2001**: Mac OS X merges Unix and GUI
-- **2004**: Ubuntu simplifies Linux CLI 
-- **2020s**: CLI continues its indispensable role, supporting automation, scripting, and advanced tasks. 
-
-## And what is a shell?
-
-> In computing, a shell is a computer program which exposes an operating system's services to a human user or other program. In general, operating system shells use either a command-line interface (CLI) or graphical user interface (GUI), depending on a computer's role and particular operation. It is named a shell because it is the outermost layer around the operating system.
-
-See [https://en.wikipedia.org/wiki/Shell_(computing)](https://en.wikipedia.org/wiki/Shell_(computing))
-
-## Terminal vs Shell
-
-Vocabulary:
-
-- **Terminal**: A program that runs a shell
-- **Shell**: A program that interprets commands
-- **Bash**: The most common shell on Linux and macOS
-- **PowerShell**: The most common shell on Windows
-- **Cmd**: The legacy shell on Windows
-
-My CLI of choice is [the Bash](https://www.gnu.org/software/bash/)
-
-- Linux/macOS user already have access to the Bash
-- MS Windows user can use the "Git Bash" after installing Git
-
-## Windows Terminal
-
-A new terminal application for Windows 10
-
-![](https://raw.githubusercontent.com/DHI/datatalks/refs/heads/main/talk_22_command_line_apps/terminal.png)
-
-## Okay, but why?!
-
-- Fast and efficient way to interact with your computer
-
-- Important part of your automation toolbox to create a reproducible data analysis pipeline
-
-- Accessing a remote server almost always requires some sort of command line skills
-
-[I also recommend "Top ten reasons to learn to use the command line: Expanding your reproducibility tools"](https://riffomonas.org/code_club/2020-08-17-command-line-life)
-
-## Important Commands
-
-| Description           | Win         | Linux, macOS (Bash) |
-| :---                  | :---        | :---                |    
-| Copy files, folders   | `copy`      | `cp`                |
-| Move files, folders   | `move`      | `mv`                |
-| List folder content   | `dir`       | `ls`                |
-| Create new folder     | `mkdir`     | `mkdir`             |
-| Change current folder | `cd`        | `cd`                |
-| Show current path.    | `echo %cd%` | `pwd`               |
-| Locate a software     | `where`     | `which`             |
-| **Danger zone** No undo!|
-| Delete file(s)         | `del`      | `rm`                |
-| Delete folder(s)       | `rmdir`.   | `rm`                |
-
-## Important Commands
-
-Almost all of these command can have several arguments, e.g., `ls -la`
-
-They also have subcommands, e.g., `git`
-
-* `git init`
-* `git add`
-* `git commit`
-* `git push`
-
-Each subcommand has its own set of options and arguments.
-
-- [Linux cheatsheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
-
-- [MS Windows cheatsheet](http://www.cs.columbia.edu/~sedwards/classes/2015/1102-fall/Command%20Prompt%20Cheatsheet.pdf) 
-
-<!-- ## Exercise -->
-
-<!-- - Start the Git Bash -->
-
-<!-- - List the content of the current folder via `ls -la` -->
-
-<!-- - Determine where you are via `pwd` -->
-
-<!-- - Go to the parent folder via `cd <your input>` -->
-
-<!-- - Copy the content from my small script (see above, section [](cli:create-project), use the little copy-icon in the top-right corner) and past it into a text file, save the text file as `create-project.sh` -->
-
-<!-- - Execute the script `./create-project.sh` (the `./` is important, for an explanation see [here](https://stackoverflow.com/questions/6331075/why-do-you-need-dot-slash-before-executable-or-script-name-to-run-it-in-bas)) without a folder name -->
-
-<!-- - Execute the script `./create-project.sh <your-new-project>` with a folder name as argument -->
-    
-# Git
-
 ## Automated Version Control (AVC)
 ::: {#sec-avc}
 ![](https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-is-it.png)
 :::
 
 ## Automated Version Control (AVC)
+
 - A system that automatically manages changes to files, typically in the context of software development.
 - Keeps track of every modification to the code in a special kind of database.
 - If a mistake is made, developers can turn back the clock and compare earlier versions of the code to help fix the mistake while minimising disruption to all team members.
 
-## AVC: What should I care?
+## Automated Version Control (AVC)
+
 ::: {#sec-avc-care}
 ![](https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-should-i-care-A.png)
 :::
 
-## AVC: What should I care?
+## Automated Version Control (AVC)
+
 ![](https://mxochicale.github.io/intro-to-git-and-github/figures/version-control-what-should-i-care-B.png)
 
-## Automated Version Control
+## Automated Version Control (AVC)
+
   - **Backup and restore**: Changes are stored securely and can be restored at any point.
   - **Collaboration**: Multiple people can work on the same project at the same time.
   - **Track changes**: You can see who last modified something that might be causing a problem, who introduced an issue, when it was introduced, and more.
   - **Explore alternatives**: Safely experiment with new ideas in a branch, without affecting the main project.
 
 ## Introduction to Git and GitHub
-::: {#sec-gg}
+
 - **Git**: A version control system that lets you manage and keep track of your source code history.
 - **GitHub**: A cloud-based hosting service that lets you manage Git repositories.
 - **Benefits**:
   - Track changes in your code across versions.
   - Collaborate with others on projects.
   - Backup your work on the cloud.
-:::
+
 
 ## What is Git ?
 
@@ -241,31 +95,32 @@ include_graphics("https://pbs.twimg.com/media/Fgg4vIWWIAAUJiq.jpg")
  - A place where you can store your code, your files, and each file's revision history.
  - Contains a `.git` folder at the root which does all the git magic behind the scenes.
 
-## Check Git
+## Check if Git is Already Installed
 
-To check if Git is already installed, run the following in the Terminal / Command Prompt:
+To check if Git is already installed, run the following in the Terminal:
 
-:::: {layout="[1,1]"}
+:::: {layout="[1,1,1]"}
 ::: {#first-column}
-### Linus/MacOS
 
-```bash
+```{.bash filename="zsh (Linux/MacOS)"}
 which git
 ```
 
 If asked to install the Xcode command line tools, say yes!
-Right click to copy on a Terminal line
 :::
 
 ::: {#second-column}
-### Windows
-
-```bash
+```{.bash filename="cmd (windows)"}
 where git
 ```
 :::
-::::
 
+::: {#third-column}
+```{.bash filename="PowerShell (windows)"}
+where.exe git
+```
+:::
+::::
 
 Check the version of your Git if you have one
 
@@ -280,6 +135,8 @@ If Git is not installed:
 - Download the installer from [https://git-scm.com/downloads](https://git-scm.com/downloads) 
 - Run keeping all the default settings. 
 
+Use `git --version` again to check that Git is installed.
+
 :::{.callout-note collapse=false appearance='default' icon=true}
 ## If the Windows installer hangs with the progress bar at 100%:
 
@@ -288,6 +145,14 @@ If Git is not installed:
  - Select Task Manager;  
  - Find Git for Windows installer and close.
 :::
+
+## Git Bash for Windows
+
+Git, the version control manager software, comes with `Git Bash` on Windows.
+
+`Git Bash` is the same Bash as the one used in Linux and MacOS.
+
+**However, all Command-Lines to use Git can be run not only in `Git Bash`, but also with `cmd` and `PowerShell`.**
 
 ## Setting up Git
 
@@ -301,7 +166,7 @@ git config --global user.name "Your Name"
 git config --global user.email "Your Email"
 ```
 
-## Exercise 1: Setting up Git {background="#43464B" .smaller}
+## Your Turn: Setting up Git {background="#43464B"}
 
 In your terminal, type your GitHub Name and Email:
 
@@ -310,14 +175,21 @@ git config --global user.name "Your Name"
 git config --global user.email "Your Email"
 ```
 
-example
+Example:
 
 ```bash
 git config --global user.name "damien-dupre"
 git config --global user.email "damien.dupre@dcu.ie"
 ```
+::: {.callout-important}
+## Important
 
-Warning, if done correctly there is no output to these commandes
+If done correctly there is no output to these commands but you can check them using:
+
+```bash
+git config --list
+```
+:::
 
 ```{r}
 countdown(minutes = 5, warn_when = 60)
@@ -340,7 +212,6 @@ To see where the settings file are defined, we can run bellow command:
 # displaying setting files location command
 git config --list --show-origin
 ```
-
 ## Setting up Git
 
 Once we set up the global variables, we will initialize the project. To do so, we have to go to that directory from the command line.
@@ -375,29 +246,6 @@ ls -la
 
 It will display that git has created a several files to keep the tracks of our changes.
 
-<!-- In VS Code, `git init` command will change the color of the files and it will show `U` beside the file names. `U` means **Untracked File** -->
-
-<!-- ## Exercise 1, creating a git repository: -->
-
-<!-- <br>- Navigate to a folder you want to work in, and create a new folder to contain your repository: -->
-
-<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ cd your_dir -->
-<!-- $ mkdir your_folder -->
-<!-- $ cd your_folder -->
-<!-- </code></pre> -->
-<!-- </div> -->
-<!-- Then initialise the folder -->
-<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git init -->
-<!-- </code></pre> -->
-<!-- </div> -->
-<!-- ::: {.callout-tip title=".git"} -->
-<!-- A hidden ".git" folder has been created in your folder. This contains everything Git needs to work. -->
-<!-- ::: -->
-
 ## Exercise 2: Clone Repository {background="#43464B" .smaller}
 
 1. Go the the GitHub repository of your website,
@@ -429,8 +277,6 @@ git add -A # does the same thing as --all but it's a shortcut
 git add . # same as --all and -A
 ```
 
-<!-- after executing the `git add` command it  will change that file from `U` to `A` in the VS Code. `A` means Added. -->
-
 ## Git Commit
 
 - You can think of a commit as a snapshot of your work at a particular time
@@ -456,45 +302,6 @@ We say these files are in the staging area.
 
 ![](https://raw.githubusercontent.com/Cambridge-ICCS/Summer-school-Intro-Git/refs/heads/main/presentation/images/show_different_file_states.png)
 
-<!-- ## Exercise 2a, create an untracked file: -->
-
-<!-- ![](images/create_untracked_file.png) -->
-
-<!-- ## Exercise 2a, create an untracked file: -->
-<!-- <br>- Create a new file in your repository. -->
-
-<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ touch new.txt -->
-<!-- $ code new.txt -->
-<!-- </code></pre> -->
-<!-- </div> -->
-<!-- <br> -->
-<!-- Lets check what git can see... -->
-<!-- <div style="background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git status -->
-<!-- </code></pre> -->
-<!-- </div> -->
-
-<!-- ## Exercise 2b, add the untracked file to the staging area: -->
-
-<!-- ![](images/add_to_staging_area.png) -->
-
-<!-- ## Exercise 2b, add the untracked file to the staging area: -->
-
-<!-- <br> Try these commands... -->
-<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git add . -->
-<!-- </code></pre> -->
-<!-- </div> -->
-<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git status -->
-<!-- </code></pre> -->
-<!-- </div> -->
-
 ## Git Commit
 
 Last step is to commit the changes using the `git commit` command. 
@@ -508,51 +315,6 @@ git commit -m "Commit Message" -m "Commit Description"
 
 git commit message should be short and precise. What are the changes being made, why are the changes and the functionalities it will add.
 git commit message should be like email subject. 
-
-<!-- `git commit` command will remove the `A` tag beside the files names in VS Code. It means these files has been committed into your local machine. -->
-<!-- Any changes made after this will flag the file as `M` tag. `M` means Modified. -->
-
-<!-- ## Exercise 2c, commiting your changes: -->
-
-<!-- ![](images/commit_to_repository.png) -->
-
-<!-- ## Exercise 2c, commiting your changes: -->
-
-<!-- Commit your file to the local git repo -->
-<!-- <div style="margin-top: 0px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git commit -m "Created new.txt" -->
-<!-- </code></pre> -->
-<!-- </div> -->
-
-<!-- <br> -->
-<!-- 'git commit' >>>> tells git you want to commit -->
-<!-- <br> -->
-<!-- <br>'-m "Comment"' >>>> adds a description to the log for this commit. This is important as it tells you and others what the commit intent is. -->
-
-
-<!-- ## git commit -->
-
-<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git commit -m "Created new.txt" -->
-
-<!-- [main (root-commit) f22b25e] Created new.txt -->
-<!--  1 file changed, 1 insertion(+) -->
-<!--  create mode 100644 new.txt -->
-
-<!-- </code></pre> -->
-<!-- </div> -->
-
-<!-- <div style="margin-top: 100px; background-color: black; color: white; padding: 10px; border-radius: 5px; font-family: monospace;"> -->
-<!-- <pre><code> -->
-<!-- $ git status -->
-
-<!-- On branch main -->
-<!-- nothing to commit, working tree clean -->
-
-<!-- </code></pre> -->
-<!-- </div> -->
 
 ## Exercise 3: First Command Line Commit {background="#43464B" .smaller}
 
@@ -654,31 +416,6 @@ Date:   Sun Dec 17 16:32:29 2023 -0330 # detailed time of the commit
 
 the HEAD always point to the current branch in this case it's `main`
 
-<!-- ## Git Environments -->
-
-<!-- Git has 3 stages where we can move files. -->
-
-<!-- 1. Working: Here the files looks like what they did during the last commit. -->
-<!-- 2. Staging: Before we create a new commit, we can move our file to a temporary location called Staging. It gives us a queue up changes -->
-<!-- until we are ready to commit. -->
-<!-- 3. Commit: This is the final environment. In this stage, a new log entry is created with a new hash. -->
-
-<!-- ## Git Environments -->
-
-<!-- Before a commit a file can be in one of two main states. -->
-
-
-<!-- 1. Tracked Files: These are the files that existed in the previous snapshot (another name for commit). -->
-<!-- 2. Untracked Files: Untracked files are anything else. -->
-
-<!-- ## Git Environments -->
-
-<!-- Tracked files can be in different states -->
-
-<!-- 1. Unmodified: Files haven't changed since the last commit. -->
-<!-- 2. Modified: Files have changed since the last commit. -->
-<!-- 3. Staged: Files that have been moved to staging environment. -->
-
 ## Git Environments
 
 We can see this with `git status` viewing command.
@@ -772,89 +509,6 @@ git mv OLD_FILE_NAME NEW_FILE_NAME
 
 To restore the renamed file to it's previous name, we can use the same command `git mv` with just changing the order of file names.
 
-<!-- ## Git Difference -->
-
-<!-- we use `git diff` command to see the changes we made across the files. If we made changes to a handful number of files then it's  -->
-<!-- easier to use the IDE interface. -->
-
-<!-- ```bash -->
-<!-- # checking difference command -->
-<!-- git diff -->
-<!-- ``` -->
-
-<!-- We can also compare files based on commit hash.  -->
-
-<!-- ```bash -->
-<!-- git diff COMMITHASH -->
-<!-- ``` -->
-
-<!-- ## Git Difference -->
-
-<!-- We use `git log` to check the git history but if we don't want to see all the information, we can use `git log --oneline` command -->
-
-<!-- ```bash -->
-<!-- git log --oneline -->
-<!-- ``` -->
-
-<!-- It will show the commit hash and commit message as decending order. We can also the git commits as a graph, which makes it really helpful -->
-<!-- when we have multiple branches. -->
-
-<!-- ```bash -->
-<!-- # git log as graph  -->
-<!-- git log --all --decorate --oneline --graph  -->
-<!-- # or -->
-<!-- git log --oneline --all --graph -->
-<!-- ``` -->
-
-<!-- ## Using Git Amend -->
-
-<!-- As we know git keeps track of all our changes, sometimes we end up with some commits that was not right. We can do another commit  -->
-<!-- with proper changes but that will make the git history quiet messy. We can use `git amend` command to add changed files to the last -->
-<!-- commit. -->
-
-<!-- ```bash -->
-<!-- # changing history command -->
-<!-- git commit --amend -->
-<!-- # Alternative options -->
-<!-- git commit --amend -m "New Commit Message" -->
-<!-- git commit --amend --no-edit -->
-<!-- ``` -->
-
-<!-- `git amend` command will launch the default editor and allow us to edit the file with the amended history. We can avoid that by using the second line -->
-<!-- if we want to have a different commit message, it will change the commit message directly in the command line. We can also keep the commit message same as the last commit by executing the third command. -->
-
-<!-- ## Using Git Reset -->
-
-<!-- We can also do that, using `git reset` command. Resetting let us go back to a previous commit, and we have to give that commit hash in the command. -->
-
-<!-- ```bash -->
-<!-- # resetting command -->
-<!-- git reset COMMIT_HASH -->
-<!-- ``` -->
-
-<!-- This will go back to that commit hash snapshot and point the head to that. But it will not delete the changes that we made in the files. -->
-<!-- It will show those files as modified after getting back to that particular commit. If we want to discard all the changes we can use the -->
-<!-- `git reset --hard` command, it will discard all the changes after that commit hash. But be careful as it's going to delete all the changes -->
-<!-- along with commits. -->
-
-<!-- ```bash -->
-<!-- # hard reset command -->
-<!-- git reset --hard COMMIT_HASH -->
-<!-- ``` -->
-
-<!-- ## Using Git Rebase -->
-
-<!-- Rebasing is another way of changing history and it's designed to take the commits from one branch and apply them to another. -->
-
-<!-- ```bash -->
-<!-- # git rebasing command -->
-<!-- git rebase <branch>/<commit> -->
-<!-- # Alternative options -->
-<!-- git rebase --interactive <branch>/<commit> # best way to use rebase -->
-<!-- git rebase -i HEAD~# # useful when have a long commit history and only want to go back to certain steps -->
-<!-- git rebase -i --root # bring all the history in ascending order and let us pick -->
-<!-- ``` -->
-
 ## Branches
 
 to see the brances we can use `git branch` command. It will show all the available branc in our project.
@@ -893,47 +547,6 @@ git branch -D NAME # ignore any conflicts, forcefully delete the branch
 ```
 
 These sequence of doing things is also called git flow.
-
-<!-- ## Git Flow -->
-
-<!-- - Feature / Fix branch -->
-<!-- - Make changes -->
-<!-- - Merge changes to main branch -->
-<!-- - Delete the feature / fix branch -->
-
-<!-- ## Merge Conflicts -->
-
-<!-- Conflicts happen when we try to merge two branches, but there are changes made in the file.  -->
-
-<!-- ###  Git Stash -->
-
-<!-- Stashing is a way of putting away code temporarily. We can do that via `git stash` command. -->
-
-<!-- ```bash -->
-<!-- # stashing command syntax -->
-<!-- git stash -->
-<!-- # Checking git stash command -->
-<!-- git stash list # for checking what has been stored -->
-<!-- git stash apply # apply a set of changes from stash -->
-<!-- git stash pop # remove the git stash from the list -->
-<!-- ``` -->
-
-<!-- It's can be think of as a deck of cards, we can stash on top of another stash. -->
-
-<!-- ## Merge Conflicts -->
-
-<!-- ### Git Clean -->
-
-<!-- remove all untracked files and directories from your branch super quicky. Nice way of removing files that we don't need anymore. -->
-
-<!-- ```bash -->
-<!-- # git clean command syntax -->
-<!-- git clean -n # dry run -->
-<!-- git clean -d # directories -->
-<!-- git clean -f # force -->
-<!-- ``` -->
-
-<!-- We can combine these commands together as well, i.e. `git clean -dn` to remove both untracked file and directories -->
 
 ## Best practices
 
