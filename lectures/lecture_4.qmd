@@ -246,17 +246,14 @@ ls -la
 
 It will display that git has created a several files to keep the tracks of our changes.
 
-## Exercise 2: Clone Repository {background="#43464B" .smaller}
+## Your Turn: Clone Repository {background="#43464B"}
 
-1. Go the the GitHub repository of your website,
-2. Find the git clone url
-3. Be sure that your terminal path has moved to your "project" folder
-3. Clone this repository from your terminal
+1. Clone this repository from your terminal
 
 ```bash
 cd ~ # brings you back to the root/home of your computer
-cd project # moves the terminal to the "project" folder
-git clone https://github.com/username/repository.git # copy the website repository/folder in the "project" folder
+cd projects # moves the terminal to the "projects" folder
+git clone https://github.com/damien-dupre/my_simple_website.git
 ```
 
 ```{r}
@@ -300,26 +297,27 @@ We say these files are in the staging area.
 
 ## Git Commit
 
-![](https://raw.githubusercontent.com/Cambridge-ICCS/Summer-school-Intro-Git/refs/heads/main/presentation/images/show_different_file_states.png)
+![](https://miro.medium.com/v2/1*diRLm1S5hkVoh5qeArND0Q.png)
 
 ## Git Commit
 
 Last step is to commit the changes using the `git commit` command. 
 
 ```bash
-# basic commit command
+# basic commit command with commit Message
 git commit -m "Commit Message"
 # commit command with description along with commit Message
 git commit -m "Commit Message" -m "Commit Description"
 ```
 
 git commit message should be short and precise. What are the changes being made, why are the changes and the functionalities it will add.
-git commit message should be like email subject. 
 
-## Exercise 3: First Command Line Commit {background="#43464B" .smaller}
+**git commit message should be like email subject. **
 
-1. Open the index.html file
-2. Modify 1 word in the text diplayed in the website (title or content)
+## Your Turn: First Command Line Commit {background="#43464B"}
+
+1. Open the `my-first-web-page.html` file
+2. Modify 1 word in the text displayed in the website (title or content)
 3. Perform your first commit with the following code:
 
 ```bash
@@ -339,7 +337,7 @@ countdown(minutes = 5, warn_when = 60)
 
 ## Working with remote repositories  
 
-![](https://raw.githubusercontent.com/DHI/datatalks/refs/heads/main/talk_16_git/images/git_staging.png)
+![](https://blog.isquaredsoftware.com/images/2021-01-career-advice-git-usage/git-staging-workflow.png)
 
 ## GitHub 
 
@@ -360,10 +358,10 @@ git push origin main
 Be sure that your git project folder is connected to GitHub repository:  
 
 ```bash
-git remote add origin https://github.com/username/repository.git
+git remote add origin https://github.com/YOURUSERNAME/my_simple_website.git
 ```
 
-## Exercise 4: First Push to GitHub{background="#43464B" .smaller}
+## Your Turn: First Push to GitHub{background="#43464B"}
 
 Just type: 
 

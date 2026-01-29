@@ -319,34 +319,14 @@ countdown(minutes = 2, warn_when = 60)
 
 ## Your Turn: Add New Files to your Repository {background="#43464B"}
 
-::: {.callout-important}
-## Important
-
-For this exercise, you need the `.css` files from the website template that you have downloaded and modified last time.
-:::
-
 1. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
 
-2. **Drop** or **choose** all the `.css` files
+2. **Drop** or **choose** all the subfolder and files contained in the local website folder beside `index.html`,
 
 3. In the main box and **commit your changes** and observe the changes on your website.
 
 ```{r}
 countdown(minutes = 2, warn_when = 60)
-```
-
-## Your Turn: Add Supporting Files {background="#43464B"}
-
-1. Open the `index.html` in GitHub, change the profile image path from web to relative in order to display your picture,
-
-2. In your Repository Page in GitHub, Click <kbd>Add files</kbd> then on <kbd>Upload files</kbd>,
-
-3. **Drop** or **choose** all images by repecting their relative path, `.js` files, and any required files,
-
-4. In the main box and **commit your changes** and observe the changes on your website.
-
-```{r}
-countdown(minutes = 4, warn_when = 60)
 ```
 
 ## {background="#43464B"}
