@@ -1,0 +1,47 @@
+﻿Object,Variable,Notes
+Colors,$body-bg,The page background color.
+Colors,$body-color,The page text color.
+Colors,$link-color,The link color.
+Colors,$input-bg,The background color for HTML inputs.
+Colors,$popover-bg,"The background color for popovers (for example, when a citation preview is shown)."
+Fonts,$font-family-sans-serif,The sans-serif font family for the page.
+Fonts,$font-family-monospace,The monospace font family for the page.
+Fonts,$font-size-root,The base font size for the page.
+Fonts,$toc-font-size,The font size for the page TOC.
+Fonts,$h1-font-size,Font sizes for the specified headings.
+Fonts,$h2-font-size,Font sizes for the specified headings.
+Fonts,$h3-font-size,Font sizes for the specified headings.
+Fonts,$h4-font-size,Font sizes for the specified headings.
+Fonts,$h5-font-size,Font sizes for the specified headings.
+Code Blocks,$code-block-border-left,"By default, Quarto does not display a left border on code blocks. Set this variable to a truthy value or a CSS color to enable the left border."
+Code Blocks,$code-block-border-left-style,The style of the left border displayed on code blocks. Defaults to solid.
+Code Blocks,$code-block-border-left-size,The thickness of the left border displayed on code blocks. Defaults to 3px;
+Code Blocks,$code-block-padding-left,The amount of padding applied between the code and the border. Defaults to 0.6em.
+Code Blocks,$code-block-bg,"By default, Quarto sets a background on code blocks by adding transparency to the theme’s progress-bg color. Set this variable to truthy value or a CSS color."
+Code Blocks,$code-block-bg-padding,The padding applied to the code block. Defaults to 0.4em.
+Code Blocks,$code-block-bg-alpha,The amount to alter the transparency fo the progress-bg color. This is not used if an explicit background color is set. Defaults to -0.35.
+Code Annotation,$code-annotation-higlight-color,The color used as a border on highlighted lines.
+Code Annotation,$code-annotation-higlight-bg,The color used for the background of highlighted lines.
+Code Copy,$btn-code-copy-color,The color used for the copy button at the top right of code blocks.
+Code Copy,$btn-code-copy-color-active,The hover color used for the copy button at the top right of code blocks.
+Inline Code,$code-bg,The background color of inline code. Defaults to a mix between the body-bg and body-color.
+Inline Code,$code-color,The text color of inline code. Defaults to a generated contrasting color against the code-bg.
+Table of Contents,$toc-color,The color for table of contents text.
+Table of Contents,$toc-font-size,The font-size for table of contents text.
+Table of Contents,$toc-active-border,The left border color for the currently active table of contents item.
+Table of Contents,$toc-inactive-border,The left border colors for inactive table of contents items.
+Layout,$content-padding-top,"Padding that should appear before the main content area (including the sidebar, content, and TOC."
+Navigation,$navbar-bg,The background color of the navbar. Defaults to the theme’s $primary color.
+Navigation,$navbar-fg,"The color of foreground elements (text and navigation) on the navbar. If not specified, a contrasting color is automatically computed."
+Navigation,$navbar-hl,"The highlight color for links in the navbar. If not specified, the $link-color is used or a contrasting color is automatically computed."
+Navigation,$sidebar-bg,The background color for a sidebar. Defaults to $light except when a navbar is present or when the style is floating. In that case it defaults to the $body-bg color.
+Navigation,$sidebar-fg,"The color of foreground elements (text and navigation) on the sidebar. If not specified, a contrasting color is automatically computed."
+Navigation,$sidebar-hl,"The highlight color for links in the sidebar. If not specified, the $link-color is used."
+Navigation,$footer-bg,The background color for the footer. Defaults to the $body-bg color.
+Navigation,$footer-fg,"The color of foreground elements (text and navigation) on the footer. If not specified, a contrasting color is automatically computed."
+Callouts,$callout-border-width,The left border width of callouts. Defaults to 5px.
+Callouts,$callout-border-scale,The border color of callouts computed by shifting the callout color by this amount. Defaults to 0%.
+Callouts,$callout-icon-scale,The color of the callout icon computed by shifting the callout color by this amount. Defaults to 10%.
+Callouts,$callout-margin-top,The amount of top margin on the callout. Defaults to 1.25rem.
+Callouts,$callout-margin-bottom,The amount of bottom margin on the callout. Defaults to 1.25rem.
+Callouts,$callout-color-<type>,The colors for the various types of callouts. Defaults:
