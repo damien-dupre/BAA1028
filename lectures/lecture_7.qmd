@@ -165,22 +165,22 @@ format:
     - custom.scss
 ```
 
-## Theme Options
+<!-- ## Theme Options -->
 
-Your `custom.scss` file might look something like this:
+<!-- Your `custom.scss` file might look something like this: -->
 
-``` css
-/*-- scss:defaults --*/
-$h2-font-size:          1.6rem !default;
-$headings-font-weight:  500 !default;
+<!-- ``` css -->
+<!-- /*-- scss:defaults --*/ -->
+<!-- $h2-font-size:          1.6rem !default; -->
+<!-- $headings-font-weight:  500 !default; -->
 
-/*-- scss:rules --*/
-h1, h2, h3, h4, h5, h6 {
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, .3);
-}
-```
+<!-- /*-- scss:rules --*/ -->
+<!-- h1, h2, h3, h4, h5, h6 { -->
+<!--   text-shadow: -1px -1px 0 rgba(0, 0, 0, .3); -->
+<!-- } -->
+<!-- ``` -->
 
-Note that the variables section is denoted by the `/*-- scss:defaults --*/` comment and the rules section (where normal CSS rules go) is denoted by the `/*-- scss:rules --*/` comment.
+<!-- Note that the variables section is denoted by the `/*-- scss:defaults --*/` comment and the rules section (where normal CSS rules go) is denoted by the `/*-- scss:rules --*/` comment. -->
 
 ## {{< fa screwdriver-wrench>}} Your Turn {background="#43464B"}
 
@@ -249,6 +249,8 @@ You might imagine how often you'll need to type those HEX codes out as you devel
 Or just look at my website:
 
 ```{.scss filename="Example stylesheet (.scss)"}
+/*-- scss:defaults --*/
+
 // Headings
 $headings-color: #E84E0F !default;
 
@@ -274,6 +276,8 @@ $navbar-fg: #eeeeee !default;
 Sass allows us to **define variables** (in the form `$var-name: value;`) for our colors, which we can reference instead of writing out their HEX codes each time. This makes your stylesheet **more readable and easier to update** (e.g. only need to update HEX codes in one spot, not multiple!).
 
 ```{.sass filename="Example stylesheet (.scss)"}
+/*-- scss:defaults --*/
+
 // define Sass vars 
 $darkblue: #053660;
 $teal: #147C91;
@@ -349,7 +353,9 @@ Adding the region decorator as written above is ***critical!*** Quarto won't rec
 
 format:
   html:
-    theme: styles.scss
+    theme: 
+      - cosmo
+      - styles.scss
     toc: true
     page-layout: full
 ```
@@ -634,7 +640,7 @@ ni styles.scss
 
 2. Add the `/*-- scss:defaults --*/` decorator to the top of `styles.scss`;
 
-3. Apply the path to your `styles.scss` file using the `theme` option;
+3. Apply the path to your `styles.scss` file using the `theme` option with your theme;
 
 4. In your `styles.scss` file, define 3 colours and assign them to the variables:
 
@@ -750,7 +756,9 @@ The easiest way to apply a main (i.e. default) font for all text elements on you
 ```{.yaml filename="_quarto.yml"}
 format:
   html:
-    theme: styles.scss
+    theme: 
+     - cosmo
+     - styles.scss
     mainfont: Nunito
     toc: true
     page-layout: full
